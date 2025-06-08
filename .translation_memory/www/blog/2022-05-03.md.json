@@ -1,0 +1,462 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-03.md",
+  "source_file_content_hash": "e9c02f87a7b4af3838dfd80feea88d68a8df1167902ef6fc22b789b038ae8b9a",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: building-swa\ntitle: \"#02: Building SWA\"\nauthors: [glaucia, nitya]\ntags: [swa, 30days, core-concepts]\ndraft: false\n---",
+      "source_content_hash": "082f9355d5e3749b38f98d753a400e5ce2f999a01b7b69d231bb33e4b0da821f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 1, Day 2` of **#30DaysOfSWA**!!",
+      "source_content_hash": "b5681248cc4ffbe539c6496c89d659c6332dd4cec1a6f510f16858df1f40ccf1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的第1周第2天！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Yesterday we got a quick introduction to Azure Static Web Apps (what it is, how it's architected, and 10 features that make it useful to modern web developers). Today, it's time to dive to dive into _Building Static Web Apps_.",
+      "source_content_hash": "e791051edf48d75df43ef1f3e19a85eb4a37ce50db5c34014f9003ffccb8afe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "昨天我们快速了解了Azure静态Web应用（它是什么、架构原理以及使其对现代Web开发者有用的10大特性）。今天，我们将深入探讨_构建静态Web应用_。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 今日要点"
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "* How can I get started with SWA?\n * Using SWA with personal and production projects.\n * Building & Deploying your first SWA\n * **Tutorial** Let's Build a Classic Movie Crawler!\n * **Exercise** Your turn! And `#MayThe4thBeWithYou`\n * **Resources:** [Static Web Apps Quickstarts](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)",
+      "source_content_hash": "6579bf23bc00e0edadecbec91a51a356eb0587928946ed5fca74b2c31a62aaa8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 如何开始使用SWA？\n * 在个人和生产项目中使用SWA\n * 构建并部署你的第一个SWA\n * **教程** 让我们构建一个经典电影信息展示页！\n * **练习** 该你了！同时庆祝`#星球大战日`\n * **资源:** [静态Web应用快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "![](../static/img/series/02-banner.png)",
+      "source_content_hash": "fcee8f3a0738519217badf8bbd7481f4a5cdf1dfde34c9deecc095ba0db4df13",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/02-banner.png)"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## 1. Getting Started",
+      "source_content_hash": "16e1249139a4f4b80b75b2a1cb777550064fa745e58604e2c91c08e1773eac85",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 1. 入门指南"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "The Azure Static Web Apps service makes it easy to publish your modern web application directly from its codebase. Let's walk through that process for a basic web application (HTML, CSS, JS) first, to understand the development workflow and configuration options.",
+      "source_content_hash": "dd4c0169c392770aaef827db91f3f4bd5d67ac106a9128b2dfc174fe7401e6a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure静态Web应用服务可轻松实现从代码库直接发布现代Web应用程序。让我们先通过一个基础Web应用（HTML、CSS、JS）来了解开发工作流和配置选项。"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "### 1.1 Requirements",
+      "source_content_hash": "4d0ed7149f2e9cd8c22ec3b8fa7c72949887f06a7a0655569244eb323d09bf95",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1.1 准备工作"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "To do this quickstart, you'll need",
+      "source_content_hash": "9249d9c74fda1576f578d16a040c15788cc2fd670aacfbdeca74c19306d2446e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "进行本快速入门需要："
+      }
+    },
+    {
+      "segment_id": "c6dea11f",
+      "source_content": "* a [GitHub account](https://github.com/) - you can [signup](https://github.com/signup) for a free one if needed.\n * an [Azure account](https://portal.azure.com) - you can [signup](https://azure.microsoft.com/en-us/free/) for a free account to start.\n * [Visual Studio Code](https://code.visualstudio.com/) and [this VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) - if you favor IDEs.",
+      "source_content_hash": "9030f58ad9996d17c951efd1679acea9c1fdbd360e41bcd7a25c6651984f3ef4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [GitHub账号](https://github.com/) - 如需可[免费注册](https://github.com/signup)\n * [Azure账户](https://portal.azure.com) - 可[免费注册](https://azure.microsoft.com/en-us/free/)开始使用\n * [Visual Studio Code](https://code.visualstudio.com/)及[此VS Code扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) - 推荐IDE用户使用"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "This approach assumes you favor using an IDE for development, and want to streamline build/deploy into that workflow. I'm a fan of Visual Studio Code so I'll use this approach. If you prefer to use the command line, or a browser, we have you covered!",
+      "source_content_hash": "d77dc7b598258718b3077eedaa90b56a9355b47ad9f8871202f1c50eaa3531f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本教程假设你偏好使用IDE开发，并希望将构建/部署流程集成其中。我将以Visual Studio Code为例。若你更倾向命令行或浏览器操作，我们也提供相应方案："
+      }
+    },
+    {
+      "segment_id": "7a2e981c",
+      "source_content": "* [Quickstart: With Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript) - for commandline-driven workflow.\n * [Quickstart: With Azure Portal](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript&pivots=github) - for browser-driven workflow.",
+      "source_content_hash": "e9f1fa5f5929d342e0cf8e36fbb1b2692a930a24484b6d83568f085cf1d0eeb8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Azure CLI快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript) - 命令行工作流\n * [Azure门户快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript&pivots=github) - 浏览器操作流程"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "### 1.2 Final Outcome",
+      "source_content_hash": "e3b4ce492119d44c3868201de2af6aef84b2dbb20d6c6d9186839859a279350c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1.2 最终成果"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "The goal is to take this basic HTML/CSS/JS application and configure it for automatic build/deploy to Azure Static Web Apps. We'll be using this **[official quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)** which comes with a  [vanilla-JS application starter template](https://github.com/staticwebdev/vanilla-basic/generate) that provides our base application. Feel free to be adventurous and follow these steps with your own vanillaJS codebase.",
+      "source_content_hash": "fce9a619b2076312260194d9868416032d6c4f232acaec89d6f624701c84f1bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "目标是将这个基础HTML/CSS/JS应用配置为自动构建/部署到Azure静态Web应用。我们将使用这个[官方快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)，它提供了[原生JS应用启动模板](https://github.com/staticwebdev/vanilla-basic/generate)作为基础。你也可以大胆尝试用自己的原生JS代码库操作。"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "We'll clone that starter first - making **GitHub** our default code-hosting provider. Azure Static Web Apps has flexible deployment options so look at tutorials for **[BitBucket](https://github.com/staticwebdev/vanilla-basic/generate), [GitLab](https://docs.microsoft.com/en-us/azure/static-web-apps/gitlab?tabs=vanilla-javascript) or [Azure DevOps](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript)** if preferred. Watch for the _Deploying SWA_ post later this week for more details.",
+      "source_content_hash": "f2b894a78ab2211d928b947bc294a4ad7ae62b6aa11b5431b273e2b3c5f5e4a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将首先克隆该模板——默认使用**GitHub**作为代码托管平台。Azure静态Web应用支持灵活部署选项，如需使用**[BitBucket](https://github.com/staticwebdev/vanilla-basic/generate)、[GitLab](https://docs.microsoft.com/en-us/azure/static-web-apps/gitlab?tabs=vanilla-javascript)或[Azure DevOps](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript)**，请参考对应教程。本周后续将发布《部署SWA》文章详解。"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "![VanillaJS Quickstart outcome page](../static/img/series/02-vanillajs-start.png)",
+      "source_content_hash": "119d7d81337fcf34cd58513b0e63a5c7ddea6812482618696327f329dbad5694",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![原生JS快速入门成果页面](../static/img/series/02-vanillajs-start.png)"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "So what does that vanilla-JS starter app do? Not much - it's just a simple title on a blank webpage as shown above. Here's what you'll end up with when done:",
+      "source_content_hash": "783ce59df1066da49f61c7443bcb3bd32ba47ae89913e4f7c0d2390e55a17224",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这个原生JS启动模板有什么功能？很简单——如上图所示，它只是个空白网页上的标题。完成后你将获得："
+      }
+    },
+    {
+      "segment_id": "6773b78b",
+      "source_content": "- **Hosted SWA**: See the [live-deployment here](https://witty-desert-019fd800f.1.azurestaticapps.net/) \n - **Codebase**: See the [code source repo here](https://github.com/fearlessly-dev/my-first-swa)",
+      "source_content_hash": "55073c32e308088acedf17ebe71f8776750abf1ceab5c8ac2d813644fc786911",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- **托管版SWA**: 查看[实时部署效果](https://witty-desert-019fd800f.1.azurestaticapps.net/)\n - **代码库**: 访问[源代码仓库](https://github.com/fearlessly-dev/my-first-swa)"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "Ready to do this? Let's go!",
+      "source_content_hash": "cdb14de66d1533fa79578eea8daa53f0a5aae769de94c27dbec3ac9df965e7fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "准备好开始了吗？让我们出发吧！"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### 1.3 Build Process",
+      "source_content_hash": "78c25f52c8591b47c46427ef1b5323c41152e027f1279ebb5e9cf9a31120a32a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1.3 构建流程"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "The process is captured in [this quickstart document](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript) and has the following steps:",
+      "source_content_hash": "0b4894c08a58f2e5c0bcbd9512c411765766e0b452f39d20c32f5b87379cd4d0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "完整流程记录在[快速入门文档](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)中，包含以下步骤："
+      }
+    },
+    {
+      "segment_id": "30193704",
+      "source_content": "* [**Click**](https://github.com/login?return_to=/staticwebdev/vanilla-basic/generate) to generate your vanilla-js app from the template.\n * [**Clone**](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript#clone-the-repository) the repo to your local machine. Open in Visual Studio Code.\n * [**Install**](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript#install-azure-static-web-apps-extension) the Azure Static Web Apps extension in VS Code (if not present)\n * [**Select Azure**](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript#create-a-static-web-app) in the Activity Bar to view Azure Extensions window. You will be prompted to log into Azure and GitHub during this workflow if needed.\n    1. Select the Static Web Apps section and click \"+\" to start SWA setup\n    2. Select the relevant Azure subscription to use\n    3. Select the region to deploy to (close to you)\n    4. Select the \"Custom\" preset - use `/src` as app location, leave build empty\n    5. Press Enter. Watch for a pop-up notification of build status.",
+      "source_content_hash": "79430a91fdcb2ec2a9142b12d7ecd5b4efc221350edee5318cdd3be5ce962c48",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [**点击**](https://github.com/login?return_to=/staticwebdev/vanilla-basic/generate)从模板生成你的vanilla-js应用\n * [**克隆**](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript#clone-the-repository)仓库到本地，用Visual Studio Code打开\n * [**安装**](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript#install-azure-static-web-apps-extension)VS Code的Azure Static Web Apps扩展（如未安装）\n * 在活动栏[**选择Azure**](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript#create-a-static-web-app)查看扩展窗口，此流程中会提示登录Azure和GitHub\n    1. 选择Static Web Apps部分，点击\"+\"开始SWA配置\n    2. 选择要使用的Azure订阅\n    3. 选择部署区域（靠近你的位置）\n    4. 选择\"Custom\"预设 - 应用位置填`/src`，构建目录留空\n    5. 按Enter键，等待构建状态弹窗通知"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "Once deployment completes (you should see the success notification), visit the Azure Extensions window again.Look for the project in the Static Web Apps section and right-click for options. Here are three key ones to know:",
+      "source_content_hash": "dca4e02a90f5a8ddc768022937cb31381bf1eb5b6609e0a3edd6d95182c2b889",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "部署完成后（会显示成功通知），再次打开Azure扩展窗口。在Static Web Apps部分找到项目右键点击，有三个关键操作："
+      }
+    },
+    {
+      "segment_id": "af7d8a35",
+      "source_content": "1. `Browse Site` - click to see the [live-deployed site](https://witty-desert-019fd800f.1.azurestaticapps.net/)\n 2. `Edit Workflow` - click to see automated [GitHub Actions](https://github.com/fearlessly-dev/my-first-swa/blob/main/.github/workflows/azure-static-web-apps-witty-desert-019fd800f.yml) setup for the SWA.\n 3. `Open in Portal` - click to manage the SWA in the Azure Portal.",
+      "source_content_hash": "238fd9e8cd999c683a74cff7071f1a2dd3928b68ff986807d12bb96f385546d2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. `浏览站点` - 查看[实时部署的网站](https://witty-desert-019fd800f.1.azurestaticapps.net/)\n 2. `编辑工作流` - 查看为SWA自动配置的[GitHub Actions](https://github.com/fearlessly-dev/my-first-swa/blob/main/.github/workflows/azure-static-web-apps-witty-desert-019fd800f.yml)\n 3. `在门户中打开` - 在Azure门户管理SWA"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "**That's it!! You just deployed your first Static Web App with just a few clicks and configuration inputs!** 🎉",
+      "source_content_hash": "c23df207c8481f72b4f2c54e2c6498b725eb1b5dc0da5bc6b800928b6d3bb70f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**搞定！！仅需几次点击和配置，你就完成了首个静态Web应用的部署！** 🎉"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "### 1.4 Let's Unpack",
+      "source_content_hash": "228c22d1c966c5f36b7436b92512c4ffe00c05c6af1367a607db28ddc7a516c7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1.4 技术解析"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "So what happened under the hood?",
+      "source_content_hash": "f4ed1ed43e27539360a6c5ee6c0e99269efd58e1dbf4b9976c81db577d0b4721",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "幕后发生了什么？"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "If you look at your [codebase](https://github.com/fearlessly-dev/my-first-swa) you'll see **one key change** - the Azure SWA service [sets up the GitHub Actions workflow](https://github.com/fearlessly-dev/my-first-swa/commit/1441e25149f1573a7010682e0a431263fbd89cb6) for you, directly in the repo using your GitHub credentials. No manual steps needed from you!",
+      "source_content_hash": "9c4c2d727aa7aaaa9abb08b5aba9dea93c37aede00b66fd5945b34d937edca58",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "查看[代码库](https://github.com/fearlessly-dev/my-first-swa)会发现**一个关键变化** - Azure SWA服务[自动配置了GitHub Actions工作流](https://github.com/fearlessly-dev/my-first-swa/commit/1441e25149f1573a7010682e0a431263fbd89cb6)，直接使用你的GitHub凭证在仓库中完成。无需手动操作！"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "The workflow automates the build/deploy process on both code commit (`push`) and contribution (`pull request`) events. So when you make changes to your application code, it triggers the workflow to automatically rebuild and deploy the updated Static Web App. 🙌🏽",
+      "source_content_hash": "3aec10028be00696ceafcb88435526a55c9c6826bbb24d4d293bb631b95f746e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该工作流会在代码提交(`push`)和贡献(`pull request`)时自动触发构建/部署。当你修改应用代码时，工作流会自动重建并更新静态Web应用。🙌🏽"
+      }
+    },
+    {
+      "segment_id": "0a103a02",
+      "source_content": "### 1.5 Video Tutorial",
+      "source_content_hash": "706e9bed9c93de3ad712b02593716d1a8240cb4a812155f946d2a2b0b98b1d44",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1.5 视频教程"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "Want to see a video walkthrough of the process? Check out this 2-minute [Azure Static Web Apps: Tips & Tricks](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/) video from 2021. It features a different vanilla-JS application but follows the same \"Quickstart with Visual Studio Code\" steps so you can see them in action!",
+      "source_content_hash": "5cdd930886ca5b850b5b52a5323dff45eaab5a77ccb97d11a2cd69d367e3bc18",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想观看流程演示？查看这段2分钟的[Azure静态Web应用技巧](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/)视频（2021年录制）。虽然演示的是另一个vanilla-JS应用，但\"使用Visual Studio Code快速入门\"的步骤完全相同！"
+      }
+    },
+    {
+      "segment_id": "897e0025",
+      "source_content": "<iframe width=\"560\" height=\"315\" frameborder=\"0\" src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-deploy-your-first-azure-static-web-apps-3-of-16--azure-tips-and-tricks-static-web-apps\"></iframe>",
+      "source_content_hash": "8f81d6ff7dcb6254494940b1233c59e8febd28322bb93e35cee16190da1c968f",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_897e0025"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "## 2. \"There is No Try!\"",
+      "source_content_hash": "4a96fbbbaea1a20397a7455baeb166d3646dde556e0a7855f41c4616d8991e57",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 2. \"没有尝试一说！\""
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "You realize today is May 3rd, right? That means tomorrow is May 4 - and what better way to celebrate our favorite movie call-to-action (`MayTheFourthBeWithYou`) than to pay homage with our own custom crafted movie banner sharing our origin story.",
+      "source_content_hash": "b8d92bfd90dcf35dcfcb1b1f653c5953292a2131f6b7b03e5c0d123f3dad9ab4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "你意识到今天是5月3日对吧？这意味着明天就是5月4日——还有什么比用我们自己定制的电影横幅来致敬我们最爱的电影口号（\"愿原力与你同在\"）更好的方式，来分享我们的起源故事呢？"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "![Build a crawler with Azure Static Web Apps](../static/img/series/02-banner-glaucia.png)",
+      "source_content_hash": "bb394906c849bbd7247eaf56807321f02854ae71e8b7e3ae15d716d45df2d462",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![使用Azure静态Web应用构建爬虫效果](../static/img/series/02-banner-glaucia.png)"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "Try out this 3-part tutorial to take the basic HTML/CSS/JS application to the next level - and recreate the iconic introduction from the classic [Star Wars](https://en.wikipedia.org/wiki/Star_Wars) franchise. Just do the thing!",
+      "source_content_hash": "db36914d4d8004ef0d2533a5c83552891480c1c858f46d60861e109314e8647a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "尝试这个由三部分组成的教程，将基础的HTML/CSS/JS应用提升到新高度——重现经典《星球大战》系列标志性的开场滚动字幕。放手去做吧！"
+      }
+    },
+    {
+      "segment_id": "dee20070",
+      "source_content": "1. [Part 1: Create basic page and style it with HTML/CSS](https://dev.to/azure/building-star-wars-crawler-with-azure-static-web-apps-part-1-3o39) \n 2. [Part 2: Bring moving banner to life with JS](https://dev.to/azure/building-star-wars-crawler-with-azure-static-web-apps-part-2-3hc0)\n 3. [Part 3: Use Visual Studio Code to deploy to Static Web Apps](https://dev.to/azure/building-star-wars-crawler-with-azure-static-web-apps-part-3-41ip)",
+      "source_content_hash": "a6aab3d49a395628ebfa54654648e8084c1ceff00420ad29ad33e2f3a3079fc8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. [第一部分：创建基础页面并用HTML/CSS设计样式](https://dev.to/azure/building-star-wars-crawler-with-azure-static-web-apps-part-1-3o39)  \n2. [第二部分：用JavaScript让动态横幅活起来](https://dev.to/azure/building-star-wars-crawler-with-azure-static-web-apps-part-2-3hc0)  \n3. [第三部分：使用Visual Studio Code部署到静态Web应用](https://dev.to/azure/building-star-wars-crawler-with-azure-static-web-apps-part-3-41ip)"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "**Please Note:** The tutorial is meant only to illustrate the creation of the banner with CSS/JS/HTML and celebrate an iconic movie on an iconic date! The movie logo, music and other iconic elements remain the property of relevant copyright holders and should not be used without permission.",
+      "source_content_hash": "3b50740c5494ce597a4fd757bc3de7b9670f5e220e0b036411372273a5a47810",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**请注意：** 本教程仅用于演示如何用CSS/JS/HTML创建横幅效果，并在标志性日期致敬经典电影！电影标志、音乐等元素版权归相关所有者所有，未经许可不得使用。"
+      }
+    },
+    {
+      "segment_id": "c7c92a79",
+      "source_content": "## 3. Let's Talk Plans!",
+      "source_content_hash": "f56a8dd10b0f36f30071f17aa86ac11f3865c3d029348461ddaef9cf40a15358",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3. 聊聊服务方案！"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "The Azure Static Web Apps service comes with [two plans](https://docs.microsoft.com/en-us/azure/static-web-apps/plans) - a **Free** plan that is perfect for Personal projects, and a **Standard** (paid) plan that is more appropriate for apps deployed in production. Check out the [Features Comparison](https://docs.microsoft.com/en-us/azure/static-web-apps/plans#features) to judge what plan is best for you.",
+      "source_content_hash": "7ac5a540ca2915c60cba28acf288001a83b2a481bcf0bac66cb5a100bc497a1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure静态Web应用服务提供[两种方案](https://docs.microsoft.com/en-us/azure/static-web-apps/plans)——适用于个人项目的**免费**方案，以及更适合生产环境应用的**标准**（付费）方案。查看[功能对比](https://docs.microsoft.com/en-us/azure/static-web-apps/plans#features)来选择最适合您的方案。"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "My personal experience is that, as an individual developer, the free tier is sufficiently generous to explore ideas and host prototypes (for real-world users) or demos (for validating ideas). The free tier also comes with Managed Functions support (to integrate a serverless API capability) out of the box. You will need the Standard plan if you want to \"Bring your own functions\" instead. For the most part, you should be able to try out all the Exercises in #30DaysOfSWA using the Free tier.",
+      "source_content_hash": "c23762c8d05de8ad2565821069e92acdac4d9a09b81f48e49def5eb1efba9da6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "根据我的个人经验，作为独立开发者，免费层级的资源已足够用于探索创意、托管原型（面向真实用户）或演示（验证想法）。免费层级还默认支持托管函数（集成无服务器API功能）。若需\"自带函数\"功能，则需标准方案。大多数情况下，您可以使用免费层级完成#30DaysOfSWA中的所有练习。"
+      }
+    },
+    {
+      "segment_id": "8574d51c",
+      "source_content": "## 4: Exercise",
+      "source_content_hash": "30d9a5f259bc0f8c18804f059807c47e142cc9c1b81db89c783b3a08b45322cc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 4. 实践练习"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "If you followed along with the quickstart, you should have setup and deployed your first Azure Static Web App using a vanilla-JS starter. Now, time to challenge yourself by trying out one (or both) of these options:",
+      "source_content_hash": "8068f5ded6fe6339140032e97a999ad8ef2dfa82c4fc3a105d6d2efa6ed56b9c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果您跟进了快速入门指南，现在应该已使用vanilla-JS模板部署了首个Azure静态Web应用。现在，尝试以下一个（或两个）挑战："
+      }
+    },
+    {
+      "segment_id": "2890f5b2",
+      "source_content": "* **Complete the other quickstart tutorials** - using [Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript) and [Azure Portal](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript) - to get a sense of how the workflows differ. And join the [#SWAanniversary](2022-04-30.md) event to learn more about [SWA CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development) for local development.\n * **Build your own movie crawler** - follow Glaucia's tutorial to have the default banner running on Azure Static Web Apps - then customize the words to suit _your origin story_ and share it on May 4th ([StarWars Day](https://www.starwars.com/star-wars-day)) - and `MayThe4thBeWithYou!`.",
+      "source_content_hash": "248de8a750e1b63dd60acd205fa19d62c553f8787ef6b2bdd9789ca2be564050",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **完成其他快速入门教程**——通过[Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript)和[Azure门户](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)操作，了解工作流差异。并参加[#SWA周年庆](2022-04-30.md)活动学习[SWA CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development)本地开发工具。  \n* **制作专属电影字幕**——跟随Glaucia的教程在Azure静态Web应用上运行默认横幅，然后修改文字讲述_你的起源故事_，并在5月4日（[星球大战日](https://www.starwars.com/star-wars-day)）分享——\"愿第四日与你同在！\""
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-03.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.881735+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "e9c02f87a7b4af3838dfd80feea88d68a8df1167902ef6fc22b789b038ae8b9a"
+  }
+}

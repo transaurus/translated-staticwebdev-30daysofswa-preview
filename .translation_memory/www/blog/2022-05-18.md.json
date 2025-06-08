@@ -1,0 +1,932 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-18.md",
+  "source_file_content_hash": "f115e27171e2efb3aa6048b2c41941003b7a439f44786d75548ad67c4cacd419",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: devtools-ado\ntitle: \"#17: Multi-Stage Deploy with ADO\"\nauthors: [anthony]\ntags: [swa, 30days, dev-tools]\ndraft: false \n---",
+      "source_content_hash": "c8418da0b2fa55962cf731c2f524a9f63c3c5119746a2ac61b7c9ac8379d03d6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/devtools-ado\" />\n  <meta name=\"twitter:title\" content=\"#17: Multi-Stage Deployments With Azure DevOps\" />\n  <meta name=\"twitter:description\" content=\"Join @nthonyChu on #30DaysOfSWA as he walks us through multi-stage deployments of @AzureStaticApps using @AzureDevOps - with @PlaywrightWeb testing integrated!\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/17-banner-2d8ecefdc1683370295255b3fa8a0df3.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://techcommunity.microsoft.com/t5/apps-on-azure-blog/multi-stage-azure-static-web-apps-deployments-with-azure-devops/ba-p/3390625\" />\n</head>",
+      "source_content_hash": "9a45c0c3f2ba7419b4cd643aef131deef4d16da3989c6c2681f0be9da1276a8c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Welcome to `Week 3, Day 3` of **#30DaysOfSWA**!!",
+      "source_content_hash": "ff916fe3aec181877e86613b6188ba86be9a407875ebd6b93b7e3d7a4d808f7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第3周第3天`!!"
+      }
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::info[From Microsoft Tech Community]\nCheck out the canonical version of this post on the **[Apps On Azure](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/multi-stage-azure-static-web-apps-deployments-with-azure-devops/ba-p/3390625)** Tech Community Blog along with other articles on the topic of **[Web Apps](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/bg-p/AppsonAzureBlog/label-name/Web%20Apps)**\n:::",
+      "source_content_hash": "6219e5647ea42f5380e19bbbf2505824c1c498978890d84fcadc9897601802f1",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[来自 Microsoft 技术社区]\n请访问 **[Apps On Azure](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/multi-stage-azure-static-web-apps-deployments-with-azure-devops/ba-p/3390625)** 技术社区博客查看本文的权威版本，以及其他关于 **[Web Apps](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/bg-p/AppsonAzureBlog/label-name/Web%20Apps)** 主题的文章。\n:::"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 我们将涵盖的内容"
+      }
+    },
+    {
+      "segment_id": "77bf3ec9",
+      "source_content": "* Build SWA with Azure Functions API + Playwright Tests\n * Deploy SWA to staging environment\n * Automate validation of staged app with Playwright\n * Wait for manual approval\n * Deploy to production\n * **Exercise.** Explore the [Demo Application Source](https://github.com/anthonychu/swa-devops-pipeline-demo) and try it out!",
+      "source_content_hash": "7a7d7a7e2fbce87bc68e08d4a73a71d47d72277f318b5ce1b439f83feac28102",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 构建包含 Azure Functions API 和 Playwright 测试的 SWA\n * 将 SWA 部署到暂存环境\n * 使用 Playwright 自动验证暂存应用\n * 等待手动批准\n * 部署到生产环境\n * **练习。** 探索 [演示应用程序源代码](https://github.com/anthonychu/swa-devops-pipeline-demo) 并尝试运行！"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "![](../static/img/series/17-banner.png)",
+      "source_content_hash": "58d116443b18c24925e519550f8f1e23dad6a758b0c9d8852448cff61c6f89f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/17-banner.png)"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "Azure Static Web Apps recently introduced the ability to automatically configure an Azure DevOps pipeline to build and deploy your app. It's a great way to get your app up and running quickly.",
+      "source_content_hash": "2837ac41759b790066c47563e3a62b6a58428a5e4484099b00e32eaeadd35f45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps 最近新增了自动配置 Azure DevOps 流水线以构建和部署应用的功能。这是快速启动和运行应用的绝佳方式。"
+      }
+    },
+    {
+      "segment_id": "1641af73",
+      "source_content": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/4JkfeZp7aDk\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "source_content_hash": "1556641069b2e6a84e6cdcc52728d991b6d1b2b3c9ee79a87b094aa673c2c178",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_1641af73"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "For production applications, it's common to first deploy an app to staging environment(s) prior to deploying to production. In this article, we'll walk through how to configure a robust Azure DevOps pipeline that will:",
+      "source_content_hash": "671b09d6b2d2dd7a246e781c63ba65f3bfb424c59fda2bbc0f44aa2da995f91d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "对于生产应用程序，通常会在部署到生产环境之前先将应用部署到暂存环境。本文将介绍如何配置一个强大的 Azure DevOps 流水线，该流水线将："
+      }
+    },
+    {
+      "segment_id": "aa83231c",
+      "source_content": "- Build an app, Azure Functions API, and Playwright tests\n- Deploy the app to a staging environment\n- Automatically validate the staging app with the Playwright tests\n- Wait for a manual approval\n- Deploy your app to production",
+      "source_content_hash": "f6820a26770cee17d1a77800f22edf387a031acc2709373c42d46656578dc97e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 构建应用、Azure Functions API 和 Playwright 测试\n- 将应用部署到暂存环境\n- 使用 Playwright 测试自动验证暂存应用\n- 等待手动批准\n- 将应用部署到生产环境"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "## Sample application",
+      "source_content_hash": "f02aefda10e45da6848de0d467ff6eb3c2ecd2e8a675e735f8016d08f6f526ee",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 示例应用程序"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "We'll use a .NET 6 full-stack application.",
+      "source_content_hash": "7c94efbc5a2f5506beabfc78144c857ed824528c63e1d58e34641cbd2f08cd09",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将使用一个 .NET 6 全栈应用程序。"
+      }
+    },
+    {
+      "segment_id": "157c9741",
+      "source_content": "- Frontend: Blazor WebAssembly\n- Backend: Azure Functions\n- Tests: Playwright",
+      "source_content_hash": "0e8a3062f317d430e869a2c3e592e61e1dcb998c0522908a6024735a668bc906",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 前端：Blazor WebAssembly\n- 后端：Azure Functions\n- 测试：Playwright"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "To follow along, import the repository into your Azure DevOps project. You can use similar steps for a Node.js app.",
+      "source_content_hash": "26fe9f963d913756dbe22287191c50ffa9e9e7c6c3c3e206efa725f1aed6b680",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "要跟随操作，请将存储库导入到您的 Azure DevOps 项目中。您可以对 Node.js 应用程序使用类似的步骤。"
+      }
+    },
+    {
+      "segment_id": "d82460ed",
+      "source_content": ":::info[**Source Code Available**]\nCheck out the code at: **[@anthonychu/swa-devops-pipeline-demo](https://github.com/anthonychu/swa-devops-pipeline-demo)**.\n:::",
+      "source_content_hash": "c1d68a834a2e6396b14061bacb69b2f6bdcf082740f0d178c6ef006a7b7d897b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[**源代码可用**]\n查看代码：**[@anthonychu/swa-devops-pipeline-demo](https://github.com/anthonychu/swa-devops-pipeline-demo)**。\n:::"
+      }
+    },
+    {
+      "segment_id": "126950d7",
+      "source_content": "## Create a static web app and deployment pipeline",
+      "source_content_hash": "d631b287e889ad21a75fcc0b8d265d4e4e4bd2593f2bdefb5ad6afb1eb74a683",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 创建静态 Web 应用和部署流水线"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "Recently, Azure Static Web Apps added the ability to [generate an Azure DevOps pipeline](https://docs.microsoft.com/azure/static-web-apps/get-started-portal?pivots=azure-devops) to deploy your app.",
+      "source_content_hash": "024749ef6f1406561dcdf74b985b28f7152d16cf2ea980fd04e7713436d878dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最近，Azure Static Web Apps 新增了 [生成 Azure DevOps 流水线](https://docs.microsoft.com/azure/static-web-apps/get-started-portal?pivots=azure-devops) 以部署应用的功能。"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "You can create a static web app and the deployment pipeline in a single step.",
+      "source_content_hash": "f3c8b2869f1c770a6fc84e0f939897447a5819d7d4f40ccc2bc0402a3e6f556b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可以在一个步骤中创建静态 Web 应用和部署流水线。"
+      }
+    },
+    {
+      "segment_id": "af6ca965",
+      "source_content": "1. In the Azure portal, search for and create a new static web app.\n\n1. During the creation process, select \"Azure DevOps\" as the deployment source and select the DevOps repository and branch that contains the app.\n\n    ![Create an app with Azure DevOps](https://user-images.githubusercontent.com/3982077/168908827-22dd512a-cec7-4e27-aca4-993428f2a03e.png)\n\n1. In the build presets, select \"Blazor\". The pre-populates the app and API folder locations.\n\n    ![Select Blazor preset](https://user-images.githubusercontent.com/3982077/168909032-b817a631-6e74-4739-8c4a-1ff480f955a3.png)",
+      "source_content_hash": "4251cb60ae45e6950b15d40fa04fbfc22a829878f0add7b7d1074fd7fe129178",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 在 Azure 门户中，搜索并创建一个新的静态 Web 应用。\n\n1. 在创建过程中，选择 \"Azure DevOps\" 作为部署源，并选择包含应用的 DevOps 存储库和分支。\n\n    ![使用 Azure DevOps 创建应用](https://user-images.githubusercontent.com/3982077/168908827-22dd512a-cec7-4e27-aca4-993428f2a03e.png)\n\n1. 在构建预设中，选择 \"Blazor\"。这将预填充应用和 API 文件夹位置。\n\n    ![选择 Blazor 预设](https://user-images.githubusercontent.com/3982077/168909032-b817a631-6e74-4739-8c4a-1ff480f955a3.png)"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "When you create the app, a new pipeline YAML file will be created in the repository. It'll automatically run. It takes a few minutes to build and deploy the app.",
+      "source_content_hash": "4a13ae8e14336f4dd90cd93cded2126eab4db532d0d016a43062c647da8cc15e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "创建应用时，存储库中将生成一个新的流水线 YAML 文件。它将自动运行。构建和部署应用需要几分钟时间。"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "![Location of the generated build pipeline YAML file](https://user-images.githubusercontent.com/3982077/168909383-0d275e2f-15ae-40e8-aa2d-56a208f7a6f4.png)",
+      "source_content_hash": "dc82d7f2a4f76732835eb76d323b5c63b433de7d664c50b96544719188636cfe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![生成的构建流水线 YAML 文件的位置](https://user-images.githubusercontent.com/3982077/168909383-0d275e2f-15ae-40e8-aa2d-56a208f7a6f4.png)"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "Open the pipeline YAML file in your browser or locally in an editor to see its contents. It contains a single `AzureStaticWebApp` task that automatically builds and deploys the app.",
+      "source_content_hash": "4109e55ca946936803fbf02233089581e944c64c832bf609a69f949630d7eb3b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在浏览器或本地编辑器中打开流水线 YAML 文件查看其内容。该文件包含一个自动构建和部署应用的 `AzureStaticWebApp` 任务。"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "## Create Azure Pipelines environments",
+      "source_content_hash": "8b2a11b9a1716609ea6b52dbd481d6bc4774d8c2551e219f81de62b3f4be9ad7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 创建 Azure Pipelines 环境"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Azure Pipelines allows you to define environments. Environments are useful for adding manual approvals to your pipeline.",
+      "source_content_hash": "f560bb585b48bbb4238b197280a3cfb2573e40b8d05f32129c5ed9af5816b094",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Pipelines 允许您定义环境。环境可用于为流水线添加手动审批环节。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "We'll create two environments — Staging and Production. They'll correspond to the two Azure Static Web Apps environments we'll deploy to.",
+      "source_content_hash": "bbe64ee686e71cdf0945a543a91e6d70b072e6a086008cff96a7c90e28f9f849",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将创建两个环境——暂存(Staging)和生产(Production)，它们将对应我们要部署的两个 Azure Static Web Apps 环境。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "To create a Pipelines environment, select \"Environments\" under Pipelines.",
+      "source_content_hash": "a47b57a707fcaf84e11e7acdad4ce0db1b1489e06e86e94b642c6d4bf17ac8d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "要创建流水线环境，请在 Pipelines 下选择\"Environments\"。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "![Open environments](https://user-images.githubusercontent.com/3982077/168909775-61e3e243-c298-4fcf-a5ba-8af0a94a7a5d.png)",
+      "source_content_hash": "e71b3d6e217d26d30eb4ccbf1d86010ab0656b5eef7afc8f660b59359b501699",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![打开环境](https://user-images.githubusercontent.com/3982077/168909775-61e3e243-c298-4fcf-a5ba-8af0a94a7a5d.png)"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "Create one named \"Staging\". Because you don't need a manual approval for this stage, you don't to configure anything else.",
+      "source_content_hash": "733ba97cc38b9055fb779c75c0a9a4d9046bcd7b8eab38b33370739336fb25a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "创建一个名为\"暂存(Staging)\"的环境。由于此阶段不需要手动审批，您无需进行其他配置。"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "Next, create a new environment named \"Production\". Because we want to require a manual approval before deploying to production, you can configure the environment to require a manual approval.",
+      "source_content_hash": "94f20a45f69cf1b39518abcd3b50290080e96dd4c88ef621f4592bda14960ec2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "接着创建一个名为\"生产(Production)\"的新环境。由于我们需要在部署到生产环境前进行手动审批，您可以配置该环境要求手动审批。"
+      }
+    },
+    {
+      "segment_id": "9f974d3d",
+      "source_content": "1. In the environment's \"Approvals and checks\", select \"Approvals\".\n\n1. Add yourself as an approver and create the approval policy.",
+      "source_content_hash": "8ac6a549e36dc69e7a3c42ab13d5e5dd15b6a27da5569ca0233c6c8956dfc21c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 在环境的\"Approvals and checks\"中，选择\"Approvals\"。\n1. 添加自己作为审批人并创建审批策略。"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "![Create an approval policy](https://user-images.githubusercontent.com/3982077/168910157-d32f767f-c608-4047-b0f5-66b7e4beb2f2.png)",
+      "source_content_hash": "2924ae8a314c9f6ea1602245fa137e9fd180bcf4f52d9522f441622e8473ecb5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![创建审批策略](https://user-images.githubusercontent.com/3982077/168910157-d32f767f-c608-4047-b0f5-66b7e4beb2f2.png)"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "The pipeline you'll update later will reference these environments.",
+      "source_content_hash": "98cbbf761bf6b0721d23a7054fb53664eda00b4e09c855c31814d207a9fb9552",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "稍后更新的流水线将引用这些环境。"
+      }
+    },
+    {
+      "segment_id": "f947c8e4",
+      "source_content": "## Protect Azure Static Web Apps environments with a password",
+      "source_content_hash": "c7db2cd875c3233d7bdf453f3ea6cccc21fd928c3d47e1c386606074efe20216",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 通过密码保护 Azure Static Web Apps 环境"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "Azure Static Web Apps provides preview environments to let you test out your app before deploying to production.",
+      "source_content_hash": "85c04bf1431688cf7c56d633b73cb32d77bcb82a4a7a19594e4c13755a818873",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps 提供预览环境，让您可以在部署到生产环境前测试应用。"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "Preview environments were intially available for pull requests in GitHub. Recently, Static Web Apps introduced the ability to arbitrary define [named preview environments](https://docs.microsoft.com/azure/static-web-apps/named-environments). For instance, we can create an environment named \"Staging\".",
+      "source_content_hash": "cad3f63452a45a52b7baa51ab3fb95f8a31577e3e7b18958d46b32cdc7c34431",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "预览环境最初是为 GitHub 中的拉取请求提供的。最近，Static Web Apps 引入了定义[命名预览环境](https://docs.microsoft.com/azure/static-web-apps/named-environments)的功能。例如，我们可以创建一个名为\"暂存(Staging)\"的环境。"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "Preview environments are public by default. This is great for open source projects, but sometimes we want to protect them from public access.",
+      "source_content_hash": "d23fd871a77d8f5b8234e3b29f01ff1c4c9a0151e4613c401fcbad1eb9cc85c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "预览环境默认是公开的。这对开源项目很有利，但有时我们希望保护它们不被公开访问。"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "You can add password protection to your app's preview environments.",
+      "source_content_hash": "ebacf818a29f3148520281033227bc462f9c464b95c9ac0c4838e441e91fafef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可以为应用的预览环境添加密码保护。"
+      }
+    },
+    {
+      "segment_id": "2ddd26d5",
+      "source_content": "1. In the Azure portal, open your static web app.\n\n1. In \"Configuration\", select the \"General settings\" tab.\n\n1. Select \"Protect staging environments only\" and enter a password.\n\n    ![Protect staging environments only](https://user-images.githubusercontent.com/3982077/168910485-02aacade-3961-41fd-aa9c-54cd14df5aab.png)",
+      "source_content_hash": "3436bf6c7d29b114d1da45b3b373ba234f7aa15f45a0df3b5aac54c518045532",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 在 Azure 门户中打开您的静态 Web 应用\n1. 在\"配置\"中选择\"常规设置\"选项卡\n1. 选择\"仅保护暂存环境\"并输入密码\n    ![仅保护暂存环境](https://user-images.githubusercontent.com/3982077/168910485-02aacade-3961-41fd-aa9c-54cd14df5aab.png)"
+      }
+    },
+    {
+      "segment_id": "b9331170",
+      "source_content": "You also have the option to protect all environments. But in this app, we want the production environment to be accessible to the public.",
+      "source_content_hash": "7d68c1c58bc53cb275cc3a0f74d3ef87b61a3d8bd1867e3bbc1b5a8a1d693755",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您也可以选择保护所有环境。但在本应用中，我们希望生产环境对公众开放。"
+      }
+    },
+    {
+      "segment_id": "2bb63d77",
+      "source_content": "## Configure the multi-stage pipeline",
+      "source_content_hash": "6917550dc65090b32244c9259770cacc5b8d3759ddaed7eed1a43ec1bb9750d2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 配置多阶段流水线"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "Now that we've configured the Azure Pipelines environments and password protection, we can configure the pipeline.",
+      "source_content_hash": "6befc9f83fa845e58b923295c43cc010e403b9d2c61ef0005f1e2d6bb804dbb2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在我们已经配置好了 Azure Pipelines 环境和密码保护，可以配置流水线了。"
+      }
+    },
+    {
+      "segment_id": "9c9e2b64",
+      "source_content": "Open the pipeline YAML file in your browser or locally in an editor. Replace its contents the contents of [this file](https://github.com/anthonychu/swa-devops-pipeline-demo/blob/main/azure-pipelines.yml).",
+      "source_content_hash": "e32c3b2b559c50e53b4aa9066b64f4ec75d9b73f138fa6e1ea8f7d8c30598826",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在浏览器或本地编辑器中打开流水线 YAML 文件，将其内容替换为[此文件](https://github.com/anthonychu/swa-devops-pipeline-demo/blob/main/azure-pipelines.yml)的内容。"
+      }
+    },
+    {
+      "segment_id": "5c7d994c",
+      "source_content": "We'll walk through the different parts of the pipeline. It has 3 main stages: build, deploy to staging, and deploy to production.",
+      "source_content_hash": "f5b1782258018af0ed05650a6a10f86dc69e07717434232be4d354d91b6963fd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将逐步介绍流水线的不同部分。它有3个主要阶段：构建应用、部署到暂存环境、部署到生产环境。"
+      }
+    },
+    {
+      "segment_id": "a461a67b",
+      "source_content": "### Stage 1: build the app",
+      "source_content_hash": "14769405cc85dc985491c03160cf78f6e398a23d7f5f4ef4d8e825ddb33764b5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 阶段1：构建应用"
+      }
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```yaml\ntrigger:\n- main\n\npool:\n  vmImage: ubuntu-latest\n\nstages:\n\n- stage: Build\n\n  jobs:\n  - job: build\n    displayName: Build app\n\n    steps:\n    \n    - task: UseDotNet@2\n      displayName: Install .NET SDK\n      inputs:\n        packageType: 'sdk'\n        version: '6.0.x'\n        \n    - script: |    \n        dotnet publish -c Release -o \"$(Build.ArtifactStagingDirectory)/frontend\"\n      displayName: Build Blazor frontend\n      workingDirectory: $(System.DefaultWorkingDirectory)/Client\n      \n    - script: |  \n        dotnet publish -c Release -o \"$(Build.ArtifactStagingDirectory)/api\"\n      displayName: Build Azure Functions API\n      workingDirectory: $(System.DefaultWorkingDirectory)/Api\n      \n    - script: |\n        dotnet build -c Release -o \"$(Build.ArtifactStagingDirectory)/tests\"\n      displayName: Build Playwright tests\n      workingDirectory: $(System.DefaultWorkingDirectory)/PlaywrightTests\n\n    - task: PublishBuildArtifacts@1\n      displayName: Publish artifacts\n      inputs:\n        PathtoPublish: '$(Build.ArtifactStagingDirectory)'\n        ArtifactName: 'drop'\n        publishLocation: 'Container'\n```",
+      "source_content_hash": "99375f900639bbae8959941a014fc036d3a93039d1c21000790ab6f57b75b5a5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_4c6754b2"
+      }
+    },
+    {
+      "segment_id": "e5821418",
+      "source_content": "The pipeline triggers on any changes to the `main` branch. If your app uses a different branch, you can change it.",
+      "source_content_hash": "632d60140c3f779b0c0c3883d5bcf81dbca9e1b88a8c26dee5bfec23cdda56dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "流水线在`main`分支发生任何更改时触发。如果您的应用使用其他分支，可以修改此设置。"
+      }
+    },
+    {
+      "segment_id": "4e2e17c5",
+      "source_content": "The pipeline then builds the app, Azure Functions API, and Playwright tests. It then outputs the artifacts. The same build artifacts are deployed to all environments. This ensures that the app you tested in other environments is the same one you're deploying to production.",
+      "source_content_hash": "d2c1b30ee47242ccdc456ff81683c8ba47eda6733d02bb1593e64140a16419b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "流水线随后会构建应用、Azure Functions API 和 Playwright 测试，然后输出构件。相同的构建构件会被部署到所有环境。这确保您在其他环境中测试的应用与部署到生产环境的是同一个版本。"
+      }
+    },
+    {
+      "segment_id": "cce332f2",
+      "source_content": "### Stage 2: deploy to staging and run Playwright tests",
+      "source_content_hash": "22881ad6344ad991c0519b6679b469e84b343e9c7ad2595444e39e594074642e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 阶段2：部署到暂存环境并运行 Playwright 测试"
+      }
+    },
+    {
+      "segment_id": "768336f1",
+      "source_content": "```yaml\n- stage: deploy_staging\n  displayName: Deploy to staging\n\n  jobs:\n    - deployment: deploy\n      displayName: Deploy and test\n      environment: Staging\n      variables:\n      # Change the variable group name to match the one in the generated pipeline\n      - group: Azure-Static-Web-Apps-calm-coast-0df39b910-variable-group\n      strategy:\n        runOnce:\n          deploy:\n            steps:\n\n            - download: none\n            - checkout: none\n\n            - task: DownloadBuildArtifacts@1\n              displayName: Download artifacts\n              inputs:\n                buildType: current\n                downloadType: single\n                artifactName: drop\n                downloadPath: $(System.ArtifactsDirectory)\n\n            - task: AzureStaticWebApp@0\n              displayName: Deploy to staging environment\n              inputs:\n                app_location: frontend/wwwroot\n                api_location: api\n                skip_app_build: true\n                skip_api_build: true\n                verbose: true\n                azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_COAST_0DF39B910)\n                deployment_environment: staging\n                workingDirectory: $(System.ArtifactsDirectory)/drop\n\n            - task: UseDotNet@2\n              displayName: Install .NET SDK\n              inputs:\n                packageType: 'sdk'\n                version: '6.0.x'\n\n            - script: |\n                chmod -R a+x $(System.ArtifactsDirectory)/drop/tests\n                sudo --preserve-env=PLAYWRIGHT_BROWSERS_PATH pwsh $(System.ArtifactsDirectory)/drop/tests/playwright.ps1 install --with-deps chromium\n                dotnet test $(System.ArtifactsDirectory)/drop/tests/PlaywrightTests.dll --logger trx\n              displayName: Run Playwright tests on staging app\n              env:\n                PLAYWRIGHT_BROWSERS_PATH: $(Build.SourcesDirectory)/browsers\n                LOGIN_PASSWORD: $(LOGIN_PASSWORD)\n            \n            - task: PublishTestResults@2\n              condition: succeededOrFailed()\n              inputs:\n                testRunner: VSTest\n                testResultsFiles: '**/*.trx'\n```",
+      "source_content_hash": "87c95e4bf07415affc0f2632d2dce6fd5299ac3eebb41bbf8fca8bccb34db63e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_768336f1"
+      }
+    },
+    {
+      "segment_id": "b0c30ab4",
+      "source_content": "This is the most complex stage. Note that it references the \"Staging\" environment we created in the Azure Pipeline. It also references the variable group that was automatically generated when the static web app was first created. Change its name to match the variable group in the generated pipeline.",
+      "source_content_hash": "7ddc9ef6ef1be3f96369746b68bc2795b4b27f0a0baefc0e03c49fbfb45dcc28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是最复杂的阶段。请注意，它引用了我们在Azure Pipeline中创建的\"Staging\"环境，同时还引用了静态Web应用首次创建时自动生成的变量组。请将其名称修改为与生成管道中的变量组相匹配。"
+      }
+    },
+    {
+      "segment_id": "318fb07e",
+      "source_content": "This stage starts by downloading the artifacts from the build stage.",
+      "source_content_hash": "378784ff1425e183447e9dd032c35406459c14132604298e563876c131c2d0e8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该阶段首先从构建阶段下载构件。"
+      }
+    },
+    {
+      "segment_id": "13440cd7",
+      "source_content": "Next, it uses the `AzureStaticWebApp` task to deploy the app to the staging environment.",
+      "source_content_hash": "8b74084f342d6d595b2dea0e25a97bc5ebd026f27c8c8166294923d6980f79a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "接着使用`AzureStaticWebApp`任务将应用部署到暂存环境。"
+      }
+    },
+    {
+      "segment_id": "7e7d40e1",
+      "source_content": "- `skip_app_build` and `skip_api_build` are set to `true` because the app and API artifacts were already built and don't need to be built again.\n- `deployment_environment` is set to `staging` because we want to deploy to the staging environment.",
+      "source_content_hash": "70312b817b05c63e650aa1e2831ff5128c648894a20df2fafad21a676d8e7090",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- `skip_app_build`和`skip_api_build`设为`true`，因为应用和API构件已预先构建完成\n- `deployment_environment`设为`staging`以指定部署到暂存环境"
+      }
+    },
+    {
+      "segment_id": "5d5a3416",
+      "source_content": "After the app is deployed, the pipeline installs the .NET SDK and runs a script that installs the required dependencies for Playwright. Playwright is a testing framework that automates running tests in a browser.",
+      "source_content_hash": "b76547173fc982cce23e9d9853c75a74ceb4b4f5dba30c757dd29cf9847df1e2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "应用部署完成后，管道会安装.NET SDK并运行安装Playwright所需依赖项的脚本。Playwright是一个可在浏览器中自动运行测试的测试框架。"
+      }
+    },
+    {
+      "segment_id": "070ff7a2",
+      "source_content": "After the dependencies are installed, the script runs the Playwright tests using the `dotnet test` command.",
+      "source_content_hash": "bbcc05d58ae497881514bcc47ab4bdafdcd7bf04b46cc8afc1cf184c330d2459",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "依赖项安装完成后，脚本使用`dotnet test`命令运行Playwright测试。"
+      }
+    },
+    {
+      "segment_id": "715a86e2",
+      "source_content": "One thing to note is that we need to configure a secret variable named `LOGIN_PASSWORD`. This is the password that the user will enter when they log into the staging environment. The Playwright tests will use this password to log in when it runs tests on the staging environment.",
+      "source_content_hash": "ff14235ebac7e5f7e93a385f0c5de8c91269db3b57e62209449d6b9d2df91231",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "需要注意的是，我们必须配置名为`LOGIN_PASSWORD`的机密变量。这是用户登录暂存环境时需输入的密码，Playwright测试将使用该密码在暂存环境中执行测试登录。"
+      }
+    },
+    {
+      "segment_id": "2153a2fa",
+      "source_content": "The last step in the stage publishes the test results.",
+      "source_content_hash": "5d86613cc11a6170bc0c40c2416991b3e85b6b72da83c7d89c6c7d897b374915",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该阶段的最后一步是发布测试结果。"
+      }
+    },
+    {
+      "segment_id": "68dbdf68",
+      "source_content": "### Stage 3: deploy to production",
+      "source_content_hash": "a2095bfd8ff535b484d19ef65f36ef320f1984f86f9ca55dcc47f135c6d85923",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 阶段3：部署到生产环境"
+      }
+    },
+    {
+      "segment_id": "8aee8de6",
+      "source_content": "```yaml\n- stage: deploy_production\n  displayName: Deploy to production\n\n  jobs:\n  - deployment: deploy\n    displayName: Deploy\n    environment: Production\n    variables:\n    # Change the variable group name to match the one in the generated pipeline\n    - group: Azure-Static-Web-Apps-calm-coast-0df39b910-variable-group\n    strategy:\n      runOnce:\n        deploy:\n          steps:\n          - download: none\n          - checkout: none\n\n          - task: DownloadBuildArtifacts@1\n            displayName: Download artifacts\n            inputs:\n              buildType: current\n              downloadType: single\n              artifactName: drop\n              downloadPath: $(System.ArtifactsDirectory)\n\n          - task: AzureStaticWebApp@0\n            displayName: Deploy to production environment\n            inputs:\n              app_location: frontend/wwwroot\n              api_location: api\n              skip_app_build: true\n              skip_api_build: true\n              verbose: true\n              azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_COAST_0DF39B910)\n              workingDirectory: $(System.ArtifactsDirectory)/drop\n```",
+      "source_content_hash": "9c09cf8434b7c60448e4ad86e73a830903278c2d68bf50217eef42129a3f0f08",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_8aee8de6"
+      }
+    },
+    {
+      "segment_id": "c2a9a004",
+      "source_content": "This stage references the \"Production\" environment in the Azure Pipeline. Because we configured this environment to require approval, this will trigger a manual approval step before this stage is run.",
+      "source_content_hash": "82d8ee0a02d5775d7577bf8ebb2807b09ebc7562b39b4d0582047cef88181f87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "此阶段引用Azure Pipeline中的\"Production\"环境。由于我们配置了该环境需要审批，运行此阶段前将触发人工审批步骤。"
+      }
+    },
+    {
+      "segment_id": "b2ffb658",
+      "source_content": "Like the previous stage, this stage downloads the artifacts and deploys them with the `AzureStaticWebApp` task. This time, no `deployment_environment` is set because we want to deploy to the production environment of the static web app.",
+      "source_content_hash": "d9ec076279c75d6538f0436f33690dda349c06736973dfe982b27add99b12bcb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "与前一阶段类似，此阶段下载构件后通过`AzureStaticWebApp`任务部署。此次未设置`deployment_environment`，因为我们要部署到静态Web应用的生产环境。"
+      }
+    },
+    {
+      "segment_id": "becb5987",
+      "source_content": "## Run the multi-stage pipeline",
+      "source_content_hash": "f8f0c72d3a39aae911bf331485fcb150221ed689cb359aa52d8a5521379ab950",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 运行多阶段管道"
+      }
+    },
+    {
+      "segment_id": "d83b50df",
+      "source_content": "Now that the pipeline is set up, you can run it by saving the file. If you edited it locally, don't forget to push it to your Azure DevOps repo.",
+      "source_content_hash": "65924efa07f23f621b39ea93dfd1722ba5d86e9383ba1c65d2eaedab59722018",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "管道配置完成后，保存文件即可运行。若在本地编辑，请记得推送到Azure DevOps代码库。"
+      }
+    },
+    {
+      "segment_id": "b16b56a2",
+      "source_content": "After the \"Deploy to staging\" stage is run, you should see that the Playwright tests have been run to validate the staging environment and the results are published.",
+      "source_content_hash": "1ab676ce139a6d59400b7fd8f648833531eac22fbd1ead444ac60af3d160b0e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "\"部署到暂存\"阶段运行后，您将看到Playwright测试已执行验证暂存环境，并发布了测试结果。"
+      }
+    },
+    {
+      "segment_id": "27f3a471",
+      "source_content": "![Test results](https://user-images.githubusercontent.com/3982077/168911185-3eea2e66-0aaf-4a86-af65-956618abc6d3.png)",
+      "source_content_hash": "924e16919dbe43e78988722d917de2fe90527c5fa1104acb0bd8f028dcff5d10",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![测试结果](https://user-images.githubusercontent.com/3982077/168911185-3eea2e66-0aaf-4a86-af65-956618abc6d3.png)"
+      }
+    },
+    {
+      "segment_id": "9929329e",
+      "source_content": "The pipeline run is paused because the \"Deploy to production\" stage requires an approval.",
+      "source_content_hash": "a5c8469e4055c6f646edbf853aa7a2642f36aa10e19208b84c26670963d23cd6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "管道运行将暂停，因为\"部署到生产\"阶段需要审批。"
+      }
+    },
+    {
+      "segment_id": "1dffcdf5",
+      "source_content": "![Approval step](https://user-images.githubusercontent.com/3982077/168912243-6450a5fa-6e95-4ac8-8f65-b1a7bc8d3e6b.png)",
+      "source_content_hash": "3065d38e4e15d1d6eae81e34bb218b0e19f36c2c9475897c77aa36ba38eaff99",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![审批步骤](https://user-images.githubusercontent.com/3982077/168912243-6450a5fa-6e95-4ac8-8f65-b1a7bc8d3e6b.png)"
+      }
+    },
+    {
+      "segment_id": "8862791b",
+      "source_content": "When you approve the pipeline, the pipeline will run again.",
+      "source_content_hash": "602f932b54f34fc69d63700d98a40b4c82f9fd520cb671be62765ad758879da6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "审批通过后，管道将重新运行。"
+      }
+    },
+    {
+      "segment_id": "e8bf4d18",
+      "source_content": "After approval, the app is deployed to production.",
+      "source_content_hash": "795680863f597d8ea698af244c51dc102df6c9c16e514f1925e029251c3b1dca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "审批完成后，应用即部署至生产环境。"
+      }
+    },
+    {
+      "segment_id": "8dfbc79d",
+      "source_content": "## A closer look",
+      "source_content_hash": "bc12290e140b3727673da75252899091e24560ec87a549e8173564e09ab071b7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 深入解析"
+      }
+    },
+    {
+      "segment_id": "0302cdc1",
+      "source_content": "Before we end this article, we want to dive a bit deeper into the Static Web Apps environments and the Playwright tests.",
+      "source_content_hash": "02bb68bf8c2bde1d8fdaf2dc58d9d4132b5d9e016c7bc0886ae39829b9898fa9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在结束本文前，我们将更深入地探讨静态Web应用环境和Playwright测试。"
+      }
+    },
+    {
+      "segment_id": "7f6f3173",
+      "source_content": "### Azure Static Web Apps environments",
+      "source_content_hash": "17cc900a25ae265123ba5a2af4845c8fa994d0c7e0031ea26435e03166af2c37",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### Azure静态Web应用环境"
+      }
+    },
+    {
+      "segment_id": "e9a0d59a",
+      "source_content": "To see the environments you've created, click your static web app's \"Environments\" tab in the Azure portal. You should see the production and staging environments.",
+      "source_content_hash": "c68f568c4801300af36fa5baf6921fb7df6a6a1f1800d535ce0dd645836760d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在Azure门户中点击静态Web应用的\"环境\"标签页，即可查看已创建的生产和暂存环境。"
+      }
+    },
+    {
+      "segment_id": "a6efb0d1",
+      "source_content": "![Static Web Apps Environments](https://user-images.githubusercontent.com/3982077/168911293-571d1057-c36b-4ff2-88df-3cdf20154318.png)",
+      "source_content_hash": "d793d7c7472c945ae5d863aa8db4e9d51e1b58060a82b93009c53b6ca6013c0c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![静态Web应用环境](https://user-images.githubusercontent.com/3982077/168911293-571d1057-c36b-4ff2-88df-3cdf20154318.png)"
+      }
+    },
+    {
+      "segment_id": "42a9e250",
+      "source_content": "### Playwright tests",
+      "source_content_hash": "c34f8d3ab534135e75935d27ffa7bd89dfd958959063d4e46f689e8c26fcc7f4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### Playwright测试"
+      }
+    },
+    {
+      "segment_id": "e4ab192a",
+      "source_content": "The Playwright tests are located in the `PlaywrightTests` project and they're written in C#.",
+      "source_content_hash": "b021f4146e68b984a321308318f2eca5c3c71d03dd3d04de8001c23f04c08865",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Playwright测试位于`PlaywrightTests`项目中，使用C#编写。"
+      }
+    },
+    {
+      "segment_id": "6fecc583",
+      "source_content": "[Playwright](https://playwright.dev) can be used to automate testing of web apps using real browsers. The tests in the example use Chrome (Chromium), but Playwright also supports Firefox, WebKit, and Microsoft Edge.",
+      "source_content_hash": "f4a96249762b8708216c087633fb4cfbd80545af5d5eafe8b84861d3d1c0b819",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Playwright](https://playwright.dev) 可用于通过真实浏览器自动化测试 Web 应用。示例中的测试使用 Chrome（Chromium），但 Playwright 也支持 Firefox、WebKit 和 Microsoft Edge。"
+      }
+    },
+    {
+      "segment_id": "d70ad719",
+      "source_content": "This is an example of a Playwright test in C#. It navigates the browser to the app's homepage, clicks on the \"Fetch data\" link, and confirms that the data is fetched from the backend API and it is rendered successfully.",
+      "source_content_hash": "148e4b23618d7b9a8dd318d266a7f33f94be415fbdf2fffb9cbd44e6714e1ba2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是一个用 C# 编写的 Playwright 测试示例。它引导浏览器访问应用主页，点击\"获取数据\"链接，并确认数据从后端 API 成功获取并渲染。"
+      }
+    },
+    {
+      "segment_id": "ebc7af28",
+      "source_content": "```csharp\n[Test]\npublic async Task ShouldLoadWeather()\n{\n    await using var browser = await Playwright.Chromium.LaunchAsync();\n    var page = await browser.NewPageAsync();\n    await GoToHomePage(page);\n\n    await page.ClickAsync(\"a[href='fetchdata']\");\n\n    var h1 = await page.QuerySelectorAsync(\"div#app main h1\");\n    var h1Text = h1 == null ? \"\" : await h1.TextContentAsync();\n    Assert.AreEqual(\"Weather forecast\", h1Text);\n\n    var rowsSelector = \"div#app main table tbody tr\";\n    // wait for table to have rows\n    await page.WaitForFunctionAsync($\"document.querySelectorAll('{rowsSelector}').length\");\n    var rows = await page.QuerySelectorAllAsync(rowsSelector);\n    Assert.AreEqual(5, rows.Count);\n}\n```",
+      "source_content_hash": "5aeffa45f50bcf6f56e58e4c63e749b2730e3ee69a2fdaa7e07786568fcbc99c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_ebc7af28"
+      }
+    },
+    {
+      "segment_id": "56f32447",
+      "source_content": "The tests use the `AZURESTATICWEBAPP_STATIC_WEB_APP_URL` environment variable to determine the URL of the app to test. In an Azure Pipeline, this variable is set by the Azure Static Web Apps task after a successful deployment. Because the tests run in the pipeline after a deployment to the staging environment, the variable contains the URL of the staging Static Web Apps environment.",
+      "source_content_hash": "9b475f7aedbe9207aadf62f1ed84bfe8c15a2d59d9879562b2701141ad8aaf1a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "测试使用 `AZURESTATICWEBAPP_STATIC_WEB_APP_URL` 环境变量来确定要测试的应用 URL。在 Azure Pipeline 中，该变量由 Azure Static Web Apps 任务在成功部署后设置。由于测试在部署到暂存环境后的流水线中运行，该变量包含暂存 Static Web Apps 环境的 URL。"
+      }
+    },
+    {
+      "segment_id": "b41b4d77",
+      "source_content": "Another interesting aspect of the tests is the following code for navigating to the homepage:",
+      "source_content_hash": "f55c1159cb85ac111d21368ec2867aca4168d5050b3baa300b51552e67c13972",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "测试中另一个有趣的方面是以下用于导航到主页的代码："
+      }
+    },
+    {
+      "segment_id": "b4d188d4",
+      "source_content": "```csharp\nprivate async Task GoToHomePage(IPage page)\n{\n    await page.GotoAsync($\"{siteBaseUrl}/\");\n    var homePageLocatorTask = page.Locator(\"text=Hello, world!\").WaitForAsync();\n    var passwordPageLocatorTask = page.Locator(\"text=Password protected\").WaitForAsync();\n    var isPasswordPage = (await Task.WhenAny(homePageLocatorTask, passwordPageLocatorTask)) == passwordPageLocatorTask;\n\n    if (isPasswordPage)\n    {\n        System.Console.WriteLine(\"Found password page, logging in...\");\n        var passwordInput = await page.QuerySelectorAsync(\"input[type=password]\");\n        if (passwordInput == null)\n        {\n            throw new Exception(\"Could not find password input\");\n        }\n        await passwordInput.TypeAsync(sitePassword);\n        await page.ClickAsync(\"button\");\n        await page.Locator(\"text=Hello, world!\").WaitForAsync();\n    }\n}\n```",
+      "source_content_hash": "8cf01b8f186a16248f9c127d5c495ae5c03e5635b1c024e3d18c62a8ad5a44f8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_b4d188d4"
+      }
+    },
+    {
+      "segment_id": "7acce358",
+      "source_content": "This code automatically logs in to the staging environment if the browser session is unauthenticated. At run-time, the `sitePassword` variable is set to the value of the `LOGIN_PASSWORD` secret variable.",
+      "source_content_hash": "2e1ecaccb2d32dabf54089175f362c1f55cda1868504dac572133792d630d565",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果浏览器会话未认证，此代码会自动登录到暂存环境。在运行时，`sitePassword` 变量被设置为 `LOGIN_PASSWORD` 密钥变量的值。"
+      }
+    },
+    {
+      "segment_id": "dfa57bae",
+      "source_content": "## Summary",
+      "source_content_hash": "30ac03ff33731529441be8fbe52a3bd0d4c5ec830e806d54692168ebb7f98ada",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 总结"
+      }
+    },
+    {
+      "segment_id": "85f6fcdd",
+      "source_content": "With the addition of features like named preview environments and automatic pipeline generation, it's now possible to configure complex, robust pipelines for building and deploying to Azure Static Web Apps from Azure DevOps.",
+      "source_content_hash": "bb5a2b65227f1db721d2dc66526db235270c48979cb8ad990ca444a8d7c9b4fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "随着命名预览环境和自动流水线生成等功能的加入，现在可以配置复杂、健壮的流水线，用于从 Azure DevOps 构建和部署到 Azure Static Web Apps。"
+      }
+    },
+    {
+      "segment_id": "9d789a78",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "3e57e612",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习"
+      }
+    },
+    {
+      "segment_id": "f6c8bbba",
+      "source_content": "The demo uses a .NET 6 full-stack application with a Blazor WebAssembly frontend, an Azure Functions backend, and integrated Playwright tests.",
+      "source_content_hash": "5694b649dfcc8f16311fb44c3be76244447de5f06f65ea442d7281040a8f1541",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "演示使用了一个 .NET 6 全栈应用，包含 Blazor WebAssembly 前端、Azure Functions 后端和集成的 Playwright 测试。"
+      }
+    },
+    {
+      "segment_id": "72cf9cce",
+      "source_content": "* Explore [the source code here](https://github.com/anthonychu/swa-devops-pipeline-demo).\n * Import the repository into your Azure DevOps project and follow the tutorial.",
+      "source_content_hash": "2a30396e31a1507bc1e60698b7307ad80223e31b55a86eb4ac80578dc1b31ede",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 探索[此处源代码](https://github.com/anthonychu/swa-devops-pipeline-demo)。\n * 将仓库导入到你的 Azure DevOps 项目并按照教程操作。"
+      }
+    },
+    {
+      "segment_id": "086e47bd",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源"
+      }
+    },
+    {
+      "segment_id": "c8184508",
+      "source_content": "* [Video](https://youtu.be/4JkfeZp7aDk): Multi-environment deployments with Azure DevOps & SWA\n* [Repo](https://github.com/anthonychu/swa-devops-pipeline-demo) with source code for demo",
+      "source_content_hash": "7e5af795ae8bb14b8d53d719176c7bdf39bd3d35683d5c896772ddfcf21872c5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [视频](https://youtu.be/4JkfeZp7aDk)：使用 Azure DevOps 和 SWA 进行多环境部署\n* 演示的[仓库](https://github.com/anthonychu/swa-devops-pipeline-demo)源代码"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-18.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.878022+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "f115e27171e2efb3aa6048b2c41941003b7a439f44786d75548ad67c4cacd419"
+  }
+}

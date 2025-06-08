@@ -1,0 +1,292 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-09.md",
+  "source_file_content_hash": "86d4eff2df13281a9b8759a95b761cb94bb3dfd5060221a5fc74969f8ce3c587",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: build-with-astro\ntitle: \"#08: Build A Blog - with Astro\"\nauthors: [glaucia]\ntags: [swa, 30days, usage-examples, astro]\ndraft: false\n---",
+      "source_content_hash": "c2e6e7ba5aaf40d4d679ce25d9af3e7a74407e6375b08b1d4a6b24b1d23d3c15",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 2, Day 1` of **#30DaysOfSWA**!!",
+      "source_content_hash": "939f61b1eb5d4e273b891e43cd8a538494edc2be78e0e4304d9d0c53ee863cb9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第2周第1天`！！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "In Week 1 we covered core concepts for Azure Static Web Apps - from development to API-enablement, security, configuraton and deployment.",
+      "source_content_hash": "3aa3fdc3280dba948a2e0d64230b3c0fd717a0b7368aea93be52a478ff18da54",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在第一周，我们涵盖了Azure静态Web应用的核心概念——从开发到API集成、安全性、配置和部署。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Today, we kick off Week 2 with a focus on seeing SWA in action - using popular web development frameworks and static site generators to build and deploy different kinds of applications. We kick things off with a look at [Astro](https://astro.build) - a modern static site generator with a BYOF (\"Bring your own framework\") approach.",
+      "source_content_hash": "97ebc829a20b59be71516be632c000cafc1899fad94c3bc8764cccc743bba693",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天，我们以实际应用为重点开启第二周，使用流行的Web开发框架和静态站点生成器来构建和部署不同类型的应用程序。我们将首先介绍[Astro](https://astro.build)——一种采用BYOF（\"自带框架\"）理念的现代静态站点生成器。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "* What is a static site generator?\n * What is Astro?\n * Build & Deploy a Personal Blog with Astro\n * **Exercise:** Try the tutorial to deploy **your** personal blog!",
+      "source_content_hash": "42c80567d7d748c184394e7a92b66e66888b032f0698325c88dbd93d5456a739",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 什么是静态站点生成器？\n * 什么是Astro？\n * 使用Astro构建并部署个人博客\n * **练习：** 跟随教程部署**你的**个人博客！"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "![Build a Blog with Astro + SWA](../static/img/series/08-banner.png)",
+      "source_content_hash": "0154d1f928bec6ebe7c8ec4190e1f2c1227e3ef41a6a03a5f9d4241ddf06f20c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![使用Astro + SWA构建博客](../static/img/series/08-banner.png)"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Static Site Generators",
+      "source_content_hash": "7aec1e8fcfee624a3fcb6d00f4f1ee2e39e5d9f98d74f1bdcc422665cb233029",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 静态站点生成器"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "The term \"static site generators\" (SSG) refers to tools that automatically build static webpages for you, populating a chosen template with your custom content or data. The code generation is transparent to you, making it possible for even non-developers to setup custom static websites quickly.",
+      "source_content_hash": "eb670a7f73ad0127acd73d8dc9a60ab1514edfe3ff320a2da6424ad571f0a134",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "术语\"静态站点生成器\"（SSG）指能自动为你构建静态网页的工具，它们将自定义内容或数据填充到选定模板中。代码生成过程对用户透明，使得即使非开发人员也能快速搭建定制化静态网站。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Static site generation is a growing trend for fast, flexible website creation. But it requires an external service to handle hosting and build/deploy workflows. **This is where Azure Static Web Apps comes in!** Check out the [SWA documentation](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-gatsby) for tutorials featuring popular SSGs like Hugo, Jekyll and Gatsby. We'll explore some other examples later this week.",
+      "source_content_hash": "2ed0c7c13c228b6c37dba0b6fa16f88ed5030805e8bde895f1e6000c856e3dfd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "静态站点生成是创建快速、灵活网站的新趋势。但它需要外部服务来处理托管和构建/部署工作流。**这正是Azure静态Web应用的用武之地！** 查看[SWA文档](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-gatsby)中关于Hugo、Jekyll和Gatsby等流行SSG的教程。本周稍后我们将探索更多示例。"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "## Hello, Astro!",
+      "source_content_hash": "1948b637b838aa381e36ea879665b5e39c6e183a3717a118f5c3277442e4c9f9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 你好，Astro！"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Today's post will however focus on [Astro](https://astro.build/blog/introducing-astro), one of the [rising stars of JavaScript](https://risingstars.js.org/2021/en#section-ssg) in the _Static Sites_ category. Astro is a static site builder that works _like an SSG_ but with some [novel features](https://astro.build/blog/introducing-astro) that set it apart.",
+      "source_content_hash": "ef360ae88db25e6709456178ef5ed33c41d0ff337a00c1e70a49a60d01a57d86",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天的文章将重点介绍[Astro](https://astro.build/blog/introducing-astro)，它是《JavaScript明星项目》中[_静态站点_](https://risingstars.js.org/2021/en#section-ssg)类别的后起之秀。Astro是一个静态站点构建工具，其工作方式_类似SSG_，但具有一些[独特功能](https://astro.build/blog/introducing-astro)。"
+      }
+    },
+    {
+      "segment_id": "cd471e4e",
+      "source_content": "* Bring your own framework (React, Vue, Svelte, web components)\n * Compose your website using that framework's UI components\n * Astro now renders a fully-static (all HTML, no JavaScript) website",
+      "source_content_hash": "b574a0f923d08f913cdff0d08cfc09e00230fb40aea2b63e51c0db66ba1b113d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 自带框架（React、Vue、Svelte、Web组件）\n * 使用该框架的UI组件构建网站\n * Astro会渲染出完全静态（纯HTML，无JavaScript）的网站"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "Astro emphasizes **fast performance** with **less JavaScript** - and takes a [partial hydration](https://www.patterns.dev/posts/progressive-hydration/) approach that allows it to load the minimal required amount of JavaScript, if and when absolutely necessary. Here's a quick overview of Astro.",
+      "source_content_hash": "05297a6f3ac4cf59e4a7d32db5771d2d819cebab4deb81721e88ae4753959325",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Astro强调**高性能**与**更少JavaScript**，采用[渐进式水合](https://www.patterns.dev/posts/progressive-hydration/)方法，仅在绝对必要时加载最小量的JavaScript。以下是Astro的快速概述。"
+      }
+    },
+    {
+      "segment_id": "100eac36",
+      "source_content": "<iframe  width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen src=\"https://www.youtube.com/embed/dsTXcSeAZq8\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" ></iframe>",
+      "source_content_hash": "b9fc51f6479d752f3fe156156caf72e56a64e82fdaa15f7f2f582ee98bb40e82",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_100eac36"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Astro + SWA",
+      "source_content_hash": "f01da36a507a52cac3d60fc373fce091dd9879fd8ce77abf5725b327386aab69",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Astro + SWA"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "In **[today's tutorial](https://dev.to/azure/building-applications-with-astro-build-azure-static-web-apps-cli-a20)**, we walk through the steps required to:",
+      "source_content_hash": "69f7b44917261c3a52131a13003537e46324cf524f103f669aefaed8bf922f92",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在[今天的教程](https://dev.to/azure/building-applications-with-astro-build-azure-static-web-apps-cli-a20)中，我们将逐步演示如何："
+      }
+    },
+    {
+      "segment_id": "4c077b92",
+      "source_content": "* create an astro-powered blog (using [this template](https://github.com/glaucia86/astro-swa-demo)\n * test it locally using the Azure Static Web Apps CLI (`swa`)\n * deploy it using the [Visual Studio Code Extenstion for SWA](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)",
+      "source_content_hash": "03d4c7d59eb8f89d3546942191d8ba5098209c63a8e607fe037f8c0088d3ce74",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 创建Astro驱动的博客（使用[此模板](https://github.com/glaucia86/astro-swa-demo)）\n * 使用Azure静态Web应用CLI（`swa`）进行本地测试\n * 通过[SWA的Visual Studio Code扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)部署"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "The end result will look like this. \n![Personal Blog with Astro](../static/img/series/08-astro.jpeg)",
+      "source_content_hash": "cc4d7d0b7083d1ded429d3872c9250e11769f43865e2849ca4c6b54b6c6c70ca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最终效果如图所示。\n![使用Astro构建的个人博客](../static/img/series/08-astro.jpeg)"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "Here are the key links to know:",
+      "source_content_hash": "cf5a4f1b8eb5433af1bbd0fc420fbe75460ff615397e59539b7b9ff57f9257bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下是关键链接："
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "*  Visit **[this page](https://dev.to/azure/building-applications-with-astro-build-azure-static-web-apps-cli-a20)** for the step-by-step tutorial.\n * Check **[this repository](tttps://github.com/glaucia86/astro-swa-demo)** for the source code (demo app template)\n * **[See this site](https://yellow-grass-008f2c710.azurestaticapps.net/)** for the deployed version of the app.",
+      "source_content_hash": "37ad7b25739f7d8ed121109a69cf2b0a497af6a1300d2bfb9e8642468f8ed40a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 访问[此页面](https://dev.to/azure/building-applications-with-astro-build-azure-static-web-apps-cli-a20)获取分步教程\n * 查看[此仓库](tttps://github.com/glaucia86/astro-swa-demo)获取源代码（演示应用模板）\n * [浏览此站点](https://yellow-grass-008f2c710.azurestaticapps.net/)查看已部署的应用版本"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "Then check back tomorrow for a new usage example and tutorial - this time, with a focus on React - as we continue to explore Azure Static Web Apps in action!",
+      "source_content_hash": "e32b1f7f4fee697b5a491893f2b2ac834ee29cbdf5433a0381221e21e7a05d58",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "明天请继续关注新的使用示例和教程——这次我们将重点介绍React，继续探索Azure Static Web Apps的实际应用！"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "Here are a couple of options to try, to get more hands-on experience:",
+      "source_content_hash": "b06855112ca67bafaa6797274bb2a1270f0c56b5df682cc83ea1313f444dd624",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下是几个可供尝试的选项，帮助您获得更多实践经验："
+      }
+    },
+    {
+      "segment_id": "158e1f5d",
+      "source_content": "* Clone the [template project](https://github.com/glaucia86/astro-swa-demo.git) and follow the [tutorial](https://dev.to/azure/building-applications-with-astro-build-azure-static-web-apps-cli-a20) to build and deploy **your** personal blog.\n* Visit the [Astro Themes](https://astro.build/themes/) page and try using a different starter project, then deploying it to Azure Static Web Apps.",
+      "source_content_hash": "59fa071e2c04b48ee2b3a7f1d75de46050475ec18bf405a57767dc2b318d5cf1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 克隆[模板项目](https://github.com/glaucia86/astro-swa-demo.git)并按照[教程](https://dev.to/azure/building-applications-with-astro-build-azure-static-web-apps-cli-a20)构建并部署**您的**个人博客。\n* 访问[Astro主题](https://astro.build/themes/)页面，尝试使用不同的入门项目，然后将其部署到Azure Static Web Apps。"
+      }
+    },
+    {
+      "segment_id": "bd92edfc",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "Check out these other tutorials using more traditional static site generators:",
+      "source_content_hash": "418aaecf4c514918722cb23be3c3fa4b14b5bc15724ca282afcb7bb779ef1dcb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "查看这些使用更传统静态站点生成器的其他教程："
+      }
+    },
+    {
+      "segment_id": "af6ca965",
+      "source_content": "* Publish a [Gatsby site](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-gatsby) to Azure Static Web Apps\n * Publish a [Hugo site](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-hugo) to Azure Static Web Apps\n * Publish a [Jekyll site](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-jekyll) to Azure Static Web Apps\n * Publish a [VuePress site](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-vuepress) to Azure Static Web Apps",
+      "source_content_hash": "5fbcd79998db570ea0566c96ea06847ea2f6addd9fb25aa8132b2abf05db73e3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 将[Gatsby站点](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-gatsby)发布到Azure Static Web Apps\n* 将[Hugo站点](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-hugo)发布到Azure Static Web Apps\n* 将[Jekyll站点](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-jekyll)发布到Azure Static Web Apps\n* 将[VuePress站点](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-vuepress)发布到Azure Static Web Apps"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-09.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.874681+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "86d4eff2df13281a9b8759a95b761cb94bb3dfd5060221a5fc74969f8ce3c587"
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-08-31-thismonth/index.md",
+  "source_file_content_hash": "ec731c463c781375bb11227ee23861d50b0d01a423bcd8973177454f1beb4b34",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: roundup-2022-aug\ntitle: \"SWA Roundup: Aug 2022\"\nauthors: [reshmi, nitya, sara]\ntags: [swa, thismonth, aug]\ndraft: false \n---",
+      "source_content_hash": "894a2d6ef315cfe3f31b95a10d5b526c18331849101383ef2fedf2fca8a527bb",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/roundup-2022-aug\" />\n  <meta name=\"twitter:title\" content=\"This Month in Azure Static Web Apps: Aug 2022\" />\n  <meta name=\"twitter:description\" content=\"A monthly roundup of news, articles, events and more - on Azure Static Web Apps\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/img/png/roundup/aug.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/roundup-2022-aug\" />\n</head>",
+      "source_content_hash": "3cc0576ae65ad8f8632137dfc7bdf8ad7aa279abf0f41c1a05a60a8e26132f44",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "It's here!! Our first roundup of **This Month in SWA** 🎉",
+      "source_content_hash": "cbfbd2a89d587125b2ab337d95eb170802c6a0b675bad67ae17fe448af9bc0fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "重磅来袭！！首期《SWA月度精选》🎉"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Each month, on the last Wednesday, we'll publish a roundup of Azure Static Web Apps product news, events, and content updates on this blog. Over time, we hope to make it your one-stop destination to catch up on all the exciting things happening in the SWA ecosystem, in one friendly post.",
+      "source_content_hash": "6d2c61879bfb1fe4dbd2bc3a26d6ca15d574245f524b022b56fb13224698deec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "每月最后一个星期三，我们都会在本博客发布Azure静态Web应用的产品动态、活动资讯和内容更新汇总。我们期待这份精选能逐步成为您一站式获取SWA生态圈所有精彩内容的友好渠道。"
+      }
+    },
+    {
+      "segment_id": "44d89370",
+      "source_content": "* Want to make sure you don't miss it? <a href=\"/blog/rss.xml\" target=\"_blank\">**Subscribe to the feed**</a>.\n * Want to contribute items for roundup? [**Submit this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community).\n * Want to catch up on past posts? [**Browse past editions.**](/thismonth#view-past-editions)",
+      "source_content_hash": "92d414eb3ac063b556398e5270bd357e38bf21ce7c00e7de854512c71adf3679",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 不想错过更新？<a href=\"/blog/rss.xml\" target=\"_blank\">**订阅RSS源**</a>。\n * 想要投稿？[**提交此定制issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)。\n * 查看往期内容？[**浏览历史版本**](/thismonth#view-past-editions)"
+      }
+    },
+    {
+      "segment_id": "8b52fbba",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "![](../../static/img/png/roundup/aug.png)",
+      "source_content_hash": "f0d12617a62241a3a1bf32a2853a7f603cfd29766afe78494efa140911c25d07",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../../static/img/png/roundup/aug.png)"
+      }
+    },
+    {
+      "segment_id": "d5420c8e",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "## Product News",
+      "source_content_hash": "a39b0906a21b5d05b839c70dd81e6e5341db47840ee4e56e0a921977d6090ef7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 产品动态"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "_This section covers recent news or announcements from the product team. Read on to learn the latest news from the world of Azure Static Web Apps!_",
+      "source_content_hash": "a271c4ebde2d498b95c3d19f0a556143bc4bc997ba6578f7d5d296512d619989",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节涵盖产品团队的最新公告。了解Azure静态Web应用的最新进展！_"
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "* **Jun 22** | [Azure SWA now supports more API options](https://azure.microsoft.com/en-us/updates/public-preview-new-api-backend-options-in-azure-static-web-apps/)<br/> You can now link Azure App Service, Azure Container Apps, and Azure API Management services seamlessly to your SWA's API endpoint. Read the [docs](https://docs.microsoft.com/en-us/azure/static-web-apps/apis-overview) and explore the [sample walkthrough](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/new-api-backend-options-in-azure-static-web-apps/ba-p/3516882) to learn more.\n\n* **Jun 8** | [Static Web Apps CLI is generally available](https://azure.microsoft.com/en-us/updates/static-web-apps-cli-now-available/). <br/> The v1.0 release was launched in late May, adding new commands like `swa init`, `swa login` and `swa deploy` to create an all-in-1 tool for local SWA development. [_Explore the documentation here_](https://azure.github.io/static-web-apps-cli/)",
+      "source_content_hash": "4c72fa79d8f22ede100f5301836bad14f5342c8adcca166df9663f2b01a1efd6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **6月22日** | [Azure SWA现支持更多API选项](https://azure.microsoft.com/en-us/updates/public-preview-new-api-backend-options-in-azure-static-web-apps/)<br/>现在可将Azure应用服务、Azure容器应用和Azure API管理服务无缝链接至SWA的API端点。查阅[文档](https://docs.microsoft.com/en-us/azure/static-web-apps/apis-overview)并体验[示例教程](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/new-api-backend-options-in-azure-static-web-apps/ba-p/3516882)。\n\n* **6月8日** | [静态Web应用CLI正式发布](https://azure.microsoft.com/en-us/updates/static-web-apps-cli-now-available/)。<br/>五月底发布的v1.0版本新增了`swa init`、`swa login`和`swa deploy`等命令，打造了本地SWA开发的全能工具。[_查看文档_](https://azure.github.io/static-web-apps-cli/)"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Don't forget to bookmark the [**Azure Updates**](https://azure.microsoft.com/en-us/updates/?query=static%20web%20apps) page to get updates at any time.",
+      "source_content_hash": "17710eacdfae71bc198552f6f72beea8aeedc0e8d30a3f6eda21fbffaa666f8a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "随时访问[**Azure更新中心**](https://azure.microsoft.com/en-us/updates/?query=static%20web%20apps)获取最新动态。"
+      }
+    },
+    {
+      "segment_id": "39993511",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "## Dev Resources",
+      "source_content_hash": "476de9fde5142c80171779eccd068628fd82d2b7b1dc0dd4fc2ddabc9666f378",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 开发资源"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "_This section covers content, events and code samples from Microsoft authors. Check them out for relevant learning resources and best practices._",
+      "source_content_hash": "1b45f986a00285ba7bb58dfd942b4957175f70952384f0bac00858883c93e9a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节汇集微软官方技术文章、活动与代码示例。获取相关学习资源与最佳实践。_"
+      }
+    },
+    {
+      "segment_id": "ddd2c7ae",
+      "source_content": "* **Aug 3** | `dev.to` -  [**Deploy Azure Static Web Apps using Python**](https://dev.to/azure/deploy-azure-static-web-apps-using-python-1hn7) by _Jay Miller_. Are you a Python developer interested in exploring Azure Static Web Apps? In this post, Jay walks you through configuring and deploying your first Python SWA from VS Code.\n\n* **Jul 22** | `TechCommunity` - [**Host your website on Azure Static Web Apps for free**](https://techcommunity.microsoft.com/t5/educator-developer-blog/host-your-website-on-azure-static-web-apps-for-free/ba-p/3579709?WT.mc_id=academic-74011-sagibbon) by _Julia Muiruri_.  Students looking to get started with Azure, create your Azure for Students account and deploy your first website within minutes!\n\n* **Jul 20** | `dev.to` -[**Taking a SWA DevOps Pipeline to the next level**](https://dev.to/azure/taking-a-swa-devops-pipeline-to-the-next-level-5co3) by _Aaron Powell_. We know SWA works seamlessly with GitHub Actions to automate the default build-deploy workflow. What if you need a more complex custom CI/CD pipeline? This article walks you through one such example.",
+      "source_content_hash": "22ebe7ee8b64c34bd9966963b29d6d08841440fde41d05d470409021d00ba857",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **8月3日** | `dev.to` - [**使用Python部署Azure静态Web应用**](https://dev.to/azure/deploy-azure-static-web-apps-using-python-1hn7) by _Jay Miller_。Python开发者想探索Azure静态Web应用？本文手把手教您从VS Code配置部署首个Python版SWA。\n\n* **7月22日** | `TechCommunity` - [**免费在Azure静态Web应用上托管网站**](https://techcommunity.microsoft.com/t5/educator-developer-blog/host-your-website-on-azure-static-web-apps-for-free/ba-p/3579709?WT.mc_id=academic-74011-sagibbon) by _Julia Muiruri_。学生用户可通过Azure学生账户快速部署首个网站！\n\n* **7月20日** | `dev.to` -[**进阶SWA DevOps流水线实践**](https://dev.to/azure/taking-a-swa-devops-pipeline-to-the-next-level-5co3) by _Aaron Powell_。当默认的GitHub Actions自动化部署无法满足复杂CI/CD需求时，本文提供了定制化解决方案。"
+      }
+    },
+    {
+      "segment_id": "6e9a41d8",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "## Community Buzz",
+      "source_content_hash": "9fae708cacd69eca2e72fc66e41553b31f1d80613ee28c92e0a50b8c165a8bc7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 社区动态"
+      }
+    },
+    {
+      "segment_id": "416beea7",
+      "source_content": ":::info[AUTHORED BY DEVS LIKE YOU!]\n_This section highlights content from our amazing developer community - submitted directly, or published to the relevant tag in sites like Tech Community and dev.to._\n:::",
+      "source_content_hash": "3b694ae639b64191d2d4ec7a639ed78e288de56c319f088f71505bfb33f4a1be",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[由开发者共创！]\n_本节重点展示来自开发者社区的精彩内容——包括直接提交的素材，或发布在Tech Community和dev.to等平台相关标签下的文章。_\n:::"
+      }
+    },
+    {
+      "segment_id": "35f6931b",
+      "source_content": "* **Jul 19** | `techcommunity.com` - [**Azure Adventure – A RPG game to test student’s Azure practical skills**](https://techcommunity.microsoft.com/t5/educator-developer-blog/azure-adventure-a-rpg-game-to-test-student-s-azure-practical/ba-p/3576331?WT.mc_id=academic-74011-sagibbon) by _Wong Cyrus, Dept Information Technology of the Hong Kong Institute of Vocational Education_.  Azure Adventure is an open source HTML5 RPG game that builds on top of the latest version of Azure Automatic Grading Engine, utilizing SWA.",
+      "source_content_hash": "40ea956e2771fb9a92a3f809a7937eae6cec7c725984cfce8132497d6ba2d96e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **7月19日** | `techcommunity.com` - [**《Azure冒险》——测试学生Azure实践技能的RPG游戏**](https://techcommunity.microsoft.com/t5/educator-developer-blog/azure-adventure-a-rpg-game-to-test-student-s-azure-practical/ba-p/3576331?WT.mc_id=academic-74011-sagibbon) 作者：_香港专业教育学院信息技术系Wong Cyrus_。这款开源HTML5 RPG游戏基于最新版Azure自动评分引擎开发，并运用了静态Web应用技术。"
+      }
+    },
+    {
+      "segment_id": "379f9c7b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "3ef18741",
+      "source_content": "## Upcoming Events",
+      "source_content_hash": "db2318a574c4d5e0551cf2de63fbbd9ab51753429c0cb2f44a4c1ae600dca803",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 近期活动"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "_This section highlights in-person or online events that are likely to feature Azure Static Web Apps content or developer conversations - links to CFPs or registration links are welcome!_",
+      "source_content_hash": "0c2c83656025095ef42800b875ab1912643024bc7e218a983023a63eeccddd2f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节重点推荐可能包含Azure静态Web应用内容或开发者交流的线上线下活动——欢迎提交活动征集或注册链接！_"
+      }
+    },
+    {
+      "segment_id": "69c1f590",
+      "source_content": "* **Sep 1-30, 2022** | [Serverless September](https://aka.ms/serverless-september) - explore Serverless on Azure\n* **Oct 7, 2022** | [Microsoft Student Summit](https://developer.microsoft.com/en-us/reactor/overview/student-summit-2022/) - virtual event held globally\n* **Oct 12-14, 2022** | [Microsoft Ignite](https://ignite.microsoft.com/en-US/home) - in-person (Seattle) and online",
+      "source_content_hash": "a7c9d6118b545c4dd4fffed17aa73609d97bb55f6469acd773a1251f74330156",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **2022年9月1-30日** | [无服务器九月](https://aka.ms/serverless-september) - 探索Azure无服务器技术\n* **2022年10月7日** | [微软学生峰会](https://developer.microsoft.com/en-us/reactor/overview/student-summit-2022/) - 全球线上活动\n* **2022年10月12-14日** | [微软Ignite大会](https://ignite.microsoft.com/en-US/home) - 线下（西雅图）与线上同步"
+      }
+    },
+    {
+      "segment_id": "63e1d83c",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "## Did You Know?",
+      "source_content_hash": "244cb6b4719225219c0ba90273be054f028633181809325a71519c00e46c39b8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 您知道吗？"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "_Each month, we hope to turn the spotlight on one key resource or person that is worth knowing about, in the context of Azure Static Web Apps._",
+      "source_content_hash": "9f671d00d60bc452c4b198f7504b0f306fc75e5645df04e827d3ee61ae1e1277",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_每月我们将聚焦一个与Azure静态Web应用相关的关键资源或人物。_"
+      }
+    },
+    {
+      "segment_id": "17f3ca09",
+      "source_content": ":::info[🌟 SPOTLIGHT ON:  DEV.TO]\n[Dev.to](https://dev.to) is an inclusive community of software developers where you can publish content and have conversations on technology in collaborative and learning-driven ways. \n\n * Explore the [**#staticwebapps**](https://dev.to/t/staticwebapps) tag - to browse ~100 articles on SWA.\n * Leave comments or reactions - to provide valued feedback! \n * Create [**a tagged post**](https://dev.to/new/staticwebapps) - to share your own learnings.\n:::",
+      "source_content_hash": "e88f2979a1b199fc2ac54a899964d49a83fc09a1d0f7c903b3c4e6b6978bb6f1",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[🌟 本期聚焦：DEV.TO]\n[Dev.to](https://dev.to)是一个包容性极强的开发者社区，您可以在此发布技术内容，以协作和学习为导向的方式进行交流。\n\n * 探索[**#staticwebapps**](https://dev.to/t/staticwebapps)标签——浏览约100篇相关文章\n * 发表评论或点赞——提供宝贵反馈！\n * 创建[**带标签的文章**](https://dev.to/new/staticwebapps)——分享您的学习成果\n:::"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "Here's a snapshot of what that tag profile looks like! **Follow** the tag to get articles in your dev.to feed - or [subscribe to the feed](https://dev.to/feed/tag/staticwebapps) from your favorite RSS reader.",
+      "source_content_hash": "9d8667d1978d8e0af97c0a7c2d513370f9c58c89369262a4b275ae0d7e716d0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是该标签页的概览！**关注**标签即可在个人动态中获取文章——或通过[订阅RSS源](https://dev.to/feed/tag/staticwebapps)在阅读器查看。"
+      }
+    },
+    {
+      "segment_id": "b3e732a4",
+      "source_content": "> ![dev.to #staticwebapps page](./devto.png)",
+      "source_content_hash": "93d3db10cb8a50070b2113ed979983bec364da5d9b39184e351428e409ea4956",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> ![dev.to #staticwebapps页面](./devto.png)"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "That's all we had for this roundup! Tell us what you think about this new format for a monthly summary! And don't forget to send us _your_ contributions.",
+      "source_content_hash": "8f406aa29e1a10049ede204aa0590e7dd0b5e708e5288897b120f249ef5acdd0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本期内容就是这些！欢迎告诉我们您对这种月度汇总新形式的看法！别忘了提交_您的_贡献内容。"
+      }
+    },
+    {
+      "segment_id": "f7a7cb1b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "## 🚨 | Call For Content",
+      "source_content_hash": "110e923a6af2e878e3de072faa343b706cf5da4a99dac6d3e339d4d6d42eaf5e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 🚨 | 内容征集"
+      }
+    },
+    {
+      "segment_id": "13f26ba5",
+      "source_content": ":::tip[Next Roundup: Sep 28, 2022]\nSubmissions welcome till Sep 25, 2022.\n\n * Did you author an article, create a SWA application or sample?\n * Are you organizing an event with a SWA-related session?\n * Are you a student who just created your first SWA app or blog post?\n\nSubmit the details [**using this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community) as soon as possible. We can't wait to share your contributions!\n:::",
+      "source_content_hash": "93a235f78457e76b46abe2631208e183f1e28e327e4246297826af63ae56925d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::tip[下期截稿：2022年9月28日]\n投稿截止日期：2022年9月25日\n\n * 您是否撰写了技术文章或创建了SWA应用/示例？\n * 您是否在筹备包含SWA相关议题的活动？\n * 您是否是刚完成首个SWA应用或博客的学生？\n\n请立即通过[此专用issue](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)提交详情，我们期待分享您的成果！\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-08-31-thismonth/index.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.882775+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "ec731c463c781375bb11227ee23861d50b0d01a423bcd8973177454f1beb4b34"
+  }
+}

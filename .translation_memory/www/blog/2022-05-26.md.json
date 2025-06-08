@@ -1,0 +1,412 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-26.md",
+  "source_file_content_hash": "158f69043d35bdd9558fbe851e3de270a1cc4ea4e332fc015c1be653691039de",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: practices-case-study\ntitle: \"#25: KlipTok & SWA: Case Study\"\nauthors: [jeff]\ntags: [swa, 30days, best-practices]\ndraft: false \n---",
+      "source_content_hash": "5903d263a57e5fbeb4872098800c1055d504b83899ef9e0298709d3ab349a56c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/practices-case-study\" />\n  <meta name=\"twitter:title\" content=\"#25: KlipTok.com: A SWA Case Study\" />\n  <meta name=\"twitter:description\" content=\"Join @csharpfritz on #30DaysOfSWA and learn how he built Kliptok.com with @AzureStaticApps to make Twitch clips searchable!\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/25-banner.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/practices-case-study\" />\n</head>",
+      "source_content_hash": "6abe67510e77d65d6f861bd6490a39bf6948e00349871cd754ce8cc6662de4c4",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Welcome to `Week 4, Day 4` of **#30DaysOfSWA**!!",
+      "source_content_hash": "7064f6086b92a7df94e65376357170c1d289f1de1c5114f1619dd639a85a0494",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第4周第4天`！！"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Week 4 focuses on Best Practices for Azure Static Web Apps. In the last two posts we explored Azure Services integrations that enhance and extend the capabilities of your deployed static website. Today, we take things in a different direction with our first **Case Study** - featuring  [KlipTok](https://kliptok.com), a [Twitch](https://twitch.tv) clip search and indexing service built by Jeff Fritz, and hosted on Azure Static Web Apps!",
+      "source_content_hash": "04c311d1cb2da023e039266d3abc6c9a22ca1888895b40b28ad1d10fdbde460a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "第4周聚焦Azure静态Web应用的最佳实践。在前两篇文章中，我们探讨了能增强和扩展已部署静态网站功能的Azure服务集成。今天，我们将以首个**案例研究**转换方向——介绍由Jeff Fritz构建、托管在Azure静态Web应用上的Twitch视频片段搜索与索引服务[KlipTok](https://kliptok.com)！"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "* What is KlipTok?\n * Why did KlipTok choose Azure Static Apps?\n * How do Azure Static Apps and Blazor work together?\n * **Exercise**: Check out the [KlipTok](https://kliptok.com) website and see it in action.",
+      "source_content_hash": "2802dafcd2fe3b15dd16407bbc68a8103ae0db913071519b82bbbb792fdff360",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 什么是KlipTok？\n * KlipTok为何选择Azure静态应用？\n * Azure静态应用如何与Blazor协同工作？\n * **实践**：访问[KlipTok](https://kliptok.com)网站体验实际效果。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "![](../static/img/series/25-banner.png)",
+      "source_content_hash": "c862c67915de621d95ec888847a1b9dcd94a2ef52f6d00e2730e0dccf8d9e3fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/25-banner.png)"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## KlipTok Makes Twitch Videos Searchable",
+      "source_content_hash": "278f4fc9e17bef995c4ea82372203939b5182b0042fa5ce71a391677f5f90eab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## KlipTok让Twitch视频可搜索"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "[KlipTok](https://kliptok.com) is a website that I started building while streaming live on Twitch in November 2019.  At the time, I wanted to build a website that would allow folks to discover Twitch clips from their favorite creators in the same way that they navigate and interact with TikTok.",
+      "source_content_hash": "dc24540f6ae97a3209ce7b473a3bef965bd0bb50db15d76220c2a64c1ebca62d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[KlipTok](https://kliptok.com)是我于2019年11月在Twitch直播期间开始构建的网站。当时我希望创建一个平台，让用户能像浏览TikTok那样探索和互动他们喜爱的创作者在Twitch上的视频片段。"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "[Twitch](https://twitch.tv) is a live-streaming service that many people use to watch folks play video games.  When something interesting happens on Twitch, viewers can isolate a clip (up to 60 seconds long) from the stream and share it with their friends.  These clips are often fun and interesting, but typically they are not discoverable.  This is **KlipTok's goal - index and make those clips more available to everyone**.",
+      "source_content_hash": "229c4a66e34e813087f1ff70bc3155d38bd7dcf9a2d20e22c11696b2a129a498",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Twitch](https://twitch.tv)是许多人用来观看游戏直播的平台。当直播中出现精彩瞬间时，观众可以截取最长60秒的片段与朋友分享。这些片段通常充满趣味，但往往难以被主动发现。这正是**KlipTok的使命——建立索引系统，让这些片段更广泛地触达用户**。"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "![Screenshot of the KlipTok Website](../static/img/series/w4d3/kliptok-site.png)",
+      "source_content_hash": "9d66914efe186cb631fad5d312df31dd3c6c66abc563c9ce9d0f10b3b8188b8e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![KlipTok网站界面截图](../static/img/series/w4d3/kliptok-site.png)"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "## How does KlipTok Work?",
+      "source_content_hash": "6d06b3380636e1c39eafe1379efdd0884a8d74409f3760587beaea05219d5a99",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## KlipTok如何运作？"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "Behind the scenes, KlipTok monitors Twitch for new clips from streamers that are signed up with the site and indexes them.  The clips are then transcribed and searchable on the site.  Visitors can view, like, and comment on clips.  Additionally, anyone can create playlists of clips to share with their friends.",
+      "source_content_hash": "e17542c669746a73cb17915a56fa9b60dbf4b317bade68c33d4707a64b11ba81",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "KlipTok在后台实时监控Twitch上已注册主播的新片段并建立索引。这些片段经过转录处理后可供站内搜索。访客可以观看、点赞和评论片段，还能创建片段合集与好友分享。"
+      }
+    },
+    {
+      "segment_id": "92b13a72",
+      "source_content": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/6uMCAHEM8Es\" title=\"YouTube video player\" frameborder=\"0\"  allowfullscreen></iframe>",
+      "source_content_hash": "12f6f6eca555204a3493c57f57cc2535bb8e48d8a436ded4bb8c42d0e7dae8cc",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_92b13a72"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "You can read the full story behind my decision process [on my blog](https://jeffreyfritz.com/2021/04/introducing-kliptok/) or watch me build a subset of its features on a livestream in Nov 2020, in the video above.",
+      "source_content_hash": "f76bca93507b937a40592652ebbe9f72cc600b5ed4eab907ce9fc28bc0d589c0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可以通过[我的博客](https://jeffreyfritz.com/2021/04/introducing-kliptok/)阅读完整决策过程，或在上方视频中观看我于2020年11月直播构建其部分功能的实况。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "After the first 18 months of running KlipTok, the **application currently manages almost 12 million clips, totalling nearly 60 GB of data in the index**.  You can view the live dashboard at [kliptok.com/status](https://kliptok.com/status) to see the current status of the application.",
+      "source_content_hash": "6a80278699a881f4f29c6deff2405d4ced4e9130340224387a2347d43d88790c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "经过18个月的运行，**KlipTok目前管理着近1200万条片段，索引数据总量约60GB**。您可访问实时仪表板[kliptok.com/status](https://kliptok.com/status)查看应用当前状态。"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "![Screenshot of the KlipTok dashboard showing almost 12 million clips](../static/img/series/w4d3/kliptok-dashboard.png)",
+      "source_content_hash": "efccfdf503c4ef701330675ff0349f143de9c15f30b56cbd5138b7b7156567a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![显示近1200万片段的KlipTok仪表板截图](../static/img/series/w4d3/kliptok-dashboard.png)"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "## KlipTok Chooses Azure Static Apps",
+      "source_content_hash": "4ead75e35b8d48409262b6e620d4183b5d29b407f452595023e79c0256714f45",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## KlipTok选择Azure静态应用"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "I chose [Azure Static Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/overview) to build and deploy the KlipTok application, and to help demonstrate [Blazor](https://blazor.net) running at scale in a large application.  This allows the application to **scale the HTTP services to deliver content** into the browser while delivering a high-performance experience with the Blazor application running in the browser on top of WebAssembly.",
+      "source_content_hash": "54ddf59390ec852610e0385ce6fe18c391c99189ebb01f5f6f99efce6120dcd7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我选择使用[Azure静态应用](https://docs.microsoft.com/en-us/azure/static-web-apps/overview)构建和部署KlipTok，同时展示[Blazor](https://blazor.net)在大型应用中的规模化运行能力。该方案使应用能**弹性扩展HTTP服务来传输内容**，同时通过基于WebAssembly运行的Blazor应用在浏览器端提供高性能体验。"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "KlipTok also operates a second [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) service called the 'BackOffice' that performs the **synchronization of Twitch clips** and other data aggregation tasks.  When new channels are added to KlipTok for monitoring, the BackOffice service is triggered with a message on [Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) to add the channel and begin processing their clips for the index.",
+      "source_content_hash": "9b48d7606163afa3e452300c96749bf47c48f9bea165f1d76481fbcd8fcdb5d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "KlipTok 还运行着第二个名为 \"BackOffice\" 的 [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) 服务，负责 **同步 Twitch 视频片段** 和执行其他数据聚合任务。当新频道被添加到 KlipTok 进行监控时，BackOffice 服务会通过 [Azure 服务总线](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) 接收消息触发，开始将该频道的视频片段加入索引处理流程。"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "We also use this Backoffice functions app to create an [ML.NET](https://docs.microsoft.com/en-us/dotnet/machine-learning/) model that is used to **recommend streamers to the user**.  The model is trained on the collection of channels that KlipTok users follow and recommends channels to users based on other users who follow the same channels.\tThe model is updated every day with new data to help make more accurate recommendations to logged in KlipTok users.",
+      "source_content_hash": "05569872dd7e23409281f24c6f73ecf313cc869ca91775079fcd6c4a596c9da6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们还利用这个后台函数应用创建了 [ML.NET](https://docs.microsoft.com/en-us/dotnet/machine-learning/) 机器学习模型，用于 **向用户推荐主播**。该模型基于 KlipTok 用户关注的频道数据进行训练，通过分析其他用户关注的相同频道来生成推荐。模型每天都会用新数据更新，以便为登录用户提供更精准的推荐。"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "By Twitch's terms of service, no videos are allowed to be shipped off of their platform for the first 24 hours after they are recorded.  This means that the clips should be referenced and embedded from Twitch using their own clip player, saving KlipTok from having to download and store the content. KlipTok can now deliver appropriate SEO-optimized content as well as render open-graph cards appropriate for Twitter, Facebook, LinkedIn and other sites.",
+      "source_content_hash": "606a8aa74ef51b415bf962dd98adc30919a782b79721c1603f9bcd9a3e326e9b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "根据 Twitch 的服务条款，视频内容在录制后的前 24 小时内不允许被导出平台。这意味着所有视频片段都应通过 Twitch 原生播放器进行引用和嵌入，这使得 KlipTok 无需下载存储实际视频内容。现在 KlipTok 既能提供符合 SEO 优化的内容，又能生成适配 Twitter、Facebook、LinkedIn 等社交平台的开放图谱卡片。"
+      }
+    },
+    {
+      "segment_id": "126950d7",
+      "source_content": "## The KlipTok Architecture",
+      "source_content_hash": "cb5acef0046cda3eb62c10e9ce31e4eb25952d70b68d8d65734b568a096676fb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## KlipTok 系统架构"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "We do have one small problem when using Blazor Web Assembly and Azure Static Websites -- search engines and social media sites do not know **how to crawl and present web assembly generated content**.",
+      "source_content_hash": "4dd41710fb507975cb556276e50100e4c26c9cc37b57ab1bc18112030fa25273",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在使用 Blazor WebAssembly 和 Azure 静态网站时我们遇到一个小问题——搜索引擎和社交媒体平台不知道 **如何抓取和呈现 WebAssembly 生成的内容**。"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "To solve this, I added [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) to the site with an Azure App Service we ironically call the 'Static Site'. Azure Front Door is Microsoft’s modern cloud Content Delivery Network (CDN) - allowing us to take advantage of a globally-distributed edge network to make our content delivery faster and more efficient.",
+      "source_content_hash": "9dcc5f55f023faae42148af5da62de04886f4f90af3885c1ea317816d9de57d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "为此，我们通过 [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) 接入了一个被戏称为\"静态站点\"的 Azure 应用服务。Azure Front Door 是微软新一代云内容分发网络(CDN)，让我们能利用全球分布的边缘节点实现更快更高效的内容交付。"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "With a few rules added to Azure Frontdoor (to detect bots), users can now be redirected to the static site and KlipTok can deliver appropriate SEO optimized content along with the [open-graph](https://ogp.me/) cards for Twitter, Facebook, LinkedIn and other social sharing sites.",
+      "source_content_hash": "1fc24f25c3bb264ad756f1c47bfafaeb44185e2c5a33ba2a29e8eb9ca97b67ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过为 Azure Front Door 添加识别爬虫的规则，现在可以将用户请求重定向到静态站点，使 KlipTok 能够同时提供 SEO 优化内容和适用于 Twitter、Facebook、LinkedIn 等社交平台的 [开放图谱](https://ogp.me/) 分享卡片。"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "![Simplified Diagram of the KlipTok System Architecture](../static/img/series/w4d3/kliptok-architecture-simplified.png)",
+      "source_content_hash": "3b24c6f30aa66c67043a279c860c1b2bd25a5dbec8446b2da31d871ba49307ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![KlipTok 系统架构简化示意图](../static/img/series/w4d3/kliptok-architecture-simplified.png)"
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## Why Azure Static Web Apps?",
+      "source_content_hash": "2c91cf6f40a6ab4d12b7b434659b627532734bad71e95a705597898abf32adc7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 为什么选择 Azure 静态 Web 应用？"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "When KlipTok was originally conceived, I wanted to **spend very little money and allow the site to scale easily** with new traffic as it grows.  As a C# and Blazor developer, this gave me the perfect intersection of my favorite technologies, keep costs low, and start to develop an application that demonstrates the capabilities of Blazor with a **VERY** large dataset.",
+      "source_content_hash": "6172eea41eb3242e0fb9079ede23969635a6c3543d8e01437c198a793fbc1069",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "KlipTok 最初设计时就希望 **以极低成本运行，同时能轻松应对流量增长**。作为一名 C# 和 Blazor 开发者，这完美结合了我喜爱的技术栈——既能控制成本，又能通过处理 **海量数据集** 来展示 Blazor 的强大能力。"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Over time, the system components of KlipTok have matured and been swapped out.  Azure Table Storage gave way to MySQL and has been since replaced by RavenDb.  The Azure Functions were originally communicating using Azure Queues, and many of them are now using Azure Service Bus.",
+      "source_content_hash": "1133bd868572c8dfd889882205e7d561a8ad0ace873efc737cb682d0a766d113",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "随着时间推移，KlipTok 的系统组件不断演进：Azure 表存储先被 MySQL 取代，后又迁移到 RavenDb；原本使用 Azure 队列通信的函数，现在大多已改用 Azure 服务总线。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "This maturing of the system components has allowed me to build and understand how other customers are using Azure and how we can improve the product to make developers of systems like KlipTok more productive.",
+      "source_content_hash": "ff8ff751d74714913d2b8e536e687fc957b9f3ab9321f91b7a988f3ff8c017c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这种组件迭代过程让我深入理解了其他客户如何使用 Azure，也帮助我们改进产品以提升 KlipTok 这类系统开发者的工作效率。"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "Using Azure Static Web Apps makes it easier for developers to integrate other Azure services - which then makes it possible for me to evolve KlipTok's architecture and capabilities quickly, to reflect changing needs.",
+      "source_content_hash": "2ff449df15f3d93bc0a895cb4629d0378a7c7fcac470be9340bc0bf75b1a3f09",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "使用 Azure 静态 Web 应用能更轻松地集成其他 Azure 服务，这使得我可以快速调整 KlipTok 的架构和功能，及时响应需求变化。"
+      }
+    },
+    {
+      "segment_id": "0a103a02",
+      "source_content": "## SWA & Blazor: Made for each other",
+      "source_content_hash": "06b791b2712d64a4882b3d68e82fdb9c2484575c09f4418ba2d98d6709888093",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 天作之合：SWA 与 Blazor"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "As a developer, I've been very happy with the combination of Blazor and Azure Static Web Apps.  The ability to build a Blazor application and know that I will always have APIs scaling to meet my customers needs is a huge plus.",
+      "source_content_hash": "445683d8da6a172b7ffcc69da446a0e133f965ce058344fb2fa0c4be73834f1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "作为开发者，我对 Blazor 和 Azure 静态 Web 应用的组合非常满意。构建 Blazor 应用时能确保 API 始终按需扩展，这是巨大的优势。"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Blazor Web Assembly uses an HttpClient to communicate with web servers;in the case of an Azure Static Web App it communicated with an HTTP triggered function.  This allows me to dramatically simplify the definition and interaction of front-end code and the back-end code.",
+      "source_content_hash": "de4bf32f3174c7b76f88e3bee0578f3fca2cc176d80b5632696ece4d2ed5e818",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Blazor WebAssembly 使用 HttpClient 与服务器通信，在 Azure 静态 Web 应用中则是与 HTTP 触发的函数交互。这种模式极大简化了前端代码与后端服务的定义和交互过程。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "For example: when a user clicks the **Like** button on a clip, the Blazor application can post a message to the hosted function to increment the like count.  This function then updates the like count in RavenDb, then updates the UI with the new like count.  The Blazor application needn't wait for the function to complete before updating the UI - it can just add or subtract one from the like count.",
+      "source_content_hash": "6b95bbc3f478440f62230b8e0825f2e214bf72f56b44143c835fc9c3bbd3e1b2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "例如：当用户点击某个剪辑的**点赞**按钮时，Blazor应用程序可以向托管函数发送消息以增加点赞数。该函数随后会更新RavenDb中的点赞计数，并通过新计数刷新UI。Blazor应用程序无需等待函数执行完成即可更新UI——只需对点赞数进行增减操作。"
+      }
+    },
+    {
+      "segment_id": "39db08de",
+      "source_content": "## Summary",
+      "source_content_hash": "30ac03ff33731529441be8fbe52a3bd0d4c5ec830e806d54692168ebb7f98ada",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 总结"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "KlipTok has been an absolute joy to build and the journey to deliver it has been a great success.  I'm very excited to continue working on KlipTok and continue to grow the application while discovering and demonstrating more cool Blazor and Azure features. Have questions or comments? Find me on Twitch",
+      "source_content_hash": "4eeb740ad71473191a950eb8bf895b5f15f80cea0ead070977f4f5c34bc5060c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "KlipTok的开发过程充满乐趣，其交付历程也取得了巨大成功。我十分期待继续完善KlipTok，在扩展应用功能的同时探索并展示更多Blazor与Azure的炫酷特性。如有疑问或建议，欢迎在Twitch上联系我。"
+      }
+    },
+    {
+      "segment_id": "f8edb6d2",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践练习"
+      }
+    },
+    {
+      "segment_id": "85aeef6c",
+      "source_content": "* **Want to see this Azure Static Web App in action**? Click over to [KlipTok](https://kliptok.com) and login with your Twitch account! Then browse the site  to have KlipTok start showing you clips from your favorite creators. \n * **Want to explore building your own Azure Static Web App with Blazor?** Check out my [earlier blog post](/blog/build-with-blazor#exercise-remix-fritzs-hats) for a great exercise where you'll start with my open-source project - [Fritz's Really Cool Hats](https://github.com/csharpfritz/Fritz.HatCollection) - to customize, build and deploy a Blazor-powered app to Azure Static Web Apps.",
+      "source_content_hash": "6f7e994c73d35105427c1326670ca411f264c859a6225f381da238adc68bc192",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **想体验这个Azure静态Web应用的实际效果？** 立即访问[KlipTok](https://kliptok.com)并用Twitch账号登录！浏览网站后，KlipTok将开始为你推荐关注创作者的热门剪辑。\n* **想尝试用Blazor构建自己的Azure静态Web应用？** 参考我的[早期博客文章](/blog/build-with-blazor#exercise-remix-fritzs-hats)，通过我的开源项目——[Fritz的炫酷帽子收藏](https://github.com/csharpfritz/Fritz.HatCollection)——来自定义、构建并部署Blazor应用到Azure静态Web应用。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-26.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.872488+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "158f69043d35bdd9558fbe851e3de270a1cc4ea4e332fc015c1be653691039de"
+  }
+}

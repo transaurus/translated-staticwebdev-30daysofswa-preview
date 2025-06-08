@@ -1,0 +1,332 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-02.md",
+  "source_file_content_hash": "1dd92800e1b22315d4b2f757c0c70a2e1335f172d4a31b20d10e786a131115cc",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: introducing-swa\ntitle: \"#01: Introducing SWA\"\nauthors: [simona, nitya]\ntags: [swa, 30days, core-concepts]\ndraft: false\n---",
+      "source_content_hash": "618ea4ac6fb106697c4d107e488f97d8ea0499f9ca4d8030f6071f5a097b9e0a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 1, Day 1` of **#30DaysOfSWA**!!",
+      "source_content_hash": "b3548658eeeb7184d995deb40f08705a06e61d547fa0a72aa01ae75b62ca4e34",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的`第1周第1天`！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "This week, we'll focus on the **Core Concepts** behind Azure Static Web Apps, starting with an introduction to SWA and continuing on to building, enhancing, and deploying, your SWA for users to experience. Let's get started today by _Introducing Static Web Apps_.",
+      "source_content_hash": "b456fff58ca5c62f30488b830576e2f7f1b46c9eed42b3e613f1047c299edaa9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本周我们将聚焦于Azure静态Web应用的核心概念，从SWA的简介开始，逐步深入到构建、增强和部署你的SWA以供用户体验。今天，让我们从《静态Web应用入门》开始。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "* What is Azure Static Web Apps?\n * How is it architected?\n * Where can I use it?\n * 10 Key Features to know\n * **Exercise:** Explore SWA Examples!\n * **Resource:** [Static Web Apps Overview](https://docs.microsoft.com/en-us/azure/static-web-apps/overview)",
+      "source_content_hash": "396bd9159ffc634674e1d8df0d003d5ffd376c5c17341dad4113868222f56fa2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 什么是Azure静态Web应用？\n * 其架构设计如何？\n * 可在哪些场景使用？\n * 10个关键特性\n * **实践：** 探索SWA示例！\n * **资源：** [静态Web应用概述](https://docs.microsoft.com/en-us/azure/static-web-apps/overview)"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "![](../static/img/series/01-banner.png)",
+      "source_content_hash": "8638ff10a60086c5d5adce3f34e9e4a3481e5bb273f2fd3c134bb001a7ce007d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/01-banner.png)"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## What is Azure SWA?",
+      "source_content_hash": "b04f48eba6ea5ebd312658f19156edb691e60a4677e35c126ff19c29f2b54bdd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 什么是Azure SWA？"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "[Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/overview) is a cloud-based service that **automatically** builds and deploys full-stack web apps to Azure **directly from your code repository**. The service works with popular code sources like GitHub, GitLab and BitBucket by default. Look for the _Deploying SWA_ post later this week where we walk through the details here.",
+      "source_content_hash": "55e5961bf32a3d66d1900ed95a2aa8129d7dd196ecaa28da57c4c68051c9ec0b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Azure静态Web应用](https://docs.microsoft.com/en-us/azure/static-web-apps/overview)是一项云服务，可**自动**从代码仓库直接构建并部署全栈Web应用到Azure。该服务默认支持GitHub、GitLab和BitBucket等常用代码源。本周后续的《部署SWA》文章将详细解析此流程。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "The benefit to you as a developer is that it **simplifies your developer experience**. Just commit changes to your application source code into the repository and step back. The SWA service monitors the codebase for changes, automatically rebuilding and redeploying your app to the hosted endpoint. Look for a _Previewing SWA_ post later this week where we'll talk about built-in support for previewing apps in non-main branches, or in pull requests, that make it easier to manage apps with multiple contributors.",
+      "source_content_hash": "fbc8dfe0bcb01b7b80907377beb427f28a2aee303b12248992ad3b26a0f5c573",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "对开发者而言，其优势在于**简化开发体验**。只需将应用源代码变更提交至仓库，剩余工作将由服务自动完成：SWA服务会监测代码库变更，自动重建并将应用部署至托管终端节点。本周《预览SWA》文章将介绍内置的多分支预览功能，该功能便于团队协作时管理非主分支或PR中的应用状态。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Prefer a 5-minute video overview? We have you covered!",
+      "source_content_hash": "f67323aa94058727820795f09db55dcfec59b45a9fdef9b2815e851ec33923d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更倾向5分钟视频概览？我们已为您准备好！"
+      }
+    },
+    {
+      "segment_id": "99d14dfd",
+      "source_content": "<iframe width=\"560\" height=\"315\" src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=what-is-azure-static-web-apps-and-what-can-it-be-used-for-1-of-16--azure-tips-and-tricks-static-web-\"  frameborder=\"0\" ></iframe>",
+      "source_content_hash": "6f77b8348b93de70b4fe501195217f230715a0fcd2fbacbbca4c84fee1dbb1b3",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_99d14dfd"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## How is it Architected?",
+      "source_content_hash": "c5451e778b50b0b63227c5ae68181a9308c344613c7a3deb4025f63442cff0d3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 架构设计"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Static Web Apps can be built using popular front-end frameworks including React, Angular, Vue, Svelte, or Blazor. These apps typically consist of a collection of **static content assets** (HTML, JS, CSS and media files) coupled with a **dynamic API endpoint** to handle client interactions in real time.",
+      "source_content_hash": "96d52e73a98d4b289182b240794c020781ce970ee2be41142d806a04986954d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "静态Web应用可采用React、Angular、Vue、Svelte或Blazor等主流前端框架构建。这类应用通常由**静态资源文件**（HTML、JS、CSS及媒体文件）与**动态API端点**组成，后者用于实时处理客户端交互。"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "Traditional web application deployments use a _single web server_ to serve both the static assets and the API endpoint. This can make scaling these services sub-optimal in terms of global availability and runtime costs.",
+      "source_content_hash": "61b1fa7496f7da15bb45c7828535e41e31a637b07b8da40ac356635d666598a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "传统Web应用部署使用_单一Web服务器_同时托管静态资源和API端点，这在全球可用性和运行时成本方面的扩展性表现欠佳。"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "With Static Web Apps, we **separate static assets from API endpoints**, allowing each to be scaled using the technology best equipped to do this in a cost-effective manner.",
+      "source_content_hash": "7f61abb3b3edd2b3ebb0dd974aa9cb0fcf38e5f7195045ccb115d47bdd53056c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "静态Web应用采用**动静分离架构**，使各组件能通过最适合的技术实现成本效益最优的扩展："
+      }
+    },
+    {
+      "segment_id": "8a01ee7b",
+      "source_content": "* Static assets get served from geographically-distributed content servers worldwide, distributing the load and speeding up access to users nearby.\n * API endpoints are hosted using a [serverless architecture](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview), spinning up compute resources (to execute functions) only as needed, in response to trigger events.",
+      "source_content_hash": "2f1fb385c0d6ea040e0eb72aa4eda05589f7db421b8328a9a7fd977368d73880",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 静态资源通过全球分布式的内容服务器交付，分散负载并提升就近用户的访问速度\n * API端点采用[无服务器架构](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)托管，根据触发器事件按需启动计算资源"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "This architecture - with static content servers, serverless backends, and automated CI/CD workflows - simplifies your development workflow **allowing you to focus your attention on the application logic and user experience** components of your modern web application.",
+      "source_content_hash": "0b19ce93a2351b391d6f4636c45fcf79af869a985d347451a773dda7acbd9e1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这种结合CDN静态托管、无服务器后端和自动化CI/CD工作流的架构，让开发者能专注于现代Web应用的**业务逻辑与用户体验优化**。"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "![](../static/img/series/01-swa-overview.png)",
+      "source_content_hash": "7391d5c183017454570591d5ccfb62cbd2218936d6d5c7729c7b60b57f0b03bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/01-swa-overview.png)"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Where can I use it?",
+      "source_content_hash": "8061e0248d9a1f0ef825b25ad60596f27f3347bb0f82a75c6240b79fd140f5c6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 适用场景"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "That's a great question!! You can use Static Web Apps to:",
+      "source_content_hash": "05ed6f2bb9bcf6b5a533240df7e21a1bc4fd9fc8591cc17c888aec8eb5c8482d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是个好问题！静态Web应用适用于："
+      }
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "* Build modern web apps with front-end frameworks (like Angular, React, Vue etc.)\n * Publish static web sites (using Gatsby, Hugo, Astro, Docusaurus, VuePress etc.)\n * Deploy web apps with frameworks like Next.js and Nuxt.js.",
+      "source_content_hash": "7b9033aa117f86125689a84b25d7f20cf2017dd3c817fd7b199b9621a0e37aff",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 使用前端框架（如Angular、React、Vue等）构建现代Web应用\n * 发布静态网站（采用Gatsby、Hugo、Astro、Docusaurus、VuePress等工具）\n * 部署Next.js和Nuxt.js等框架的Web应用"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "You can [**configure your existing application**](https://docs.microsoft.com/en-us/azure/static-web-apps/front-end-frameworks) to use Azure Static Web Apps using an IDE like VS Code, or using Command-line tools (like Azure CLI and SWA CLI), or through the browser (using the Azure Portal). Look for two posts later this week that dive into this in detail:",
+      "source_content_hash": "7f3bf812957c554be584afec3ff5fd8e8e2591a16ef96a6f4472d945425e8411",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "你可以通过以下方式[**配置现有应用程序**](https://docs.microsoft.com/en-us/azure/static-web-apps/front-end-frameworks)以使用Azure静态Web应用：使用VS Code等IDE、命令行工具（如Azure CLI和SWA CLI）或浏览器（通过Azure门户）。本周后续将有两篇文章深入探讨此内容："
+      }
+    },
+    {
+      "segment_id": "36ab8340",
+      "source_content": "* _Building SWA_ (tomorrow) on getting started with using SWA in your app.\n * _Configuring SWA_ (later) on customizing app behaviors and build process.",
+      "source_content_hash": "4d7686332964642d132b0295868eca8b9cf92124cb1c7aef30bde1f27636e387",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 《构建SWA》（明日发布）：介绍如何在应用中开始使用SWA\n * 《配置SWA》（后续发布）：讲解自定义应用行为和构建流程"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "But wait - there's one more thing.",
+      "source_content_hash": "110073e9d3b47471abf974a764a7c53e96090355df4600389d17443304e24b49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但请稍等——还有一项重要通知"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "**Keep an eye out for an announcement later in the series** where we'll be debuting a new [Community Showcase](/showcase) page - here's a sneak preview. You can filter it to see examples from popular front-end technologies, select \"open source\" to see the repository for inspiration - **and consider adding your own project** at the end of your journey!",
+      "source_content_hash": "0bfd5d3e1fe962adccfc665c8e5304d4a48e5e78053b2d57d360873fb64a818f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**请持续关注本系列后续公告**，我们将推出全新的[社区展示墙](/showcase)页面（此处为预览图）。您可按流行前端技术筛选案例，选择\"开源\"查看灵感代码库——**并考虑在旅程结束时提交自己的项目**！"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "![](../static/img/png/swa-showcase.png)",
+      "source_content_hash": "c6228aaa4ed8c12e5228415011b75d511cfa6c56a7a40effc8d1f6108d2b40b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/png/swa-showcase.png)"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "## 10 Things To Know!",
+      "source_content_hash": "c17e0a2a6cfc483c96708862dfc639d6a5d3b2f63282a3c37dcd65e028e561d9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 十大核心特性"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "We've talked about what SWA is, how it's architected, and where you can use it. But what are the key features that make it powerful? [**Read the Documentation**](https://docs.microsoft.com/en-us/azure/static-web-apps/overview#key-features) for the detailed list - or scan the visual guide below for a summary!",
+      "source_content_hash": "e841307ecc847d79c55dccdae1fcaf693e6d84c9f7618b11aabcfc3c34e48946",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们已探讨了SWA的定义、架构和应用场景。但使其强大的关键特性是什么？[**查阅文档**](https://docs.microsoft.com/en-us/azure/static-web-apps/overview#key-features)获取完整列表，或通过下方图示快速了解概要！"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "![](../static/img/series/01-ten-things.png)",
+      "source_content_hash": "b837316a44c174f13725fed6625cc4347126b5aef3d74a2e35ace5d000980c8f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/01-ten-things.png)"
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## Exercise:",
+      "source_content_hash": "065c73e3519d375a2bb5587ee9ccd2ae52435872b584df696733762233ca8fdb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践任务："
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "That was a lot to digest right?  It helps to see some of these ideas in action. So here's two things you can do before we dive into the quickstart tomorrow:",
+      "source_content_hash": "dc3be41e5f8dc9dd9f6187d5cfde6203a25730f595a11255ee970992b758d949",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "信息量较大对吗？通过实际案例能更好理解这些概念。在明天开始快速入门之前，您可以先完成两项准备："
+      }
+    },
+    {
+      "segment_id": "1316cb90",
+      "source_content": "* Visit the [Showcase Gallery](https://github.com/microsoft/static-web-apps-gallery-code-samples) repository to see some examples of SWA in Action.\n * Follow the [#staticwebapps](https://dev.to/t/staticwebapps) tag to see community-posted articles on usage.",
+      "source_content_hash": "16a37949170a58d908b7fb0d428bbb09c4b790e1517b9d5cf6cc5d23894a0b79",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 访问[示例展示库](https://github.com/microsoft/static-web-apps-gallery-code-samples)查看SWA实际应用案例\n * 关注[#staticwebapps](https://dev.to/t/staticwebapps)标签获取社区发布的使用教程"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-02.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.876243+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "1dd92800e1b22315d4b2f757c0c70a2e1335f172d4a31b20d10e786a131115cc"
+  }
+}

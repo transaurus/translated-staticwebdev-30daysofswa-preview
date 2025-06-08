@@ -1,0 +1,552 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-07.md",
+  "source_file_content_hash": "e23fc06febff95d705cd649bf77af5e1c4a1d4925b510bb6ad682d5e13e54868",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: previewing-swa\ntitle: \"#06: Previewing SWA\"\nauthors: [nitya, michail]\ntags: [swa, 30days, core-concepts]\ndraft: false\n---",
+      "source_content_hash": "8f5feee78a44a33f9073b255550472b6e174bb2b7623676b060a7e2e25c812e6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 1, Day 6` of **#30DaysOfSWA**!!",
+      "source_content_hash": "36d8e1de83b6654f75ee8a358689ce72483e6cbff66a7f7dd166cb52fb304cac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的第1周第6天！！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "We're almost at the end of week 1!! 🎉",
+      "source_content_hash": "e3e8cc07773c33682cc1b4c5b2dbc49af82d0da09621b56f71eb9e57f7850ce1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们即将完成第一周的学习！！🎉"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "So far, we've learned how we can use the _static assets hosting_ (Azure Static Web Apps) and _serverless API_ (Azure Functions) capabilities to build and deploy a web application in a scalable and cost-effective way. And we learned to _configure_ and _secure_ our Static Web App to suit our needs. So what else do we need to talk about?",
+      "source_content_hash": "911a7d59af914e3db39d953d792a37c303694d75bb46b78f8affc790d06a56c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "截至目前，我们已经学习了如何利用_静态资产托管_(Azure Static Web Apps)和_无服务器API_(Azure Functions)功能来构建并部署一个具备可扩展性和成本效益的Web应用程序。我们还学会了如何根据需求_配置_和_保护_静态Web应用。那么还有什么需要探讨的呢？"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "**Deployment** options? Let's do it!! We've talked about the default experience so far: deploy from a _production_ branch, using _GitHub_ Actions for CI/CD. But how do we handle **previewing** the Static Web App before production deploys? Let's talk about previewing SWA in pull requests, on non-production branches, and in pre-configured named environments that make our staging workflows more productive.",
+      "source_content_hash": "79d69e9539fb138d272f26c03c5d6e19e8ef65441d0f5eec6b052a19b0b05d26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**部署**选项？让我们开始吧！此前我们讨论的是默认体验：从_生产_分支部署，使用_GitHub_ Actions实现CI/CD。但如何在生产部署前**预览**静态Web应用？我们将探讨如何在拉取请求中预览SWA、在非生产分支预览，以及通过预配置的命名环境使我们的预发布工作流更高效。"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 今日要点"
+      }
+    },
+    {
+      "segment_id": "034de896",
+      "source_content": "* What types of deployment does SWA support?\n * _Previewing_: in Pull Requests\n * _Previewing_: in Non-Production Branches\n * _Previewing_: in Named Environments\n * _Deploying_: to Custom Domains\n * **Exercise:** [Review PR using SWA Preview Capability](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests)",
+      "source_content_hash": "d2251ee96ac01ae34defe27e4a37ecf6b8d71ab489a1b2ecf9118c87108c3d1a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* SWA支持哪些部署类型？\n * _预览功能_：在拉取请求中\n * _预览功能_：在非生产分支\n * _预览功能_：在命名环境中\n * _部署功能_：到自定义域名\n * **实践练习:** [使用SWA预览功能审查PR](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests)"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "![](../static/img/series/06-banner.png)",
+      "source_content_hash": "a23277c5aa157790669e8c05e70a2e154b94b5b45613bbac208474fef8649c01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/06-banner.png)"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Deployment Types",
+      "source_content_hash": "83b6ab6bfa8fe5febda66e4bbaf414567af8ee2b3b0b29718b38b83a9b18badc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 部署类型"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "When we think about deployment, we are typically thinking of two kinds of environments: _production_ which serve as the primary endpoint for real world use, and _staging_  that can be used for internal testing, early validation of preview releases.",
+      "source_content_hash": "89f2e054cfe014dc7895c5d361713571c56deb980c3aea3f5286221862cdf714",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当我们考虑部署时，通常涉及两类环境：作为实际使用主入口的_生产环境_，以及用于内部测试和预览版早期验证的_预发布环境_。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Azure Static Web Apps has built-in support for four types of environments:",
+      "source_content_hash": "b4894242a63a4f48827fcc51f5a09fc8723a2f4df665adb4d4fca74dddd37647",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps 原生支持四种环境类型："
+      }
+    },
+    {
+      "segment_id": "f2c8a42b",
+      "source_content": "* _Production_: This is the real world deployment endpoint that is **indexed by search engines**, and associated with the custom domain (if configured).\n * _Pull Request (PR)_: This is a **temporary** environment setup for a Pull Request, and torn down when that PR is closed.\n * _Branch_: This is a environment you can set up for non-production branches, at a **stable** URL for the lifetime of the branch.\n * _Named_: The above environments have URLs that reflect their PR (number) or branch (name). You can also configure a **stable** preview environment with a fixed name, associated with some deployment context (e.g., an interim release)",
+      "source_content_hash": "ff4347ed6bfc2f154370d7585f7f272b66900a14dd3843eda023c4c7f13c7a12",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* _生产环境_：这是真实世界的部署入口，会被**搜索引擎索引**，并可关联自定义域名（若已配置）。\n * _拉取请求(PR)环境_：这是为拉取请求建立的**临时**环境，当PR关闭时会被拆除。\n * _分支环境_：这是为非生产分支建立的**长期稳定**环境，URL在该分支存续期间保持不变。\n * _命名环境_：上述环境的URL会反映PR编号或分支名称。您也可以配置具有固定名称的**稳定**预览环境，关联特定部署上下文（例如临时版本）。"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Production deploys have URLs like `<DEFAULT-HOSTNAME>-<NUMBER>.azurestaticapps.net` where the `DEFAULT-HOSTNAME` is unique for each application.",
+      "source_content_hash": "af8f250f731902f4fa39a8450f572d8de6520db68ed59da6aaf20a26b0ac3073",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "生产部署的URL格式为`<默认主机名>-<编号>.azurestaticapps.net`，其中`默认主机名`对每个应用唯一。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "With _preview_ environments, the URL looks like: `<DEFAULT_HOSTNAME>-<BRANCH_OR_ENVIRONMENT_NAME>.<LOCATION>.azurestaticapps.net` where the `LOCATION` reflects the deployment region, and the `BRANCH_OR_ENVIRONMENT_NAME` can also take the form of a branch name, a named environment, or a number in the case of pull requests.",
+      "source_content_hash": "6979335e65ec0b739e1edcc57f1e9511119b9c6cb7add8d5de5601002ef13ed6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_预览_环境的URL格式为：`<默认主机名>-<分支或环境名称>.<区域>.azurestaticapps.net`，其中`区域`反映部署地理位置，`分支或环境名称`可以是分支名、命名环境或拉取请求编号。"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Let's take a brief look at each of these.",
+      "source_content_hash": "c5ae657ae9866fbdbb2ae3b7fdea4fb7c43f766626c8fea577fd66864963a1dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "让我们简要了解每种类型。"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## Pull Requests",
+      "source_content_hash": "98b854ff204836d218ad6daa8c0f4c2fd989b3249252dc53054370edc2c81d76",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 拉取请求"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Currently Pull Request _preview environments_ are available for projects hosted in GitHub, and configured to use GitHub Actions by Azure Static Web Apps:",
+      "source_content_hash": "b5ae9cd27fa74c7571d9b80a7d14ae449d777c54925c3bd75fbed3f16f613343",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当前拉取请求_预览环境_仅适用于托管在GitHub且配置了GitHub Actions的项目："
+      }
+    },
+    {
+      "segment_id": "6773b78b",
+      "source_content": "* Every PR to a _watched branch_ gets a dedicated but **temporary** pre-production staging environment that is torn down when the PR is closed.\n  * Use it to validate changes, perform sanity checks, etc.\n  * The environment is automatically rebuilt and deployed if new commits are made to the branch associated with an active PR.\n  * The staged environment is _publicly visible_ event if your GitHub repo is private - though the URL is not easily discoverable (i.e., not indexed by search engines) by default.",
+      "source_content_hash": "4248ab080bcbbd942798c3f8d20f8c76ef02a891b6847a0fde1d0186cdfe7cbe",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 每个发往_受监控分支_的PR都会获得一个**临时**预发布环境，该环境在PR关闭时自动拆除。\n  * 用于验证变更、执行完整性检查等\n  * 如果向关联PR的分支提交新代码，环境会自动重建部署\n  * 即使GitHub仓库是私有的，预览环境也_对外可见_——不过默认情况下URL不易被发现（即不被搜索引擎索引）"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Learn how to [preview Pull Requests in Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests).",
+      "source_content_hash": "3669257a3d543de1c6a68916535055bfdf0226c672f9b73e12bc870f9a83e455",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "了解如何[在Azure Static Web Apps中预览拉取请求](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests)。"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "## Branches",
+      "source_content_hash": "5154035001eb39070ba322c22bb8b67327d94c4781789c60912dc1e504863020",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 分支"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "Preview environments for branches will have **stable** URLs. Configure them in the relevant _GitHub Actions_ or _Azure Pipelines_ workflow files as [shown in this example](https://docs.microsoft.com/en-us/azure/static-web-apps/branch-environments?tabs=github-actions#example).",
+      "source_content_hash": "64087bfd1d997f1f2b257d60bc079718f1d33e4bd5e67d530e263f573d0b4eba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "分支的预览环境将拥有**稳定**的URL。在相关的_GitHub Actions_或_Azure Pipelines_工作流文件中进行配置，如[此示例所示](https://docs.microsoft.com/en-us/azure/static-web-apps/branch-environments?tabs=github-actions#example)。"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "For example, in a GitHub Actions context, this involves two steps:",
+      "source_content_hash": "0c1d15fa6fcba12d7567f8de17e07d1a7318ad1dafaf3967774c58aee34d3088",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "例如，在GitHub Actions环境下，这涉及两个步骤："
+      }
+    },
+    {
+      "segment_id": "24c174ca",
+      "source_content": "* set the `production_branch` property to the branch you want to use as the source for that production deployment.\n * list all other branches that you want preview environments for under `trigger` (Azure Pipelines) or `push: branches` (in GitHub Actions).",
+      "source_content_hash": "47e94c9e6249f84cc598a068d31517fd1f363a70e232c677b6a30c891a9c6980",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 将`production_branch`属性设置为要用作生产部署源的指定分支。\n* 在`trigger`（Azure Pipelines）或`push: branches`（GitHub Actions）下列出所有需要创建预览环境的其他分支。"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "You can use a wildcare (`**` for GitHub Actions, `*` for Azure Pipelines) if you want to track _all_ branches for preview environment support.",
+      "source_content_hash": "184d356e0f5d3321535b73a6c7115bd7a4517b04c2223399563be703d34502ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若需为所有分支提供预览环境支持，可使用通配符（GitHub Actions用`**`，Azure Pipelines用`*`）。"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "Here's an example GitHub Actions config file - the **production** environment is built from the _main_ branch, and separate **preview** environments are built for the other listed branches (_dev_ and _staging_).",
+      "source_content_hash": "a7771c9a18ad312278e912d4f83cbcd02967f863761871502af925e04aa82ee2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下是一个GitHub Actions配置文件的示例——**生产**环境基于_main_分支构建，同时为其他指定分支（_dev_和_staging_）创建独立的**预览**环境。"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "Learn how to [create branch preview environments in Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/branch-environments?tabs=github-actions).",
+      "source_content_hash": "13ee0bc2dee9f4b2f5e366db590bb704f4436b76326193a59856a01a0f15c99a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "了解如何[在Azure Static Web Apps中创建分支预览环境](https://docs.microsoft.com/en-us/azure/static-web-apps/branch-environments?tabs=github-actions)。"
+      }
+    },
+    {
+      "segment_id": "17c579d2",
+      "source_content": "```\nname: Azure Static Web Apps CI/CD\n\non:\n  push:\n    branches:\n      - main\n      - dev\n      - staging\n  pull_request:\n    types: [opened, synchronize, reopened, closed]\n    branches:\n      - main\n\njobs:\n  build_and_deploy_job:\n    ...\n    name: Build and Deploy Job\n    steps:\n      - uses: actions/checkout@v2\n        with:\n          submodules: true\n      - name: Build And Deploy\n        id: builddeploy\n        uses: Azure/static-web-apps-deploy@v1\n        with:\n          ...\n          production_branch: \"main\"\n```",
+      "source_content_hash": "8ba1f3cc5475bf0672f04d8a6f5bb594a89720fcbcf852b4dfe651716c3c4908",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_17c579d2"
+      }
+    },
+    {
+      "segment_id": "a138e327",
+      "source_content": "## Named Envs",
+      "source_content_hash": "b04aac492351d72da66d32a7a36a347c9797f44e58be598d3b27acc49d5ca3e5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 命名环境"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Sometimes, you want to have a non-production preview environment that is at _stable_ URL (not tied to a specific PR number or branch name), and that gets rebuilt on commits to _all tracked branches_ in the configuration file.",
+      "source_content_hash": "fa48f5c61ae8a33f261f0087593e2cecaa2cb287a035488ae555d158ccea42db",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "有时，您可能需要一个非生产的预览环境，其URL保持**稳定**（不关联特定PR编号或分支名称），且会在配置文件中所有被跟踪分支提交时触发重建。"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "Just like with branches, this requires a manual change to your default configuration file (GitHub Actions or Azure Pipelines) as [shown in this example](https://docs.microsoft.com/en-us/azure/static-web-apps/named-environments?tabs=github-actions#configuration).",
+      "source_content_hash": "d3014adae325bb84e8f4caffe35f95bf7ce47edad790e03fee55963487f2738b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "与分支配置类似，这需要手动修改默认配置文件（GitHub Actions或Azure Pipelines），如[此示例所示](https://docs.microsoft.com/en-us/azure/static-web-apps/named-environments?tabs=github-actions#configuration)。"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "In the GitHub Actions case, the steps are:",
+      "source_content_hash": "d4c0e4cb70eec649f90835ef4e685eecd85aa957861d4d1262992f2ddbb15ebc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在GitHub Actions场景中，步骤如下："
+      }
+    },
+    {
+      "segment_id": "664ad8b1",
+      "source_content": "* Set the `deployment_environment` property (in the relevant build job) to be the **name** you want to use for this preview environment\n * List the branches you want associated with this named environment under `push: branches` - commits to those will result in rebuild/deploy to this environment.",
+      "source_content_hash": "d8adbedc7c0defd0f89dd6ad5184742c28a4fdb96cc9c3b1b9598f656b8a6e54",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 将`deployment_environment`属性（在相关构建任务中）设为此预览环境的**名称**。\n* 在`push: branches`下列出与此命名环境关联的分支——这些分支的提交将触发该环境的重建和部署。"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "Here's an example GitHub Actions configuration file - this sets up a named environment called **release** which gets updated when changes are made to **any** branch (reflected by the `**` wildcard), and deployed to a site with a URL like `<DEFAULT_HOST_NAME>-release.<LOCATION>.azurestaticapps.net`.",
+      "source_content_hash": "f279843b8ff9fc68aae37699681012d0e441f70c06b4a3ffadd0d2d79b94cfbb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是一个GitHub Actions配置示例——创建名为**release**的命名环境，当**任意**分支发生变更时（通过`**`通配符实现），该环境会更新并部署至类似`<DEFAULT_HOST_NAME>-release.<LOCATION>.azurestaticapps.net`的URL。"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "Learn about [named preview environments in Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/named-environments?tabs=github-actions)",
+      "source_content_hash": "d3522f14d9a86c46e49db852551bd1e059cc402dfe17b163ab847f08a3c1d7f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "了解[Azure Static Web Apps中的命名预览环境](https://docs.microsoft.com/en-us/azure/static-web-apps/named-environments?tabs=github-actions)"
+      }
+    },
+    {
+      "segment_id": "f155ef1e",
+      "source_content": "```\nname: Azure Static Web Apps CI/CD\n\non:\n  push:\n    branches:\n      - \"**\"\n  pull_request:\n    types: [opened, synchronize, reopened, closed]\n    branches:\n      - main\n\njobs:\n  build_and_deploy_job:\n    ...\n    name: Build and Deploy Job\n    steps:\n      - uses: actions/checkout@v2\n        with:\n          submodules: true\n      - name: Build And Deploy\n        id: builddeploy\n        uses: Azure/static-web-apps-deploy@v1\n        with:\n          ...\n          deployment_environment: \"release\"\n```",
+      "source_content_hash": "8c18a9437e4976450de1ab6cd0cb3f8b3e6670f7499310b1d42d3bad2fa2825d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_f155ef1e"
+      }
+    },
+    {
+      "segment_id": "af843cee",
+      "source_content": "## Custom Domains",
+      "source_content_hash": "307ca2694884c066849c8e20be77d3d15904571489d95473e27e0631bc49ad37",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 自定义域名"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "You may have noticed that default deployment URLs - in the form `XXX.azurestaticapps.net` for production environments or `XXX.<LOCATION>.azurestaticapps.net` for preview environments - are not exactly user friendly for use and recall.",
+      "source_content_hash": "420c32f2429732e776133bbbcff16c7b1ad59fa832b20780d9042aa764f93acd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可能已注意到，默认部署URL（生产环境形如`XXX.azurestaticapps.net`，预览环境形如`XXX.<LOCATION>.azurestaticapps.net`）并不便于用户记忆和使用。"
+      }
+    },
+    {
+      "segment_id": "be17ccc3",
+      "source_content": "Adding a custom domain helps. Azure Static Apps makes that easy with options to also configure **subdomains** and an **apex domain**! Here, given a domain like `www.azure.com`, `azure.com` is the apex domain and `www` is the relevant subdomain.",
+      "source_content_hash": "f744e19688b66a44b6cae1ada8bcc37c5f05339116bac0ed673482a54eefee9b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "添加自定义域名可解决此问题。Azure Static Apps支持配置**子域名**和**根域名**！例如，对于域名`www.azure.com`，`azure.com`是根域名，`www`是相关子域名。"
+      }
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "So how do you configure these? You have two options:",
+      "source_content_hash": "e163fea89a127ae0773b748bcde142c5ca69af8271cfe5b6dd1292bc74e0fd55",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如何配置这些域名？您有两种选择："
+      }
+    },
+    {
+      "segment_id": "f4e38e16",
+      "source_content": "* Use an **external DNS Provider** (if your domain registrar supports it)\n* Use **Azure DNS** (to manage your DNS domain, even if purchased elsewhere)",
+      "source_content_hash": "bf013b6cb8d060965b82022579784403010cf1beb501363445ae1c70861ca629",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 使用**外部DNS提供商**（如果您的域名注册商支持）\n* 使用**Azure DNS**（管理DNS域名，即使域名购自他处）"
+      }
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "To keep this post short, we won't go into details for each of these options. Instead check out these links based on the direction you want to go in:",
+      "source_content_hash": "2f5a645628ad19182bd52d766a47799da6123886c527a98c567ffe153184e176",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "为保持本文简洁，我们不再详述每种选项。请根据需求参考以下链接："
+      }
+    },
+    {
+      "segment_id": "415dc9ef",
+      "source_content": "* Setup Apex Domain - with [Azure DNS](https://docs.microsoft.com/en-us/azure/static-web-apps/apex-domain-azure-dns) | with [External Provider](https://docs.microsoft.com/en-us/azure/static-web-apps/apex-domain-external)\n * Setup Subdomain - with [Azure DNS](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain-azure-dns) | with [External Provider](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain-external)",
+      "source_content_hash": "e7444871fa23ad61ba381d92bd961ca95f094c8b7377e5a24e9a96c333714da6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 设置根域名 - 使用 [Azure DNS](https://docs.microsoft.com/en-us/azure/static-web-apps/apex-domain-azure-dns) | 使用 [外部提供商](https://docs.microsoft.com/en-us/azure/static-web-apps/apex-domain-external)\n * 设置子域名 - 使用 [Azure DNS](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain-azure-dns) | 使用 [外部提供商](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain-external)"
+      }
+    },
+    {
+      "segment_id": "e2bc0815",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "3c6dd548",
+      "source_content": "## How-Tos: Watch It!",
+      "source_content_hash": "ee0c680dc08a7da7380fb47927701ab32fdcc5680f1fc7bebfbf589574e796ad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 操作指南：视频演示"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "Prefer a Video Walkthrough to understand the process? We have you covered with the [Azure Tips And Tricks: Static Web Apps](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/) series. Check out this video to understand how you can setup a custom domain for your Static Web App!",
+      "source_content_hash": "03d94ff877338ffbdadc7a88ee4e32b355035ad2954ddfec18bc241bd4f98b74",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更喜欢通过视频了解操作流程？我们为您准备了 [Azure 技巧与窍门：静态 Web 应用](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/) 系列。观看此视频，了解如何为静态 Web 应用设置自定义域名！"
+      }
+    },
+    {
+      "segment_id": "5c5fbd5d",
+      "source_content": "<iframe   width=\"560\" height=\"315\" frameborder=\"0\"  src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-set-up-a-custom-domain-name-in-azure-static-web-apps-10-of-16--azure-tips-and-tricks-static-w\"></iframe>",
+      "source_content_hash": "2c981c764981fb0f1541b7e64145ebfcfd9f7f2ef964eeae7f3e5b46921f49e1",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_5c5fbd5d"
+      }
+    },
+    {
+      "segment_id": "c81952ce",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "657bde08",
+      "source_content": "## Exercise: Try it!",
+      "source_content_hash": "bc55f0f2c08841e4e70a501f60c77e3f8758d23328aa6889164ee4e76e057c0a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习：动手尝试！"
+      }
+    },
+    {
+      "segment_id": "827eb9a3",
+      "source_content": "**Pull Requests** are critical to having a productive open source or multi-contributor project, so it's important to know how Azure Static Apps works in setting up **pre-production** environments for validating the changes proposed in a pull-request, before merging it for production deployment.",
+      "source_content_hash": "7528582929daa1dc1c618548673b3d86cf01eb5dff9a6897a7a6adeb35caf355",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**拉取请求**对于高效开展开源或多贡献者项目至关重要，因此了解 Azure 静态应用如何在合并到生产部署之前，为验证拉取请求中的变更设置**预生产**环境非常重要。"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "Get hands-on experience with the process by completing [this tutorial](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests) on an existing Azure Static Web Apps project.",
+      "source_content_hash": "6021b80149f7e6dddf9fd58916b9cb171ae348de22507be26a749d245c56f5fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过完成[本教程](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests)，在现有的 Azure 静态 Web 应用项目上获得实际操作经验。"
+      }
+    },
+    {
+      "segment_id": "89cf7bac",
+      "source_content": "_At present, the staged pre-production environment for Pull Requests is available only for GitHub Actions deployments - so make sure you pick a GitHub-hosted SWA project that already had the default workflows set up_.",
+      "source_content_hash": "9faffdf3a29126c93cead6ff831fa2d0c177e9462f9626e8d7d55f9a4e90c908",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_目前，拉取请求的分阶段预生产环境仅适用于 GitHub Actions 部署 - 因此请确保选择一个已设置默认工作流的 GitHub 托管的 SWA 项目_。"
+      }
+    },
+    {
+      "segment_id": "4b6c0556",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "a75f8411",
+      "source_content": "## Useful Resources",
+      "source_content_hash": "199ff2f5e8aba1500eadf7f3173a271b0d0e0c499dc71756f74b2be573bfe05a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实用资源"
+      }
+    },
+    {
+      "segment_id": "471486dc",
+      "source_content": "1. [Preview environments in Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/preview-environments)\n2. [Pull-Request Preview Environments](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests)\n3. [Branch Preview Environments](https://docs.microsoft.com/en-us/azure/static-web-apps/branch-environments)\n4. [Named Preview Environments](https://docs.microsoft.com/en-us/azure/static-web-apps/named-environments)\n5. Video Series: [Azure Tips And Tricks - Static Web Apps](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/)\n6. [About Custom Domains](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain)",
+      "source_content_hash": "ce5fc6eeeba7d20a4f8738891ab579326d906693e2be501c24cef7356329e0e9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. [Azure 静态 Web 应用中的预览环境](https://docs.microsoft.com/en-us/azure/static-web-apps/preview-environments)\n2. [拉取请求预览环境](https://docs.microsoft.com/en-us/azure/static-web-apps/review-publish-pull-requests)\n3. [分支预览环境](https://docs.microsoft.com/en-us/azure/static-web-apps/branch-environments)\n4. [命名预览环境](https://docs.microsoft.com/en-us/azure/static-web-apps/named-environments)\n5. 视频系列：[Azure 技巧与窍门 - 静态 Web 应用](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/)\n6. [关于自定义域名](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-07.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.878700+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "e23fc06febff95d705cd649bf77af5e1c4a1d4925b510bb6ad682d5e13e54868"
+  }
+}

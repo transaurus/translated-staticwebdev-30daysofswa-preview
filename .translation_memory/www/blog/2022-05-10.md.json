@@ -1,0 +1,322 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-10.md",
+  "source_file_content_hash": "2f0e35b4a9f81ebe25dcce56d0d64ebf14155d89fde821c77d2e4b762c770029",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: build-with-react\ntitle: \"#09: Manage Inventory - with React\"\nauthors: [chris]\ntags: [swa, 30days, usage-examples, react]\ndraft: false\n---",
+      "source_content_hash": "3b9e73cc573dc05c73a617d56b46030341dfff0f1b870da9f5fd87031bc77712",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 2, Day 2` of **#30DaysOfSWA**!!",
+      "source_content_hash": "dc922f1c519c57a0ef9d7910863ce0d7c58659cd39ebbb6e1a56c3c1e8755879",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的第二周第二天！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Yesterday we looked at using a static site builder (namely [Astro](https://astro.build)) to create a personal blog and host it with Azure Static Web Apps. Over the next two days, we switch gears and look at using Azure Static Web Apps with some popular _front-end frameworks_ - starting today with [React](https://reactjs.org/).",
+      "source_content_hash": "7d7ba3570eee20ef8dd711a5aa3b8db73b3c49c50e18156dfabfc67094c8fd36",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "昨天我们探讨了如何使用静态站点生成器（特别是 [Astro](https://astro.build)）创建个人博客并将其托管在 Azure Static Web Apps 上。接下来的两天，我们将转换方向，研究如何将 Azure Static Web Apps 与一些流行的 _前端框架_ 结合使用——今天从 [React](https://reactjs.org) 开始。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 我们将涵盖的内容"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "* Why Learn React?\n * React + SWA: Quickstart\n * Build: Inventory Management App\n * **Exercise:** Build & Deploy a basic React SWA.",
+      "source_content_hash": "873bf419417672e80df8fd7a381e6f573491658a72aa709b510d0f1860616e53",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 为什么要学习 React？\n * React + SWA：快速入门\n * 构建：库存管理应用\n * **练习：** 构建并部署一个基础的 React SWA。"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "![](../static/img/series/09-banner.png)",
+      "source_content_hash": "96ae692009c51b4ee21ba7ee993a2700917ba438ffb7e8d839527d32065c7985",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/09-banner.png)"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Why Learn React?",
+      "source_content_hash": "9e3f125949cbf1e008b3920144404aa6c40ced1863cd3677e6de6f197c6ee8c8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 为什么要学习 React？"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "React describes itself as [a JavaScript library for building user interfaces](https://reactjs.org/) that targets single-page application (SPA) development with a declarative and component-based approach. Today, it's one of the most popular technologies used for web development, leading the [2021 rising stars of JavaScript](https://reactjs.org/) section for front-end frameworks. Whether you're new to web development, or an experienced developer, it's a technology worth learning.",
+      "source_content_hash": "27863a2e167de124f0086b68270aafcbe43d1af96a89ce60d57ddf371964c4ef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "React 自称是 [一个用于构建用户界面的 JavaScript 库](https://reactjs.org/)，采用声明式和组件化的方式开发单页应用（SPA）。如今，它已成为最受欢迎的 Web 开发技术之一，在 [2021 年 JavaScript 新星](https://reactjs.org/) 的前端框架类别中名列前茅。无论你是 Web 开发新手还是经验丰富的开发者，React 都是一项值得学习的技术。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "New to React? Here are a couple of resources:",
+      "source_content_hash": "52819fecc690d9331b24edb984f88d3571105e1a6aa40e44a14c2998653f3a33",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "React 新手？这里有一些资源供你参考："
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "* [Official Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)\n * [Creating your first web apps with React](https://docs.microsoft.com/en-us/learn/paths/react/) - on Microsoft Learn\n * [Web Dev For Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) - project-based curriculum",
+      "source_content_hash": "0ee250fba74ab4860244fac6131754313d779981cbbf90ac790644cca7436cdd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [官方教程：React 入门](https://reactjs.org/tutorial/tutorial.html)\n * [使用 React 创建你的第一个 Web 应用](https://docs.microsoft.com/en-us/learn/paths/react/) - 在 Microsoft Learn 上\n * [Web 开发初学者指南](https://github.com/microsoft/Web-Dev-For-Beginners) - 基于项目的课程"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "`",
+      "source_content_hash": "8d33f520a3c4cef80d2453aef81b612bfe1cb44c8b2025630ad38662763f13d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "`"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## SWA Quickstart",
+      "source_content_hash": "91f6cf6adc204e84cfb93b65ead4a74508edf66fd2c80025b87bb43cb2eff4c9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## SWA 快速入门"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Once you have a simple React application scaffolded, configuring it to use Azure Static Web Apps is easy. In week 1, we covered the three different approaches (using Visual Studio Code, using Azure Portal, using Azure CLI) to build and deploy a vanillaJS app.",
+      "source_content_hash": "a8a31fd94da9dc44ab201877b1e3448aefa25f620acb763cd0f8c31815deaab1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "一旦你搭建了一个简单的 React 应用，配置它使用 Azure Static Web Apps 就变得非常简单。在第一周，我们介绍了三种不同的方法（使用 Visual Studio Code、使用 Azure 门户、使用 Azure CLI）来构建和部署一个 vanillaJS 应用。"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Want to try building and deploying a basic React starter app? The Azure Static Web Apps documentation has **Quickstarts** to help!",
+      "source_content_hash": "4dff76d61e2f4f30251420c206f0e06590d4bfc0033581045f7f171210c57985",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想尝试构建并部署一个基础的 React 入门应用吗？Azure Static Web Apps 文档提供了 **快速入门** 指南来帮助你！"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "The following tutorials use the [react-basic](https://github.com/staticwebdev/react-basic) starter template bootstrapped using [create-react-app](https://github.com/facebook/create-react-app). Pick an option based on your preferred development environment:",
+      "source_content_hash": "7559f889d0c84bd6ab2be8f0fc4642b56c54f63acc72a977b44964e8a82771c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下教程使用了 [react-basic](https://github.com/staticwebdev/react-basic) 入门模板，该模板通过 [create-react-app](https://github.com/facebook/create-react-app) 创建。根据你偏好的开发环境选择一个选项："
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "* SWA Quickstart: [Using Visual Studio Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)\n * SWA Quickstart: [Using Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=react)\n * SWA Quickstart: [Using Azure Portal](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=react&pivots=azure-devops)",
+      "source_content_hash": "75e8d02d6ca42d146ffbd5d26bfc02c21d1f296c58874105ddaee772121ba827",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* SWA 快速入门：[使用 Visual Studio Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)\n * SWA 快速入门：[使用 Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=react)\n * SWA 快速入门：[使用 Azure 门户](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=react&pivots=azure-devops)"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "This should help you setup and validate the basic tooling required for developing Azure Static Web Apps. Now, let's think about building something a little more functional!",
+      "source_content_hash": "a442cd54d3118a4c08c575135afd6fcd68bbb8722327fa14895113965ec5d5dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这应该能帮助你设置并验证开发 Azure Static Web Apps 所需的基础工具。现在，让我们考虑构建一个功能更丰富的应用！"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## Inventory Mgmt",
+      "source_content_hash": "8422f49d1aea8f016a5809a86c961aad79c672bbb2ad78de386d6011dfbf8d98",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 库存管理应用"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Today, I'm publishing the first of a _multi-part tutorial_ on how you can build an inventory management app with Azure Static Web Apps and React.",
+      "source_content_hash": "dc218fdd6b0535581494da929627bd2fcf0a9c4a494b3382000a4543840fb6bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天，我将发布一个 _多部分教程_ 的第一部分，介绍如何使用 Azure Static Web Apps 和 React 构建一个库存管理应用。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "[**Read Part 1 of the Tutorial Here**](https://dev.to/azure/build-an-inventory-management-app-with-azure-static-web-apps-with-react-part-1-2l2e):",
+      "source_content_hash": "c52816e5ab90d7ac485044ce1ec4c6a46e81afbfba164789d6708a344ded2ecd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[**点击此处阅读教程的第一部分**](https://dev.to/azure/build-an-inventory-management-app-with-azure-static-web-apps-with-react-part-1-2l2e)："
+      }
+    },
+    {
+      "segment_id": "7d9e2bd7",
+      "source_content": "> In this series, I'll take you from the very beginning on generating a React app and deploying it within 5 minutes. In the upcoming parts, I'll keep building on the same app, and add things like backend and other things.",
+      "source_content_hash": "5ff63c53522238493d34aeb0d6d7af3356afce40e0107d9eff017ecdb0da0d98",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> 在本系列教程中，我将从零开始带你生成一个 React 应用，并在 5 分钟内完成部署。在接下来的部分中，我会继续完善这个应用，并添加后端等功能。"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "![Banner image from dev.to article](../static/img/series/09-snowpack.png)",
+      "source_content_hash": "4c8ff3840a57ae30ca636e41826933efb67c4a70519c827b0271d19796dd921b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![来自 dev.to 文章的横幅图片](../static/img/series/09-snowpack.png)"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "In this tutorial you'll learn about:",
+      "source_content_hash": "c87b74840713f2c082fd7d2b48b827551562b62af10333c8e0944244b3e0c24d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在本教程中，你将学习："
+      }
+    },
+    {
+      "segment_id": "9b797309",
+      "source_content": "* Options to scaffold your React App\n * Use the `Snowpack` option to scaffold your project\n * Use VS Code to configure & deploy the app to SWA.",
+      "source_content_hash": "1d18291f09738dbfb48dee6acff0e87609dc9b8cd973c159c13b3dab2a593755",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 搭建 React 应用的选项\n * 使用 `Snowpack` 选项搭建项目\n * 使用 VS Code 配置并部署应用到 SWA。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Check out the [deployed SWA](https://happy-wave-036ec970f.1.azurestaticapps.net/) at this stage of the tutorial. In the next part of the series, we'll improve UI and add routing support.",
+      "source_content_hash": "e0558db67f39b2c4ccdf540fa81b9d39aff86e53570cd7277a888a1560e33076",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "查看本教程当前阶段的[已部署SWA应用](https://happy-wave-036ec970f.1.azurestaticapps.net/)。在系列教程的下一部分，我们将优化用户界面并添加路由支持。"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "[**Revisit this series page tomorrow**](https://dev.to/azure/build-an-inventory-management-app-with-azure-static-web-apps-with-react-part-1-2l2e) to continue with the tutorial.",
+      "source_content_hash": "57d78cd44ded58f7b04f6920106b0c0abffc9bdefb9875410d6123befb1e549f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[**明天请继续访问本系列页面**](https://dev.to/azure/build-an-inventory-management-app-with-azure-static-web-apps-with-react-part-1-2l2e)以跟进后续教程。"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "## Exercise: Try It!",
+      "source_content_hash": "776747d7fe9ee20f08cb8ba152f2c8c6f91411c4ae9dba14b5adf54269cb4cf2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践练习：立即尝试！"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "This is the perfect time to make sure you have your development environment setup and ready to follow along. Try the quickstart option, then follow along with the tutorial series.",
+      "source_content_hash": "d0aef9b5c63a47630ce65e4bbad15c9d657df205d7b0fa5c7317b786757b3819",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在正是确保您已配置好开发环境并准备跟进的绝佳时机。尝试快速入门选项，然后跟随教程系列进行操作。"
+      }
+    },
+    {
+      "segment_id": "3ef18741",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源列表"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "Here are the key resources we shared in this article:",
+      "source_content_hash": "b21e69a7dff7c4877ecdb6de74e42098ab75d17e6323af4498aa1ecb8ca9dd77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本文分享的关键资源如下："
+      }
+    },
+    {
+      "segment_id": "76dbcc76",
+      "source_content": "* SWA Quickstart: [Using Visual Studio Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)\n * SWA Quickstart: [Using Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=react)\n * SWA Quickstart: [Using Azure Portal](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=react&pivots=azure-devops)\n * [Official Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)\n * [Creating your first web apps with React](https://docs.microsoft.com/en-us/learn/paths/react/) - on Microsoft Learn\n * [Web Dev For Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) - project-based curriculum",
+      "source_content_hash": "34abbbd1019b2f944b8cd8f070dbb2cfdedd3799ae87180d56d98633c71be34d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* SWA快速入门：[使用Visual Studio Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)\n * SWA快速入门：[使用Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=react)\n * SWA快速入门：[使用Azure门户](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=react&pivots=azure-devops)\n * [官方教程：React入门](https://reactjs.org/tutorial/tutorial.html)\n * [使用React创建首个Web应用](https://docs.microsoft.com/en-us/learn/paths/react/) - Microsoft Learn平台\n * [Web开发初学者指南](https://github.com/microsoft/Web-Dev-For-Beginners) - 基于项目的课程体系"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-10.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.875407+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "2f0e35b4a9f81ebe25dcce56d0d64ebf14155d89fde821c77d2e4b762c770029"
+  }
+}

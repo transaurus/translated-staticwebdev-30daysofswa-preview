@@ -1,0 +1,960 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-19.md",
+  "source_file_content_hash": "91a585fcebd5cac74d9f2bafa16b0bf048cc9c7a509936f9fa64f62118da3e4b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: devtools-msedge\ntitle: \"#18: Debug with Edge DevTools\"\nauthors: [patrick]\ntags: [swa, 30days, dev-tools]\ndraft: false\ndescription: Learn to use Microsoft Edge DevTools and its VS Code Extension to debug you Azure Static Web App and improve performance and accessibility\nimage: \"../static/img/series/18-banner.png\"\nkeywords: [devtools, msedge, azure, staticwebapps, vscode]\n---",
+      "source_content_hash": "75b65dadaa38da07a00b3f2766cad203022fefad21e24afe59eeac401a600585",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "321c5251",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/devtools-msedge\" />\n  <meta name=\"twitter:title\" content=\"#18: Debug with Edge DevTools\" />\n  <meta name=\"twitter:description\" content=\"Join @patrickbrosset on #30DaysOfSWA to explore Debugging, Perf, #Accessibility for @AzureStaticApps using @MSEdgeDev #DevTools on @code\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/18-banner-3c83eb95b9d1aabe5f27d4282c5423ad.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/devtools-msedge\" />\n</head>",
+      "source_content_hash": "464291e2f126db850e99b937805b4d0fdc18f9d31a265f0a76065f38f054e4af",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_321c5251"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Welcome to `Week 3, Day 4` of **#30DaysOfSWA**!!",
+      "source_content_hash": "b72a1745f816b5f9d4063796d87d1626639d847cb3c04ca7da41e0438968a88e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第3周第4天`!!"
+      }
+    },
+    {
+      "segment_id": "64f5e8db",
+      "source_content": ":::info[GLOBAL ACCESSIBILITY AWARENESS DAY]\nDid you know today is [Global Accessibility Awareness Day](https://accessibility.day/) - a day where we think about **digital accessibility** and what it means to make the web experience inclusive and friendly to everyone! \n\nVisit the [Accessbility in Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/accessibility/) documentation to learn best practices around designing, building, and testing, your modern websites for accessibility.\n:::",
+      "source_content_hash": "04182d92932f2f7949f309faf2c138fde07b14fd167df260364d8b71f0c3d5be",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[全球无障碍意识日]\n你知道吗？今天是[全球无障碍意识日](https://accessibility.day/)——一个让我们思考**数字无障碍性**的日子，探讨如何使网络体验对所有人更加包容和友好！\n\n访问[Microsoft Edge无障碍功能文档](https://docs.microsoft.com/en-us/microsoft-edge/accessibility/)，了解设计、构建和测试现代网站无障碍性的最佳实践。\n:::"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "As we'll learn in a post later this week (stay tuned!), using the [Azure Static Web Apps extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) makes it quick to create and manage your Web Apps directly from VS Code. \n_But what about the other aspects of your developer experience - like debugging your web app or profiling its performance in the browser?_",
+      "source_content_hash": "7816de340fa911108bc1399f734feeb1436e73983a6e3b59996df5bc8beaf7bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "正如我们将在本周晚些时候的一篇文章中了解到的（敬请期待！），使用[VS Code的Azure Static Web Apps扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)可以快速从VS Code中创建和管理你的Web应用。  \n_但开发者体验的其他方面呢——比如在浏览器中调试你的Web应用或分析其性能？_"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "**As a web developer, it's important to minimize context switching.**",
+      "source_content_hash": "6c7cac79a21a53bfdcc07659d46fa11ce55b64f517978c17cbf24ef56676d2af",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**作为Web开发者，减少上下文切换非常重要。**"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "The fewer tools you need to use to do your job, the better. This way you can stay focused on the tasks at hand more easily, without having to constantly deal with multiple tools and windows on your computer. You become more productive when the tools you rely on work better together.",
+      "source_content_hash": "9c0acb0631e1cd70f905c3cc7530dc594d860b088aad661fd9e88101183fa778",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "你工作中需要使用的工具越少越好。这样你可以更容易地专注于手头的任务，而不必频繁应对电脑上的多个工具和窗口。当你依赖的工具能更好地协同工作时，你的工作效率会更高。"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 我们将涵盖的内容"
+      }
+    },
+    {
+      "segment_id": "8a01ee7b",
+      "source_content": "* Getting started with the **Edge DevTools** VS Code extension\n* Seamless **debugging** experiences for your front-end app.\n* Discovering some of the DevTools **accessibility** tools.\n* Discovering some of the DevTools **performance improvement** tools.\n* **Exercise:** Install the Edge DevTools VSCode Extension and try these features out!",
+      "source_content_hash": "3e9a2663cf855baf101d9dfa3b532adf04539c9c56167ccf7f273d0191b38fed",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 开始使用**Edge DevTools** VS Code扩展\n* 为你的前端应用提供无缝的**调试**体验\n* 探索DevTools中的一些**无障碍**工具\n* 探索DevTools中的一些**性能优化**工具\n* **练习：**安装Edge DevTools VS Code扩展并尝试这些功能！"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "![](../static/img/series/18-banner.png)",
+      "source_content_hash": "e272996ae91cd6be5f39e16579dcbf96e400658af9216b5d545cd43a0b49a008",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/18-banner.png)"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Debug front-end code from VS Code",
+      "source_content_hash": "c3279e4edf908479d744e33e6f45953f347bb723595f4027e42ab25221a39362",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 在VS Code中调试前端代码"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "After you've created your SWA and have started adding more functionality to it, there will come a time when debugging your front-end code may become useful. Maybe you've added some JavaScript front-end logic that needs debugging, or maybe you've added new CSS layout code that needs inspecting.",
+      "source_content_hash": "7e66a91b6d71f04efd90c3cc1884e5a79d1a0ed6f2418a807fc7ff28270fe3d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当你创建了SWA并开始为其添加更多功能后，调试前端代码可能会变得很有必要。也许你添加了一些需要调试的JavaScript前端逻辑，或者新的CSS布局代码需要检查。"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "The DevTools built in to your favorite browser come in very handy at this point. But, having to switch between your source files in your editor and your browser window to do the debugging can quickly become frustrating. It's also prone to errors as there aren't great solutions to move the tweaks you do in DevTools back to your editor.",
+      "source_content_hash": "60152c6c42c997927456db0678dc25a26bd1b378d0c844e1c2f54ea35ea3556a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这时，你最喜欢的浏览器内置的DevTools会非常有用。但是，为了进行调试而不得不在编辑器中的源文件和浏览器窗口之间来回切换，很快就会让人感到沮丧。这也容易出错，因为目前没有很好的解决方案能将你在DevTools中所做的调整直接同步回编辑器。"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "One tool that can help a lot here is the **[Microsoft Edge Developer Tools extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)**. This extension gives you DevTools in VS Code directly.",
+      "source_content_hash": "041eeefa417105896f1d03e0d6c5db3020c4e8933b57526e16704eeaf151b63f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "一个能提供很大帮助的工具是**[VS Code的Microsoft Edge开发者工具扩展](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)**。这个扩展让你直接在VS Code中使用DevTools。"
+      }
+    },
+    {
+      "segment_id": "0bfbe139",
+      "source_content": ":::info[Edge DevTools For Visual Studio Code v2 Just Released!]\n[**Read this post**](https://dev.to/codepo8/edge-devtools-for-visual-studio-code-v2-1bp3) to learn about improvements and new features like _Screencast with emulation support_, _Sourcemap support for styles_ and more!\n:::",
+      "source_content_hash": "044f62010d670097c3af12826aea6aac652a936401e773e619f75ae5d9ed2076",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[Edge DevTools for Visual Studio Code v2 刚刚发布！]\n[**阅读这篇文章**](https://dev.to/codepo8/edge-devtools-for-visual-studio-code-v2-1bp3)，了解改进和新功能，如_支持模拟的屏幕投射_、_样式的源映射支持_等！\n:::"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "With this extension, the **Elements** and **Network** are embedded directly within VS Code, your **Console** messages appear in the VS Code console, issues detected by the Edge **Issues** panel are highlighted in your source code directly, and you get a live preview of your web app's front-end right in VS Code!",
+      "source_content_hash": "c9d7063895333b0f02979ed9ec5a8385ec878365cbe7776cbbd0b7a0593d7e68",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过这个扩展，**元素**和**网络**工具直接嵌入到VS Code中，你的**控制台**消息会显示在VS Code的控制台中，Edge**问题**面板检测到的问题会直接在你的源代码中高亮显示，并且你可以在VS Code中实时预览你的Web应用前端！"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Finally, as you tweak your CSS code from within the **Styles** panel, your changes are automatically applied to your source files, even if you use a CSS pre-processor.",
+      "source_content_hash": "bce50357477211d6b2b7a225d169c4dc329c2588a82a9dd84b9b40f1a635eccd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最后，当你在**样式**面板中调整CSS代码时，你的更改会自动应用到源文件中，即使你使用的是CSS预处理器。"
+      }
+    },
+    {
+      "segment_id": "8fe7e58e",
+      "source_content": "<!-- Insert Chris' video here -->",
+      "source_content_hash": "8fcc5b4af928d556f20bc2132762f2131aaae4a9312294531b93c60e02e4acd3",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_8fe7e58e"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "### Get started with Edge DevTools VS Code extension",
+      "source_content_hash": "5c218ac4dc3b88b0bc3168125902d2cffee57bae4bf1ad75fff6d7c581112f83",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 开始使用Edge DevTools VS Code扩展"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "First let's install the extension, right from VS Code.",
+      "source_content_hash": "516810a06e760ba3b1dcc0287da9140d4ae569cb8a0fca441110f536dd6fdc62",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "首先，让我们直接从VS Code安装这个扩展。"
+      }
+    },
+    {
+      "segment_id": "af6ca965",
+      "source_content": "1. In VS Code, open the **Extensions** sidebar, and search for \"Edge Tools\".\n1. The **Microsoft Edge Tools for VS Code** extension should be listed. Click the **Install** button and wait for the process to end.",
+      "source_content_hash": "52d396a7ec3c1a863f72afa26ed1ffbc209b2c1e3eac33cd7847fda18afa4f8f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 在 VS Code 中，打开 **扩展** 侧边栏，搜索 \"Edge Tools\"。\n1. **Microsoft Edge Tools for VS Code** 扩展应出现在列表中。点击 **安装** 按钮并等待安装完成。"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "![Screenshot of VSCode showing the Extensions sidebar with the Edge Tools for VS Code extension displayed](../static/img/series/w3d4/install.png)",
+      "source_content_hash": "13d53791024f2c8fcd99bdb791d9521fc8f564495fca801317fde3196e725797",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![VS Code 截图显示扩展侧边栏，其中列出了 Edge Tools for VS Code 扩展](../static/img/series/w3d4/install.png)"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "Once installed, the extension appears as a new icon in the **Activity bar** which gives you access to useful features. Let's jump straight in and make use of the most useful feature: generating a `launch.json` configuration file for your project.",
+      "source_content_hash": "8e5c9705f71dc79c2fa3a319160799c550e61e179cc35fde589ec53ef8bd54c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "安装完成后，扩展会以新图标形式出现在 **活动栏** 中，提供实用功能入口。让我们直接体验最实用的功能：为项目生成 `launch.json` 配置文件。"
+      }
+    },
+    {
+      "segment_id": "6384b3d4",
+      "source_content": "1. Click the **Microsoft Edge Tools** extension icon in the **Activity bar**.\n1. Click **Generate launch.json**. A file appears in VS Code with some useful configuration details we can tweak.",
+      "source_content_hash": "e50843c8cefab195d7658413586cb29fd77b2149e9e4506c730a43542218f6c4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 点击 **活动栏** 中的 **Microsoft Edge Tools** 扩展图标。\n1. 点击 **Generate launch.json**。VS Code 中将出现包含可调整配置详情的文件。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "![Screenshot of VSCode showing the Edge Tools sidebar with the button to generate a launch json file and the file created next to it](../static/img/series/w3d4/launchjson.png)",
+      "source_content_hash": "705d6f0c255581a2d71376e58e89becf27da42d9d9b6674e8c183fe40380282e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![VS Code 截图显示 Edge Tools 侧边栏，包含生成 launch json 文件的按钮及生成的文件](../static/img/series/w3d4/launchjson.png)"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "The most important configuration you should change now is the `url` and perhaps add a `preLaunchTask` if you need to.",
+      "source_content_hash": "4dc7fac69d405149f096b980c5e3b2e28cbfe346f5e235a263eae3a1211bed74",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在最需要调整的配置是 `url`，如果需要还可以添加 `preLaunchTask`。"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "I'll use my blog to illustrate the changes here. In this project, I have a build task configured that generates the HTML code for my blog from markdown, watches for changes in files, and serves the resulting site from HTTP port 8080.",
+      "source_content_hash": "106c6158422dd50d83ed14d64b66cde40fd6a5a92651cf1c01ef5a3ee1019e15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我将以个人博客项目为例说明修改方式。该项目配置了构建任务：从 markdown 生成博客 HTML 代码，监听文件变更，并通过 HTTP 8080 端口提供站点服务。"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "So, in my case, I'll update the **Launch Microsoft Edge in headless mode** configuration in `launch.json` to this:",
+      "source_content_hash": "5d2a328f76632edb1104b2b19d1a56f92a8726b33c27ff378bd955d94ad685df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "因此，我将把 `launch.json` 中的 **Launch Microsoft Edge in headless mode** 配置修改为："
+      }
+    },
+    {
+      "segment_id": "f6563256",
+      "source_content": "```json\n{\n  \"type\": \"pwa-msedge\",\n  \"name\": \"Launch Microsoft Edge in headless mode\",\n  \"request\": \"launch\",\n  \"runtimeArgs\": [\n    \"--headless\",\n    \"--remote-debugging-port=9222\"\n  ],\n  \"preLaunchTask\": \"npm: serve\",\n  \"url\": \"http://localhost:8080\",\n  \"presentation\": {\n    \"hidden\": true\n  }\n}\n```",
+      "source_content_hash": "67a6072f4af5ed0f2fdbea0b4bed9a314d548ff190ff8ae2fae210c27c4952f0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_f6563256"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "When this launch configuration is used, it will build my blog from source code, serve it on a local server, open the browser directly within VS Code, and the DevTools panels alongside it. Let's test it! Click on **Launch Project** in the **Microsoft Edge Tools** extension to get everything running.",
+      "source_content_hash": "00bdfb132ff5e89ac4e81ee67ba74ea092f37b8eff052a6a6fb5789991753423",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "使用此启动配置时，系统将从源代码构建博客，在本地服务器运行，直接在 VS Code 中打开浏览器，并同步显示 DevTools 面板。点击 **Microsoft Edge Tools** 扩展中的 **Launch Project** 即可启动全流程。"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "![Screenshot of VSCode showing 3 panels side by side: a CSS file, the DevTools, and the browser rendering of my site](../static/img/series/w3d4/firstrun.png)",
+      "source_content_hash": "e292bfd02b2a8521d20319784516a825eba0e63793f8c1848e2b2c42b017b944",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![VS Code 截图显示并排的三个面板：CSS 文件、DevTools 和站点渲染效果](../static/img/series/w3d4/firstrun.png)"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "Now try to apply this to your own project, changing the configuration to match your needs. Next, we'll review the most useful features of the extension.",
+      "source_content_hash": "c0424872450c876908a582303962854c2b93200eee5cefa17598994e4fd99a1f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在请根据您的项目需求调整配置。接下来我们将介绍扩展的核心功能。"
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "### Mirror CSS changes to source files",
+      "source_content_hash": "17fa769458ea6ef417acf611759d34763bc9f67a1aa5feb3ed338554e44b5526",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 将 CSS 修改同步至源文件"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "Tweaking CSS properties in DevTools is great because you get a live preview of your changes on the web page, and with the **Microsoft Edge Tools** extension, you also get mirroring of your changes right back to the corresponding source file. This way, you don't need to remember all of the changes you made and manually apply them to your editor. The extension is able to figure out the mapping between the live CSS code and the source files in your project.",
+      "source_content_hash": "dee4a02085c48987b002a052ea4241153975a3c2f13591a2334e6065950dbcfc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在 DevTools 中调整 CSS 属性的优势在于可以实时预览网页效果，而 **Microsoft Edge Tools** 扩展还能将修改直接映射回源文件。这样您无需手动记忆并应用所有修改，扩展会自动建立实时 CSS 代码与项目源文件的映射关系。"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "Changing CSS code in the **Styles** panel automatically opens the corresponding source file and applies the same change.",
+      "source_content_hash": "fd768003a9618e78ffea16b8e0d85c8e3218b740a19eb53cd0cecb2f474f4599",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在 **Styles** 面板修改 CSS 代码会自动打开对应源文件并应用相同变更。"
+      }
+    },
+    {
+      "segment_id": "44aaa880",
+      "source_content": "Note that the extension does not save the CSS source file for you. You can keep on tweaking CSS in DevTools and, only once you're ready, save the changes made by the extension in the source file on your behalf.",
+      "source_content_hash": "12fb91743a5ab4ad4e5ab8642d106f8c795eb4627b255a9c00b76eacaf1bf906",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "注意扩展不会自动保存 CSS 源文件。您可以在 DevTools 中持续调整 CSS，仅当确认修改后，扩展才会代您保存源文件变更。"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "You can learn more about CSS mirroring in the [Microsoft Edge DevTools extension docs](https://docs.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension#syncing-live-changes-from-the-styles-tool-by-using-css-mirror-editing).",
+      "source_content_hash": "102cf7bf56ade7b45ba3f9ef5c5f20a3402493465ebbb1c2aab7509e1dda1665",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更多 CSS 镜像功能说明请参阅 [Microsoft Edge DevTools 扩展文档](https://docs.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension#syncing-live-changes-from-the-styles-tool-by-using-css-mirror-editing)。"
+      }
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "![Screenshot of VSCode showing editing a CSS value in the DevTools pane and the value being reflected in the source file](../static/img/series/w3d4/mirror.png)",
+      "source_content_hash": "74c0b6d7b548e87cf2eef122faffe623f629336eb014890616ceb1b563958ab8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![VS Code 截图显示在 DevTools 面板编辑 CSS 值时，源文件中的对应值同步更新](../static/img/series/w3d4/mirror.png)"
+      }
+    },
+    {
+      "segment_id": "64d57278",
+      "source_content": "### Find issues with your code",
+      "source_content_hash": "5973420bcf00aa6f2e6169e9d0ed014e0a270bccc4f7314f8d67e8e03b8e6e08",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 检测代码问题"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "Edge DevTools comes with a built-in **Issues** tool that provides useful information about the inspected web page. For example, it can report on browser compatibility, accessibility, or security issues.",
+      "source_content_hash": "c522054f132ee25b7792a2cad3d769e9732b2297296eeafaf988aa0dd352ecc0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Edge DevTools 内置的 **Issues** 工具可提供被检测网页的实用信息，例如浏览器兼容性、可访问性或安全问题报告。"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "The **Microsoft Edge Tools** extension in VS Code provides the same feature, but integrated right into your source code. For example, browser compatibility warnings are highlighted in your CSS source code with squiggly lines, and hovering over the highlight reveals more information about the issue.",
+      "source_content_hash": "d73d14ad30a0d86edf0d4f76142593723a363cfbc2dfa600671914281df59551",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "VS Code 中的 **Microsoft Edge Tools** 扩展提供相同功能，但直接集成在源代码中。例如，CSS 源文件中的浏览器兼容性警告会以波浪线高亮显示，悬停提示框会展示问题详情。"
+      }
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "![Screenshot of part of a CSS file in the VSCode editor, with a CSS property underline and a tooltip showing the browser compatibility warning related to using this property](../static/img/series/w3d4/cssissue.png)",
+      "source_content_hash": "deca20cfff768c5e13a55ec7cad7572090a8469a3b7e57d4a78a92f979f2a0c1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![VS Code编辑器中CSS文件部分截图，显示某CSS属性被下划线标记，工具提示说明该属性存在浏览器兼容性警告](../static/img/series/w3d4/cssissue.png)"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "You can also review all issues at once by opening the **Problems** panel in VS Code's bottom drawer.",
+      "source_content_hash": "e935e35733105949343cc39048f3d5deb0e5936bd43cbb24f139531779dbb429",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您也可以通过打开VS Code底部面板中的**问题(Problems)**视图一次性查看所有问题。"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "You can learn about other ways to find issues with your code in the [Microsoft Edge DevTools extension docs](https://docs.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension#inline-and-live-issue-analysis).",
+      "source_content_hash": "b5df1890fd7646b69f90ae7374b678b48764f70f08f512cdc3e42ca2a6804fd6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更多代码问题检测方法请参阅[Microsoft Edge DevTools扩展文档](https://docs.microsoft.com/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension#inline-and-live-issue-analysis)。"
+      }
+    },
+    {
+      "segment_id": "c83259bb",
+      "source_content": "### Get your console messages",
+      "source_content_hash": "dae75c02210f2c49668210872504c0bdad009e69118d263e1184367d1ee7f108",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 获取控制台消息"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "The **Microsoft Edge Tools** extension in VS Code also integrates the very popular **Console** tool. People rely on the console all the time when debugging their code.",
+      "source_content_hash": "0866bcd8b31a66d023b78219765c25292fb250ab0e9d65a542a61c5fcbde8b67",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "VS Code中的**Microsoft Edge工具**扩展还集成了广受欢迎的**控制台(Console)**工具。开发者在调试代码时经常依赖控制台输出。"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "Because the extension also works with the built-in VS Code JavaScript debugger, that means you can debug your front-end JavaScript code in VS Code as normal, and see your console logs in DevTools right next to you.",
+      "source_content_hash": "07a2d9029062f761cb1b4c34e2fd4451fbfa8d09613d7afd7c00babb79e66202",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "由于该扩展可与VS Code内置JavaScript调试器协同工作，这意味着您可以在VS Code中正常调试前端JavaScript代码，同时直接在相邻的DevTools面板查看控制台日志。"
+      }
+    },
+    {
+      "segment_id": "9c2ab4c8",
+      "source_content": "## Learn about other DevTools features",
+      "source_content_hash": "25c38642959a17e65e23000f1385206b0045d698d7371bddffeb1304d96e5904",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 了解其他DevTools功能"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "As we've just seen, the **Microsoft Edge Tools** extension is very helpful. It caters for most web development tooling needs, while ensuring you have a seamless experience without having to leave VS Code.",
+      "source_content_hash": "0ca6d40ff897403cd5a699a9efee0666e200aec7cf1543c5724c6a6f022c960f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "正如我们所见，**Microsoft Edge工具**扩展非常实用。它满足了大多数Web开发工具需求，同时确保您无需离开VS Code即可获得无缝体验。"
+      }
+    },
+    {
+      "segment_id": "cfeb9eb1",
+      "source_content": "But there's more to the Edge DevTools available in the browser (the tools you get when you press **F12**) that's not yet available within the VS Code extension version.",
+      "source_content_hash": "28a59e7bbc00411d43b429deb9822c94481d50b4d7cf5105a2773ad98f9b8f84",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但浏览器版Edge DevTools（按**F12**调出的工具）中仍有部分功能尚未集成到VS Code扩展版本。"
+      }
+    },
+    {
+      "segment_id": "f7e6e884",
+      "source_content": "Building a great SWA means building a great web app first and foremost and while learning the ins and outs of SWA is very important, learning about how to build a performant and accessible web experience for all your users is also crucial.",
+      "source_content_hash": "361f2d54e4a7c5b3bc45056553b856acfd18aaf569f10fb4aecf9de2b4017ad9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "构建优秀的静态Web应用(SWA)首先需要构建优秀的Web应用。虽然掌握SWA的细节非常重要，但学习如何为所有用户打造高性能、无障碍的Web体验同样关键。"
+      }
+    },
+    {
+      "segment_id": "17b50e81",
+      "source_content": "Let's discover a few tools and features of DevTools that can help you with this.",
+      "source_content_hash": "00969cec91c35c8efd1d36e5cbf5ef3a4c2b2830215b5d8cb185bfda411a11aa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "下面我们来了解几个能助您实现这一目标的DevTools功能。"
+      }
+    },
+    {
+      "segment_id": "6ab1b234",
+      "source_content": "### Fix accessibility issues",
+      "source_content_hash": "5b91489492873726f54547eaf290e00fa42ff3e2c1e7c1aaed8b81276a2e263b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 修复无障碍访问问题"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "Every year the [WebAIM organization](https://webaim.org/) publishes a report of the most common website issues that create accessibility problems for people. Sadly, every year the result is quite depressing. You can read the [WebAIM Million 2022 report](https://webaim.org/projects/million/).",
+      "source_content_hash": "9cb230e02776ec42138b4c622e45f437ca3de1981b8f28c032a1ae32a503a863",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "每年[WebAIM组织](https://webaim.org/)都会发布关于造成用户无障碍访问障碍的最常见网站问题报告。遗憾的是，结果总令人忧心。您可阅读[2022年WebAIM百万网站调查报告](https://webaim.org/projects/million/)。"
+      }
+    },
+    {
+      "segment_id": "619c3209",
+      "source_content": "On the bright side though, the most common accessibility issues can be detected and solved easily with DevTools! So let's learn about some of the features that can help create more accessible web experiences for all.",
+      "source_content_hash": "3c899040eb3362b4fdce475da53ddd854a2a0b8f620bb81c4181051120bba53e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但好消息是，最常见的无障碍问题都可以通过DevTools轻松检测和解决！让我们了解几个有助于创建普惠性Web体验的功能。"
+      }
+    },
+    {
+      "segment_id": "44285072",
+      "source_content": "The most common accessibility problem out there is low contrast text. If the contrast ratio between the text color and the color of the background behind it is too low, then people might not be able to read the text at all. The color picker in DevTools is a great way to detect these problems.",
+      "source_content_hash": "f0dde702626308bb713609e54ae825a72c786050e90af86065d1e42bdf1fde3f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最普遍的无障碍问题是文本对比度不足。如果文本颜色与背景色的对比比率过低，用户可能完全无法阅读内容。DevTools中的取色器是检测此类问题的利器。"
+      }
+    },
+    {
+      "segment_id": "6ffcaeb2",
+      "source_content": "1. Right-click a piece of text on your web page and select **Inspect**.\n1. In the **Styles** tab, find the **color** CSS property that defines which color the text is, and click the colored square next to it.\n1. Review the **Contrast ratio** in the color picker. Your goal is to have 2 check marks next to it, meaning that the contrast ratio meets the recommendation.",
+      "source_content_hash": "a770efc85c1d63dba52f4fd4d6df4380ade254434aae178baa95b54e95c7917c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 在网页文本上右键点击并选择**检查(Inspect)**\n1. 在**样式(Styles)**标签页找到定义文本颜色的**color**CSS属性，点击其旁边的色块\n1. 查看取色器中的**对比度比率(Contrast ratio)**。理想状态应显示两个对勾标记，表示符合推荐标准"
+      }
+    },
+    {
+      "segment_id": "008183b0",
+      "source_content": "![Screenshot of the Elements tool in Edge, showing the color picker on one of the text color CSS properties in the Styles pane, with the contrast ratio report.](../static/img/series/w3d4/colorpicker.png)",
+      "source_content_hash": "e663d1d8ae512951e7dc9f9e04f6838e564dad0c1380953c1a67fadc1a013d2d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Edge浏览器Elements工具截图，显示Styles面板中文本颜色CSS属性的取色器及对比度比率报告](../static/img/series/w3d4/colorpicker.png)"
+      }
+    },
+    {
+      "segment_id": "0ddaa835",
+      "source_content": "If the text doesn't have enough contrast, then you can fix the problem right here in DevTools.",
+      "source_content_hash": "b69181c962256e1af48e51c355c2c0d86d9db6f362f3beaefca00aed19501022",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若文本对比度不足，您可以直接在DevTools中修复。"
+      }
+    },
+    {
+      "segment_id": "ccb70509",
+      "source_content": "1. Click the **show more** arrow next to the **Color contrast** value to reveal more information. Two lines will appear in the color picker.\n1. Use these lines to choose a color that meets the recommendation.",
+      "source_content_hash": "dcd5786fad5f9a920769f31cee6b379a430435617ebda86c58aaaffde218037f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 点击**颜色对比度(Color contrast)**值旁的**显示更多(show more)**箭头展开详细信息，取色器中将出现两条参考线\n1. 沿着这两条参考线选择符合推荐标准的颜色"
+      }
+    },
+    {
+      "segment_id": "827eb9a3",
+      "source_content": "![Screencast showing the color picker in the Styles pane, with the 2 guide lines to choose a color that has enough contrast. Moving the current color selection across those 2 lines recalculates the ratio in real time.](../static/img/series/w3d4/contrastratiolines.gif)",
+      "source_content_hash": "e140b809be28b9c28789ff18a41b43d556c4159939386f3d49e91c8c602a5555",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![动态演示Styles面板中的取色器，展示两条用于选择达标颜色的参考线。移动当前颜色选择点时，对比度比率会实时重新计算](../static/img/series/w3d4/contrastratiolines.gif)"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "Another very common accessibility problem is missing alternative text for images (or alt text). Alt text helps users of screen readers perceive the content of an image, but it also important for cases where users decide to disable images, or when images fail to load, and even for search engine optimization. And, DevTools can detect missing alt text automatically! So there's really no excuses for not writing great textual substitute for your images.",
+      "source_content_hash": "924aa5792fd8f4a055ab99fb82ee9f5ba4c240531b88c9606ffaff5ca9d013f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "另一个非常常见的无障碍问题是图像缺少替代文本（alt text）。替代文本能帮助屏幕阅读器用户感知图像内容，同时也对用户禁用图片、图片加载失败的情况至关重要，甚至影响搜索引擎优化。而DevTools可以自动检测缺失的替代文本！因此没有任何理由不为图像编写优质的文本替代。"
+      }
+    },
+    {
+      "segment_id": "ff048fb8",
+      "source_content": "1. Open DevTools by pressing **F12**.\n1. Click **More Tools** (**+**) in the main toolbar at the top and select the **Issues** tool from the list.\n1. Check if the list of issues contains an **Accessibility** category. If it does, check for **Images must have alternate text** warnings.\n1. Open one of the warnings, review the problem, and click **Open in Elements** to see the problem directly in the **Elements** tool.",
+      "source_content_hash": "10bb2460467a9bd2aad30642f6c85f0f945928705ea878a969a88f4efb79d4f0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 按**F12**打开DevTools。\n1. 点击顶部主工具栏中的**更多工具**(**+**)，从列表中选择**问题**工具。\n1. 检查问题列表中是否包含**无障碍**类别。若有，请查看**图像必须具有替代文本**警告。\n1. 打开任意警告查看问题详情，点击**在元素面板中打开**即可在**元素**工具中直接定位问题。"
+      }
+    },
+    {
+      "segment_id": "674abb31",
+      "source_content": "![Screenshot of the Issues tool in Edge, showing 4 missing alt-text warnings.](../static/img/series/w3d4/alttext.png)",
+      "source_content_hash": "0037d7cd93dad6e59cd96b83e11ec06e40227a60b878e2b18db7b88fcbe0801a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Edge浏览器问题工具截图，显示4条缺失替代文本的警告](../static/img/series/w3d4/alttext.png)"
+      }
+    },
+    {
+      "segment_id": "9ef42155",
+      "source_content": "Now let's talk about source order. The order in which assistive technology (such as screen readers) navigates a page is linked to the order in which the various elements appear in the document source code. Now, this order might be very different from the order in which the elements appear, visually, on the screen. Using CSS, you can re-order things visually, without changing the document source order.",
+      "source_content_hash": "8a7c13fd5e3f13178d0332a00e7743d5dd0a0a0846a009208133e918f11d47f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在我们来讨论源代码顺序问题。辅助技术（如屏幕阅读器）浏览页面的顺序与元素在文档源代码中的出现顺序直接相关。但视觉呈现顺序可能通过CSS调整而与源代码顺序完全不同。为确保文档导航逻辑对所有用户（包括辅助技术用户）都具有可理解性，必须检查源代码顺序是否合理。"
+      }
+    },
+    {
+      "segment_id": "fe25bd72",
+      "source_content": "So, to make sure the document navigation makes sense to all, even to users of assistive technology, it is important to check that the source order itself makes sense.",
+      "source_content_hash": "a5fe444900a6068585225dc31550014a94d8f38728906cacb03c9166e36ce0c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Edge和Chrome DevTools提供的**源代码顺序查看器**功能可有效解决这个问题。"
+      }
+    },
+    {
+      "segment_id": "c8a6ab3e",
+      "source_content": "Edge and Chrome DevTools have a **Source Order Viewer** feature that helps with this.",
+      "source_content_hash": "c85c1361fbeaed773c730d25756de71f124474f75c74c6617e579fa4d98ffef4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 按**F12**打开DevTools。\n1. 在**元素**工具中选择需要检查的布局元素。\n1. 点击侧边栏中的**无障碍**选项。\n1. 在**无障碍**面板底部勾选**显示源代码顺序**复选框，页面将出现带数字编号的叠加层。\n1. 通过在DOM树中选择不同元素持续检查其源代码顺序。"
+      }
+    },
+    {
+      "segment_id": "aa3dd15d",
+      "source_content": "1. Open DevTools by pressing **F12**.\n1. Open the **Elements** tool and select a layout element which you want to check the source order in.\n1. Click **Accessibility** in the tool's sidebar.\n1. At the bottom of the **Accessibility** pane, select the **Show source order** checkbox. An overlay appears showing the source order with numbers.\n1. Keep selecting different elements in the DOM tree to review their source order.",
+      "source_content_hash": "cb2629c460f33211b779c380f54c05db3ef928f989d627a15d208f4490b44d95",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Edge元素工具的无障碍面板截图，显示启用的源代码顺序查看器复选框及页面上的数字叠加层](../static/img/series/w3d4/sourceorder.png)"
+      }
+    },
+    {
+      "segment_id": "b27c61de",
+      "source_content": "![Screenshot of the Accessibility pane in the Elements tool in Edge, with the source order viewer checkbox selected, and the numbers overlay displayed on the page.](../static/img/series/w3d4/sourceorder.png)",
+      "source_content_hash": "9bbc113bb12f0de50ea85a481203abf9a3f8f445e912b5c0e8ce11d3bc8f1058",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {}
+    },
+    {
+      "segment_id": "de588fa2",
+      "source_content": "### Improve performance",
+      "source_content_hash": "ecd7fe74e926b35eac7101039b3a699c2668f200eb95e364cdef998e5aa28bbb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 提升性能"
+      }
+    },
+    {
+      "segment_id": "3799844b",
+      "source_content": "Great performance can have a very positive impact on your website. A page that appears fast and responds to user actions instantly can impact user retention, engagement, and even revenue.",
+      "source_content_hash": "cca17cb1c9acf57beca3ce7543bb2e1d586d9003847c46f6bb8eeaff50c60d28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "优秀的性能表现能为网站带来显著积极影响。快速加载且即时响应操作的页面能有效提升用户留存率、参与度甚至商业收益。"
+      }
+    },
+    {
+      "segment_id": "015c0c6e",
+      "source_content": "Performance improvement work can be daunting, but there are two useful tools in DevTools that can ease the pain: the **Performance** tool and the **Detached Elements** tool.",
+      "source_content_hash": "de1f34dffb0fe02eb85d3932155f3cb8d8f6b80c66a837dbac6cd19fe772aa1b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "虽然性能优化工作可能令人望而生畏，但DevTools中的**性能**工具和**分离元素**工具能大幅降低优化难度。"
+      }
+    },
+    {
+      "segment_id": "6e5d54a8",
+      "source_content": "Let's start with the **Performance** tool. You'll find one in all browser DevTools, Edge, Chrome, Firefox, or Safari. They're all a little bit different, but at their core give you ways to understand the runtime performance of the inspected web page over a given period of time.",
+      "source_content_hash": "128f8ab20d45da978697c08385bbbfe426301d59fdc857b338e81390e71ce19a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "所有浏览器DevTools（Edge、Chrome、Firefox或Safari）都内置**性能**工具。这些工具核心功能相似，均可分析指定时间段内被检测网页的运行性能表现。"
+      }
+    },
+    {
+      "segment_id": "48249e3c",
+      "source_content": "To use the tool in Edge:",
+      "source_content_hash": "f8b0f2ecc886670aafd23fc2b7da0ae1d99e4e87219dca7398d94fae4ad7fc5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在Edge中使用该工具："
+      }
+    },
+    {
+      "segment_id": "e73f1e25",
+      "source_content": "1. Open DevTools by pressing **F12**.\n1. Click **Performance** in the main toolbar at the top (you might have to click on the **More tabs** (**>>**) button first if the tab isn't visible.\n1. Click the **Record** button.\n1. Use the web page as a normal user would.\n1. Stop the recording with the **Stop** button.",
+      "source_content_hash": "cb0546dcb2df77f2860b26b66b00f79e1b939dba740e53de23331e427c9ad236",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 按**F12**打开DevTools。\n1. 点击顶部主工具栏中的**性能**标签（若不可见需先点击**更多标签**(**>>**)按钮）。\n1. 点击**录制**按钮。\n1. 模拟正常用户操作使用网页。\n1. 点击**停止**按钮结束录制。"
+      }
+    },
+    {
+      "segment_id": "1f9058cd",
+      "source_content": "![Screenshot of the performance tool in Edge DevTools](../static/img/series/w3d4/perftool.png)",
+      "source_content_hash": "d3986b86fd9b40962b955a49e449c8d025881ec290f704a78039fce80df2a4be",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Edge DevTools性能工具界面截图](../static/img/series/w3d4/perftool.png)"
+      }
+    },
+    {
+      "segment_id": "09512450",
+      "source_content": "The **Performance** tool can tell you how busy (or idle) the browser was with things like running JavaScript code, reacting to user events, and re-rendering the page during the recording period. So it's a great way to find bottlenecks in your site's performance and therefore know what fixes would give the best bang for your bucks.",
+      "source_content_hash": "319514d80c30645df3c8ab26163eee1dc0259461cc20f968440354c87689fe47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**性能**工具能显示录制期间浏览器执行JavaScript代码、响应用户事件和页面重绘等操作的繁忙程度，是发现网站性能瓶颈的利器，可帮助您确定最具性价比的优化方案。"
+      }
+    },
+    {
+      "segment_id": "09f901c3",
+      "source_content": "One example, if your site does a lot of animations and other visual things, is that the tool can report on frames per second (FPS) and alert you when the rate drops too low and could impact the user experience.",
+      "source_content_hash": "fe5bf2f6b363dae96ea932d1907ae589641b2559f5696b3c4a5fc6cbd2234ec9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "例如对于包含大量动画等视觉效果的站点，该工具可报告帧率(FPS)并在帧率过低可能影响用户体验时发出警报。"
+      }
+    },
+    {
+      "segment_id": "be0f7233",
+      "source_content": "The **Performance** tool has a lot of functionality packed into a small user interface, so it can be important to go through its documentation to understand what everything does. To learn more, check out [Get started analyzing runtime performance](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/evaluate-performance/)",
+      "source_content_hash": "78d1904c74aa85c74691cd54aeb3f4637a87642557d0357c3adecf86c3bd9d7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**性能工具**在紧凑的用户界面中集成了大量功能，因此查阅其文档以理解各项功能至关重要。了解更多信息，请参阅[运行时性能分析入门指南](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/evaluate-performance/)。"
+      }
+    },
+    {
+      "segment_id": "d8c366cc",
+      "source_content": "Another important performance aspect is memory. How much memory your site uses of what's available, and whether it keeps on using more and more memory over time can make your site, and even the entire computer, run slow.",
+      "source_content_hash": "bee07ef3b5a4f64bd078484f75a43b0d7970e68b43ef8aa2ccd91fa9bf36906d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "另一个关键性能指标是内存占用。您的站点对可用内存的消耗量，以及是否随时间推移持续增加内存使用，可能导致站点甚至整个计算机运行缓慢。"
+      }
+    },
+    {
+      "segment_id": "833ce577",
+      "source_content": "One type of memory leaks is DOM leaks, where the front-end JavaScript code does a lot of DOM node manipulation and, in the process, keeps references to more and more DOM nodes it doesn't need any longer. As the complexity of your app or site grows, it gets easier to make mistakes and introduce these types of memory leaks by accident.",
+      "source_content_hash": "ef8018bf54fe2b303d31164088669c4f8ad6914e19db6b48cc6e4c3a38a33e02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "DOM泄漏是一种常见的内存泄漏类型，当前端JavaScript代码进行大量DOM节点操作时，可能无意中保留了对不再需要的DOM节点的引用。随着应用或站点复杂度提升，开发者更容易因疏忽而引入此类内存泄漏。"
+      }
+    },
+    {
+      "segment_id": "f6479c91",
+      "source_content": "Edge comes with a tool called **Detached Elements** which is great for investigating this type of memory leaks. Knowing that you have a leak isn't too hard, but knowing where it originates from can feel like playing hide-and-seek in the dark. The **Detached Elements** tool points at DOM nodes that are still around in memory but not used in the page, and tells you which part of your code still references them. This way you can take a look at your code, and decide whether these nodes are, indeed, being leaked and need to be destroyed, potentially saving a lot of memory and improving performance.",
+      "source_content_hash": "bd1fcfab0dd77ef4d3104325e47aa904771bf4d4a8614cb416b74a3cd5388c9b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Edge浏览器内置的**分离元素工具**专门用于排查此类内存泄漏。虽然发现泄漏存在并不困难，但定位泄漏源头往往如同黑暗中捉迷藏。该工具能列出仍驻留内存但未在页面使用的DOM节点，并显示代码中保持引用的具体位置，帮助您判断是否需要销毁这些节点以释放内存、提升性能。"
+      }
+    },
+    {
+      "segment_id": "61e5dad6",
+      "source_content": "To use the tool in Edge:",
+      "source_content_hash": "f8b0f2ecc886670aafd23fc2b7da0ae1d99e4e87219dca7398d94fae4ad7fc5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在Edge中使用该工具的方法："
+      }
+    },
+    {
+      "segment_id": "1537994d",
+      "source_content": "1. Open DevTools by pressing **F12**.\n1. Click **More Tools** (**+**) in the main toolbar at the top and select the **Detached Elements** tool from the list.\n1. Click the **Get detached elements** button to list the DOM nodes in memory that aren't used in the page.\n1. You can then use the app as a user would, and keep clicking that button to update the list. You can also click the **Collect garbage** button to force the browser to run its garbage collection mechanism, to see if some nodes have been collected in the meantime.",
+      "source_content_hash": "99690a54d905760b0b2218fc8555756b5d9568af5f076ea6142c46a028bf26f2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 按**F12**打开开发者工具\n1. 点击顶部主工具栏的**更多工具**(**+**)，从列表中选择**分离元素工具**\n1. 点击**获取分离元素**按钮列出内存中未使用的DOM节点\n1. 模拟用户操作使用应用时，可重复点击该按钮更新列表。点击**垃圾回收**按钮可强制浏览器执行垃圾回收机制，观察节点是否被清除。"
+      }
+    },
+    {
+      "segment_id": "09d52457",
+      "source_content": "![Screenshot of the detached elements tool in Edge, showing 3 DOM nodes in the list](../static/img/series/w3d4/detachedelements.png)",
+      "source_content_hash": "784fe9767506b15ca59a8d9eb21ea2dd093966be5ca4987b3dac1e1726e6b6a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Edge分离元素工具截图，显示列表中3个DOM节点](../static/img/series/w3d4/detachedelements.png)"
+      }
+    },
+    {
+      "segment_id": "d73903fc",
+      "source_content": "This should already give you a pretty good idea of where to start looking, but the tool is also integrated with the **Memory** tool, and using the **Memory** tool is great for finding where the listed DOM nodes are references from.",
+      "source_content_hash": "5782d5f682aa6adad2dc6911ebdd2aee2a8f907fb466214dc08735106ba71361",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该工具已提供初步排查方向，但其与**内存工具**深度集成，结合使用能更精准定位DOM节点的引用来源。"
+      }
+    },
+    {
+      "segment_id": "9ffdd332",
+      "source_content": "1. Click the **Analyze** button and wait for the heap snapshot to be taken.\n1. Click any of the numbers appearing in the **Id** column to jump right from a DOM node in the **Detached Elements** tool to its list of retainers in the **Memory** tool.",
+      "source_content_hash": "8bb7f962dc5b6e998417c98178bbfe114522502544372446ec5ceec8e5bf0dc1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 点击**分析**按钮等待堆快照生成\n1. 点击**ID**列中任意数字，即可从**分离元素工具**跳转至**内存工具**查看该DOM节点的持有者列表"
+      }
+    },
+    {
+      "segment_id": "ba12acea",
+      "source_content": "The information displayed in the **Retainers** section of the **Memory** tool will give you hints as to which part of your code is currently keeping the DOM node alive in memory.",
+      "source_content_hash": "13a2c420a15270e5b46dc2f257b2886a0b9b95b42c531eb96c8ddd2514b8e21a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**内存工具**的**持有者**区域将显示哪些代码段当前仍保持该DOM节点存活于内存中。"
+      }
+    },
+    {
+      "segment_id": "4033c370",
+      "source_content": "![Screenshot of the detached elements tool in Edge, with the memory tool below it showing the list of retainers for one of the DOM nodes in the list](../static/img/series/w3d4/detachedelements-memory.png)",
+      "source_content_hash": "2fba02a9c374d9f53dab963ebe6fa78312b12b8060bf4955856ead05e0be14b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Edge工具组合截图：上方分离元素工具，下方内存工具显示某个DOM节点的持有者列表](../static/img/series/w3d4/detachedelements-memory.png)"
+      }
+    },
+    {
+      "segment_id": "dfb6fc67",
+      "source_content": "Learn more about using the **Detached Elements** tool in [Debug DOM memory leaks with the Detached Elements tool](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/memory-problems/dom-leaks).",
+      "source_content_hash": "3216260c63b53aceb7d83e42e6543bc532ee7027feab4974bef8e7a9ea9846a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "深入了解**分离元素工具**的使用方法，请参阅[使用分离元素工具调试DOM内存泄漏](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/memory-problems/dom-leaks)。"
+      }
+    },
+    {
+      "segment_id": "a9950191",
+      "source_content": "## Conclusion",
+      "source_content_hash": "be031d37bb75d96ef08ca9ec5b0e83bb6f91172f60d3c31a78feae8d7dc4a0b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 总结"
+      }
+    },
+    {
+      "segment_id": "d3f13bf4",
+      "source_content": "I hope what we saw today was useful. If there's one thing I'd love for you to take away from this is that building a great Azure Static Web App starts with building a great web experience for all!",
+      "source_content_hash": "72f49dbad0df251f30e29cd0889a66ad72fc1b4392a2f033cd3f27d058e7c754",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "希望今天的分享对您有所启发。最核心的要点是：构建出色的Azure静态Web应用，始于为所有用户打造卓越的Web体验！"
+      }
+    },
+    {
+      "segment_id": "e636ba62",
+      "source_content": "Learning the tools at your disposal to find and fix the most common mistakes that prevent such a great experience is important, and the Edge DevTools VS Code extension eases the pain by integrating directly in your existing environment.",
+      "source_content_hash": "e76be59bab860cbce1dd9cffc6cc106fee1670dd17b1803ac2c2dbd058d4bb65",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "掌握这些诊断和修复常见问题的工具至关重要，而Edge开发者工具VS Code扩展通过直接集成到开发环境，能显著提升工作效率。"
+      }
+    },
+    {
+      "segment_id": "34bbfe56",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习"
+      }
+    },
+    {
+      "segment_id": "65be34cb",
+      "source_content": "Install the latest version of the **[Microsoft Edge Developer Tools extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)** and try out some of these features. **Try identifying and fixing accessibility issues**, or use the **Performance tool** to analyze the runtime performance, of a Static Web App you've deployed.",
+      "source_content_hash": "52d0b617dd68165ddc5f7d01289a976f5ece85a37e89bad5adf861e166b1263d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "安装最新版本的 **[Microsoft Edge 开发者工具 VS Code 扩展](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)**，并尝试使用这些功能。**尝试识别并修复无障碍访问问题**，或使用**性能工具**分析已部署静态 Web 应用的运行时性能。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-19.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.868994+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "91a585fcebd5cac74d9f2bafa16b0bf048cc9c7a509936f9fa64f62118da3e4b"
+  }
+}

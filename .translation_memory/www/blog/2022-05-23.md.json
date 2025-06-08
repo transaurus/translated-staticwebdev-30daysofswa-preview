@@ -1,0 +1,732 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-23.md",
+  "source_file_content_hash": "ef0e8388f37d105974d3f0c5a547a3042e26749fcfdff5060345a2ebb262b188",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: practices-e2e\ntitle: \"#22: E2E Development & SWA\"\nauthors: [natalia]\ntags: [swa, 30days, best-practices]\ndraft: false\n---",
+      "source_content_hash": "706155890a8b58e91055db1895095ebba8886fd4759e7beb369fc0e907409730",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "775b7fa4",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/practices-e2e\" />\n  <meta name=\"twitter:title\" content=\"#22: E2E Development & SWA\" />\n  <meta name=\"twitter:description\" content=\"Join @anfibiacreativa as we kick off 'Best Practices' week on #30DaysOfSWA with a discussion on End-to-End Developer Experiences for @AzureStatic Apps!\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/22-banner-c5cc6f06159eb61034c900af02756c3a.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/practices-e2e\" />\n</head>",
+      "source_content_hash": "f53cc5f2ec5010c54212264152bacfd832eee28f55efb4dc79f0d85b21e59de2",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_775b7fa4"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Welcome to `Week 4, Day 1` of **#30DaysOfSWA**!!",
+      "source_content_hash": "e80fad2570a7b30bc0b83a63272f4c2a362302208ac6d396aa3bed8c964fb97c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的`第4周第1天`!!"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "This kickstarts our **\"Best Practices\"** week where we'll explore additional topics that help up deliver an enhanced or more optimal modern web application experience to our users. We'll start by looking at the End-to-End _developer experience (DX)_ - the importance of having a smooth and seamless DX to complement the UX (user experience), and best practices to improve your developer experience by architecting your applications and integrating services in more effective ways. Let's dive in!",
+      "source_content_hash": "3b0992cc78a6b347a64c7beefe9c733403a9d876d586e019dd9fc3b3d69da869",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这将开启我们的**\"最佳实践\"**主题周，我们将探索更多有助于为用户提供增强或更优化的现代Web应用体验的主题。首先我们将关注端到端的_开发者体验(DX)_——拥有流畅无缝的DX对用户体验(UX)的补充意义，以及通过更有效的应用架构设计和服务集成来提升开发者体验的最佳实践。让我们开始吧！"
+      }
+    },
+    {
+      "segment_id": "64f5e8db",
+      "source_content": ":::info[What We'll Cover]\n * What is an end-to-end developer experience (DX)?\n * What are core DX components when building and deploying static web apps?\n * How can we improve DX implementing best practices?\n * How can we create an architecture matrix to guide E2E DevEx?\n * **Exercise**: Try to reproduce the architecture seen below!\n:::",
+      "source_content_hash": "87d534bab08b7771cc13365a2b6afe41655036efac71dd2b4c0796e235b457cc",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[内容概览]\n * 什么是端到端开发者体验(DX)？\n * 构建和部署静态Web应用时的核心DX组件有哪些？\n * 如何通过实施最佳实践来改进DX？\n * 如何创建架构矩阵来指导端到端开发者体验？\n * **练习**：尝试复现下文所示的架构！\n:::"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "![](../static/img/series/22-banner.png)",
+      "source_content_hash": "c80c9a28e71a8d47644c429cfe504af8ecfe84ca4d70983f6330dce76686f4f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/22-banner.png)"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "Today we explore the importance of a great development experience and how can you improve yours, when building and deploying your static web applications using Azure Static Web Apps!",
+      "source_content_hash": "2019430f08c57503051290968b42934567df5ee1299ce54fec50f17d88eaf6f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天我们将探讨卓越开发体验的重要性，以及如何在使用Azure静态Web应用构建和部署静态Web应用时提升您的开发体验！"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "I admit it took me some time to write this post. It would have been much easier for me to write about a specific topic with code examples and technical definitions, than describing what developer experience means to me.",
+      "source_content_hash": "0fca07d3e2e7d31e5817ca281a7016fd09f0bddbf1dd919e0ceb22ee52f3c962",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我承认撰写这篇文章花费了不少时间。相比描述开发者体验对我的意义，写一个包含代码示例和技术定义的具体主题要容易得多。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "The definition of developer experience, like anything else you _experience_, is subjective. It has a lot of you, in it. It changes with you, and the context you're a part of. Things like _how long you've been in the business_ or _what type of software you work on_, or _where do you deploy it_, will all impact your perception of an experience.",
+      "source_content_hash": "353ea35f95a443cd52cad6dfe8aa0897e0031eba7f1dbe2d9750456eca4cac25",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "开发者体验的定义如同任何其他_体验_一样具有主观性。它包含大量个人因素，随着您和所处环境的变化而变化。诸如_从业年限_、_开发的软件类型_或_部署环境_等因素都会影响您对体验的感知。"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "So how to put it in words? How to define it and scope it?",
+      "source_content_hash": "51de58ac113d9768550e6ab8aa55375b7a4df2cbf10337919c7ff1ec4fc1ad55",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "那么如何用语言表述？如何定义和界定它？"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "It's impossible for me to do it in a way that feels relatable to everyone. I can only explain it, from the perspective inferred by my needs and my perception of the outcome, as an individual developer, and how it impacts my vision and my work.",
+      "source_content_hash": "7b6bffee409789240181b04aee04f58327422a73849a0fe61d64836245173f6c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我无法以让所有人产生共鸣的方式做到这一点。我只能从个体开发者的角度，基于我的需求和对结果的感知来解释它，以及它如何影响我的视野和工作。"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "## Predictability",
+      "source_content_hash": "f62f957223fdf3bf3a2b646e5d2f2d5a8fd4f798f82644d77adf4bc53ad68d46",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 可预测性"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "Let me start by saying that in my personal life, when I think of memorable experiences, a lot of them have been the consequence of an impulse. A spontaneous act. In my personal life, I am not much of a planner. I am the kind of person that wakes up every Saturday morning and declares \"We are going somewhere far away this weekend!\". And my husband (who is all the contrary from me and needs a lot of structure!) will ask questions like:",
+      "source_content_hash": "250d48468774816876268a87f84cfec5bb17763e8849c8e9de2875889a79731e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "首先我想说，在我的个人生活中，当回忆难忘经历时，许多都源于一时冲动。一个自发行为。生活中我并不是个计划性强的人。我属于那种会在周六早晨突然宣布\"这周末我们要去远方！\"的类型。而我丈夫（与我截然相反，极度需要条理）总会问："
+      }
+    },
+    {
+      "segment_id": "40251870",
+      "source_content": "* Ok, where do you wanna go? \n * Have you booked a hotel? \n * Do you know where we will have lunch?",
+      "source_content_hash": "67ecf492d282d24a7877c7644c2b6c20831966b228914b215ab3a0705df2b514",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 好吧，你想去哪儿？\n * 订好酒店了吗？\n * 知道午餐在哪里解决吗？"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "And I would invariably respond: \"I don't care! Let's just hop in the car, drive somewhere and figure it all out on the way there!\". That's because I think that experimenting and experiencing, go hand in hand, when it comes to adventure. And the actual _way there_, is part of the fun.",
+      "source_content_hash": "9d17869e002a258ac04a6a64880d48ea12cc842ff33a6c9c92f5706d13663b0b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "而我的标准回答总是：\"无所谓！直接上车出发，路上再决定！\"因为我认为冒险精神与体验探索密不可分，而_旅途本身_就是乐趣的一部分。"
+      }
+    },
+    {
+      "segment_id": "1c79ea5b",
+      "source_content": "> **At work, however, I like predictability.**",
+      "source_content_hash": "5a1fc5e9deb4251a7c7c822cc85d4976375b2d4b83b57d56c43bd7208d508dba",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> **但在工作中，我追求可预测性。**"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "I like structure, repeatability, patterns & conventions. I appreciate having a framework, an opinion others agree with so I'm on the same page with my team. And I like all this because it oftentimes leads to quick results and success.",
+      "source_content_hash": "c9bce6dd6c8e3bb578e2ade7608bb109db8bf6557175e5cb4c5073d81e9f3633",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我喜欢结构化、可重复性、模式与规范。我珍视能与团队达成共识的框架和方案。因为这些特质往往能带来快速成果和成功。"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## A Road Analogy",
+      "source_content_hash": "dc582b7e0bfa7b0cd378981e0c821a2545704b5062348c09616b184e7241140e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 道路隐喻"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "Experiences are like roads. They can take you places -- or not. And to me, **development experiences are just like the roads we travel on**:",
+      "source_content_hash": "e84a64660c86f3d0f36fcf06118aa156e262a8f3b1961096e69156fffafd8c47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "体验如同道路，可能引您抵达目的地——也可能不会。对我而言，**开发体验恰似我们行驶的道路**："
+      }
+    },
+    {
+      "segment_id": "158e1f5d",
+      "source_content": "* They have milestones - so I can measure progress.\n * They have multiple lanes - so I have flexibility.\n * They have entry and exit ramps - so I can change paths quickly. \n * They have destinations - so I know I'm getting somwhere specific.",
+      "source_content_hash": "7df8ec8e93d9aad3799d231135ef2b1926a48324edfe186d802727c84b39523c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 设有里程碑——可衡量进度\n * 多车道设计——赋予灵活性\n * 配备匝道——快速切换路径\n * 明确目的地——确保方向清晰"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "When I first got into web development, there were a fewer types of roads. Most were linear and slow, particularly when it came to frontend development. You needed repeated round-trips to the same server, just to get something to render on a page.",
+      "source_content_hash": "65508571565b8e632130822eb30f80f6b579be077ec63d26662823addb06e671",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当我初次接触网页开发时，技术路径的类型还较为单一。多数是线性且缓慢的，尤其是前端开发领域。你需要与服务器进行多次往返交互，才能让页面渲染出内容。"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "![the roundtrip road of boring development](../static/img/series/w4d1/swaF1.png)",
+      "source_content_hash": "b7b7716109ce18dc74fdd72cf443f115778ced74dfae489b7b61f3a83918b962",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![枯燥开发的往返路径](../static/img/series/w4d1/swaF1.png)"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "By contrast, today we're speeding along multi-lane freeways with numerous twists and turns, interconnecting roads, and possibilities ([aka configurations](https://dev.to/azure/04-configuring-static-web-apps-2oa7)) to choose from. To reach a destination, you may have to use ramps to connect two different roads - similar to how we connect tow different services [via an API](https://dev.to/azure/03-api-enabling-static-web-apps-25kh).",
+      "source_content_hash": "ef5ab5f8f0a81ce9bf0a85d199d89ed7e21f2229a32e34cba8c13361f63b2a32",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "相比之下，如今我们正疾驰在多车道的高速公路上，这里有无数迂回曲折的路线、相互连接的道路和可供选择的配置方案。要抵达目的地，你可能需要通过匝道连接两条不同的道路——就像我们通过API对接两个不同的服务那样。"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "![more lanes, more connectivity, more fun, more speed](../static/img/series/w4d1/swaF3.png)",
+      "source_content_hash": "e200a68d981754885f1ff8c15b48b58aea7ec12f15deec742ae858bc196325c5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![更多车道、更强连通性、更多乐趣、更高速度](../static/img/series/w4d1/swaF3.png)"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "If we continue with this analogy, then **a bad development experience is like poor road planning or construction**:",
+      "source_content_hash": "4d839070bb7afa3f6dcb563dbf5b223a15603c2b805601250ac209412ed42738",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "延续这个比喻，**糟糕的开发体验就如同拙劣的道路规划或施工**："
+      }
+    },
+    {
+      "segment_id": "1316cb90",
+      "source_content": "- the road is old, bumpy, cracked\n- the signposts are few and far between, giving the user insufficient time to process and follow instructions. \n- if you miss an exit, you may have to travel a long distance before you have the opportunity to turn around\n- there may be no way to access a desired road from another one - no exit or entry ramps at all!\n- if your car breaks down, or your run out of fuel - there may not be service stations nearby to for refill or recharge.\n- or you may find a station, but you have no idea of the cost of refill or recharge before you commit to taking that exit.\n- there may not be any way to get food or drinks for many miles.",
+      "source_content_hash": "f1339131c5c31bcd45e1f839b15d56a8a5c0fdb00ca7439080242b2d3df6dd90",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 道路老旧、颠簸、龟裂\n- 路标稀少且间距过大，无法让用户及时处理并遵循指引\n- 错过出口后可能需长途跋涉才能调头\n- 道路间可能完全缺乏互通匝道\n- 车辆故障或燃料耗尽时，附近可能没有补给服务站\n- 即便发现服务站，也无法预先了解补给成本\n- 数十公里内可能没有任何餐饮供给"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "You can probably guess how these travel constraints map onto poor developer experiences, but let's spell it out:",
+      "source_content_hash": "93066805e14bbc85c9d32c85fe060d38996666da786ad5bc702188dc2d705dec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这些出行限制如何映射到糟糕的开发体验已不言而喻，但我们仍要明确阐述："
+      }
+    },
+    {
+      "segment_id": "9e8f150c",
+      "source_content": "- having to slow down due to infrastructure conditions\n- feeling like you're not making any progress\n- having the certainty that your application quality is degrading due the environment and lack of resources or support, resulting in technical debt\n- not having the ability to [secure your implementation](https://dev.to/azure/05-securing-static-web-apps-5fe3)\n- not finding the right, complete or fresh documentation to help you understand the best path\n- not having the right SDK's, API methods, or means of integrating your app to other software, to accomplish simple or more complex tasks, like authentication, storage, content authoring [with a headless CMS](https://dev.to/azure/12-headless-cms-swa-built-with-blazor-1e2d) or setting up your CI/CD pipeline\n- not having the right tools to [build](https://dev.to/azure/02-building-static-web-apps-2j72), [deploy](https://dev.to/azure/07-deploying-static-web-apps-48e), optimize, [preview](https://dev.to/azure/06-previewing-static-web-apps-4p36), monitor or speed up your processes\n- not being able to scale or not being sure how much it will cost you\n- not having fun, as you go",
+      "source_content_hash": "2b4c1a856d01cfb88fa803816601b8e337ced139ee3392d58c9d382d814cb8d8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 因基础设施条件被迫降速\n- 陷入毫无进展的困境\n- 因环境缺陷和资源匮乏导致应用质量持续恶化，形成技术债务\n- 缺乏实施安全防护的能力\n- 找不到最新、完整的文档来规划最佳路径\n- 缺少合适的SDK、API方法或集成方案来完成基础/复杂任务（如认证、存储、无头CMS内容创作或CI/CD管道配置）\n- 缺乏构建、部署、优化、预览、监控或加速流程的工具链\n- 无法扩展或难以预估扩展成本\n- 全程毫无乐趣可言"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "**Because, let's face it: developing should be a fun experience. And for that you need the right vehicle, the right infrastructure, and a plan.** \nAnd when you lack all that, it's like riding a Lamborghini across a sandy desert.",
+      "source_content_hash": "6c0487998e6858694aa4ebf4882935198ad1876f7baede285c49afba5c13931b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**因为我们必须承认：开发本应是充满乐趣的旅程。这需要合适的工具、完善的基础设施以及清晰的规划。** 当这些全部缺失时，就如同驾驶兰博基尼穿越沙漠。"
+      }
+    },
+    {
+      "segment_id": "5064856a",
+      "source_content": ":::info[WHAT WE CAN CONCLUDE]\nIs that developer experience refers to the entirety of physical, emotional and cognitive experiences of an individual while using a tool or technology to complete a software development task. It can equate to suffering (when bad), enduring (when fustrating or neutral), or to feeling pleasure and delight (when great).\n:::",
+      "source_content_hash": "5e341e0e1facb835ea19f0bacfe0f2b7f5977bc6b99e93ddb7fae8d6b9bd2a91",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[核心结论]\n开发者体验涵盖个体在使用工具或技术完成软件开发任务时的全部物理、情感和认知体验。它可能等同于痛苦（糟糕时）、忍耐（沮丧或平淡时）或愉悦与欣喜（卓越时）。\n:::"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "![The right infrastructure, capabilities and resources, to support the right architecture](../static/img/series/w4d1/swaF4.png)",
+      "source_content_hash": "c39273470e2d1e7817c753ba4605b9554f5e7c865c12dd5358167e26f00f0b70",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![支撑正确架构所需的基础设施、能力与资源](../static/img/series/w4d1/swaF4.png)"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "Making the right architecture and technology decisions, will definitely impact the outcome. And we can only make those decisions right, when we ask the right questions.",
+      "source_content_hash": "3b04ebdf636c11a6428878410d9a227c0332cfaaf509f19796a3466b4518f9c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "做出正确的架构与技术决策将直接影响最终成果。而唯有提出正确的问题，我们才能做出这些关键决策。"
+      }
+    },
+    {
+      "segment_id": "56bc971f",
+      "source_content": "## Architecture: What core infrastructure, capabilities and resources do we need?",
+      "source_content_hash": "d4eac396552ac67e4649f2c3f661851e7f14f26a1f0f356d757df4cfe9410a02",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 架构规划：我们需要哪些核心基础设施、能力与资源？"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "As we hope you have learned from following this [30 days of Static Web Apps](https://dev.to/azure/kicking-off-30daysofswa-2d8g), it is a dedicated offering for frontend developers working with SPA's and Static Generated websites. We continue to work to extend its capabilities, and support more frameworks and use cases.",
+      "source_content_hash": "9d60376450ce779258a0ca4289eebd099bbafb8304b71fc0f2e9393e9ad9f25e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "正如我们希望通过这个[30天静态Web应用系列](https://dev.to/azure/kicking-off-30daysofswa-2d8g)让您了解到的，这是一项专为开发SPA和静态生成网站的前端开发者打造的服务。我们持续扩展其功能，支持更多框架和用例。"
+      }
+    },
+    {
+      "segment_id": "ab39e8a7",
+      "source_content": "### Documentation: Should be fresh & relevant!",
+      "source_content_hash": "39a4c8e0061819528ab06abaa71b3fdde346782639a576352fe7b7a771ef4e65",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 文档：保持新鲜与相关！"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "When thinking about those milestones that should hit along the road of a great end-to-end developer experience, we are working hard to make sure you always find complete and fresh documentation to help you get started and know all the possibilities you have with Static Web Apps, upfront, and to keep supporting you with relevant documentation and content as your applications grow.",
+      "source_content_hash": "e9a93fa9567092db793c45f857ae005377fbc717f68a60550281192c85f14c72",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在规划卓越端到端开发者体验的里程碑时，我们全力确保您始终能获取完整且最新的文档——既帮助您入门时了解静态Web应用的所有可能性，也随着应用增长持续提供相关文档支持。"
+      }
+    },
+    {
+      "segment_id": "48155948",
+      "source_content": "### Workflows: Building blocks & seamless integrations!",
+      "source_content_hash": "18796fdb4b336aad275b2042ffcb659a323c904b3bb3dbc775064a4d16bb0a7a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 工作流：构建模块与无缝集成！"
+      }
+    },
+    {
+      "segment_id": "44aaa880",
+      "source_content": "Not only have we been working to offer an intuitive user interface at the Azure portal itself. We have been very intentional at the time of making sure integration with the [tools](https://dev.to/azure/15-develop-with-azure-tools-3h47), and platforms frontend developers know, use and love, like GitHub and VS Code, is seamless.",
+      "source_content_hash": "1a415fdc65bf0c270d694734eaedefaa2f13b45597fe3845dc598fa50d483d7a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们不仅在Azure门户打造直观界面，更刻意确保与前端开发者熟悉喜爱的工具（如GitHub和VS Code）实现无缝集成。通过[这些工具](https://dev.to/azure/15-develop-with-azure-tools-3h47)，体验将更加流畅。"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "Static Web Apps automatically pushes a GitHub actions workflow file as you generate the application as a resource, and you can create it from the portal, if you prefer a UI guided experience, but also without ever leaving your favorite code editor, by installing the [official extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)!",
+      "source_content_hash": "34eb5c0e8dc53842200587ed3774214aa72c76b25ea05841fc18aa9b1f2f7cd2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "创建静态Web应用资源时，系统会自动推送GitHub Actions工作流文件。您既可通过门户UI引导创建，也能直接安装[官方扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)，在不离开代码编辑器的情况下完成部署！"
+      }
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "And if you prefer a command line experience, you can use the brand new Static Web Apps CLI, with extended support to login to Azure, create, build and deploy apps, and a local emulator, so you can test your apps before you ever deploy to the cloud.",
+      "source_content_hash": "2887d74c789e934ed9c515d7e0be08e3a31ba26d532703f8db5bc43aebbef993",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若偏爱命令行，全新静态Web应用CLI支持Azure登录、应用创建/构建/部署，还提供本地模拟器供您在云端部署前测试应用。"
+      }
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "Creating your static web applications and configuring your pipelines, has never been this easy!",
+      "source_content_hash": "0bcbc59f6413e3448f33475fea8638a0e8862503b52b783cd22c1835bce9617f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "创建静态Web应用和配置流水线，从未如此简单！"
+      }
+    },
+    {
+      "segment_id": "47516512",
+      "source_content": "### Efficient & Versatile: Serverless + Containerized APIs",
+      "source_content_hash": "32c8447a0d643fede858105634c0e679fe55ae91860403031f7a6216142ec644",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 高效多能：无服务+容器化API"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "Because we recognize that the use cases for Jamstack and JavaScript full-stacks applications in general are becoming more and more complex, part of our strategy for a delightful end-to-end development experience relies on the simplification and standarization of mechanisms for API integration, via serverless functions through industry compliant patterns and via our super efficient devkits.",
+      "source_content_hash": "cbfbc75318f9918a530a4cda15241e099587f1141172fce80b06849c04c899ae",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "随着Jamstack和JavaScript全栈应用场景日益复杂，我们通过标准化API集成机制（包括行业合规模式的无服务函数和高效开发工具包）来优化端到端开发体验。"
+      }
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "And that includes a concern that has historically been a challenge for frontend developers: the integration with databases and data storage. Azure Static Web Apps is unique in that it integrates very well with our CosmosDB database, a versatile cloud database that offers different API's to meet different developer skills and server a myriad of use cases in a very effective way.",
+      "source_content_hash": "de9f131701d4d85272869d56305917663a0a15a8d152254c6684f159b90f20a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这特别解决了前端开发者长期面临的挑战——数据库集成。静态Web应用与CosmosDB深度整合，这款多功能云数据库通过不同API满足多样化需求，以极高效率应对各类场景。"
+      }
+    },
+    {
+      "segment_id": "47cd8dd6",
+      "source_content": "### Security & Performance: E2E testing + debugging",
+      "source_content_hash": "7130628fa31b1ee358f56f017199f50716a797239671d615cafcead376f7352a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 安全与性能：端到端测试+调试"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "And when we go to the service station, it may be a good time to check our oil levels, air pressure and wipe our window panes. And what a better way to do it than with tools from the same developer ecosystem and that play right (yes, you got me! I'm playing with words now!) like [Playwright](https://dev.to/azure/16-test-automation-with-playwright-odk) and Edge Developer Tools.",
+      "source_content_hash": "6f4ec98503944ffc758d8ac4e78b78bb1b30036af18cf26a90d363604b5c53e3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "就像进服务站检查机油和胎压，现在您可以使用同生态链的顶尖工具——比如[Playwright](https://dev.to/azure/16-test-automation-with-playwright-odk)和Edge开发者工具——进行测试（没错，我在玩文字游戏！）。"
+      }
+    },
+    {
+      "segment_id": "383fbdd2",
+      "source_content": "So now when you use the newly release Preview environments, to test development from a specific staging branch, you will have also the ability to integrate with best-in-class tooling, iteration after iteration, until feature complete.",
+      "source_content_hash": "7d77111aeb81197b88db5a064ebdc1662a4627a419ed2fc3edfd614d0cc1bfaf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过新发布的预览环境测试特定暂存分支时，您还能在每次迭代中集成行业领先工具，直至功能完备。"
+      }
+    },
+    {
+      "segment_id": "13292277",
+      "source_content": "## Alignment: The ultimate e2e roadmap should _map_ to the development cycle",
+      "source_content_hash": "b416d553aadee1fd5def72a633cfca2591ce030557fb7ab630142ee5613c0d02",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 路线对齐：终极端到端方案应映射开发周期"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "Any aspect on its own, can describe an end-to-end experience. For instance:",
+      "source_content_hash": "74f0d1f101c48043b18873ddb617e43664c541d524d8f4cbf6e3166b33a1986c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "每个独立环节都可视为端到端体验。例如："
+      }
+    },
+    {
+      "segment_id": "8c9c56b6",
+      "source_content": "* If I want to secure my app against unauthorized access, I must implement identity. That's an E2E experience.\n * If I want to persist data, I'll need to integrate with a database. An E2E experience.\n * If I want to integrate third-party services on demand, I'll need event-driven functions. Another E2E experience.",
+      "source_content_hash": "a935127c092721c4edb506d177847da1aee4e487f77d3b72be0e54144ba5ad69",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 实现身份验证防御未授权访问——这是端到端体验\n* 集成数据库实现数据持久化——这是端到端体验\n* 通过事件驱动函数按需集成第三方服务——这也是端到端体验"
+      }
+    },
+    {
+      "segment_id": "9e90a9b3",
+      "source_content": "The ultimate end-to-end experience, however, is that that encompasses all components described by a matrix of architecture definitions and best practices,  mapping to the software development cycle itself.",
+      "source_content_hash": "4630274f3190471e806ea5e7afa892f3e8fb3b268579ade5e01033de650e1d2a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但真正的终极端到端体验，是涵盖架构定义矩阵所有组件、映射完整软件开发周期的解决方案。"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "![development roadmap equals cycle](../static/img/series/w4d1/SWAF5.png)",
+      "source_content_hash": "39fb8d4d611248391f6e5f38b1d264e37cc76b0a93214b155afe0ec444c7fe47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![开发路线图等于开发周期](../static/img/series/w4d1/SWAF5.png)"
+      }
+    },
+    {
+      "segment_id": "17b50e81",
+      "source_content": "When we are in the system design phase for our application, we will start thinking about what in research is known as \"Jobs to be Done\", and materialize them or _get them done_ , using tools or integrating with other products or services.",
+      "source_content_hash": "cb17cc753cfd2fbf982ee2fb5e2854065807b6b8db155c66e3174bd36aa47ea0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当进入应用程序的系统设计阶段时，我们将开始思考研究中称为\"待完成工作\"的事项，并通过工具或与其他产品服务的集成来具体实现这些需求。"
+      }
+    },
+    {
+      "segment_id": "719d3997",
+      "source_content": "**Setup phase**.\nJob to be done will be generic - \"I need to build a static web app.",
+      "source_content_hash": "91491005500ddf802b972f2509aab34c6a5680d548f7b74d39cbc2cec17f793a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**初始化阶段**。\n待完成工作通常是通用性的——\"我需要构建一个静态Web应用\"。"
+      }
+    },
+    {
+      "segment_id": "1852dfef",
+      "source_content": "- What do I need? => I need a framework.\n- What does the framework require => It's a JS framework that runs in the browser, or in a Node.js runtime. I need a node environment and a node package manager to manage dependencies. \n- Selected framework has its own CLI => I need it to optimize it and build it. \n- I want to version it, so I need a version control tool. To collaborate, I need to host that code in a central, remote location (aka version control hosting). \n- And because we want to build it remotely each time we integrate with a CI/CD pipeline, that includes a runner and some virtualization or emulation. - And we want to publish it, so I need a hosting service. \n- And...\"_",
+      "source_content_hash": "2fc8676b80d918d5b5b4c9f22f6f96f908295b6e6c115e158e45c032e5f20bd6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 我需要什么？ => 需要一个框架。\n- 框架要求什么 => 这是一个运行在浏览器或Node.js环境中的JS框架。需要Node运行环境和包管理工具来管理依赖。\n- 所选框架自带CLI => 需要用它来优化和构建应用。\n- 希望进行版本控制 => 需要版本控制工具。为了协作，需要将代码托管在中央远程仓库（即版本控制托管平台）。\n- 由于每次集成时都需要远程构建 => 需要包含运行器和虚拟化/模拟的CI/CD流水线。\n- 还需要发布应用 => 因此需要托管服务。\n- 以及...\""
+      }
+    },
+    {
+      "segment_id": "d2a3d4c7",
+      "source_content": "And those are the _requirements_ that we start mapping to _setup and service capabilities_, so we can put together local and remote environments capable to fulfill them.",
+      "source_content_hash": "55813eadcd69458faa23639949f089dcc291e504851e44165a5005dfff7bd4f2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这些就是我们需要映射到\"设置与服务能力\"的_需求_，从而搭建能够满足这些需求的本地和远程环境。"
+      }
+    },
+    {
+      "segment_id": "d4eab4a6",
+      "source_content": "## Welcome to the matrix",
+      "source_content_hash": "52d9166c472824f979b1b87030c48d6f26e223cb30864ec73ad14b3a364f3be8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 欢迎来到矩阵世界"
+      }
+    },
+    {
+      "segment_id": "0ddaa835",
+      "source_content": "So let's do together an exercise of architecture definitions based out of developer _jobs to be done_, classifying them by the milestone we defined in the previous graphic. As a bonus, we will map them to a requirement, that can be a business requirement, a developer job to be done, or an end user story.",
+      "source_content_hash": "f29aa625b6bc6b6f4d4eec7b32e3d24c767994366243f277cc1713dac5ecc2f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "让我们基于开发者的\"待完成工作\"共同进行架构定义练习，并按照前文图表定义的里程碑进行分类。作为附加项，我们会将其映射到可能是业务需求、开发者待完成工作或最终用户故事的需求项。"
+      }
+    },
+    {
+      "segment_id": "fd7ed056",
+      "source_content": "The matrix will be roughly based on the high-level diagram below:",
+      "source_content_hash": "5c65f009281b1db5cbac8da38f17317e0f51e8ac1e18097331344669b1e44770",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该矩阵将大致基于下方的高阶架构图："
+      }
+    },
+    {
+      "segment_id": "b08ad0b4",
+      "source_content": "![static web app high level architecture diagram](../static/img/series/w4d1/swaF6.png)",
+      "source_content_hash": "02b8b2f5c51bcb5238ba7544d161031d4f3bedd15b2ef2a3b2a3f54b772de2cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![静态Web应用高阶架构图](../static/img/series/w4d1/swaF6.png)"
+      }
+    },
+    {
+      "segment_id": "ea0b1e5c",
+      "source_content": "| Job to be done | Product/Service | Phase | Requirement | \n|----------|-------------|------|------|\n|As a developer, I want to use the tools I am familiar with, to code, build and deploy my Jamstack (Statically Generated) applications| VS Code / SWA CLI | Setup | As an end-user, I want to be able to access an online catalogue of products with their respective detail pages |\n|As a developer, I want to connect my remote repository where I collaborate with other team members, to the service I will be deploying my app to | GitHub / VS Code / Static Web Apps* | Setup | As a business owner, I want the code and secrets for my e-commerce platform to be stored safely |\n|As a developer, I want to setup a CI/CD pipeline, for remote collaboration and fast/agile integration |  GitHub Actions Static Web Apps | Setup | As a content author, I want to see the new content published when I submit it to the content authoring tool, without any additional manual work |\n|As a developer, I want to integrate with a database to store content and assets | CosmosDB*† / Azure Functions*† / Static Web Apps* | Implementation or Integration | As a business owner I want all assets and information to stored safely and versioned |\n|As a developer, I want to integrate with a (headless) CMS for 3rd party content authoring | Azure Functions*† / Static Web Apps* |Implementation or Integration | As a content author, I want to see the new content published when I submit it to the content authoring tool |\n|As a developer, I want to trigger the CI/CD workflows via custom/scheduled events | GitHub Actions* / Durable Functions** | Integration | As a business owner, I want my teams to automate the process of building and deploying new code or content so we can achieve optimal time-to-value |\n|As a developer, I want to secure my implementation to make sure requests to our service come from my application | Indentity Platform† | Implementation or Integration | As a business owner, I want to make sure our e-commerce tool is secure and compliant with laws and regulations |\n|As a developer, I want to restrict access to certain pages to users with a certain role| Identity Platform† | Implementation or Integration | As an end user, I want to keep a private profile with my payment methods and other PII |\n|As a developer, I want to localize the UI to several different languages | Cognitive Services*† | Implementation or Integration | As an end user, I want to access content in my own language |\n|As a developer, I want to personalize recommendations in dynamic pages | Cognitive Services*† | Implementation or Integration | As an end user, I want to have recommendations that are relevant to me |\n|As a developer, I want to integrate with a 3rd party payment platform | _3rd party_ / Azure Functions* | Implementation or Integration | As a business owner, I want payments processed by a reliable 3rd party provider |\n|As a developer, I want to preview and debug changes before I promote them to production | Static Web Apps Preview/Edge Developer Tools | Build/Deploy/Testing | As a business owner, I want to preview changes before they go live |\n|As a developer, I want to reduce technical debt by implementing an e2e test automation suite | Playwright / GitHub Actions | Testing | As an end user, I want the user interface to respond quickly and accurately, when I interact with it |\n|As a developer, I want to be able to publish my application to the web | Static Web Apps | Build/Deploy | As a business owner, I want my application to be accessible by web users from all parts of the world, with the least possible latency |\n|As a developer, I want to enable a mechanism for the application to be accessible via a distributed network | Azure Front Door | Setup/Integration | As a user I want web pages I visit, to load very fast |\n|As a developer I want to integrate with analytics tools, to share data with stakeholders | Static Web Apps / App Insights | Setup/Testing | As a business owner, I want to know what products are being queried the most to understand market trends |",
+      "source_content_hash": "af9c829f75e9a10dc64289397f5da4dc82c6b37ef0b34444099f0cb82ec25082",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_ea0b1e5c"
+      }
+    },
+    {
+      "segment_id": "4899bc54",
+      "source_content": "(*)Expresses the ability to operate directly from the VS Code context via an extension, or locally with the CLI capability\n(†) Expresses the existence of an SDK to accelerate and secure the implementation",
+      "source_content_hash": "476808b04daca182db76b8c99ed24e13b60be5c01af4602aba21bea5f73684d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "(*)表示可通过VS Code扩展直接操作，或通过CLI在本地实现的能力\n(†) 表示存在用于加速和保障实现的安全开发工具包(SDK)"
+      }
+    },
+    {
+      "segment_id": "4cc0fc36",
+      "source_content": "> **As we can see, you don't need to be part of a massive organization or a large, distributed team, to implement certain workflows and give structure to your own development cycles in process, to gain in developer productivity and delightful experiences.**",
+      "source_content_hash": "58c06fbb63ca4b16537d474109222ed4f6c085b66dcbf78b8f4e9f352ca37a1e",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> **由此可见，您无需身处大型组织或分布式团队，就能实施特定工作流，为开发流程赋予结构，从而提升开发效率并获得愉悦体验。**"
+      }
+    },
+    {
+      "segment_id": "c5e0bb3d",
+      "source_content": "Writing down your own matrix as you start, and extending it as your application scales and has extended requirements, can help you better organize yourself, make sure you're implementing best practices, and even evaluate tools and technologies to make sure you're on the right, most optimal path.",
+      "source_content_hash": "b1cf0be6d510e9a2b54af9254763f4389061f38eb3e08d0a300b9b2dd8ad7995",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在项目启动时记录专属矩阵，并随着应用规模扩展和需求增长不断完善，可帮助您更高效地组织工作、确保最佳实践的实施，甚至评估技术选型以优化发展路径。"
+      }
+    },
+    {
+      "segment_id": "f2c67ca5",
+      "source_content": "Static Web Apps is a modern, low configuration capability for Jamstack development, that offers you a myriad of satellite integrations, for free! And it has the advantage of growing with you, should you need more capacity, more tools, or even a full migration.",
+      "source_content_hash": "eb1fa49569762a14246449c91f4871880dc2e03ab4679ce779462c7e50550ff6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "静态Web应用作为Jamstack开发的现代化低配置方案，免费提供丰富的周边集成生态，其优势在于能伴随您的需求增长而扩展——无论是容量提升、工具补充还是完整迁移。"
+      }
+    },
+    {
+      "segment_id": "b7d7a8d8",
+      "source_content": "## To wrap this up...",
+      "source_content_hash": "f8f92ac4fed0632c3f8be60d7434fa76b382227a4b9c356f543d6b5e33f5e839",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 总结..."
+      }
+    },
+    {
+      "segment_id": "48249e3c",
+      "source_content": "Developer Experience is an end-to-end exercise that can be connected to the development, implementation and/or integration of a single feature or a group of them, from design, to execution, to testing, to release.",
+      "source_content_hash": "9e472cf1410d2cba3aa6f3e76982d9ca7ed9781fa1c509a397647f3d83f2a980",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "开发者体验是从设计到执行、测试直至发布的端到端实践，可关联单个功能或功能组的开发、实现和/或集成全过程。"
+      }
+    },
+    {
+      "segment_id": "ebfad7e4",
+      "source_content": "In order for developers to have a *great* experience they enjoy, from one end to the other, they need to find:",
+      "source_content_hash": "97a9a13bf685a6c123afc3f848d35dafc3d490eb52d54d096ffae19ebcb53ed7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "为了让开发者获得贯穿始终的_卓越_体验，他们需要："
+      }
+    },
+    {
+      "segment_id": "41da8c12",
+      "source_content": "- guidelines that help them define a problem they can design an effective solution\n- technologies that are compatible as building blocks for it\n- complete, accurate and fresh documentation to support at all times\n- tools that simplify the _jobs to be done_ or tasks, individual and collective (to a single developer or a team of them)\n- underlying mechanisms (exposed to the developer or not depending on their wishes or needs), for effectual program compilation, transpilation, testing, deployment and execution (such as runtimes and pipelines)\n- definitions and hooks for integration (with other technologies) or and migration (to other technologies)",
+      "source_content_hash": "cb9a7d5a420c0cbfae582850152973107d4e09120ea02d1188f141480db03a2e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 指导原则：帮助明确可设计方案的问题定义\n- 兼容技术：作为解决方案的构建模块\n- 完整文档：实时提供准确新鲜的指导支持\n- 效率工具：简化个体或团队的\"待完成工作\"\n- 底层机制：根据需求显隐的编译、转译、测试、部署和执行支撑（如运行时和流水线）\n- 集成规范：与其他技术的对接或迁移方案"
+      }
+    },
+    {
+      "segment_id": "af834e0d",
+      "source_content": "When all those, and some more, are fulfilled, developers become more productive, focused, and can spend their time doing what they love, instead of wasting it in undifferentiated tasks.",
+      "source_content_hash": "4ff9250215e6ac4e50b0a27a06c280476125674cd3c301913a6f5e52c9f730c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当这些要素（以及更多）得到满足时，开发者将提升生产力、保持专注，将时间投入创造性工作而非重复性劳动。"
+      }
+    },
+    {
+      "segment_id": "e594a4f9",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践练习"
+      }
+    },
+    {
+      "segment_id": "c277c3c0",
+      "source_content": "Try to reproduce the architecture seen above! Most of the integrations are available to the free tier! Show us how far you got!",
+      "source_content_hash": "c11ed1c23a697f27b620e5153ca4e3cf3f1cd877ce126b1c18199e58543e88cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "尝试重现上述架构吧！大部分集成功能在免费层即可使用！向我们展示你的实现成果！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-23.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.866789+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "ef0e8388f37d105974d3f0c5a547a3042e26749fcfdff5060345a2ebb262b188"
+  }
+}

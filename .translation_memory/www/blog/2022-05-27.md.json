@@ -1,0 +1,432 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-27.md",
+  "source_file_content_hash": "6dda9d25d905bbcccbb1d141d18d1669f8d585ce43358c40c3dd917fb9782eed",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: practices-byo-functions\ntitle: \"#26: Azure Functions & SWA\"\nauthors: [craig]\ntags: [swa, 30days, best-practices]\ndraft: false\n---",
+      "source_content_hash": "dded4a158f528b5d89568f934736cef1bd774575ca8b8e1c7c031925869a71ea",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/practices-byo-functions\" />\n  <meta name=\"twitter:title\" content=\"#24: Custom Vision & SWA\" />\n  <meta name=\"twitter:description\" content=\"Join @CraigShoemaker on #30DaysOfSWA as he walks us through the what-why-how, of 'Bringing Your Own Functions' to @AzureStatic Apps!\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/26-banner.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/practices-byo-functions\" />\n</head>",
+      "source_content_hash": "0ce246774ea5fd8a1de7d4d2ab69b6ec80daad02c2d44b4e8e305d3aca5fef13",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Welcome to `Week 4, Day 5` of **#30DaysOfSWA**!!",
+      "source_content_hash": "e75f8db90d934734c286a6a047006bf5b76fae4827079540a908ce9ca4839425",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第4周第5天`！"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "All week, we'll explore end-to-end development workflows with Azure Static Web Apps as one component that is integrated with other services to deliver an enhanced modern web application experience.",
+      "source_content_hash": "9315389f35dabcefaeb7936dafe86dd46f0f3179bef014ca4e61ffe8e29b2dec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本周我们将探索端到端的开发工作流，其中Azure静态Web应用作为集成组件，与其他服务协同提供增强的现代化Web应用体验。"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "The default Azure Static Web Apps architecture separates the web application into two components: static assets (served from global content distribution services) and dynamic API endpoints (implemented using serverless architectures). In our [API-enabling SWA](blog/deploying-swa) post, we focused on **Managed Functions**, where the Azure Static Web Apps service configures and manages your Azure Functions Deployment.",
+      "source_content_hash": "35c9be401c69968554e0381cc5c327efa6c162abebb5551f9341d72cf0cb02eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "默认的Azure静态Web应用架构将Web应用分为两个组件：静态资源（由全球内容分发服务提供）和动态API端点（通过无服务器架构实现）。在[启用SWA API](blog/deploying-swa)一文中，我们重点介绍了**托管函数**——即由Azure静态Web应用服务配置和管理您的Azure函数部署。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Today, we'll explore the other option **Bring Your Own Functions** - where you can use pre-existing (or independently developed) Azure Functions applications and manage their deployment separately.",
+      "source_content_hash": "dadca6943d4969c414710769bb3f575763d09a2c3a47372e83d05ce398386b28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天，我们将探讨另一种选择**自带函数(BYOF)**——您可以使用预先存在（或独立开发）的Azure函数应用，并独立管理其部署。"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "5da9e02b",
+      "source_content": "* What is \"Bring Your Own Functions\" (BYOF)? \n* Benefits of BYOF over Managed Functions\n* Switching from Managed Functions to BYOF\n* **Resources**: Building Serverless apps with Azure Functions\n* **Exercise**: Complete [this learning module](https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/), add real-time updates to your SWA!",
+      "source_content_hash": "705b6e89e1fe30271a5bc6167d92bc2f8484459f50fc3b07e1909d5a0df976c7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 什么是\"自带函数(BYOF)\"？\n* BYOF相比托管函数的优势\n* 从托管函数切换到BYOF\n* **资源**：使用Azure函数构建无服务器应用\n* **练习**：完成[此学习模块](https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)，为您的SWA添加实时更新功能！"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "![](../static/img/series/26-banner.png)",
+      "source_content_hash": "0c1ea0c6fbc436eab416e11d1df7de33898a12a89e89591671a5d5fa3c777eef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/26-banner.png)"
+      }
+    },
+    {
+      "segment_id": "80d9e13c",
+      "source_content": "## What does \"Bring Your Own Functions\" (BYOF) mean?",
+      "source_content_hash": "e9aa064f7276a34ae4fdc3e79111236d38633d4892af87e3003f7eaea1c3b229",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## \"自带函数(BYOF)\"意味着什么？"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "In our [API-enabling SWA](blog/deploying-swa) post, we mentioned that the Azure Static Web App can implement Serverless API using Azure Functions in two ways:",
+      "source_content_hash": "c489c2135fbaa24f17767e8cfd0e367029dfb690d1dbe2300b8db7217592ed56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在[启用SWA API](blog/deploying-swa)一文中我们提到，Azure静态Web应用可以通过两种方式实现无服务器API："
+      }
+    },
+    {
+      "segment_id": "8612da05",
+      "source_content": "* **Managed Functions** - where the Azure Static Web Apps service configures and manages your Azure Functions deployment.\n* **Bring Your Own Functions** - where you use a pre-existing Azure Functions application and manage the deployment yourself.",
+      "source_content_hash": "e287a94445f3b513115ec430892531863ddf03595151a6b2da8d6e81d66fe428",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **托管函数**——由Azure静态Web应用服务配置和管理您的Azure函数部署\n* **自带函数**——使用预先存在的Azure函数应用并自行管理部署"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "The second option means that you build and deploy a serverless application using Azure Functions that exists _independent_ of your Azure Static Web App deployment. These applications can make use of the [full Azure Functions feature set](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) without any of the limitations imposed for Managed Functions in SWA. All you need to do is **configure** the Static Web App service to use this new serverless API endpoint.",
+      "source_content_hash": "711f4576a53ea99ab3aa95fe26c2d23c5eb9a916658cf376adf673f692cd50f2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "第二种方案意味着您可以构建并部署一个独立于静态Web应用的Azure函数无服务器应用。这些应用能够利用[完整的Azure函数功能集](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)，而不受SWA中托管函数的限制。您只需**配置**静态Web应用服务使用这个新的无服务器API端点。"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "## Why \"Bring Your Own Functions\"?",
+      "source_content_hash": "ea1ced2fa035cecf18514ac5464d388dee867b09c03094cd5425de5e6bfcaeb6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 为什么选择\"自带函数\"？"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Bring Your Own Functions is a power feature of Azure Static Web Apps that lets you link existing Functions apps and allows you to **avoid the restrictions of Managed Functions**. This means you can:",
+      "source_content_hash": "8d59a0b9c0ac8b52c2dc49fdbea4f6b313ecc4b52b9e1b09c7e98546e66f6a80",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "自带函数是Azure静态Web应用的一项强大功能，允许您链接现有函数应用并**规避托管函数的限制**。这意味着您可以："
+      }
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "*   Implement and run functions in any language using **[custom handlers](https://docs.microsoft.com/azure/azure-functions/functions-custom-handlers)**.\n*   Use **[triggers and bindings](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings?tabs=csharp)** to create complex workflows with ease.\n*   Implement **[Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview?tabs=csharp)** that remain stateful in serverless contexts.\n*   Use any other Azure Functions features and adopt **[best practices](https://docs.microsoft.com/en-us/azure/azure-functions/functions-best-practices?tabs=csharp)**.",
+      "source_content_hash": "85dfbdbaeb5594bb31b7b832cfa812bb12f3514b2cfc8a1a91aaf23ebae3b934",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 使用[自定义处理程序](https://docs.microsoft.com/azure/azure-functions/functions-custom-handlers)以任意语言实现函数\n* 通过[触发器和绑定](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings?tabs=csharp)轻松创建复杂工作流\n* 实现保持无服务器上下文状态性的[持久函数](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview?tabs=csharp)\n* 使用其他任何Azure函数特性并采用[最佳实践](https://docs.microsoft.com/en-us/azure/azure-functions/functions-best-practices?tabs=csharp)"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "These kinds of capabilities become critical when you deploy real-world applications at scale. Note that Azure Static Web Apps has two hosting plans: free and standard where the Free tier supports only Managed Functions. To take advantage of the power of \"Bring Your Own Functions\" you need to be on the standard plan.",
+      "source_content_hash": "b9c14ad3b5d996ce3a3f0fe6aaf09d1840955e053f600f445e014eb2841f332e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这些能力在部署实际生产级应用时至关重要。请注意Azure静态Web应用有两种托管计划：免费版和标准版，其中免费版仅支持托管函数。要使用\"自带函数\"的强大功能，您需要选择标准计划。"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## Linking an existing Functions app",
+      "source_content_hash": "b609de70da866e9db2fc2dfaa965a034b02c7a687ec9629b70634089868ecfe4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 链接现有函数应用"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Using an existing Functions app in Static Web Apps is easy - **all your have to do is link the two apps together**. Once you create the link, then a Functions app published under the following URL:",
+      "source_content_hash": "09054bfb8adb7d76a266ed9f5184e3022b3a6f5350db0121416ff692c300c030",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在静态Web应用中使用现有函数应用非常简单——**只需将两个应用链接起来**。建立链接后，原本发布在这个URL下的函数应用："
+      }
+    },
+    {
+      "segment_id": "7a577a50",
+      "source_content": "```\nhttps://my-functions-app.azurewebsites.net/api/data\n```",
+      "source_content_hash": "2c9e2ce9aa414996eb83fb502ffb9ec6503482853011d392ebb13dccf17e97a9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_7a577a50"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "...is now also available under the `api` route in your static web app.",
+      "source_content_hash": "63f23182fc7cc545a6b5f5160885b46a46e2e4d04ce3091855e31990a2e26e99",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "...现在也可以通过静态Web应用的`api`路由访问。"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "For instance:",
+      "source_content_hash": "e7fa29a18b75e39f4feff4e225db896c98877f1fba78d8d2005b2f43a234b6ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "例如："
+      }
+    },
+    {
+      "segment_id": "bc137a19",
+      "source_content": "```\nhttps://red-sea-123.azurestaticapps.net/api/data\n```",
+      "source_content_hash": "84f795ca2928b53257b01b841ed7014ce0a372cccec73866937debb4e6c87f09",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_bc137a19"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "Linking an existing Functions app is a two step process: (1) Update the [staticwebapp.config.json](https://docs.microsoft.com/azure/static-web-apps/configuration) file, and (2) Link the apps via the Azure portal.",
+      "source_content_hash": "554b5c2cdc5f0e52decea9b9d30ef86ab4f85475ef035e8097c847e819926ef6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "关联现有Functions应用分为两步：(1) 更新[staticwebapp.config.json](https://docs.microsoft.com/azure/static-web-apps/configuration)文件，(2) 通过Azure门户关联应用。"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "### 1. Update the configuration",
+      "source_content_hash": "d1ce6f9f367272152630f0f7d8c98c4b576b9679880a4bc5007250155bbca5ec",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1. 更新配置文件"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "Edit your site's `staticwebapp.config.json` file to make these changes:",
+      "source_content_hash": "7713fed6a7b7a8342ed933e877a9e7e6bf866c595ab69aa9b94267b3f340162c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "编辑站点的`staticwebapp.config.json`文件进行以下修改："
+      }
+    },
+    {
+      "segment_id": "536b7b6b",
+      "source_content": "* Set the `api_location` value to an empty string (`\"\"`)",
+      "source_content_hash": "e98bd745cf63788a95060101e62e6ecbe396a61f4b941c14ef7e6f75a197c379",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 将`api_location`值设为空字符串(`\"\"`)"
+      }
+    },
+    {
+      "segment_id": "0a103a02",
+      "source_content": "### 2. Link apps via the Azure portal",
+      "source_content_hash": "0969d5a3f0ddcea159c97bae755f7e1b27352fa963c93ede51eefd4bb4b6644b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 2. 通过Azure门户关联应用"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "Navigate to your static web app in the Azure portal and make these changes:",
+      "source_content_hash": "2cc75844e64d8b7d34d4719639535f4597919789345d4c0896ab235bb97754b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在Azure门户中导航至静态Web应用并进行以下操作："
+      }
+    },
+    {
+      "segment_id": "9e8f150c",
+      "source_content": "* Click on **Functions** in the *Settings* menu\n* Click **Production** in the *Environment* dropdown\n* Click **Link to Function app** next to the *Functions type* dropdown\n* Select your subscription from the *Subscription* dropdown\n* Select your Functions app name from the *Function App* dropdown\n* Click the **Link** button",
+      "source_content_hash": "c93827a7d9cf96405c54b92d36d1b72ed7ba14bb8d2ec2d90de6a0b06e0c43c2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 在*设置*菜单中点击**Functions**\n* 在*环境*下拉菜单中选择**生产环境**\n* 在*Functions类型*下拉菜单旁点击**关联Function应用**\n* 从*订阅*下拉菜单中选择您的订阅\n* 从*Function应用*下拉菜单中选择目标Functions应用名称\n* 点击**关联**按钮"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "Now your Functions app is linked to your website and is available under the `api` route for your Static Web App!",
+      "source_content_hash": "f7962d4cb04e7b5b17abf70408c3cc2a2d3e5df60dac0f8d990a93dbf6b473c6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在您的Functions应用已与网站关联，可通过静态Web应用的`api`路由访问！"
+      }
+    },
+    {
+      "segment_id": "f8edb6d2",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "### 1. Overview",
+      "source_content_hash": "c073053dc62be13ee877e77a739149cdd8459b10c95c0dd0dbab90bcc5da9ef2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1. 概述"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "Are you new to the whole idea of serverless applications and a Functions-based backend? Watch this video overview of Azure Functions - then check out the [developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference?tabs=blob).",
+      "source_content_hash": "da2f3d3b962150623c48f3704e2901f33d990edf987bab20cd3faf370fd7fea2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "是否初次接触无服务器应用和Functions后端？观看这段[Azure Functions视频概述](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)，然后查阅[开发指南](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference?tabs=blob)。"
+      }
+    },
+    {
+      "segment_id": "de88dabe",
+      "source_content": "<iframe width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/8-jz5f_JyEQ\" title=\"YouTube video player\" frameborder=\"0\" allowfullscreen></iframe>",
+      "source_content_hash": "8f9746de3e5e86d7005f52cb6a055fa09747395d5adb331924cffb94872fa059",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_de88dabe"
+      }
+    },
+    {
+      "segment_id": "54bafb10",
+      "source_content": "### 2. Quickstart",
+      "source_content_hash": "7c7cde5b98f4ec29ac6a2a6f4ff5d36ae728d9c21b7960c6484699b4e0612893",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 2. 快速入门"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "Want to get a quickstart with Azure Functions? You can code your functions in C#, Java, JavaScript, PowerShell, Python, TypeScript and more (e.g., Go, Rust). For example, you can create JavaScript Functions apps in the following ways:",
+      "source_content_hash": "8338b639c76712b6fcf94ef17ad30e8cd868dccfd12e1d19821b4efbbc3cd1e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想要快速上手Azure Functions？您可以使用C#、Java、JavaScript、PowerShell、Python、TypeScript等多种语言（如Go、Rust）编写函数。例如，可通过以下方式创建JavaScript Functions应用："
+      }
+    },
+    {
+      "segment_id": "7a3b7c62",
+      "source_content": "* [Using Visual Studio Code](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-node)\n * [Using Commandline Tools](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-node?tabs=azure-cli%2Cbrowser)\n * [Using an ARM Template](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-resource-manager?tabs=visual-studio-code%2Cazure-cli) = JSON configuration file",
+      "source_content_hash": "95d019066f526bd5f2238b32438f21ada184dc451c4038401824e79ef62c5f0a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [使用Visual Studio Code](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-node)\n* [使用命令行工具](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-node?tabs=azure-cli%2Cbrowser)\n* [使用ARM模板](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-resource-manager?tabs=visual-studio-code%2Cazure-cli) = JSON配置文件"
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "### 3. Learning Path",
+      "source_content_hash": "ce5a501e1c793ff23b9731e0bfcc757c0dd3074866833e971b2012c4868046ab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 3. 学习路径"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "Want a more comprehensive tour of Azure Functions features and capabilities, with hands-on modules? Try the [Create Serverless Applications](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/) learning path. It has 11 modules covering both core concepts and usage examples.",
+      "source_content_hash": "d56ca96cf3176cf9d8fc6221c96a31a0ca2398567b7839f4cb617091698483e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想要系统学习Azure Functions功能特性并通过实践模块掌握？尝试[创建无服务器应用程序](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/)学习路径。该路径包含11个模块，涵盖核心概念和使用示例。"
+      }
+    },
+    {
+      "segment_id": "48155948",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习"
+      }
+    },
+    {
+      "segment_id": "44aaa880",
+      "source_content": "Complete [this learning module](https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)to learn how to use Azure SignalR to get real-time updates to your app using Azure Functions. _Then put that learning to use by updating one of your existing SWA projects to use this capability_.",
+      "source_content_hash": "18cc7c196f2e69d05c20aaf572f37947afafc1c5969a80060513f667997ccf02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "完成[此学习模块](https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)，掌握如何使用Azure SignalR通过Azure Functions实现应用实时更新功能。_然后将所学知识应用于现有SWA项目的升级改造_。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-27.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.880940+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "6dda9d25d905bbcccbb1d141d18d1669f8d585ce43358c40c3dd917fb9782eed"
+  }
+}

@@ -1,0 +1,572 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-28.md",
+  "source_file_content_hash": "93af8cbf6e6379c314e911e44512a3986fabc63220c844002177a8c27af3dd19",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: practices-cosmosdb\ntitle: \"#27: Video Conf with ACS & SWA\"\nauthors: [david]\ntags: [swa, 30days, best-practices]\ndraft: false\n---",
+      "source_content_hash": "06db654c1285274d1b3e50c040e9f9bdccdc6d282ae8760785660ba0bce6edc4",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Welcome to `Week 4, Day 6` of **#30DaysOfSWA**!!",
+      "source_content_hash": "f9ba541e1ecacdf3c49701088e7bd63a0a1fc4730f1cd8d14a4c4e43e6c388f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的第4周第6天！！"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "In an earlier example this week, we looked at a real-world case study with KlipTok, involving Azure Static Web Apps integration with _multiple_ backend services, to deliver the desired user experience. Today we look at another great example of an end-to-end development workflow that involves multiple service integrations - this time with a focus on deliver a rich video conferencing web application experience. Let's learn how to build this with **a workflow that involves Azure Static Web Apps, Azure Functions, Azure CosmosDB - and Azure Communications Services (ACS)**.",
+      "source_content_hash": "524c9e8d6fad437c96d8d57996ca760d70a33a6992d950f00927e12de5d1a124",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在本周早先的示例中，我们通过KlipTok的实际案例研究了Azure静态Web应用如何与_多个_后端服务集成，以提供理想的用户体验。今天我们将探讨另一个端到端开发工作流的优秀示例——这次的重点是构建一个功能丰富的视频会议Web应用体验。让我们学习如何通过**结合Azure静态Web应用、Azure Functions、Azure CosmosDB以及Azure通信服务(ACS)**的工作流来实现这一目标。"
+      }
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "* What is Azure Communications Services (ACS)?\n * The Video Conference Authentication Workflow\n    - Azure Static Web Apps for social authentication\n    - Azure CosmosDB to store ACS identity information\n    - Azure Functions to map social auth to ACS identity\n * A Static Web App - hosting a Metaverse? 🤯\n * **Exercise** Deploy the sample yourself following the step-by-step tutorial",
+      "source_content_hash": "018efb1a6657fb39e8a94c0e1c0b7f069172cdebdb9e2274593644f18824aeaf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 什么是Azure通信服务(ACS)？\n * 视频会议认证工作流\n    - 使用Azure静态Web应用实现社交认证\n    - 使用Azure CosmosDB存储ACS身份信息\n    - 使用Azure Functions映射社交认证到ACS身份\n * 静态Web应用——托管元宇宙？🤯\n * **实践练习** 按照分步教程自行部署示例"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "![](../static/img/series/27-banner.png)",
+      "source_content_hash": "23b713b816865a5df21f28fc5f0daba708915bcf4a7af61ed4ae12a3683d8826",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/27-banner.png)"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## What is Azure Communications Services (ACS)?",
+      "source_content_hash": "7e655f899adcc14625e3b88de365fae4f293e2985b7eb57f6f6c8733717b0dec",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 什么是Azure通信服务(ACS)？"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "[Azure Communication Services (ACS)](https://docs.microsoft.com/en-us/azure/communication-services/overview) is a set of **rich communication, video, and SMS APIs** to deploy your applications across any device, on any platform. If you want to enable emails, chat, audio/video conferencing, phone calls or SMS inside an existing app, this service is right for you. You can view it as your building blocks to create your own custom version of Microsoft Teams, it uses the same underlying infrastructure. This [CPaaS](https://www.forbes.com/advisor/business/software/what-is-cpaas/) (Communications Platform As A Service) will manage scalability, quality & availability of this service for you. This platform is also built on top of our secure and compliant cloud.",
+      "source_content_hash": "03bf360957352a6b2d3613793d77f7062acc559beed202c9b15ab43982747266",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Azure通信服务(ACS)](https://docs.microsoft.com/en-us/azure/communication-services/overview)是一套**丰富的通信、视频和短信API**，可在任何设备、任何平台上部署您的应用程序。如果您希望在现有应用中集成电子邮件、聊天、音频/视频会议、电话或短信功能，这项服务正适合您。您可以将其视为构建自定义版Microsoft Teams的基础组件，它使用相同的基础架构。这项[CPaaS](https://www.forbes.com/advisor/business/software/what-is-cpaas/)（通信平台即服务）将为您管理服务的扩展性、质量和可用性。该平台还构建在我们安全合规的云基础之上。"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Watch this short video for a quick introduction 👇🏼",
+      "source_content_hash": "21af2034c14e69c5bb2b79c4d1b23d775b92b8c330c52d2115c1187c167fb774",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "观看这段短视频快速了解👇🏼"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Of course, this service comes with a price. You can find the cost of each service by visiting [Azure Communication Services pricing | Microsoft Azure](https://azure.microsoft.com/en-us/pricing/details/communication-services/).",
+      "source_content_hash": "e808a9d3cc6096e2813fe9bc56303a133a4138847461778eeb9b3c984ec08da8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当然，这项服务是收费的。您可以通过访问 [Azure通信服务定价 | Microsoft Azure](https://azure.microsoft.com/en-us/pricing/details/communication-services/)查看各项服务的费用。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "ACS exposes its services via various SDKs: [Azure Communication Services – Samples and Tools](https://github.com/Azure/communication) available for JavaScript, .NET, Java, Android, iOS & Python developers.",
+      "source_content_hash": "6c84e989eda445e2c0704f61527ec302ec5eeca361d481435464389b19cb291c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "ACS通过多种SDK提供其服务： [Azure通信服务 – 示例和工具](https://github.com/Azure/communication)支持 JavaScript、 .NET、 Java、 Android、 iOS 和 Python 开发者。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "You can also optionally use this on top of the ACS UI library: [Overview – Page ⋅ Storybook](https://azure.github.io/communication-ui-library/?path=/story/overview--page) which consists of React-based components implementing the [Microsoft Fluent Design](https://developer.microsoft.com/fluentui/) to help you build visually engaging web apps. The best sample mixing all of these concepts is **[Group calling hero sample – An Azure Communication Services sample overview](https://docs.microsoft.com/en-us/azure/communication-services/samples/calling-hero-sample?pivots=platform-web)**.",
+      "source_content_hash": "dc32fa0659733699fbc100fc02d529e72a767f28b14895d4372c3fadff60b4e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您还可以选择在ACS UI库之上使用： [概述 – Page ⋅ Storybook](https://azure.github.io/communication-ui-library/?path=/story/overview--page)，它包含基于React的组件，实现了 [Microsoft Fluent Design](https://developer.microsoft.com/fluentui/) ，帮助您构建视觉上吸引人的Web应用。融合所有这些概念的最佳示例是**[群组通话英雄示例 – Azure通信服务示例概述](https://docs.microsoft.com/en-us/azure/communication-services/samples/calling-hero-sample?pivots=platform-web)**。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "To give you a brief idea, watch this 2 min video tutorial that shows you how to get the internal ACS authentication token to connect to its infrastructure. I can then join an existing Teams meeting using a simple web page and the ACS JavaScript SDK:",
+      "source_content_hash": "7c210e3aaf6ee67ac09bab397e2393de8c0adbfd9fdba6ed50208abddf8a52cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "为了让您有个大致了解，观看这段2分钟的视频教程，了解如何获取内部ACS认证令牌以连接其基础架构。然后我可以通过简单的网页和ACS JavaScript SDK加入现有的Teams会议："
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "**Want to follow along at home?** You simply need to:",
+      "source_content_hash": "eae877ebff20a26c70abde6d55216d917d427c17d663a117750a1fa1e0fac740",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**想在家跟着做吗？** 您只需："
+      }
+    },
+    {
+      "segment_id": "9b797309",
+      "source_content": "* [Create an Azure Communication Services resource in your Azure Portal](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) \n  * Navigate to https://aka.ms/acsquicktest and follow the video tutorial above.",
+      "source_content_hash": "382229e0acea96ebf26101bd523df82378b14a42fde43287887fef911258fc53",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [在Azure门户中创建Azure通信服务资源](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) \n  * 访问 https://aka.ms/acsquicktest 并按照上面的视频教程操作。"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "You’ll discover that, by default, Azure Communication Services provides the basic authentication & identity layer. But you need to build on top of it to connect your own identity platform. Let’s see how to do that, next!",
+      "source_content_hash": "fb7f8fe8badba0ae1af24d4fe5e451a992904597239e5f123c08925e928ef26e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您会发现，默认情况下，Azure通信服务提供了基本的认证和身份层。但您需要在此基础上连接自己的身份平台。接下来，我们看看如何实现这一点！"
+      }
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "## Building an authentication layer with Azure Function, CosmosDB & Static Web App",
+      "source_content_hash": "100bf5ab55141f6fecf0a441541d8e359c43a2c0fbfbdf1ad5c488704239029a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 使用Azure Function、CosmosDB和静态Web应用构建认证层"
+      }
+    },
+    {
+      "segment_id": "9e95fc4a",
+      "source_content": "### 1. Azure Static Web Apps - social authentication",
+      "source_content_hash": "87e92205d46b984a22c1237b201d846e0905cb01c6fa52eaf6dfb8428504013a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1. Azure Static Web Apps - 社交身份验证"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Well, it turns out that SWA provides an awesome out of the box authentication experience. To know more about it, please read: [Authentication and authorization for Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations). In seconds, without any additional code required, you’ll have an authentication layer provided to you!",
+      "source_content_hash": "277ec2800b3215eaa069a30e117e0342e31ebdb8a6d4606120a27954c2b3275c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "实际上，SWA 提供了开箱即用的出色身份验证体验。要了解更多信息，请阅读：[Azure Static Web Apps 的身份验证和授权](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations)。无需编写任何额外代码，几秒钟内即可获得现成的身份验证层！"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "We’re going to use it as our front end to welcome and authenticate our users.",
+      "source_content_hash": "b65a3d54c691ef4db1694b15beba4d99a72e02f25cc84cccad7ee08075c26806",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将使用它作为前端来欢迎并验证用户身份。"
+      }
+    },
+    {
+      "segment_id": "bd92edfc",
+      "source_content": "### 2. Azure Functions - map to ACS identity",
+      "source_content_hash": "2da09e6051d4253581af7350ea9f981283657f7f01a76ce80c84902742d41c03",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 2. Azure Functions - 映射到 ACS 身份标识"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "Then, we will map their social account identity with the internal ACS identity via an Azure Function. The Azure Function will store the mapping into a small CosmosDB table. Here’s the flow.",
+      "source_content_hash": "a110c8d39be14c8d3f935f97ae4b6f134a36a4f5cb75573c9f1eb120a874a4dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "然后，我们将通过 Azure Function 将他们的社交账户身份与内部 ACS 身份标识进行映射。Azure Function 会将映射存储在一个小型 CosmosDB 表中。流程如下："
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "First, you’ll land on a page asking you to choose your favorite social provider:",
+      "source_content_hash": "304fb3a3a55da4931d9ba3c4e213183d2b07692b91222a79508818cb62e1e74e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "首先，您会进入一个页面，要求选择您喜欢的社交登录提供商："
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "![Screenshot of the Static Web App sample showing the Twitter, Github, Microsoft & Google logos](../static/img/series/w4d6/ACSSWA001.jpg)",
+      "source_content_hash": "66cf9ff8ae1cec17c80a9569d97763abcb5f4c41bfb01861dca09adff45f0577",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![静态 Web 应用示例的截图，显示 Twitter、Github、Microsoft 和 Google 的 logo](../static/img/series/w4d6/ACSSWA001.jpg)"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "Then, once authenticated, you’ll be directly connected to the Azure Communication Services infrastructure. No need to generate a token or whatever, the Azure Function took care of it. I’ve been using my Twitter account in this screenshot for instance:",
+      "source_content_hash": "0f3594354c3992854dd4a35ff7c7f98f041408a014921ec0541930fd016b5d89",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "认证通过后，您将直接连接到 Azure 通信服务基础设施。无需生成令牌或其他操作，Azure Function 已为您处理。例如，在此截图中我使用了我的 Twitter 账户："
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "![Screenshot of the Static Web App sample once authentified, showing the web camera active](../static/img/series/w4d6/ACSSWA002.jpg)",
+      "source_content_hash": "330b326b828a82b12c818f721080f0d7e35700e435d625bc674c291cb0cabe0b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![认证后的静态 Web 应用示例截图，显示网络摄像头已激活](../static/img/series/w4d6/ACSSWA002.jpg)"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "You see that the UI shows how my Twitter account, *davrous@twitter*, is mapped to the internal ACS user ID *8:acs:4ba98fcc*… that you should normally not share to the users of course 😉.",
+      "source_content_hash": "5d5c921740cba53061bb9502f2d124b36d646ca1e79dd034d7ff4be343281d1c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可以看到 UI 显示了我的 Twitter 账户 *davrous@twitter* 如何映射到内部 ACS 用户 ID *8:acs:4ba98fcc*...当然正常情况下您不应该向用户显示这些信息 😉。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "Thanks to that, you’re ready to call friends and colleagues immediately or join a Teams meeting via simply using their social account email address as the person to call.",
+      "source_content_hash": "68f07dd4d06fef0598b5bc399ab7c9f230a916e06d174df7aef2fa47ca3a4337",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过这种方式，您可以立即呼叫朋友和同事，或仅通过使用他们的社交账户电子邮件地址作为呼叫对象来加入 Teams 会议。"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "### 3. Azure Functions + CosmosDB Binding",
+      "source_content_hash": "55168cb9bae54668983a78381e90abaf659684467b3bd67bc1e8d840676805ce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 3. Azure Functions + CosmosDB 绑定"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "Let’s have a look to the Azure Function code enabling this scenario. First, you can see in the [function.json file](https://github.com/davrous/acsauth/blob/main/api/users/function.json) that I’m using the CosmosDB binding feature. To know more about this feature:",
+      "source_content_hash": "0d4a9ad1bf5cd9b7bf205368c769f93670834732ec62a02d63ef66d288c8d672",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "让我们看看实现此场景的 Azure Function 代码。首先，您可以在 [function.json 文件](https://github.com/davrous/acsauth/blob/main/api/users/function.json) 中看到我使用了 CosmosDB 绑定功能。要了解更多关于此功能的信息："
+      }
+    },
+    {
+      "segment_id": "cc9271fb",
+      "source_content": "-\t[Azure Cosmos DB input binding for Functions 2.x and higher](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-input?tabs=in-process%2Cfunctionsv2&pivots=programming-language-javascript)\n-\t[Azure Cosmos DB output binding for Functions 2.x and higher](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-output?tabs=in-process%2Cfunctionsv2&pivots=programming-language-csharp)",
+      "source_content_hash": "6b4793cfb72a7ea8c071e548752d23e9712033305dfd42b0afa122e65de6f319",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "-\t[Azure Functions 2.x 及更高版本的 Azure Cosmos DB 输入绑定](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-input?tabs=in-process%2Cfunctionsv2&pivots=programming-language-javascript)\n-\t[Azure Functions 2.x 及更高版本的 Azure Cosmos DB 输出绑定](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-output?tabs=in-process%2Cfunctionsv2&pivots=programming-language-csharp)"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "In a nutshell, via a simple declaration in the *function.json* file, you have a simple data access layer available in your Azure Function code for free.",
+      "source_content_hash": "8539aa6d570fb9613f519206c164e1036a01473d3a71feb298c0b1d568c4394d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "简而言之，通过在 *function.json* 文件中进行简单声明，您就可以在 Azure Function 代码中免费获得一个简单的数据访问层。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "If you look into my json file, I’m defining a route under *users/{email}/{lookup:bool?}* that will be exposed under 2 functions in my Azure Function: *setUser* as the output binding (to write or update into CosmosDB) and *getUser* as the input binding (to read from CosmosDB).",
+      "source_content_hash": "2eafd9fb2ae0bb21071118f6f870abe1601303499672cadf82d2b71b3e30f876",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果您查看我的 json 文件，我定义了一个路由 *users/{email}/{lookup:bool?}*，它将在我的 Azure Function 中暴露为两个函数：*setUser* 作为输出绑定（用于写入或更新 CosmosDB）和 *getUser* 作为输入绑定（用于从 CosmosDB 读取）。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "In this declaration file, I’m also asking the Azure Function to use the CosmosDB database named “*ACS*” with the table named “*users*” using “*email*” parameter as the partition key.",
+      "source_content_hash": "f1457131de332e9b397dc759258ad3e757b8c9ac0a43f30ab9e87baf3dbefd1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在此声明文件中，我还要求 Azure Function 使用名为“*ACS*”的 CosmosDB 数据库和名为“*users*”的表，并使用“*email*”参数作为分区键。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "*getUser* will be called with a first required parameter which is an email address associated to the ACS internal identity. It has a second optional parameter which is a boolean. This asks to the Azure Function to do a simple resolve query to return the internal ACS id associated with the email address. It’s useful when you’d like to call someone on ACS by simply providing his email address rather than being forced to know its internal ACS identity (starting with *8:acs:xxx*).",
+      "source_content_hash": "daf75804db26a64660f179a15300f40304562c25a6f824dbef2770d2fe1acf43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "*getUser* 将被调用时带有一个必需的参数，即与 ACS 内部身份标识关联的电子邮件地址。它还有一个可选的布尔参数。这要求 Azure Function 执行一个简单的解析查询，以返回与电子邮件地址关联的内部 ACS ID。当您希望通过仅提供某人的电子邮件地址（而不是必须知道其以 *8:acs:xxx* 开头的内部 ACS 身份标识）来在 ACS 上呼叫某人时，这非常有用。"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "*setUser* simply create a new record or update it.",
+      "source_content_hash": "5324fcc9e9d87445ee8cc8848ec1a973336459ec13cdd7afdc86be7c8378f62d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "*setUser* 只是创建新记录或更新现有记录。"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "You can find the complete source code of the Azure Function there: [acsauth/index.ts at main · davrous/acsauth (github.com)](https://github.com/davrous/acsauth/blob/main/api/users/index.ts).",
+      "source_content_hash": "7131f93c41cf4649ba80a7801a7d0a3959d5713b2a04a7f6ea0ac02b3917ac42",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "你可以在以下位置找到Azure Function的完整源代码：[acsauth/index.ts at main · davrous/acsauth (github.com)](https://github.com/davrous/acsauth/blob/main/api/users/index.ts)。"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "The first block is simply doing the resolve logic I was mentioning just before. The second block is first checking if the user has already been created in the CosmosDB table and if the ACS token is still valid. Indeed, ACS tokens are valid for 24 hours only. If the user doesn’t exist or if its token has expired, we’re using the ACS JavaScript SDK to create a new identity & authentication token to map it to the email address.",
+      "source_content_hash": "b335c151811711249958604d7113807b185fab43d5e8dbf5c9d7537ac8d661e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "第一个代码块实现了前文所述的解析逻辑。第二个代码块首先检查用户是否已存在于CosmosDB表中且ACS令牌是否仍有效（ACS令牌有效期仅为24小时）。若用户不存在或令牌过期，则调用ACS JavaScript SDK创建新身份标识及认证令牌，并将其与电子邮件地址建立映射。"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "If you’re interested in the ACS identity concepts, please read:",
+      "source_content_hash": "575722245f4a11ec0ee3afb8ebc00f571b5482acceb6100461b6d25532227d6e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若需了解ACS身份标识相关概念，请参阅："
+      }
+    },
+    {
+      "segment_id": "936011bd",
+      "source_content": "-\t[Identity model - An Azure Communication Services concept](https://docs.microsoft.com/en-us/azure/communication-services/concepts/identity-model)\n-\t[Quickstart - Create and manage access tokens - An Azure Communication Services quickstart](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/access-tokens?pivots=programming-language-javascript)",
+      "source_content_hash": "7ff07dae6c17c40039fa27b5555e4e6aaafbaf09df28533b36f3753fbf954634",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- [身份模型 - Azure通信服务概念](https://docs.microsoft.com/en-us/azure/communication-services/concepts/identity-model)\n- [快速入门：创建和管理访问令牌 - Azure通信服务指南](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/access-tokens?pivots=programming-language-javascript)"
+      }
+    },
+    {
+      "segment_id": "1f4b3b94",
+      "source_content": "### 4. CosmosDB - stores ACS identity data",
+      "source_content_hash": "620858531679f271dd9cc216aba26205d4389996f6d9b0ad720d97d01f7aad99",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 4. CosmosDB - 存储ACS身份数据"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Now, let’s have a look to what’s stored in the CosmosDB table thanks to the Azure Portal:",
+      "source_content_hash": "07a4bd9a54fbd1549c21516fe9610684d7a92528c8cab49de22c6fcdfed26f3a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在通过Azure Portal查看CosmosDB表中的存储内容："
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "![Screenshot of Azure Portal, in the CosmosDB blade showing the content of the table](../static/img/series/w4d6/ACSSWA003.jpg)",
+      "source_content_hash": "88b9468975b90211d01786da05e18322cc964a27ccbb9ad9639ae606ae564586",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Azure门户中CosmosDB模块显示表内容的截图](../static/img/series/w4d6/ACSSWA003.jpg)"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "You can find all the required information for my scenario:",
+      "source_content_hash": "d76ec57ced8d8dc869f2d8154b72f43850d542e447556eb5caac15fb80540cd9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "表中包含本场景所需的所有信息："
+      }
+    },
+    {
+      "segment_id": "1b8037f4",
+      "source_content": "-\t**id**: an email address coming from the social network, which is my partition key and my primary key for my requests\n-\t**userId**: the associated internal ACS identity in the form of 8:acs:xxxx.\n-\t**userToken**: the associated internal ACS authentication token required to be able to connect to the ACS infrastructure\n-\t**expiresOn**: when the ACS authentication token will expire",
+      "source_content_hash": "84b5052c8da804d3806c0592851929c2a4c1d953131bedff2b188a9d6e1f2455",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- **id**: 来自社交网络的电子邮件地址，作为分区键和查询主键\n- **userId**: 关联的ACS内部身份标识（格式为8:acs:xxxx）\n- **userToken**: 连接ACS基础设施所需的认证令牌\n- **expiresOn**: ACS认证令牌的过期时间"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "The beauty of the Azure Function binding feature is that I didn’t have to write any code to manage the reading or writing part of the records. It can even update an existing record if needed.",
+      "source_content_hash": "0de502e0ccdefd4dfceabe97e7172e8894947fb6e235fa227498398997682b49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Function绑定功能的精妙之处在于：无需编写任何代码即可实现记录的读写操作，甚至能自动更新现有记录。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "With few lines of code, I’ve been able to create a small authentication layer on top of ACS to create users mapped to ACS internal identity. With the out of the box Static Web App authentication experience, I didn’t even need to write any code to authenticate users with their social identity!",
+      "source_content_hash": "bf92d7e5d8f8ee10cfe921e70cb8341ccc69f37d53bbed6664e64cec152bd12b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "仅用少量代码，我就在ACS之上构建了身份映射层。结合Static Web App开箱即用的认证功能，甚至无需编写社交账号认证代码！"
+      }
+    },
+    {
+      "segment_id": "b9b8694c",
+      "source_content": "## A Static Web App hosting a Metaverse? 🤯",
+      "source_content_hash": "156b4501f7e36695973d70a129552b2eb93e09b7097a575db4aedfcdc07ee7dd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 托管元宇宙的静态Web应用？🤯"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "In the same sample, I’ve been building on top of the architecture described just above a small metaverse using [Babylon.js](https://www.babylonjs.com), an open source & free WebGL engine I’ve been contributing to. The logic is identical to what I’ve described up to now.",
+      "source_content_hash": "ddcc73bc1e1e132e97528fdf3c7cc2cf974917b3e522790fb3abaacf2c506d82",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在上述架构基础上，我使用开源WebGL引擎[Babylon.js](https://www.babylonjs.com)构建了小型元宇宙场景（本人也是该项目的贡献者）。核心逻辑与前文所述完全一致。"
+      }
+    },
+    {
+      "segment_id": "b9331170",
+      "source_content": "Thanks to the SWA, I’m authenticating the user using his social profile. But then, I can do the video call to another ACS user or someone in Teams from a 3D scene. And everything is waayyy cooler inside a 3D scene, right?",
+      "source_content_hash": "cde211ec70029653719408f808bd33e8b7e87eb07387cdbea74b980e801bf8a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过SWA用社交账号认证用户后，可直接在3D场景中发起与其他ACS用户或Teams成员的视频通话。在3D环境中进行这一切显然更酷炫，不是吗？"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "![Screenshot of the Static Web App with a 3D scene of a museum loaded](../static/img/series/w4d6/ACSSWA004.jpg)",
+      "source_content_hash": "d1bd1f3c900a4ab99010cac798fec16848f871f3d190c7874dd21133c92cf7bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![加载博物馆3D场景的静态Web应用截图](../static/img/series/w4d6/ACSSWA004.jpg)"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "But wait, there’s even better. You can experience this Babylon.js scene in VR thanks to its native WebXR support! To give you an idea, here’s a video where I’m using my Valve Index to call my girl friend in Teams so we can visit this museum together.",
+      "source_content_hash": "377db000f953c118388c50e85a1b49b5504209f1de03fae8c269299d26ab0823",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更精彩的是：得益于原生WebXR支持，你可用VR设备体验这个Babylon.js场景！参考这段视频——我使用Valve Index头显与女友Teams通话，共同虚拟参观博物馆。"
+      }
+    },
+    {
+      "segment_id": "5c7d994c",
+      "source_content": "If you’re interested in WebXR, I’ve written a full article on what you can build with it sharing lot of my samples: [From gaming to metaverses, building WebXR apps with Babylon.js – David Rousset (davrous.com)](https://www.davrous.com/2022/04/12/from-gaming-to-metaverses-building-webxr-apps-with-babylon-js/).",
+      "source_content_hash": "2e4757cf589385e2257218f7887b890f7e03e13bb52f9b0ad064a849b98aa6a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若对WebXR感兴趣，可参阅我的专题文章（含多个示例项目）：[从游戏到元宇宙：用Babylon.js构建WebXR应用 – David Rousset (davrous.com)](https://www.davrous.com/2022/04/12/from-gaming-to-metaverses-building-webxr-apps-with-babylon-js/)。"
+      }
+    },
+    {
+      "segment_id": "a461a67b",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践练习"
+      }
+    },
+    {
+      "segment_id": "e77cf7c6",
+      "source_content": "If you’d like to play and learn from this sample mixing ACS, SWA, Azure Function, CosmosDB & Babylon.js, you can **deploy it in less than 10 minutes** by following the step-be-step tutorial available in this associated repo: [davrous/acsauth: Deploy in less than 10 min an Azure Communication Services sample to be shared & tested with your colleagues & friends](https://github.com/davrous/acsauth).",
+      "source_content_hash": "56334111cd1631009764c0679927b4588dfb62bb3e9754b1e973ab0260ca81a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若您想体验并学习这个融合了ACS、SWA、Azure Function、CosmosDB和Babylon.js的示例项目，只需**不到10分钟**即可完成部署——按照关联仓库中的分步教程操作：[davrous/acsauth: 10分钟内部署Azure通信服务示例，与同事朋友共享测试](https://github.com/davrous/acsauth)。"
+      }
+    },
+    {
+      "segment_id": "bb1346b6",
+      "source_content": "Enjoy and see you in the metaverse! 😊",
+      "source_content_hash": "13258ecdf9efbcfd48b3159fecd29ba407abd6405c5d5019fb34a0412fe93c99",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "祝您探索愉快，元宇宙里见！😊"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-28.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.869991+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "93af8cbf6e6379c314e911e44512a3986fabc63220c844002177a8c27af3dd19"
+  }
+}

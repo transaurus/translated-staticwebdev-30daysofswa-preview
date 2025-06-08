@@ -1,0 +1,442 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-13.md",
+  "source_file_content_hash": "141997705d64df16a75c1da67299b705273cef019d0b6ea72f35478eff5aa24e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: build-with-blazor\ntitle: \"#12: Headless CMS & Blazor SWA\"\nauthors: [justin, jeff]\ntags: [swa, 30days, usage-examples, blazor]\ndraft: false\n---",
+      "source_content_hash": "9b7ae466a688abcb3bcffa0fb692b4203233c420f2a0efe3a97c7e733225cde5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 2, Day 5` of **#30DaysOfSWA**!!",
+      "source_content_hash": "c2117a6dfee142a2e4afbf91bb0743e518d9d16460f6d2b0d57dd5a6824aa2bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第二周第五天`！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Over the last few days we've been exploring JavaScript-based frameworks for building web apps. Today, we switch our attention to our amazing .NET community and talk about building Static Web Apps with [Blazor](http://blazor.net)",
+      "source_content_hash": "ef727d313fc30c4191ad98ecc455917b0ba9299910c9c2ec28468425895aae35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "过去几天我们一直在探索基于JavaScript的Web应用框架。今天，我们将目光转向卓越的.NET社区，探讨如何使用[Blazor](http://blazor.net)构建静态Web应用。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 今日要点"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "* Introduction: Blazor WebAssembly\n * Quickstart: Simple Blazor SWA\n * Advanced: Blazor SWA + Wordpress CMS\n * **Exercise**: Remix Fritz's Hat Collection!",
+      "source_content_hash": "6a132aa0cc2a7a670dc275f6bc6b43b8eee9cfc47b820f3efb61b030c68964d0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 简介：Blazor WebAssembly\n * 快速入门：简易Blazor静态Web应用\n * 进阶：Blazor静态Web应用 + WordPress内容管理系统\n * **实践**：改造Fritz的帽子收藏项目！"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "![](../static/img/series/12-banner.png)",
+      "source_content_hash": "1fd56d4332b1a3e02cafcfa11429cb5a8a8817ad849a3729de589072f587df34",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/12-banner.png)"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Blazor WebAssembly",
+      "source_content_hash": "0b0cdf0fd33537ceefcb28e03877d5dbc5bdf557ee07c17d9ae55a48c72de998",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Blazor WebAssembly"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "When we think about web applications, we typically think of developing with JavaScript, HTML, and CSS. In fact, many of you reading this series may identify yourselves as JavaScript developers when discussing modern web apps.",
+      "source_content_hash": "3fb1a813a13ce1682557c89f41df67a2b5c3af6f7f12f03d730053bc8849f7d0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "谈及Web应用开发时，我们通常会想到使用JavaScript、HTML和CSS。事实上，阅读本系列的读者中，许多人在讨论现代Web应用时会自称为JavaScript开发者。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "What if I told you that was not always the case? What if you could **write web applications in C#**, running in a .NET runtime inside the browser! Turns out you can - thanks to [Blazor](https://blazor.net).",
+      "source_content_hash": "7300606442dca063c19d9c83a0e86b6060a3ecd77f9ccf087b38ed6ce4ec8e48",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但如果我告诉你并非总是如此呢？如果能在浏览器中通过.NET运行时**使用C#编写Web应用**呢？借助[Blazor](https://blazor.net)，这已成为现实。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "**What is Blazor?**",
+      "source_content_hash": "45a253f68422e6e3a43c6c2978c901e2cd49383eabb20d6b31701c91c6795563",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**什么是Blazor？**"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Blazor is a [framework for building interactive client-side web UI with .NET](https://docs.microsoft.com/en-us/aspnet/core/blazor). Developers can build interactive web applications using C# (instead of JavaScript) - and extend experiences to hybrid desktop and mobile apps with .NET capabilities.",
+      "source_content_hash": "5a855e04f81b0c4f9af113acd649ea77163b42e7c6f82eda0236f68763031d83",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Blazor是[基于.NET构建交互式客户端Web UI的框架](https://docs.microsoft.com/en-us/aspnet/core/blazor)。开发者可以使用C#（而非JavaScript）构建交互式Web应用，并通过.NET能力将体验扩展到混合桌面和移动应用。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "**What is Web Assembly?**",
+      "source_content_hash": "5231bfbb9fc94647dd613f3b3c4dd4aaf01587a051a360dd485450455fb89e50",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**什么是WebAssembly？**"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Running .NET code inside web browsers is made possible by [WebAssembly](https://webassembly.org/)(`wasm`) - a binary instruction format and open web standard that is designed as a _portable compilation target_ for programming languages. It provides a sandboxed runtime that can be implemented _inside_ JavaScript virtual machines (like those in modern web browsers) to support web apps.",
+      "source_content_hash": "0b41dda1ec0de781dbabf27e8be6de3cfd16f2b44c891828207015cadaccb283",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在浏览器中运行.NET代码的能力源自[WebAssembly](https://webassembly.org/)(`wasm`)——一种二进制指令格式和开放Web标准，设计作为编程语言的_可移植编译目标_。它提供了可在JavaScript虚拟机（如现代浏览器中的虚拟机）内实现的沙盒运行时，以支持Web应用。"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "**How does Blazor WebAssembly Work?**",
+      "source_content_hash": "1b577c4ef768c939de8b0380988891bd489b3dcadca18ac867ef76c1b91d02c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**Blazor WebAssembly如何运作？**"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "[Blazor WebAssembly](https://docs.microsoft.com/en-us/aspnet/core/blazor/) is a framework for building single page app (SPA) that works with all modern web browsers, including mobile versions. Blazor apps are written using [Razor](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/?view=aspnetcore-6.0) components in a .NET runtime. The .NET code is then executed via WebAssembly in the browser's JavaScript sandbox. WebAssembly uses JavaScript interoperability to get full access to browser features. Learn how [Blazor web apps work](https://docs.microsoft.com/en-us/aspnet/core/blazor/).",
+      "source_content_hash": "0c0a31ecbdb3a54c01c95a1a0b151518ee0cec28509c5f5faec753d2b824689b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Blazor WebAssembly](https://docs.microsoft.com/en-us/aspnet/core/blazor/)是构建单页应用(SPA)的框架，兼容所有现代浏览器（包括移动版）。Blazor应用使用.NET运行时中的[Razor](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/?view=aspnetcore-6.0)组件编写，.NET代码通过WebAssembly在浏览器的JavaScript沙盒中执行。WebAssembly利用JavaScript互操作性实现对浏览器功能的完整访问。了解[Blazor Web应用工作原理](https://docs.microsoft.com/en-us/aspnet/core/blazor/)。"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "![](https://docs.microsoft.com/en-us/aspnet/core/blazor/index/_static/blazor-webassembly.png?view=aspnetcore-6.0)",
+      "source_content_hash": "4bb936b24ddcd5c9f868e85d3be25144f8fd135bae7e25ef29cfc97d213654c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](https://docs.microsoft.com/en-us/aspnet/core/blazor/index/_static/blazor-webassembly.png?view=aspnetcore-6.0)"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Simple Blazor SWA",
+      "source_content_hash": "f072060db99f50842772afb5df5fd1329295e0c95e9962fa8b4d6014397057c2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 简易Blazor静态Web应用"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Want to learn how you can deploy a simple Blazor application to Azure Static Web Apps? We have you covered! Follow [this tutorial](https://docs.microsoft.com/en-us/azure/static-web-apps/deploy-blazor) to learn how to deploy an **existing Blazor app** to Azure Static Web Apps.",
+      "source_content_hash": "c3910beb64330d8a4ee52eb54b82599ae7c92fd69ff9f88a801e6ca4223c6d30",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想学习如何将简单Blazor应用部署到Azure静态Web应用？我们为您准备了指南！按照[本教程](https://docs.microsoft.com/en-us/azure/static-web-apps/deploy-blazor)学习如何将**现有Blazor应用**部署到Azure静态Web应用。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "The end result will look something like this - a single page Blazor web application that displays weather data _returned from a serverless API_ - beginning with [this starter app](https://github.com/login?return_to=/staticwebdev/blazor-starter/generate),",
+      "source_content_hash": "ed693b503733fee6c9e202552a89cda0c47b09bcf93d857460554bbb8f5b2aad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最终效果类似这样——一个单页Blazor Web应用，展示_从无服务器API返回_的天气数据，从[此入门应用](https://github.com/login?return_to=/staticwebdev/blazor-starter/generate)开始。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "![Quickstart demo](../static/img/series/12-swa-quickstart.png)",
+      "source_content_hash": "bc37a770c10c0a89970fa1fcdb9fa741ebec95a6e6bfc9e9c7a7e1c90ef9aa83",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![快速入门演示](../static/img/series/12-swa-quickstart.png)"
+      }
+    },
+    {
+      "segment_id": "12647a35",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "## Blazor SWA and Wordpress",
+      "source_content_hash": "40ac330ce2cae03e05e277d635f8827921873a0564ef86e1154de079ddc63b12",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Blazor静态Web应用与WordPress"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "Want to try a more complex example? Check out [this advanced tutorial](https://dev.to/azure/blazor-webassembly-for-headless-cms-on-azure-static-web-apps-412c) (from Justin Yoo). Here's a brief introduction:",
+      "source_content_hash": "185947059c4f9a082505d413f5d47dfbdb6b87598a1a9996a7cf75fbba72a6cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想尝试更复杂的示例？查看[此进阶教程](https://dev.to/azure/blazor-webassembly-for-headless-cms-on-azure-static-web-apps-412c)（作者Justin Yoo）。以下是简要介绍："
+      }
+    },
+    {
+      "segment_id": "07262d7e",
+      "source_content": "> One of the most popular scenarios to build a static website is to run a blog site for myself or my organisation. WordPress is the most popular service for this purpose. Now, you want to migrate your WordPress blog site to a static website, but it doesn't look easy.",
+      "source_content_hash": "e84028cb53cdb0314485ebc9fc89e1c206525c0bfbc2dd4c2550775cd8c3a08b",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> 构建静态网站最流行的场景之一是为个人或组织搭建博客站点。WordPress 是用于此目的的最受欢迎的服务。现在，您希望将 WordPress 博客站点迁移到静态网站，但这看起来并不容易。"
+      }
+    },
+    {
+      "segment_id": "460b1891",
+      "source_content": "> What if you still want to use the WordPress site to write content but only want to refresh the UI outside the site? What if you can even use C# for it through Blazor WebAssembly? You are now able to use the existing WordPress site as the data source of truth and build a UI in a separate instance with your preferred method. Does that sound attractive?",
+      "source_content_hash": "957b7ceb1802af2e4ecc00bedc7e614e7b4482e1bbbab8b2269fd7942da0f19a",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> 如果您仍希望使用 WordPress 站点撰写内容，但只想在站点外部刷新 UI 怎么办？如果您甚至可以通过 Blazor WebAssembly 使用 C# 来实现这一点呢？您现在可以将现有的 WordPress 站点作为数据源，并使用您喜欢的方法在单独的实例中构建 UI。这听起来有吸引力吗？"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "Join Justin as he walks through the steps required to:",
+      "source_content_hash": "05d27bef2306b1be494b435e8931745bb21b9b5a3a360315cfe7309ae59abb21",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "跟随 Justin 一起了解所需的步骤："
+      }
+    },
+    {
+      "segment_id": "24c174ca",
+      "source_content": "* use the serviced Wordpress instance as a headless CMS\n * build the Blazor WebAssembly app using Wordpress\n * host the completed app on Azure Static Web Apps",
+      "source_content_hash": "ba7733800e8141ceba24470766359234a66d8f2d28bf9827d272a4c1d2dabb90",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 将托管的 WordPress 实例用作无头 CMS\n * 使用 WordPress 构建 Blazor WebAssembly 应用\n * 在 Azure Static Web Apps 上托管完成的应用"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "The end result issomething like this. \n **[Read the blog post behind this!!](https://dev.to/azure/blazor-webassembly-for-headless-cms-on-azure-static-web-apps-412c)**.",
+      "source_content_hash": "b16f62345fc0f52cdd83655879fe6bfaa38f97f983c773442add8a4443a35af4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最终结果如下所示。\n **[阅读这篇博客文章了解更多！！](https://dev.to/azure/blazor-webassembly-for-headless-cms-on-azure-static-web-apps-412c)**。"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "![Final demo](../static/img/series/12-swa-wordpress.png)",
+      "source_content_hash": "4b4392e325043ea7c44a8c812a87c56996122d4abdf1c3cd3ce85185174192f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![最终演示](../static/img/series/12-swa-wordpress.png)"
+      }
+    },
+    {
+      "segment_id": "803be95a",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "d422fb13",
+      "source_content": "## Exercise: Remix Fritz's Hats!",
+      "source_content_hash": "b308c5c2295a8c7efdc08d79ec59cadad33cc2c758ebe08e9364af00b8974845",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习：混音 Fritz 的帽子！"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "Hopefully you're ready to try something fun that will reinforce what you learned today.",
+      "source_content_hash": "86873de7cbe6a3bbd90d26ee1422e4e8b3e12d54c8ac1a40b3bf9563bf5e794f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "希望您已准备好尝试一些有趣的内容，以巩固今天学到的知识。"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "**Say Hello to (Jeff) Fritz's Really Cool Hats**",
+      "source_content_hash": "f49154110920b0e20d29830a073d6ecffb3b5621c445a04c38f185d18f345e2e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**向 (Jeff) Fritz 的超酷帽子问好**"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "[Fritz's Really Cool Hats](https://hats.csharpfritz.com/) is an open-source static web site built with Blazor WebAssembly, incorporating C# Azure Functions and Azure Storage, and deployed using Azure Static Web Apps. The project was created by **Jeff Fritz** - the face behind many Twitch livestreams and the popular [Beginners Series To Blazor](https://docs.microsoft.com/en-us/shows/beginners-series-to-blazor/).",
+      "source_content_hash": "8b07a129abcf8a4cbe1ac39ed5c9abc353e3ec37087f9150886344f7b9fbcc9c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Fritz 的超酷帽子](https://hats.csharpfritz.com/) 是一个使用 Blazor WebAssembly 构建的开源静态网站，结合了 C# Azure Functions 和 Azure Storage，并通过 Azure Static Web Apps 部署。该项目由 **Jeff Fritz** 创建，他是许多 Twitch 直播和流行的 [Blazor 初学者系列](https://docs.microsoft.com/en-us/shows/beginners-series-to-blazor/) 的幕后人物。"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "[**Visit The Deployed Site**](https://hats.csharpfritz.com/)",
+      "source_content_hash": "a3bd7ce225a5748e0e07c6506597efead7a946b4154d064db4877f6cf4fbc57a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[**访问已部署的站点**](https://hats.csharpfritz.com/)"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "![Hats demo](../static/img/series/12-swa-fritz.png)",
+      "source_content_hash": "afbf05508eebfe0a22e8e87099beea4d2fc5a2e76a0fb52e02f0624df538650f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![帽子演示](../static/img/series/12-swa-fritz.png)"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "For this exercise:",
+      "source_content_hash": "9c4fce5b1899ba54f0668b0284ccab5dcec41a164cda63f4e2418c4056adfadd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本次练习："
+      }
+    },
+    {
+      "segment_id": "e032fbc6",
+      "source_content": "* [Fork the repository](https://github.com/csharpfritz/Fritz.HatCollection) and clone it locally.\n* Open project in Visual Studio - press F5 to launch (app and api).\n* Configure [your Azure Storage account](https://github.com/csharpfritz/Fritz.HatCollection#data-storage) to add your own images\n* Use the [quickstart](https://aka.ms/blazor-swa/quickstart) to deploy to Azure Static Web Apps.",
+      "source_content_hash": "005acc6330d4dca97ba2dc5e5fa074cfd041b2c27436793d8efd904998bd414d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Fork 仓库](https://github.com/csharpfritz/Fritz.HatCollection) 并在本地克隆。\n* 在 Visual Studio 中打开项目 - 按 F5 启动（应用和 API）。\n* 配置 [您的 Azure Storage 账户](https://github.com/csharpfritz/Fritz.HatCollection#data-storage) 以添加您自己的图片\n* 使用 [快速入门](https://aka.ms/blazor-swa/quickstart) 部署到 Azure Static Web Apps。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Explore the source and the GitHub Actions files in the original repository to understand how the app is structured. Then share your deployed project with us by tagging a tweet with #30DaysOfSWA.",
+      "source_content_hash": "0aa3cfc2292a8cab236e8672a5ceb0c50b39fddf2b89bd40ac26a8caec05fd16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "探索原始仓库中的源代码和 GitHub Actions 文件，了解应用的结构。然后通过标记带有 #30DaysOfSWA 的推文与我们分享您部署的项目。"
+      }
+    },
+    {
+      "segment_id": "cb0bf89b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "Here are some resources to get you started with your Blazor journey into",
+      "source_content_hash": "41dcd3d4df1b0d6deac54ee5ff8b6f463ac086954a801361f98a788dd389b1f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下是一些资源，帮助您开始 Blazor 之旅："
+      }
+    },
+    {
+      "segment_id": "85aeef6c",
+      "source_content": "* [Blazor: Build Client Web Apps With C#](https://blazor.net)\n * [Beginner's Series to: Blazor](https://docs.microsoft.com/en-us/shows/beginners-series-to-blazor/)\n * [Tutorial: Build a Static Web App with Blazor](https://docs.microsoft.com/en-us/azure/static-web-apps/deploy-blazor)\n * [Fritz.HatCollection - Source](https://github.com/csharpfritz/Fritz.HatCollection), Jeff Fritz\n * [Headless CMS Example - Source](https://github.com/justinyoo/blazor-wasm-azfunc-aswa), Justin Yoo",
+      "source_content_hash": "a36c03514939eb5d352f82e181425f74c8866c54733b0993b012f485470d3e08",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Blazor：使用 C# 构建客户端 Web 应用](https://blazor.net)\n * [Blazor 初学者系列](https://docs.microsoft.com/en-us/shows/beginners-series-to-blazor/)\n * [教程：使用 Blazor 构建静态 Web 应用](https://docs.microsoft.com/en-us/azure/static-web-apps/deploy-blazor)\n * [Fritz.HatCollection - 源代码](https://github.com/csharpfritz/Fritz.HatCollection)，Jeff Fritz\n * [无头 CMS 示例 - 源代码](https://github.com/justinyoo/blazor-wasm-azfunc-aswa)，Justin Yoo"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-13.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.882299+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "141997705d64df16a75c1da67299b705273cef019d0b6ea72f35478eff5aa24e"
+  }
+}

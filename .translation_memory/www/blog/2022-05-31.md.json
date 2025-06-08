@@ -1,0 +1,82 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-31.md",
+  "source_file_content_hash": "04439c45c48a395fec9ff87c97c85c712a4662783d8bd2bc6119b152ac6e607b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: 30days-showcase\ntitle: \"#30: The Road Ahead!\"\nauthors: [nitya]\ntags: [swa, 30days]\ndraft: true \n---",
+      "source_content_hash": "9140a2af80c2e2e348418ccabf995de8bb1c265aaceeaff9e41f7cd10f9a3162",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/30-days-showcase\" />\n  <meta name=\"twitter:title\" content=\"\" />\n  <meta name=\"twitter:description\" content=\"\" />\n  <meta name=\"twitter:image\" content=\"\" />\n  <meta name=\"twitter:domain\" content=\"\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/30-days-showcase\" />\n</head>",
+      "source_content_hash": "4f4f83ae6d29b38031bd6a047fccb1f7738d9dff6b4eddf75e3b9db0728204c0",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Welcome to `The Last Day!` of **#30DaysOfSWA**!!",
+      "source_content_hash": "1c6a2b5fa3e90b9a742a42e9a42b3968a9940d294368669091c921b2f762a9f7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的`最后一天`！！"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Here's how you can keep going..",
+      "source_content_hash": "1e8cbf32e41d8ae2632f01752b024842bee7584494e1b58ac589a70894f2c78e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下是持续学习的方式.."
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "* \n * \n * \n * **Exercise** \n * **Resource(s):**",
+      "source_content_hash": "f3d17bf5025081efee060c9c4e1d224da8886c4cb4f4565ef3a8fba58e9d9034",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* \n * \n * \n * **实践练习** \n * **资源：**"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "![](../static/img/series/banner.png)",
+      "source_content_hash": "2d1721b8fc188bcd95f986a0bd55e12ad0ca8370d682f4385cdf22308fae3233",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/banner.png)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-31.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.869722+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "04439c45c48a395fec9ff87c97c85c712a4662783d8bd2bc6119b152ac6e607b"
+  }
+}

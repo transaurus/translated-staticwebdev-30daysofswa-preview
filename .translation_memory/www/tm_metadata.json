@@ -1,0 +1,49 @@
+{
+  "locales": [
+    "zh-CN"
+  ],
+  "folder_patterns": [
+    {
+      "source_dir_relative_to_docusaurus_root": "blog",
+      "target_i18n_subpath": "docusaurus-plugin-content-blog",
+      "original_agent_pattern": {
+        "source_pattern": "blog/**/*",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-blog/**/%original_file_name%",
+        "type": "blog",
+        "description": "Primary blog content (#30DaysOfSWA blog posts)"
+      },
+      "type": "blog",
+      "description": "Primary blog content (#30DaysOfSWA blog posts)",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "blog-roundup",
+      "target_i18n_subpath": "docusaurus-plugin-content-blog-blog-roundup",
+      "original_agent_pattern": {
+        "source_pattern": "blog-roundup/**/*",
+        "translation_pattern": "i18n/%locale%/docusaurus-plugin-content-blog-blog-roundup/**/%original_file_name%",
+        "type": "blog-blog-roundup",
+        "description": "Custom blog instance for #ThisMonthInSWA roundup posts"
+      },
+      "type": "blog-blog-roundup",
+      "description": "Custom blog instance for #ThisMonthInSWA roundup posts",
+      "ignore_patterns": null
+    },
+    {
+      "source_dir_relative_to_docusaurus_root": "i18n/en",
+      "target_i18n_subpath": "",
+      "original_agent_pattern": {
+        "source_pattern": "i18n/en/**/*.json",
+        "translation_pattern": "i18n/%locale%/**/%original_file_name%",
+        "type": "json_translations",
+        "description": "JSON translation files for UI strings, theme labels, and component messages"
+      },
+      "type": "json_translations",
+      "description": "JSON translation files for UI strings, theme labels, and component messages",
+      "ignore_patterns": null
+    }
+  ],
+  "docusaurus_root_dir_relative_to_repo": "www",
+  "docusaurus_config_filepath_relative_to_repo": "www/docusaurus.config.js",
+  "source_language": "en"
+}

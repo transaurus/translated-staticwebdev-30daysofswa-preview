@@ -1,0 +1,532 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-17.md",
+  "source_file_content_hash": "c438fc3b4364f8ef382a1543c035081eaf1b9a8b6bd7c86e32eb7d532a5d53d6",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: devtools-playwright\ntitle: \"#16: Test Automation with Playwright\"\nauthors: [nitya, debbie]\ntags: [swa, 30days, dev-tools, playwright]\ndraft: false\n---",
+      "source_content_hash": "12b047a60d18239ab4d5c96ba9a817c609479cb109b06f8367b0effdb204cd61",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Welcome to `Week 3, Day 2` of **#30DaysOfSWA**!!",
+      "source_content_hash": "51a7faa39eada1478b73e0d881ef6ad286e091a66a6848ed7d748ce2b829f68c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第3周第2天`！"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Yesterday we kicked off \"Developer Tools\" week by talking about the end-to-end developer experience associated with building modern web applications. Today we focus on a key segment - **testing**. Let's look at what test automation means for modern web applications, and how [Playwright](https://www.playwright.dev) can help you automate end-to-end testing of your Azure Static Web App.",
+      "source_content_hash": "dc24347a97ae9fc6146907e0ddfc26d24478b23b00ca1e07098327a7829504bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "昨天我们以讨论构建现代Web应用的端到端开发者体验开启了\"开发者工具\"主题周。今天我们将聚焦关键环节——**测试**。让我们探讨现代Web应用的测试自动化意味着什么，以及如何利用[Playwright](https://www.playwright.dev)实现Azure静态Web应用的端到端自动化测试。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 今日要点"
+      }
+    },
+    {
+      "segment_id": "730c423c",
+      "source_content": "* Test Automation for Modern Web Apps\n * What is Playwright?\n * Get Started With Playwright\n * Explore Playwright Tools\n * Use Playwright with SWA\n * **Exercise**: Try the Tutorial with **your** deployed app.",
+      "source_content_hash": "b92aa9904c76fa194822f3cdf014e6c0c6f948f471eeb0dae7f5656b2a5b7afa",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 现代Web应用的测试自动化\n * 什么是Playwright？\n * Playwright快速入门\n * 探索Playwright工具链\n * 在SWA中使用Playwright\n * **实践**：用**你的**部署应用尝试教程"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "![](../static/img/series/16-banner.png)",
+      "source_content_hash": "bc45ef444a40d78046bcc891e885b58e06f08fc1f5f4c65e2af643b181203676",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/16-banner.png)"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Test Automation",
+      "source_content_hash": "bb91d0e068622f2b0d496b6c288d06bd27fd529b381e4938e443f1687c047214",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 测试自动化"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "Modern mobile web applications have to work correctly and consistently across all modern browsers (like Chromium, Firefox or WebKit) and the device platforms they run on (with varying screen sizes, orientations). Testing your application UI/UX **manually** becomes difficult when we think about the granularity of tests across these combinations. Testing manually becomes impossible when we factor in the frequency at which testing needs to be done to validate these on every code commit or pull request. This is where test automation shines!",
+      "source_content_hash": "18072458a49f02710d4241b1f58a27b072c3a149ac7fdfe2d1098fbf0fdb3d0d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现代移动Web应用需要确保在所有主流浏览器（如Chromium、Firefox或WebKit）及其运行的设备平台（不同屏幕尺寸和方向）上都能正确稳定运行。当我们考虑这些组合场景下的测试粒度时，**人工**测试UI/UX变得异常困难。若再考虑每次代码提交或拉取请求都需要验证的频率，人工测试更是不可能完成的任务。这正是测试自动化的价值所在！"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Test Automation is about executing tests **automatically** to validate software specs, then using the reported insights to improve software quality iteratively. For web apps, this requires tools that can _automate test actions in the browser_ (web automation) and support this consistently _across browsers_. **[This is where Playwright shines!](https://www.playwright.dev)**",
+      "source_content_hash": "1b820b7ab82764b9e1b4f8cfd43142a7562ff36e362ce203bb2ddcb3eac396e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "测试自动化通过**自动**执行测试来验证软件规范，并利用报告反馈迭代提升软件质量。对于Web应用，这需要能_在浏览器中自动化测试操作_（Web自动化）且_跨浏览器保持一致性_的工具。[这正是Playwright的强项！](https://www.playwright.dev)"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Playwright Overview",
+      "source_content_hash": "ef14802dd624e25ad213e4b1bc8c129e250cd3d388dc435e4ce78cf474d16435",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Playwright概览"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Playwright is an open-source framework for **reliable** end-to-end testing of modern web apps. It features a built-in [Playwright Test Runner](https://playwright.dev/docs/1.21/intro) for automating test execution, and supports a [Playwright Library](https://playwright.dev/docs/1.21/library) to simplify integration into third-party solutions.",
+      "source_content_hash": "4dc825123dd27b64a14a8b1e4696eec9fb1b219004222b9d753eacde3da94d14",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Playwright是用于现代Web应用**可靠**端到端测试的开源框架。其内置的[Playwright测试运行器](https://playwright.dev/docs/1.21/intro)可自动化测试执行，同时提供[Playwright库](https://playwright.dev/docs/1.21/library)简化与第三方方案的集成。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "![Visual Guide to Playwright](../static/img/series/16-playwright.jpg)",
+      "source_content_hash": "3de2ecd899128fcd41ab1747f84b1e57588d8423c7de043404928fac47d3e668",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Playwright可视化指南](../static/img/series/16-playwright.jpg)"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "This visual guide shows the key features of the framework ([downloadable hi-res version here](https://github.com/SketchTheDocs/cloud-skills/blob/main/gallery/Playwright-03-Overview.png)) with these useful features:",
+      "source_content_hash": "80f5dee95b1ca69298e44093309b39bc52096a1390374d32cd5cd4616e45dbc1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该可视化指南展示了框架的核心特性（[下载高清版本](https://github.com/SketchTheDocs/cloud-skills/blob/main/gallery/Playwright-03-Overview.png)），包括："
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "* **Unified API** - you write tests once, they run on all browsers and devices.\n * **Mobile Web Testing** - rich set of device profiles, usable with native emulators.\n * **Multi-Language Support** -  write tests in Java, JS/TS, Python or C#.\n * **Reliable Testing** - no flaky tests thanks to auto-waiting and web-first assertions\n * **Powerful Tooling** - get help authoring, debugging, profiling, and reporting, tests.\n * **Full Isolation** - browser contexts (in just ms), options to parallelize tests",
+      "source_content_hash": "652cdbdf16fd256349e948698491754c8e009a22c139cfb352ba1f9311b9b6cc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **统一API** - 一次编写测试，全平台运行\n * **移动Web测试** - 丰富的设备配置文件，支持原生模拟器\n * **多语言支持** - 可用Java、JS/TS、Python或C#编写测试\n * **可靠测试** - 自动等待机制和Web优先断言消除不稳定测试\n * **强大工具链** - 提供测试编写、调试、分析和报告支持\n * **完全隔离** - 毫秒级创建浏览器上下文，支持测试并行化"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "Check out the Playwright [documentation](https://playwright.dev/docs/1.21/intro) and [API](https://playwright.dev/docs/1.21/api/class-playwright) for more details.",
+      "source_content_hash": "b988c02b774037d344d89d5e69053e44def118ac657b51a320585707c4e5e5eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "详见Playwright[文档](https://playwright.dev/docs/1.21/intro)和[API](https://playwright.dev/docs/1.21/api/class-playwright)。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "**What kinds of things can we test with Playwright?**",
+      "source_content_hash": "6bfc3fc93c43c5e3628ddc48f3752d3a2c78f85d2e124d2c434285da0551faa6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**能用Playwright测试哪些内容？**"
+      }
+    },
+    {
+      "segment_id": "824626b3",
+      "source_content": "* Test if UI component behaviors work as expected (events)\n * Test if UI workflows are correct (navigation, inputs)\n * Test UX behaviors in different contexts (with fixtures)\n * Modify network traffic (auth, proxy etc.) for testing\n * Validate behaviors under network conditions (modified)\n * Validate behaviors for device contexts (emulated profiles)\n * Automate capture of evidence (videos, screenshots) in tests",
+      "source_content_hash": "7ee96ab4d07280726abe81699c9b540f5adc39fcdc656df65cd04574add8c967",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 验证UI组件行为是否符合预期（事件）\n * 验证UI流程是否正确（导航、输入）\n * 测试不同上下文中的UX行为（使用fixtures）\n * 修改网络流量（认证、代理等）进行测试\n * 模拟网络条件下的行为验证\n * 验证设备上下文行为（模拟配置文件）\n * 自动化捕获测试证据（视频、截图）"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Explore the **[Guides](https://playwright.dev/docs/1.21/library)** and **[Demo.Playwright](https://github.com/MarcusFelling/Demo.Playwright#run-playwright-example-tests)** for usage examples. And check out **[Debbie's playwright-testing](https://dev.to/debs_obrien/series/17445)** series for more examples of Playwright in action.",
+      "source_content_hash": "d99b5a833146b802d09b131858e83c32cb04631b60413de506675b4028968613",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "参考**[指南](https://playwright.dev/docs/1.21/library)**和**[Demo.Playwright](https://github.com/MarcusFelling/Demo.Playwright#run-playwright-example-tests)**获取使用示例。另可查阅**[Debbie的playwright-testing](https://dev.to/debs_obrien/series/17445)**系列了解Playwright实战案例。"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## Playwright Quickstart",
+      "source_content_hash": "bdecd62070b7d3f0d1969f35f8d335fbf169d0effd7fb1f3d0cb360f4f91e83d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Playwright 快速入门"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "It's time to get some hands-on experience with Playwright. Check out the [Getting Started](https://playwright.dev/docs/1.21/intro) guide on their site for reference.",
+      "source_content_hash": "90469dcb403f23693a40bc030447f70d4ca9aefca8e0d3e91cd9fa0a647d68f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在让我们动手实践 Playwright。请参考官网的[入门指南](https://playwright.dev/docs/1.21/intro)。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "However, we'd like to walkthrough it with a real-world example in mind and figure out how to go from the boilerplate setup to the start of a basic script and configuration that sets us up to do more for testing our Azure Static App.",
+      "source_content_hash": "14fbadbc76eddf2c8894e3d94426f615874e5f0702a8ea3ba549ccfe3bc8a731",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将通过一个真实案例，演示如何从模板配置过渡到基础脚本编写，为测试 Azure 静态应用奠定基础。"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "**#30DaysOfSWA Website Example: Step-by-Step Tutorial**:",
+      "source_content_hash": "bf21de79df8cfe8a8f20954dc0e028a9d0eae51a089984219f64d911719e8118",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**#30DaysOfSWA 网站示例：分步教程**："
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Check out [this repository](https://github.com/fearlessly-dev/30daysofSWA-testing) that I setup today, to use the quickstart guide as a basis for setting up end-to-end testing for the [#30DaysOfSWA](https://aka.ms/30DaysOfSWA) website! The [README](https://github.com/fearlessly-dev/30daysofSWA-testing) documents the following steps in detail:",
+      "source_content_hash": "8647bee72d9d3ec23c5d8ef42f77ce7861208f0d5c2660a8f7851d2a513f790e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "查看我今日创建的[代码仓库](https://github.com/fearlessly-dev/30daysofSWA-testing)，该仓库基于快速入门指南为 [#30DaysOfSWA](https://aka.ms/30DaysOfSWA) 网站配置端到端测试！[README](https://github.com/fearlessly-dev/30daysofSWA-testing) 详细记录了以下步骤："
+      }
+    },
+    {
+      "segment_id": "2eb5ba30",
+      "source_content": "* [Setup Testing Repo](https://github.com/fearlessly-dev/30daysofSWA-testing#2-where-should-my-tests-be)\n * [Install Playwright](https://github.com/fearlessly-dev/30daysofSWA-testing#3-how-do-i-install-playwright)\n * [Explore Boilerplate (setup)](https://github.com/fearlessly-dev/30daysofSWA-testing#4-what-did-the-installation-do)\n * [Run Default Test](https://github.com/fearlessly-dev/30daysofSWA-testing#5-what-can-i-do-with-this)\n * [View Generated Test Report](https://github.com/fearlessly-dev/30daysofSWA-testing#6-what-does-the-report-show)\n * [Automate Tests with GitHub Actions](https://github.com/fearlessly-dev/30daysofSWA-testing#7-what-about-those-github-actions)\n * [View Actions-Generated Report Assets](https://github.com/fearlessly-dev/30daysofSWA-testing#8-viewing-actions-generated-reports)\n * [Customize Default Script/Config for *My* App](https://github.com/fearlessly-dev/30daysofSWA-testing/blob/main/README.md#9-lets-customize-the-script)\n * [The Joy Of Trace Logs!!](https://github.com/fearlessly-dev/30daysofSWA-testing/blob/main/README.md#the-joys-of-trace-logs)\n * **You Did It!**",
+      "source_content_hash": "e7dee0c78496e55234d545722d97ba3cec29654ca34abc3df624777ded83b981",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [配置测试仓库](https://github.com/fearlessly-dev/30daysofSWA-testing#2-where-should-my-tests-be)\n * [安装 Playwright](https://github.com/fearlessly-dev/30daysofSWA-testing#3-how-do-i-install-playwright)\n * [探索模板配置](https://github.com/fearlessly-dev/30daysofSWA-testing#4-what-did-the-installation-do)\n * [运行默认测试](https://github.com/fearlessly-dev/30daysofSWA-testing#5-what-can-i-do-with-this)\n * [查看生成的测试报告](https://github.com/fearlessly-dev/30daysofSWA-testing#6-what-does-the-report-show)\n * [通过 GitHub Actions 自动化测试](https://github.com/fearlessly-dev/30daysofSWA-testing#7-what-about-those-github-actions)\n * [查看 Actions 生成的报告资产](https://github.com/fearlessly-dev/30daysofSWA-testing#8-viewing-actions-generated-reports)\n * [为*我的*应用定制默认脚本/配置](https://github.com/fearlessly-dev/30daysofSWA-testing/blob/main/README.md#9-lets-customize-the-script)\n * [追踪日志的妙用！！](https://github.com/fearlessly-dev/30daysofSWA-testing/blob/main/README.md#the-joys-of-trace-logs)\n * **大功告成！**"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "By the end of this tutorial you should have:",
+      "source_content_hash": "c7f54282ec515daf105bcb25704dfbcc48a80d96ac6bc43a636ffd780889fd43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "完成本教程后，你将获得："
+      }
+    },
+    {
+      "segment_id": "6384b3d4",
+      "source_content": "* A starter test script customized for **your** application\n * A test configuration file **with tracing on** to capture detailed profiling data\n * A GitHub Actions workflow that **automates test runs** with each codebase change.",
+      "source_content_hash": "d51e1cfe3f0f0381a8840aa709eb138f7644730b804bfe56350db3d70b69d3a2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 为**你的**应用定制的初始测试脚本\n * 启用了追踪功能的测试配置文件，可捕获详细分析数据\n * 随代码变更自动运行测试的 GitHub Actions 工作流"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "![Test Run Report](https://github.com/fearlessly-dev/30daysofSWA-testing/raw/main/my-report-detail.png)",
+      "source_content_hash": "a8218c6ca98bbf7f5049cfc38a3a0e0c1f656d7e505d80d375694222fab6f4af",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![测试运行报告](https://github.com/fearlessly-dev/30daysofSWA-testing/raw/main/my-report-detail.png)"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "At this point, you are now ready to build on this:",
+      "source_content_hash": "8bc6a395c180151dc66d00fa04b6ceb9332626efa6b570c76a980aa5ca76ccd2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "至此，你可以进一步："
+      }
+    },
+    {
+      "segment_id": "cc9271fb",
+      "source_content": "* add more tests to your `example.spec.js` file => **see: [Playwright Test API](https://playwright.dev/docs/test-annotations)**\n * configure your test run in `playwright.config.js`. => **see:[Configuration Object](https://playwright.dev/docs/test-configuration)**",
+      "source_content_hash": "48d91aa0be1b68b826f4362b84968f013fb5b1e95e53ba2e951512e9c0224754",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 在 `example.spec.js` 中添加更多测试 => 参考：[Playwright 测试 API](https://playwright.dev/docs/test-annotations)\n * 在 `playwright.config.js` 中配置测试运行 => 参考：[配置对象](https://playwright.dev/docs/test-configuration)"
+      }
+    },
+    {
+      "segment_id": "3a8d2b95",
+      "source_content": "## Playwright Tooling",
+      "source_content_hash": "2295674d3b183e3882547f3e673f4fe9b17725d40810957fa08a98538877ac9a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Playwright 工具链"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "In the tutorial above, we mentioned some Playwright tools (CLI, TraceViewer, HTML Reporter, Codegen) in passing. Playwright has a really powerful set of tools that can streamline your end-to-end testing experience from _authoring_ to _reporting_.",
+      "source_content_hash": "4f769daf35415c8d0a6ee09654c2ee7b19a1607a2c5cb7b69f8cf763e895de3e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "上述教程中我们简要提到了 Playwright 工具（CLI、TraceViewer、HTML 报告器、Codegen）。Playwright 提供了一套强大的工具链，可优化从_编写_到_报告_的端到端测试体验。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "**Start by familiarizing yourself with the [Playwright CLI](https://playwright.dev/docs/cli)**.",
+      "source_content_hash": "24b2762bf31488196a1bd63a7764fdc292ddfca4e4f3f88daf6d0d294bba13af",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**首先熟悉 [Playwright CLI](https://playwright.dev/docs/cli)**。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "It's the main launching pad for all other command-line utilities. Using the CLI you can navigate to pages (_\"open\"_), install browser dependencies (_\"install\"_), take screenshots (_ \"screenshot\"_), launch the test runner (_\"test\"_), author tests (_\"codegen\"_), view traces (_\"show-trace\"_) and more.",
+      "source_content_hash": "7161790ef50d7521cd134068417361cbcf4bddcc6a2749020da63156a2dcfe7e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是所有命令行工具的主入口。通过 CLI 你可以：导航页面（_\"open\"_）、安装浏览器依赖（_\"install\"_）、截取屏幕（_\"screenshot\"_）、启动测试运行器（_\"test\"_）、编写测试（_\"codegen\"_）、查看追踪记录（_\"show-trace\"_）等。"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "Launch the CLI as follows:",
+      "source_content_hash": "e64946435e1b8ca90e7398dbbf7bddb6ec63da6f81c93557571b62bdb7b656a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "按以下方式启动 CLI："
+      }
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```\nnpx playwright <command> [options]\n```",
+      "source_content_hash": "7ffa514e54def7e8961ebbfdd6ada0ad494be14a9a1f7d9cb0bf56f45eb2fb35",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_890e01bc"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "Use `npx playwright --help` for details on commands and options supported in your installed CLI version. Want a deeper dive?",
+      "source_content_hash": "a0e15bf0db1208b5c715b051c5cb52c08f22694068478ece14b19433d3100766",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "使用 `npx playwright --help` 查看已安装 CLI 版本支持的命令和选项详情。需要更深入探索？"
+      }
+    },
+    {
+      "segment_id": "936011bd",
+      "source_content": "* Check out Nitya's **[Tool Talk Post](https://dev.to/azure/005-tool-talk-hello-command-line-faj)** for detailed coverage.\n * Download this handy **[hi-res visual guide](https://cloud-skills.dev/gallery/Playwright-01-CommandLine.png)** as a cheatsheet",
+      "source_content_hash": "b6408e255d10049cac1973d69d0fe42f6f63e116b9804adae6acca3bed3f8d88",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 阅读 Nitya 的 **[工具详解文章](https://dev.to/azure/005-tool-talk-hello-command-line-faj)** 获取详细解析\n * 下载这份 **[高清可视化指南](https://cloud-skills.dev/gallery/Playwright-01-CommandLine.png)** 作为速查表"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "**Usage Example**:",
+      "source_content_hash": "88bcb558e22800c7d45dd0a5b99fb1b87e202b6404a5df0bb96955706c501b2a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**使用示例**:"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Let's use the `screenshot` command to capture an image of the kickoff post from the #30DaysOfSWA website for an \"iPhone 6\" device profile. You can see the [named device profiles](https://github.com/microsoft/playwright/blob/f1307f4a4d92490d7d0e7ee5a6a7fe9a22804e86/packages/playwright-core/src/server/deviceDescriptorsSource.json) currently supported for reference.",
+      "source_content_hash": "820b7ff2c4d1574725328c14f71b4f71983acf0f2378c57ee7e1a6376b1c9a06",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "让我们使用 `screenshot` 命令捕获 #30DaysOfSWA 网站启动帖子的截图，设备配置文件选择 \"iPhone 6\"。可参考当前支持的 [命名设备配置文件列表](https://github.com/microsoft/playwright/blob/f1307f4a4d92490d7d0e7ee5a6a7fe9a22804e86/packages/playwright-core/src/server/deviceDescriptorsSource.json)。"
+      }
+    },
+    {
+      "segment_id": "59534425",
+      "source_content": "```\nnpx playwright screenshot --device \"iPhone 6\" https://www.azurestaticwebapps.dev/blog/kickoff 30Days.png\n\nNavigating to https://www.azurestaticwebapps.dev/blog/kickoff\nCapturing screenshot into 30Days.png\n```",
+      "source_content_hash": "6530f98708a5a182165fed3431d058279cb311f67193f024d435845d207f1f18",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_59534425"
+      }
+    },
+    {
+      "segment_id": "5d7070ce",
+      "source_content": "| **Result:** This is what the saved image looks like. |\n|:--|\n| ![Screenshot](../static/img/series/30Days.png) |",
+      "source_content_hash": "d9457af1edb54227698dc5df923df5376d1ffa4941904b24361cc6073b91c28e",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_5d7070ce"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "**Then start exploring these tools**:",
+      "source_content_hash": "632c61175a803b878a5fbe6ace768026b66647b4576646d70e3dac9e1cd93be7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**然后开始探索这些工具**:"
+      }
+    },
+    {
+      "segment_id": "f93a1bb7",
+      "source_content": "* [Inspector](https://playwright.dev/docs/inspector) - a GUI-based tool for debugging test execution\n * [TraceViewer](https://playwright.dev/docs/trace-viewer) - a GUI-based tool to explore recorded test traces\n * [Codegen](https://playwright.dev/docs/codegen) - an authoring tool to generate tests based on user interactions\n * [Debugging](https://playwright.dev/docs/debug) - additional tools to support runtime debugging\n * [Reporters](https://playwright.dev/docs/test-reporters) - built-in reporters of different types",
+      "source_content_hash": "7aa16ddba44ed3c593ac9e4a256feba617bd9a13099f0061df53ba7fbf26a432",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [检查器](https://playwright.dev/docs/inspector) - 基于 GUI 的测试执行调试工具\n * [追踪查看器](https://playwright.dev/docs/trace-viewer) - 可视化查看测试追踪记录\n * [代码生成器](https://playwright.dev/docs/codegen) - 根据用户交互生成测试的创作工具\n * [调试工具](https://playwright.dev/docs/debug) - 支持运行时调试的附加工具\n * [报告器](https://playwright.dev/docs/test-reporters) - 多种内置报告格式"
+      }
+    },
+    {
+      "segment_id": "714b728f",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "47cd8dd6",
+      "source_content": "## What's Next",
+      "source_content_hash": "7027d20df47e677159d4e3c8dbba8ebb639330853069eab74d83748ee5e5c49a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 后续步骤"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "We covered a lot today.",
+      "source_content_hash": "d999990aca5edd67d287084f8c02b5d449466922a2dbecc76e9ed929f633fbd5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天我们涵盖了大量内容。"
+      }
+    },
+    {
+      "segment_id": "383fbdd2",
+      "source_content": "At this point, you should know what Playwright its, and why it's useful for automating tests for  modern web applications. You should have a sense of the powerful developer tools it has, and understand how to setup and configure it for use with your Azure Static Web App. And you should have a clean basis for building up your test suite.",
+      "source_content_hash": "dbc9c41c04f1d2e05ac789d55ffecf19986b63751142f05dbc480eac64ab4d0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "至此，您应该了解 Playwright 是什么，以及为何它对现代 Web 应用的自动化测试如此有用。您应该对其强大的开发者工具有所认知，并掌握如何为 Azure Static Web App 配置它。同时您已获得构建测试套件的良好基础。"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "So where can we go next to skill up? We have you covered:",
+      "source_content_hash": "56feeb437b18b7d97ae05ce22ca9fb09d0c9c9754b382d0dfc20e3604150b802",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "接下来如何提升技能？我们为您准备了："
+      }
+    },
+    {
+      "segment_id": "1fe5236e",
+      "source_content": "* **[Watch this repository](https://github.com/fearlessly-dev/30daysofSWA-testing)** I setup today. I hope to continue adding more tests that can walk through various Playwright features with a deployed SWA,, and use that to explore both the Playwright capabilities and SWA-specific features or usage.\n * **Join us tomorrow** when we explore a \"Multi-Stage Deployment with Azure DevOps\" demo that shows you a full-stack application with Playwright tests integrated. Learn interesting aspects - like using SWA environment variables to define test parameters - that highlight best practices for test setup in SWA.\n * **Last but not least**, check out this talk from last year for more insights into End-to-End Testing for Playwright from the Azure Static Web Apps Team.\n\n    <iframe  width=\"560\" height=\"315\" frameborder=\"0\"  src=\"https://aka.ms/docs/player?ev=learn-tv-static-web-apps-code-to-scale&session=end-to-end-testing-with-playwright\"></iframe>",
+      "source_content_hash": "f662df7f84130fe5cae00230254a56f18aff373fb1e1bd72986fa9581c004cbc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **[关注此仓库](https://github.com/fearlessly-dev/30daysofSWA-testing)** - 我将持续添加更多测试案例，通过已部署的 SWA 演示 Playwright 各项功能，并探索 SWA 特有特性和用法\n * **明日加入我们** - 探索\"使用 Azure DevOps 实现多阶段部署\"的完整演示，包含 Playwright 测试集成。学习如使用 SWA 环境变量定义测试参数等最佳实践\n * **最后但同样重要** - 观看去年 Azure Static Web Apps 团队关于 Playwright 端到端测试的深度分享：\n\n    <iframe  width=\"560\" height=\"315\" frameborder=\"0\"  src=\"https://aka.ms/docs/player?ev=learn-tv-static-web-apps-code-to-scale&session=end-to-end-testing-with-playwright\"></iframe>"
+      }
+    },
+    {
+      "segment_id": "73776161",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践练习"
+      }
+    },
+    {
+      "segment_id": "f7e6e884",
+      "source_content": "Pick one of the apps you've built (or use) - preferably one that is currently deployed to Azure Static Web Apps so you can explore other scenarios later.",
+      "source_content_hash": "1aeb10e72b54bea1bef63ecb7a2dcc5e774c03402525b2f92d8371935d73f82e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "选择您已构建（或正在使用）的任一应用（建议当前部署在 Azure Static Web Apps 上的应用，便于后续探索其他场景）。"
+      }
+    },
+    {
+      "segment_id": "17b50e81",
+      "source_content": "[Walk through the same steps](https://github.com/fearlessly-dev/30daysofSWA-testing) with **your** deployed app - then try adding one new test script that goes beyond the starter test case. Look at the [demo](https://github.com/MarcusFelling/Demo.Playwright) project for inspiration!",
+      "source_content_hash": "65511d8f00d5fde81d95d3b62235713d2c0f0d8275df65aad7ec9af0588f185f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "按照 [相同步骤](https://github.com/fearlessly-dev/30daysofSWA-testing) 为 **您的** 已部署应用配置测试环境，然后尝试添加一个超越基础测试用例的新测试脚本。可参考 [演示项目](https://github.com/MarcusFelling/Demo.Playwright) 获取灵感！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-17.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.883304+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "c438fc3b4364f8ef382a1543c035081eaf1b9a8b6bd7c86e32eb7d532a5d53d6"
+  }
+}

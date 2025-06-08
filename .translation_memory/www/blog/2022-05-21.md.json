@@ -1,0 +1,442 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-21.md",
+  "source_file_content_hash": "be0833f23fd8a95af1a4868abf5da7b59f13410ecce3f06e46b5a780961cfb17",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: devtools-swacli-deploy\ntitle: \"#20: Deploy with SWA CLI\"\nauthors: [wassim, yohan]\ntags: [swa, 30days, dev-tools]\ndraft: false\n---",
+      "source_content_hash": "7bf06295c5ffba71355f15f8632c29d39afd9b3924b7d41b6c5b8c760b793008",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/devtools-swacli-deploy\" />\n  <meta name=\"twitter:title\" content=\"#20: Deploy with SWA CLI\" />\n  <meta name=\"twitter:description\" content=\"Join @sinedied and @manekinekko on #30DaysOfSWA in part 2 of the intro to SWA CLI for @AzureStaticApps - focused on deployment!\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/20-banner-62cb7a9019981d88c514d8875b8547d9.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://dev.to/azure/deploy-your-static-web-apps-to-azure-directly-from-the-command-line-2ip8\" />\n</head>",
+      "source_content_hash": "b5d43b545f5e6073c79c4bcf33bf20cfae25c7929ae12be8d4ea26451c9d032d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Welcome to `Week 3, Day 6` of **#30DaysOfSWA**!!",
+      "source_content_hash": "cd2166c867fbb206db7cb8580ab561bcadd63fc9229a0788358303a68f319f19",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第3周第6天`！！"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "This is second part of the 2-part series that focuses on the launch of the [Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/?WT.mc_id=30daysofswa-61155-cxall) at the [Azure Static Web Apps Anniversary event](https://docs.microsoft.com/en-us/events/learntv/swa-anniversary-may-2022?WT.mc_id=30daysofswa-61155-cxall) on May 19, 2022. Yesterday's post introduced the core `swa` command and walked through the `swa init` and `swa start` commands - and covered configuration.",
+      "source_content_hash": "4a63c4840cab8835f7aeb098a80b0f50a60b44f814ae97d4fd1a4dba5726dc6f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是2篇系列文章的第二部分，重点介绍在[Azure Static Web Apps周年活动](https://docs.microsoft.com/en-us/events/learntv/swa-anniversary-may-2022?WT.mc_id=30daysofswa-61155-cxall)上发布的[Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/?WT.mc_id=30daysofswa-61155-cxall)。昨天的文章介绍了核心的`swa`命令，并详细讲解了`swa init`和`swa start`命令及其配置。"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "Today, we'll explore the `swa login` and `swa deploy` commands that help with deploying your locally-developed app to the Azure cloud. And we'll cover the use of Environment Variables to streamline the developer experience further.",
+      "source_content_hash": "21cf0b39eaf7a769398bb82f81c99b809d18372bbfa076a18bd7168c348792f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天，我们将探索`swa login`和`swa deploy`命令，它们可以帮助你将本地开发的应用程序部署到Azure云上。我们还将介绍如何使用环境变量来进一步简化开发体验。"
+      }
+    },
+    {
+      "segment_id": "6b3596a2",
+      "source_content": ":::info[What We'll Cover]\n * Logging in to Azure\n * Deploying your app\n * Environment variables\n * **Exercise**: Use the new `swa` CLI to authenticate, and deploy your app\n:::",
+      "source_content_hash": "41172fb30133f82ac7a34b2c962200ca2aa7f2a6105a4dea47101add74d3aee0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[我们将涵盖的内容]\n * 登录Azure\n * 部署你的应用\n * 环境变量\n * **练习**：使用新的`swa` CLI进行身份验证并部署你的应用\n:::"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "![](../static/img/series/20-banner.png)",
+      "source_content_hash": "2ba637df06cb9ded121a6db201657d2adfd5ddaef85d7fcb0c273d23d0d17d46",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/20-banner.png)"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "For this second article about the SWA CLI, we'll talk about the new deployment options. And yes, you can now deploy your apps straight from the command line! Who's better than the person who implemented it to talk about it? I'll let my friend [Wassim](https://twitter.com/manekinekko) explain it all to you.",
+      "source_content_hash": "59c7708f997f1ca68165d3356432a54a0bd845b89e62f865ca1260842135f427",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在这篇关于SWA CLI的第二篇文章中，我们将讨论新的部署选项。是的，你现在可以直接从命令行部署你的应用了！还有谁能比实现这个功能的人更适合来讲解呢？我将让我的朋友[Wassim](https://twitter.com/manekinekko)为你详细解释。"
+      }
+    },
+    {
+      "segment_id": "df997fae",
+      "source_content": "> If you've never heard of Static Web Apps (or SWA for short), it's a web app hosting service provided by Azure, offering streamlined full-stack development with many built-in features like authentication, customizable routing, serverless functions and more. It also has a great [free tier](https://azure.microsoft.com/free/?WT.mc_id=30daysofswa-61155-cxall) 😉",
+      "source_content_hash": "4fe10b0dcf4f831b276300f7c865fdcdd2e3b9316927c2787924fccb0d6f764e",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> 如果你从未听说过Static Web Apps（简称SWA），它是Azure提供的一项Web应用托管服务，提供了简化的全栈开发体验，内置了许多功能，如身份验证、可自定义的路由、无服务器函数等。它还有一个很棒的[免费层](https://azure.microsoft.com/free/?WT.mc_id=30daysofswa-61155-cxall) 😉"
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "## Logging in to Azure",
+      "source_content_hash": "16758373085b05cee308b518fed22fb28950e5fe6c43fd2b36f8ccff1b70c411",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 登录Azure"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "In the new SWA CLI for Azure Static Web Apps, we introduced a new `swa login` command allowing you to log in to your Azure account, straight from the command line. This command will encrypt and store your credentials in your system's key Chain, so you don't have to enter them again.",
+      "source_content_hash": "72b7f996fccc409beeecced4ed69bb35c16ebfe236e0d426b2471dbee7893a63",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在新的Azure Static Web Apps CLI中，我们引入了一个新的`swa login`命令，允许你直接从命令行登录到你的Azure账户。此命令会加密并将你的凭据存储在你系统的密钥链中，这样你就不需要再次输入它们。"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "In most common cases, the `swa login` will pick your current active Azure credentials from the following locations (in this order):",
+      "source_content_hash": "e1d0f928b568f61d0463421d5606863efaf4939f00791957cba1d6981ba2b184",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在大多数常见情况下，`swa login`会从以下位置（按此顺序）获取你当前活动的Azure凭据："
+      }
+    },
+    {
+      "segment_id": "b93ddfac",
+      "source_content": "1. Your environment variables, if you have set one or all of following [variables](https://azure.github.io/static-web-apps-cli/docs/cli/env-vars#azure-identity?WT.mc_id=30daysofswa-61155-cxall):\n    - `AZURE_TENANT_ID`\n    - `AZURE_CLIENT_ID`\n    - `AZURE_CLIENT_SECRET`\n2. Your current Visual Studio Code, if you're using VS Code and is connected to Azure.\n3. Interactive prompt using your browser.\n4. The last fallback is the device code flow, which will prompt you to log in to your Azure account using a generated device code.",
+      "source_content_hash": "c803bf3eda366751d6a4a365d1a103d2df14a094b60a5bb8aefbea1529e6cbe1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 你的环境变量，如果你设置了以下任意一个或多个[变量](https://azure.github.io/static-web-apps-cli/docs/cli/env-vars#azure-identity?WT.mc_id=30daysofswa-61155-cxall)：\n    - `AZURE_TENANT_ID`\n    - `AZURE_CLIENT_ID`\n    - `AZURE_CLIENT_SECRET`\n2. 你当前的Visual Studio Code，如果你正在使用VS Code并已连接到Azure。\n3. 通过浏览器进行交互式提示。\n4. 最后的回退是设备代码流，它将提示你使用生成的设备代码登录到你的Azure账户。"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "However, if you need, you can also provide any of these credentials from the command line, using the available flags:",
+      "source_content_hash": "b9b2e0b83057062f61df7ae7901c5868afc665ecbb11ce1576f7e16eb0798d5f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "不过，如果需要，你也可以通过命令行提供这些凭据，使用可用的标志："
+      }
+    },
+    {
+      "segment_id": "c3955998",
+      "source_content": "```bash\nUsage: swa login [options]\n\nlogin into Azure\n\nOptions:\n  -S, --subscription-id <subscriptionId>    Azure subscription ID used by this project\n                                            (default: \"process.env.AZURE_SUBSCRIPTION_ID\")\n  -R, --resource-group <resourceGroupName>  Azure resource group used by this project\n  -T, --tenant-id <tenantId>                Azure tenant ID (default: \"process.env.AZURE_TENANT_ID\")\n  -C, --client-id <clientId>                Azure client ID\n  -CS, --client-secret <clientSecret>       Azure client secret\n  -n, --app-name <appName>                  Azure Static Web App application name\n  -cc, --clear-credentials                  clear persisted credentials before login (default: false)\n  -u, --use-keychain                        enable using the operating system native keychain\n                                            for persistent credentials (default: true)\n  -nu, --no-use-keychain                    disable using the operating system native keychain\n```",
+      "source_content_hash": "ad6110c4a88c6a64fc5fb7f8598ac9a09e60adadeb136f8c6c3a26be704480f2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_c3955998"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "Once logged in, the SWA CLI will store your active Azure subscription ID and tenant ID in a local file called `.env` at the root of your project:",
+      "source_content_hash": "5437e12caf0bce601163039266d384dab549c2b847a4198e24f05cf680d26d7e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "登录后，SWA CLI会将你的活动Azure订阅ID和租户ID存储在你项目根目录下名为`.env`的本地文件中："
+      }
+    },
+    {
+      "segment_id": "8a9e710a",
+      "source_content": "```bash\n➜ swa login\n\nWelcome to Azure Static Web Apps CLI (1.0.0)\n\nChecking Azure session...\n✔ Successfully logged into Azure!\n✔ Saved project credentials in .env file.\n✔ Successfully setup project!\n```",
+      "source_content_hash": "bef0a015dcdf1f65594e914a87149641104ae3f513b4513ca5773d7294778d6e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_8a9e710a"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "This file will be used when deploying your project to Azure using the `swa deploy` command.",
+      "source_content_hash": "b18761c37f0e5b5585e62a2cb61de999663c164465d74270bf3009d029086129",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这个文件将在使用`swa deploy`命令将你的项目部署到Azure时使用。"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "## Deploying your app",
+      "source_content_hash": "f144e79d83996f5974cd1f740b88366db4557914a8676c6d23d84986856dc466",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 部署你的应用"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "The new SWA CLI makes it even more easier to deploy your apps to Azure. You can now deploy your app directly from the command line, using one single `swa deploy` command.",
+      "source_content_hash": "15d7f05e44d1d2fddeea2e29edcb2f8b6342c571ad1b2765e4c38253d060cb15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "新的SWA CLI使得将你的应用部署到Azure变得更加容易。你现在可以直接从命令行使用一个简单的`swa deploy`命令来部署你的应用。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "The `swa deploy` command is smarter enough to figure out if you already have an Azure Static Web Apps instance available, and if so, it will use it. Otherwise, it will create a new one on the fly - or prompt you to select one from a list of already available ones:",
+      "source_content_hash": "7953a813b51f09007ac77950151faa801c8d0698b34a196191aeb80df6b1ee77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "`swa deploy` 命令足够智能，能够判断您是否已拥有可用的 Azure Static Web Apps 实例。若存在，则直接使用；否则会自动创建新实例，或提示您从现有实例列表中选择："
+      }
+    },
+    {
+      "segment_id": "ec99e704",
+      "source_content": "```bash\n➜ swa deploy\n\nWelcome to Azure Static Web Apps CLI (1.0.0)\n\nUsing configuration \"thundr\" from file:\n  /home/wassimchegham/oss/@thundr-dev/thundr/swa-cli.config.json\n\nDeploying front-end files from folder:\n  /home/wassimchegham/oss/@thundr-dev/thundr/app/dist/thundr-ui\n\nDeploying API from folder:\n  /home/wassimchegham/oss/@thundr-dev/thundr/api\n\nChecking Azure session...\n✔ Successfully logged into Azure!\n\nChecking project settings...\n? Choose your Static Web App › - Use arrow-keys. Return to submit.\n❯   >> Create a new application\n    swa_samples/angular-web-bluetooth\n    swa_samples/catsify\n    swa_samples/hexa\n    swa_samples/ngxtools\n    swa_samples/nitrooo\n  ↓ swa_samples/photobooth-teams\n\n```",
+      "source_content_hash": "3f667171f599012db82a2af812d7d86258966b95b934848812b2300bee2b6547",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_ec99e704"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "The `swa deploy` command is also able to detect if your existing Static Web Apps instance has already been deployed from a CI/CD pipeline and inform you about it!",
+      "source_content_hash": "7e2f12e9a6efc1fa3dc7c9371f651a18e20ea6da2bb89e16ac98b354d2b84d38",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该命令还能检测现有 Static Web Apps 实例是否已通过 CI/CD 流水线部署，并给出相应提示！"
+      }
+    },
+    {
+      "segment_id": "36d6c3de",
+      "source_content": "## Deploying from a CI/CD pipeline",
+      "source_content_hash": "c9f7e0cdc6db9137229b50c1e804691591462429d8f31fac9cee9a38daad0287",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 通过 CI/CD 流水线部署"
+      }
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "Deploying from CI/CD pipelines is a common practice in many projects. You can use the `swa deploy` command to deploy your app to Azure from your CI/CD pipeline. You can accomplish this by setting a deployment token:",
+      "source_content_hash": "f576bda0a789be0201be09eb6cf2182ef652b4a7b4ba426798dbfc21f423eefb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "从 CI/CD 流水线部署是项目中的常见实践。您可通过设置部署令牌，使用 `swa deploy` 命令从 CI/CD 流水线将应用部署到 Azure："
+      }
+    },
+    {
+      "segment_id": "b474abd5",
+      "source_content": "```bash\n➜ swa deploy --print-token --app-name thundr --resource-group swa_samples\n\nWelcome to Azure Static Web Apps CLI (1.0.0)\n\nChecking project \"thundr\" settings...\n✔ Successfully setup project!\n\nDeploying to environment: preview\n\nDeployment token:\n7c3fc44b858164b677-truncated-8c80ace9-39a8-416c-ae22-864745c0470b003\n```",
+      "source_content_hash": "ff6017728c3b319ac1343b593dbba9b51185ccf8768038a81658fd2864a1f7f8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_b474abd5"
+      }
+    },
+    {
+      "segment_id": "4fe849d4",
+      "source_content": "```bash\nswa deploy --deployment-token=7c3fc44b858164b677-truncated-8c80ace9-39a8-416c-ae22-864745c0470b003b003\n```",
+      "source_content_hash": "b108d3e93f725c422f80eec9888597dc7d192ff707e20b03998de4fff3bdc0d2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_4fe849d4"
+      }
+    },
+    {
+      "segment_id": "17b50e81",
+      "source_content": "You can also set the deployment token as an [environment variable](https://azure.github.io/static-web-apps-cli/docs/cli/env-vars#deploy-settings?WT.mc_id=30daysofswa-61155-cxall):",
+      "source_content_hash": "0dbe07ffd01f08a0e627537956f3059ba43ae94ab04b79b330d0b03b83729749",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您也可将部署令牌设为[环境变量](https://azure.github.io/static-web-apps-cli/docs/cli/env-vars#deploy-settings?WT.mc_id=30daysofswa-61155-cxall)："
+      }
+    },
+    {
+      "segment_id": "3ad9440a",
+      "source_content": "```bash\nexport SWA_CLI_DEPLOYMENT_TOKEN=7c3fc44b858164b677-truncated-8c80ace9-39a8-416c-ae22-864745c0470b003b003\nswa deploy\n```",
+      "source_content_hash": "a3d415827e3ba70fb5c40fc36b5cd9b386140db8fd296809ea7dc40fdfd8c9c5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_3ad9440a"
+      }
+    },
+    {
+      "segment_id": "b50cf7ff",
+      "source_content": "## Environment variables",
+      "source_content_hash": "30b1e68ef7c0da8921224a3d04a08502c2bb290ac1b7de8cf24a66418c28d568",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 环境变量"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "The new SWA CLI introduced a new set of environment variables to make it easier for you to configure your experience. You can customize the behavior of the SWA CLI by setting the following environment variables:",
+      "source_content_hash": "e6f8ca798e302c3c0cf1829603358e655c83deea44a2d912807017a6c1ae9cda",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "新版 SWA CLI 引入了一系列环境变量来简化配置体验。您可通过设置以下变量自定义 CLI 行为："
+      }
+    },
+    {
+      "segment_id": "6ffcaeb2",
+      "source_content": "- General settings\n- Emulator settings\n- Deploy settings\n- Runtime settings\n- Login experience",
+      "source_content_hash": "f82048d38a2a388399e8074356cfee92188e068c752a1470bc1d9ee494679ed9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 常规设置\n- 模拟器设置\n- 部署设置\n- 运行时设置\n- 登录体验"
+      }
+    },
+    {
+      "segment_id": "0ddaa835",
+      "source_content": "You can read more about these environment variables in the [Environment Variables section](https://azure.github.io/static-web-apps-cli/docs/cli/env-vars??WT.mc_id=30daysofswa-61155-cxall) in our new documentation website.",
+      "source_content_hash": "6c38aed762e30d5e2107e895b6740d7829ffc8d27ceb925145f96ada9b22ca7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更多细节请参阅文档网站的[环境变量章节](https://azure.github.io/static-web-apps-cli/docs/cli/env-vars??WT.mc_id=30daysofswa-61155-cxall)。"
+      }
+    },
+    {
+      "segment_id": "08f73f73",
+      "source_content": "## Next steps",
+      "source_content_hash": "3a5d9cbc49e6e5f0c98349dd1cd7cfe5713807fc5f02234240621031925d1f32",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 后续步骤"
+      }
+    },
+    {
+      "segment_id": "b08ad0b4",
+      "source_content": "From the start of your project to its deployment to Azure, with all the needed local testing in-between, you should now be equipped to take care of your complete development process all from the command line. Now the main challenge remaining for you is to deploy and grow your app 😉.",
+      "source_content_hash": "27055a99bf1846129eb1f5f0b137428f58f14b9cb9db7a611d8a9b3b1883369d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "从项目初始化到 Azure 部署，再到完整的本地测试环节，您现在已能通过命令行掌控整个开发流程。接下来真正的挑战是如何运营和扩展您的应用 😉。"
+      }
+    },
+    {
+      "segment_id": "d636abf8",
+      "source_content": "If you'd like to learn some tips you can use when developing your app, you can check out the [Static Web Apps - Tips & Tricks](https://aka.ms/StaticWebAppsTips??WT.mc_id=30daysofswa-61155-cxall) video series.",
+      "source_content_hash": "2df6aebfdc8528076fb319427194e31b44a5f95d807f9b843b7818e9ac6a4259",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如需获取开发技巧，可观看 [Static Web Apps 技巧与窍门](https://aka.ms/StaticWebAppsTips??WT.mc_id=30daysofswa-61155-cxall)视频系列。"
+      }
+    },
+    {
+      "segment_id": "99840f13",
+      "source_content": "You can also learn more about all the new features of the SWA CLI and how to use them by looking at the [new docs website](https://azure.github.io/static-web-apps-cli/?WT.mc_id=30daysofswa-61155-cxall).",
+      "source_content_hash": "ad6537673af86fc658c90d1bc3a6f14a907976f62420c72700fe1e061b9b99a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您也可通过[新版文档网站](https://azure.github.io/static-web-apps-cli/?WT.mc_id=30daysofswa-61155-cxall)了解 SWA CLI 的所有新功能。"
+      }
+    },
+    {
+      "segment_id": "a6b29dc7",
+      "source_content": "## Tell us your feedback!",
+      "source_content_hash": "a7bd722a22757a6044d364656dd7cf8681e0e0762bd117e96446bbea7c496adf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 反馈通道"
+      }
+    },
+    {
+      "segment_id": "dc72fd20",
+      "source_content": "We're also here on dev.to to listen and help as much as we can! 🙂",
+      "source_content_hash": "3b50e307991cc594244cb7badf59930c7e66f8e3d90042a1f50b26a2b9781f55",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们随时在 dev.to 上倾听并为您提供帮助！🙂"
+      }
+    },
+    {
+      "segment_id": "674abb31",
+      "source_content": "Please tell us your experience, your difficulties, your questions, and what features you would like to see in the next versions of the SWA CLI.",
+      "source_content_hash": "a4ca4ba1d7d0d39ad7000f6f5f022c08d1615c1f3eeb0eab7ed2b924602278d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "请分享您的使用体验、遇到的困难、疑问，以及希望在未来版本中看到的功能。"
+      }
+    },
+    {
+      "segment_id": "8d279c43",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源"
+      }
+    },
+    {
+      "segment_id": "e5821418",
+      "source_content": "Want to see the Static Web Apps CLI in action? The tool became generally available yesterday, launching at the [Azure Static Web Apps Anniversary](https://aka.ms/swaanniversary). Watch the segment to see the SWA CLI in action.",
+      "source_content_hash": "5b82923b8c66719c12a6955a23b12868bdb3b18759317880f6944351928f53be",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想观看 Static Web Apps CLI 的实际演示？该工具已在昨日举办的 [Azure Static Web Apps 周年庆](https://aka.ms/swaanniversary)上正式发布，相关演示片段可供参考。"
+      }
+    },
+    {
+      "segment_id": "eac93253",
+      "source_content": "<iframe width=\"560\" height=\"315\" frameborder=\"0\"  src=\"https://www.youtube.com/embed/1e6k5HNK4F8?WT.mc_id=30daysofswa-61155-cxall\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "source_content_hash": "0929ddb9618fe2697a82536f820136f095f1cb8ba07ab510104e0ec3a8e5430e",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_eac93253"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-21.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.879284+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "be0833f23fd8a95af1a4868abf5da7b59f13410ecce3f06e46b5a780961cfb17"
+  }
+}

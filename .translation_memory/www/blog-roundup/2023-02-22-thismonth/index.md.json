@@ -1,0 +1,342 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog-roundup/2023-02-22-thismonth/index.md",
+  "source_file_content_hash": "c31fe98205db714da21d7f66d057f0c6220df0bbfa41031cf1b213ecce4aa732",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: roundup-2023-feb\ntitle: \"2023 | February\"\nauthors: [reshmi, nitya, sara]\ntags: [swa, thismonth, jan]\ndraft: false\n---",
+      "source_content_hash": "def460899a994f1bd98e09c71494255ae6d06d7fc97a0f046d917b3179ec893f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/roundup-2023-feb\" />\n  <meta name=\"twitter:title\" content=\"This Month in Azure Static Web Apps: Feb 2023\" />\n  <meta name=\"twitter:description\" content=\"This February in @AzureStaticApps - we cover Azure Static Web Apps Diagnostics, authentication, deploying from Codespaces and SWA CLI\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/img/png/roundup/feb.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/thismonth/roundup-2023-feb\" />\n</head>",
+      "source_content_hash": "b598fc6f8bda19d80c2a9f749fbf73699acb0337951c05b255375f1435a9f6bc",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Welcome to the **February 2023** edition of **This Month in SWA** 🎉",
+      "source_content_hash": "84ccd5332cdfa57363eda28e7133476dedd38488038bf9a22e619d8a6069a8c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎阅读 **2023年2月** 的 **Azure静态Web应用月度简报** 🎉"
+      }
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::info[ABOUT THE ROUNDUP ]\n\nThe roundup is traditionally published **on the last Monday of each month** - just ahead of the [**Azure Static Web Apps Community Standup**](https://www.youtube.com/playlist?list=PLI7iePan8aH7Yo8vo288dAULgjyCCCcEJ) held on the last Wednesday of each month. Catch up on all the news and announcements in one friendly blog post, then join the livestream for interactive discussions, demos and more.\n\n * Want to make sure you don't miss the next roundup? <a href=\"/thismonth/rss.xml\" target=\"_blank\">**Subscribe to the feed**</a>.\n * Want to contribute items for roundup? [**Submit this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community).\n * Want to catch up on past posts? [**Browse past editions.**](/roundup#roundups-archive)\n * Want to catch up on past livestreams? [**Watch standup recordings**](https://aka.ms/swa/community/standups)\n\nAnd don't forget to contribute _your_ updates for inclusion in the next issue!\n\n:::",
+      "source_content_hash": "09ee828afb97c5ef43f4cc9687bb087a81a69ac49a71a4def71242a5b26b62e6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[关于本简报]\n\n本简报传统上于**每月最后一个周一**发布——恰好在[**Azure静态Web应用社区站会**](https://www.youtube.com/playlist?list=PLI7iePan8aH7Yo8vo288dAULgjyCCCcEJ)（每月最后一个周三举行）之前。您可以通过这篇友好的博客文章了解所有新闻和公告，然后加入直播参与互动讨论、演示等。\n\n * 不想错过下一期简报？<a href=\"/thismonth/rss.xml\" target=\"_blank\">**订阅RSS源**</a>。\n * 想为简报投稿？[**提交此定制议题**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)。\n * 想回顾往期内容？[**浏览历史版本**](/roundup#roundups-archive)。\n * 想观看往期直播？[**查看站会录像**](https://aka.ms/swa/community/standups)\n\n别忘了提交_您的_更新内容以便纳入下一期！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b0e5a8f2",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "![](../../static/img/png/roundup/feb.png)",
+      "source_content_hash": "d2b557e8ab525d5174bda125de6262259dd7e9cc23be9a4ec73e17d2b3ca460c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../../static/img/png/roundup/feb.png)"
+      }
+    },
+    {
+      "segment_id": "5ef5fda3",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Product News",
+      "source_content_hash": "a39b0906a21b5d05b839c70dd81e6e5341db47840ee4e56e0a921977d6090ef7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 产品动态"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "_This section covers recent news or announcements from the product team. Read on to learn the latest news from the world of Azure Static Web Apps!_",
+      "source_content_hash": "a271c4ebde2d498b95c3d19f0a556143bc4bc997ba6578f7d5d296512d619989",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节涵盖产品团队的最新新闻或公告。阅读以下内容，了解Azure静态Web应用领域的最新动态！_"
+      }
+    },
+    {
+      "segment_id": "824626b3",
+      "source_content": "* **Feb 15** | [Public preview: Python 3.10 Support](https://azure.microsoft.com/updates/public-preview-python-310-support/?WT.mc_id=javascript-74011-ninarasi) By using Python 3.10 for your app, you can leverage the latest language and runtime improvements in Python. To use Python 3.10 in your Azure functions, please use [Functions version 4.x](https://learn.microsoft.com/azure/azure-functions/functions-versions?tabs=v4&pivots=programming-language-python&WT.mc_id=javascript-74011-ninarasi).\nAzure Static Web Apps support for Python 3.10 follows the Python 3.10 lifecycle. | _**[Read More For Details!](https://aka.ms/swa-language-runtime)**_\n\n* **Feb 08** | [Update: Enhanced Next.js Hybrid support in Static Web Apps](https://github.com/Azure/static-web-apps/discussions/1066) Static Web Apps recently enhanced the support for Next.js Hybrid rendering. It now has support for [standalone](https://nextjs.org/docs/advanced-features/output-file-tracing) and for split deployment (of static and dynamic content). These changes will reflect in your Next.js SSR apps _on redeploy_. | _**[Comment on the thread to give your feedback](https://github.com/Azure/static-web-apps/discussions/1066)**_\n\n* **Jan 26** | [Welcome to Azure Static Web Apps Community Standups!](https://youtu.be/7hTQJs9Ku5Y?list=PLI7iePan8aH7Yo8vo288dAULgjyCCCcEJ&t=143/?WT.mc_id=javascript-74011-ninarasi) This is a monthly livestream covering news, demos and product updates! In the first edition of the SWA Community Standup, you'll get to meet the team, learn more about the product, explore community resources, and see quickstart demos with your favorite developer tooling! | _**[Bookmark The Playlist!](https://aka.ms/swa/community/standups)**_",
+      "source_content_hash": "51a7628de7ac3b1fff88e20299bf33545ac549075f7e4dc9ea04cd99dd079d51",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **2月15日** | [公开预览：Python 3.10支持](https://azure.microsoft.com/updates/public-preview-python-310-support/?WT.mc_id=javascript-74011-ninarasi) 通过使用Python 3.10，您可以利用Python最新的语言和运行时改进。要在Azure函数中使用Python 3.10，请使用[Functions 4.x版本](https://learn.microsoft.com/azure/azure-functions/functions-versions?tabs=v4&pivots=programming-language-python&WT.mc_id=javascript-74011-ninarasi)。Azure静态Web应用对Python 3.10的支持遵循Python 3.10的生命周期。| _**[阅读详情！](https://aka.ms/swa-language-runtime)**_\n\n* **2月8日** | [更新：静态Web应用中增强的Next.js混合渲染支持](https://github.com/Azure/static-web-apps/discussions/1066) 静态Web应用近期增强了对Next.js混合渲染的支持。现在支持[独立模式](https://nextjs.org/docs/advanced-features/output-file-tracing)和拆分部署（静态与动态内容）。这些变更将在您重新部署Next.js SSR应用时生效。| _**[在讨论中留言反馈](https://github.com/Azure/static-web-apps/discussions/1066)**_\n\n* **1月26日** | [欢迎参加Azure静态Web应用社区站会！](https://youtu.be/7hTQJs9Ku5Y?list=PLI7iePan8aH7Yo8vo288dAULgjyCCCcEJ&t=143/?WT.mc_id=javascript-74011-ninarasi) 这是每月一次的直播活动，涵盖新闻、演示和产品更新！在首期SWA社区站会中，您将认识团队、深入了解产品、探索社区资源，并通过您喜爱的开发工具观看快速入门演示！| _**[收藏播放列表！](https://aka.ms/swa/community/standups)**_"
+      }
+    },
+    {
+      "segment_id": "49d8fe2a",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## Dev Resources",
+      "source_content_hash": "476de9fde5142c80171779eccd068628fd82d2b7b1dc0dd4fc2ddabc9666f378",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 开发资源"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "_This section covers content, events and code samples from Microsoft authors. Check them out for relevant learning resources and best practices._",
+      "source_content_hash": "1b45f986a00285ba7bb58dfd942b4957175f70952384f0bac00858883c93e9a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节涵盖来自微软作者的内容、活动和代码示例。查看这些资源以获取相关学习资料和最佳实践。_"
+      }
+    },
+    {
+      "segment_id": "a0e887c2",
+      "source_content": "* **Feb 16** | `youtube.com` - [**Why I Have Fallen In Love with Azure Static Web Apps | Complete Beginner's Guide**](https://www.youtube.com/watch?v=AgP4p8qhi4s) by _James Montemagno_.\nNo matter if you are building a web app with libraries and web frameworks like Blazor, Angular, React, Svelte, Vue, Next.js, Nuxt.js, Gatsby, Hugo, VuePress, or basically anything that has static content (HTML, CSS, JavaScript), you can take advantage of Azure Static Web Apps. In this video I walk through how to create your very first Azure Static Web app, how to deploy it with GitHub actions, how to communicate with an Azure Function backend, and how to setup a full custom domain name with SSL certs! In under 30 minutes! \n\n* **Feb 07** | `techcommunity.microsoft.com` - [**How to setup Built-in Authentication for Azure SWA using Azure Active Directory**](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/how-to-setup-built-in-authentication-for-azure-static-web-apps/ba-p/3734709?WT.mc_id=javascript-74011-ninarasi) by _Joey Huang_. Azure Static Web Apps provides 2 mechanisms for authentication: built-in auth and custom auth. It enables authentication by simply defining the routing rules and roles in the _staticwebapp.config.json_ config file. Let's walk through enabling built-in auth using Azure AD step-by-step!\n\n* **Jan 24** | `techcommunity.microsoft.com` -  [**Integrating network isolated backends with Azure Static Web Apps**\n](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/integrating-network-isolated-backends-with-azure-static-web-apps/ba-p/3721136?WT.mc_id=javascript-74011-ninarasi) by _Thomas Gauvin_. Azure Static Web Apps allows you to easily host your web apps globally, with built-in support for APIs, staging environments and more. With the new API integration feature you can also link network isolated backends to benefit from this feature’s key benefits: integrated security and seamless routing. Read the post for more details!",
+      "source_content_hash": "94450dfb4debb2a3d578e1859253d7d0e3909b52ede3d3c7222cc280c81c19b8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **2月16日** | `youtube.com` - [**为何我爱上了Azure静态Web应用 | 完整初学者指南**](https://www.youtube.com/watch?v=AgP4p8qhi4s) 作者：_James Montemagno_。\n无论您使用Blazor、Angular、React、Svelte、Vue、Next.js、Nuxt.js、Gatsby、Hugo、VuePress等库或Web框架构建Web应用，还是任何包含静态内容（HTML、CSS、JavaScript）的项目，都可以充分利用Azure静态Web应用的优势。本视频将带您逐步创建首个Azure静态Web应用，通过GitHub Actions部署，与Azure Functions后端通信，并配置完整的自定义域名及SSL证书——全程不到30分钟！\n\n* **2月7日** | `techcommunity.microsoft.com` - [**如何为Azure静态Web应用配置基于Azure Active Directory的内置身份验证**](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/how-to-setup-built-in-authentication-for-azure-static-web-apps/ba-p/3734709?WT.mc_id=javascript-74011-ninarasi) 作者：_Joey Huang_。Azure静态Web应用提供两种身份验证机制：内置验证和自定义验证。仅需在_staticwebapp.config.json_配置文件中定义路由规则和角色即可启用身份验证。本文将逐步演示如何使用Azure AD配置内置验证！\n\n* **1月24日** | `techcommunity.microsoft.com` - [**将网络隔离的后端与Azure静态Web应用集成**](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/integrating-network-isolated-backends-with-azure-static-web-apps/ba-p/3721136?WT.mc_id=javascript-74011-ninarasi) 作者：_Thomas Gauvin_。Azure静态Web应用可轻松实现全球化托管，内置API支持、暂存环境等功能。通过新的API集成特性，您还能关联网络隔离的后端，享受无缝路由和集成安全等核心优势。阅读全文获取详情！"
+      }
+    },
+    {
+      "segment_id": "ba96ee98",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "ee8401db",
+      "source_content": "## Community Buzz",
+      "source_content_hash": "9fae708cacd69eca2e72fc66e41553b31f1d80613ee28c92e0a50b8c165a8bc7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 社区动态"
+      }
+    },
+    {
+      "segment_id": "c1d6a7ca",
+      "source_content": ":::info[AUTHORED BY DEVS LIKE YOU!]\n_This section highlights content from our amazing developer community - submitted directly, or discovered via the Azure Static Web Apps tag in sites like Tech Community and dev.to._\n:::",
+      "source_content_hash": "c6637baa6633ddcd5f64e3626150d4338eb82f5d03bf63e845a92bae43a50647",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[开发者共创内容]\n_本节聚焦开发者社区提交或通过Tech Community、dev.to等平台Azure静态Web应用标签发现的优质内容。_\n:::"
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "* **Feb 17** | `medium` - [**Hosting your student portfolio for free on Azure static web Apps**](https://medium.com/@kevin_comba/hosting-your-student-portfolio-for-free-on-azure-static-web-apps-ecac2b75300c) As a student, it can be difficult😒😒 to showcase your work to potential employers, especially when you don’t have a personal website or the means to host one. By hosting your portfolio on Azure Static Web Apps, you can get a professional and easily accessible portfolio to help you stand out from other applicants. Learn how!\n* **Jan 16** | `dev.to` -  [**Serverless in Azure using Static Web Apps, Functions and Cosmos DB**](https://dev.to/c_arnab/serverless-in-azure-using-static-web-apps-functions-and-cosmos-db-506j) by _Arnab Choudhuri_ In this post, we look at Serverless development on Azure - from tools for local development, to built-in authentication support,  HTTP-triggered functions, seamless integration with a data layer built in CosmosDB. Finally we look at the CI/CD using GitHub Actions - all in the context of a real-world scenario. \n* **Jan 03** | `dev.to` -  [Deploy A Single Page Application to Azure Static Webapp using TeamCity, Jenkins or any CI, or command line](https://dev.to/gkarwchan/deploy-a-single-page-application-to-azure-static-website-using-cicd-and-cli-3o7b) by _Ghassan Karwchan_ I was trying to setup a deployment for an SPA application to an Azure Static Web app using TeamCity, but most of the tutorials I found was doing the deployment through CI/CD of Github's Actions .. But what if .. we need to do it on demand from TeamCity, or any other CI/CD tool? You can do this using [the Azure Static Web Apps CLI](https://github.com/Azure/static-web-apps-cli)! Learn how.\n\n* **Case Study:** | `github.com` - [Peacock VS Code Extension Docs on SWA](https://peacockcode.dev/) by _John Papa_. Want to check out a real-world case study that you can replicate for your own scenarios? C\n[vscode-peacock](https://github.com/johnpapa/vscode-peacock) is a VS Code extension that lets you subtly change the colors in your editor to reflect your context! It has over 2.1M installs and 8.5M+ downloads - _and has its documentation hosted on Azure Static Web Apps_.",
+      "source_content_hash": "20ea84d0adc53bedd04be61441d35c9ec2814bee82856122c5e2d71e0f21ff5d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **2月17日** | `medium` - [**免费在Azure静态Web应用上托管你的学生作品集**](https://medium.com/@kevin_comba/hosting-your-student-portfolio-for-free-on-azure-static-web-apps-ecac2b75300c) 作为一名学生，向潜在雇主展示你的作品可能很困难😒😒，尤其是当你没有个人网站或托管手段时。通过在Azure静态Web应用上托管作品集，你可以获得专业且易于访问的展示平台，从而在求职者中脱颖而出。快来学习如何操作吧！\n* **1月16日** | `dev.to` - [**使用Azure静态Web应用、函数和Cosmos DB实现无服务器架构**](https://dev.to/c_arnab/serverless-in-azure-using-static-web-apps-functions-and-cosmos-db-506j) 作者_Arnab Choudhuri_ 本文探讨了Azure上的无服务器开发——从本地开发工具、内置身份验证支持、HTTP触发的函数，到与CosmosDB构建的数据层无缝集成。最后我们通过一个真实场景，演示了如何利用GitHub Actions实现CI/CD全流程。\n* **1月3日** | `dev.to` - [**通过TeamCity/Jenkins/命令行将单页应用部署到Azure静态Web应用**](https://dev.to/gkarwchan/deploy-a-single-page-application-to-azure-static-website-using-cicd-and-cli-3o7b) 作者_Ghassan Karwchan_ 当我尝试通过TeamCity部署SPA应用到Azure静态Web应用时，发现大多数教程都使用GitHub Actions的CI/CD流程。但如果我们需要通过TeamCity或其他CI/CD工具按需部署呢？使用[Azure静态Web应用CLI](https://github.com/Azure/static-web-apps-cli)就能实现！本文将详细讲解方法。\n\n* **案例研究:** | `github.com` - [Peacock VS Code扩展文档托管于SWA](https://peacockcode.dev/) 作者_John Papa_ 想了解可复用的真实案例吗？[vscode-peacock](https://github.com/johnpapa/vscode-peacock)是一款能根据上下文智能调整编辑器配色的VS Code扩展，拥有超210万安装量和850万+下载量——其文档正是托管在Azure静态Web应用上。"
+      }
+    },
+    {
+      "segment_id": "678c3938",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "a4bf4268",
+      "source_content": "## Upcoming Events",
+      "source_content_hash": "db2318a574c4d5e0551cf2de63fbbd9ab51753429c0cb2f44a4c1ae600dca803",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 近期活动"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "_This section highlights in-person or online events that are likely to feature Azure Static Web Apps content or developer conversations - links to CFPs or registration links are welcome!_",
+      "source_content_hash": "0c2c83656025095ef42800b875ab1912643024bc7e218a983023a63eeccddd2f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节收录包含Azure静态Web应用相关内容或开发者交流的线上线下活动，欢迎提交CFP或注册链接！_"
+      }
+    },
+    {
+      "segment_id": "887c863e",
+      "source_content": "* **Feb 22** | ✨ **Join LIVE for [Azure Static Web Apps Community Standups](https://www.youtube.com/watch?v=7hTQJs9Ku5Y)** ✨ Meet members of the Azure Static Web Apps team as they cover the latest news, demos and announcements in a livestreamed event (12pm EST).\n* **Feb 1-Mar 1** | Are you a pro-dev who wants to contribute to the Low-Code revolution? Join us all-month for [Low Code February](https://microsoft.github.io/Low-Code/blog/2023-kickoff/) for #30DaysOfLowCode learning!",
+      "source_content_hash": "d4f2b72990495ef57ca6f7a82cf8fa5af3f7864dc87dbdeffd18a3ca1ad02911",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **2月22日** | ✨ **实时参与[Azure静态Web应用社区站会](https://www.youtube.com/watch?v=7hTQJs9Ku5Y)** ✨ 与Azure静态Web应用团队成员面对面，在直播中获取最新动态、演示和公告（美国东部时间中午12点）。\n* **2月1日-3月1日** | 专业开发者想参与低代码革命？整个二月加入[低代码二月](https://microsoft.github.io/Low-Code/blog/2023-kickoff/)开启#30DaysOfLowCode学习之旅！"
+      }
+    },
+    {
+      "segment_id": "c9716ede",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "39db08de",
+      "source_content": "## Did You Know?",
+      "source_content_hash": "244cb6b4719225219c0ba90273be054f028633181809325a71519c00e46c39b8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 你知道吗？"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "_Each month, we hope to turn the spotlight on one key resource or person that is worth knowing about, in the context of Azure Static Web Apps._",
+      "source_content_hash": "9f671d00d60bc452c4b198f7504b0f306fc75e5645df04e827d3ee61ae1e1277",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_每月我们将重点推荐一个与Azure静态Web应用相关的关键资源或人物。_"
+      }
+    },
+    {
+      "segment_id": "29662466",
+      "source_content": ":::info[🌟 SPOTLIGHT ON:  SVELTEKIT ADAPTER FOR SWA]\n\n[**SvelteKit 1.0 was announced in Dec 2022**](https://svelte.dev/blog/announcing-sveltekit-1.0), a milestone for the recommended way to build Svelte apps - with an [interactive tutorial](https://learn.svelte.dev/) to jumpstart your learning journey.\n\nTo deploy your SvelteKit app, you need to _adapt_ it to your deployment (hosting) target, using [Adapters](https://kit.svelte.dev/docs/adapters), plugins that generate the deployment-ready site from your built app. **Did you know** SvelteKit supports some [zero-config deployment adapters](https://kit.svelte.dev/docs/adapter-auto) by default - including **[svelte-adapter-azure-swa](https://github.com/geoffrich/svelte-adapter-azure-swa) for Azure Static Web Apps!**\n\n:::",
+      "source_content_hash": "91a601d22b0ee10cd0194ecd6650b4e4dc1e6879910a324093f06fb80f51783a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[🌟 聚焦：适用于SWA的SVELTEKIT适配器]\n\n[**SvelteKit 1.0于2022年12月正式发布**](https://svelte.dev/blog/announcing-sveltekit-1.0)，这是构建Svelte应用推荐方式的里程碑——配套的[交互式教程](https://learn.svelte.dev/)可助您快速入门。\n\n要部署SvelteKit应用，您需要使用[适配器](https://kit.svelte.dev/docs/adapters)将其适配到目标部署环境，这类插件能将构建好的应用转换为可部署的站点。**您知道吗**？SvelteKit默认支持一些[零配置部署适配器](https://kit.svelte.dev/docs/adapter-auto)，包括专为Azure静态Web应用设计的**[svelte-adapter-azure-swa](https://github.com/geoffrich/svelte-adapter-azure-swa)！**\n\n:::"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "Want hands-on experience with Azure SWA adapter + SvelteKit? Check out \n**[Creating a SvelteKit app for Azure Static Web Apps](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static.html)** - a 4-part series from a member of the Svelte team, that covers end-to-end flow of code from the local machine to the Azure SWA deployment shown below.",
+      "source_content_hash": "4739878ad020b4908d6a2c2916f49f7c6c4bf0b70656d715b1cbd61740f8a0ee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想要亲身体验Azure SWA适配器与SvelteKit？请查看  \n**[为Azure静态Web应用创建SvelteKit应用](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static.html)**——这是来自Svelte团队成员的四部分系列教程，完整演示了从本地开发到Azure SWA部署的全流程，如下图所示。"
+      }
+    },
+    {
+      "segment_id": "f6db2c30",
+      "source_content": "- Part 1 - [Create Svelte App](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static.html)\n  - Part 2 - [Add an API](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static_5.html)\n  - Part 3 - [Use the Azure SWA adapter](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static_13.html)\n  - Part 4 - [Deploy to Azure](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static_17.html)",
+      "source_content_hash": "be83b5bf02393bbc247ef4e87283555b586a0e46927d1fb6b22c7cc11e9464c7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 第一部分 - [创建Svelte应用](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static.html)\n  - 第二部分 - [添加API](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static_5.html)\n  - 第三部分 - [使用Azure SWA适配器](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static_13.html)\n  - 第四部分 - [部署到Azure](https://sveltekit.blogspot.com/2022/11/creating-sveltekit-app-for-azure-static_17.html)"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "🚨 _Note: The tutorial is from Nov 2022, pre-release of SvelteKit 1.0. If you try this out and have updates or learnings, do share this with us as a contribution to the next roundup!_",
+      "source_content_hash": "7b8add112ddf944adbdf2a431893b7b39df2425943de1284bb5656ff2374e8cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "🚨 注意：本教程发布于2022年11月，早于SvelteKit 1.0正式版。如果您尝试时发现需要更新或有心得，欢迎通过下期汇总投稿分享！"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia4MjlHAY0tg8gMEmAlyv4b16OHviYHZX54dkr46ShIeUzzKvCPFR4ZFDm19alGdTnZUrfHeryOvMot3ULTIaYISTgNb3h4AXoQU57uHZFJrsQ92VC3Ve0KFGqmtt5ac8VLhlugakdmJ617Zr0D74D701nS0RM9vS24crSJ_3NnBTZVlGMkIUEdCBJ/w640-h512/SvelteKitBlog2.drawio.png)",
+      "source_content_hash": "78a5cbc9fcaa15f567c2f33e719a304038b012670a2bf60f414e0d1cec76958a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia4MjlHAY0tg8gMEmAlyv4b16OHviYHZX54dkr46ShIeUzzKvCPFR4ZFDm19alGdTnZUrfHeryOvMot3ULTIaYISTgNb3h4AXoQU57uHZFJrsQ92VC3Ve0KFGqmtt5ac8VLhlugakdmJ617Zr0D74D701nS0RM9vS24crSJ_3NnBTZVlGMkIUEdCBJ/w640-h512/SvelteKitBlog2.drawio.png)"
+      }
+    },
+    {
+      "segment_id": "55ba2007",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "638efb88",
+      "source_content": "## 🚨 | Call For Content",
+      "source_content_hash": "110e923a6af2e878e3de072faa343b706cf5da4a99dac6d3e339d4d6d42eaf5e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 🚨 | 内容征集"
+      }
+    },
+    {
+      "segment_id": "e8e66eae",
+      "source_content": ":::tip[Next Roundup: Mar 20, 2023]\nSubmissions welcome till Mar 15, 2023.\n\n * Did you author an article, create a SWA application or sample?\n * Are you organizing an event with a SWA-related session?\n * Are you a student who just created your first SWA app or blog post?\n\nSubmit the details [**using this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community) as soon as possible. We can't wait to share your contributions!\n:::",
+      "source_content_hash": "e07a0c8daf36a4c87138da49e897d76d2386fcfcafe39bcc6e41ad5940aa55fd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::tip[下期汇总：2023年3月20日]\n投稿截止日期：2023年3月15日。\n\n * 您是否撰写了技术文章、创建了SWA应用或示例？\n * 您是否在策划包含SWA相关议题的活动？\n * 您是否是刚完成首个SWA应用或博客的学生？\n\n请尽快通过[**此专用issue提交**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)详情。我们期待展示您的成果！\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog-blog-roundup/2023-02-22-thismonth/index.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.876817+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "c31fe98205db714da21d7f66d057f0c6220df0bbfa41031cf1b213ecce4aa732"
+  }
+}

@@ -1,0 +1,522 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-22.md",
+  "source_file_content_hash": "4f5c40123ce5129184f5b74263e03dd8216a146afbefff9b1c112814a3b9b943",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: devtools-vscode\ntitle: \"#21: Develop With VSCode\"\nauthors: [alex]\ntags: [swa, 30days, dev-tools]\ndraft: false\n---",
+      "source_content_hash": "8e22b42e268cdb397cbc0e75ee21d46e802eab41574cf47c2d1afb09e67df066",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "775b7fa4",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/devtools-vscode\" />\n  <meta name=\"twitter:title\" content=\"#21: Debug with VS Code\" />\n  <meta name=\"twitter:description\" content=\"Join @alexweininger as we wrap DevTools week on #30DaysOfSWA with a look at seamless debugging using @code for @AzureStatic Apps!\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/21-banner-4c8833d85f3b63b56f65329fd492dcb5.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/devtools-vscode\" />\n</head>",
+      "source_content_hash": "9c36c4fac9f138662d72cbb453ee66a890cca275305a00c972f39a1e0bcbfd88",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_775b7fa4"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Welcome to `Week 3, Day 7` of **#30DaysOfSWA**!!",
+      "source_content_hash": "f750b43efaa8925cac69c587f8b13b23b1a8fda892226f2fa0342974f634871f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第3周第7天`！"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "This week has been all about the SWA developer tools. To conclude the week, we'll show how the [Azure Static Web Apps extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) can make using all of these awesome tools easier!",
+      "source_content_hash": "b06ac06c937c6c0b9d1b9ea950b3621597f0aeab669421228b0972c2ef1324ca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本周我们聚焦于SWA开发者工具。作为本周的收官之作，我们将展示如何通过[VS Code的Azure Static Web Apps扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)更便捷地使用这些强大工具。"
+      }
+    },
+    {
+      "segment_id": "6b3596a2",
+      "source_content": ":::info[WHAT WE'LL COVER TODAY]\n * Debugging with VS Code\n * Easily add an API endpoint\n * Debug API and Frontend simultaneously\n * **Resource(s):** [Azure Static Web Apps Quickstart: With VS Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)\n:::",
+      "source_content_hash": "685cf1cd3ee83f0bab46a7385d6b275096c96037c9eeee00d130ded0afd0c03f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[今日内容概览]\n * 使用VS Code进行调试\n * 轻松添加API端点\n * 同时调试API与前端\n * **资源推荐:** [Azure Static Web Apps快速入门：使用VS Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)\n:::"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "![](../static/img/series/21-banner.png)",
+      "source_content_hash": "a7b0c3e7b0690d70c9825ac3b9c3134be165746a6f3ba09721bfa3d0caa8ba56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/21-banner.png)"
+      }
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "## Prerequisites 🛠️",
+      "source_content_hash": "5ecd7d00b37319ee9d48c7f510f4c758655677d173971c7627a4c2ddc0433ec0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 准备工作 🛠️"
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "1. **Google Chrome installed** - we make use of the debugger\n\n2. **Azure Static Web Apps extension for VS Code** - [View on Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)\n\n3. **Azure Static Web Apps CLI** - [View on GitHub](https://github.com/Azure/static-web-apps-cli)",
+      "source_content_hash": "07f1075f81df0a401482811f7e3b9cbb9ee8b10119b479773da5447858d9d0fa",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. **安装Google Chrome** - 我们将使用其调试器\n\n2. **安装VS Code的Azure Static Web Apps扩展** - [市场链接](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)\n\n3. **安装Azure Static Web Apps CLI** - [GitHub链接](https://github.com/Azure/static-web-apps-cli)"
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```\nnpm install -g @azure/static-web-apps-cli@latest\n```",
+      "source_content_hash": "203e450def2b3226b62d7bf5be9e4a5c05c8f4928754ef4c5c2de95283e14041",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## 1. Getting started 🟢",
+      "source_content_hash": "129689c5c13d2c1e8876df26eca9374c558c92b766fa8498dfcdab82d45bd9f0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 1. 开始使用 🟢"
+      }
+    },
+    {
+      "segment_id": "ddd2c7ae",
+      "source_content": "1. Clone one of these repositories, and open it up in VS Code",
+      "source_content_hash": "84bc9b4c931aebf69e86a2b543cea92d293c5736604c124632b8e7dc3e5e4e44",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 克隆以下任意代码库，并在VS Code中打开"
+      }
+    },
+    {
+      "segment_id": "619c9033",
+      "source_content": "| Framework | Repository |\n|---|---|\nAngular | https://github.com/staticwebdev/angular-basic\nReact | https://github.com/staticwebdev/react-basic\nSvelte | https://github.com/staticwebdev/svelte-basic",
+      "source_content_hash": "6a2e4a3153e68deca06683a89610897efa9d3f12cd201893cd846b428950fc8b",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_619c9033"
+      }
+    },
+    {
+      "segment_id": "a0e887c2",
+      "source_content": "2. Run `npm install`",
+      "source_content_hash": "8bcc93bbc104eced21af59761d92a42d6f240c2d9a40eaacfa316c195745a898",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "2. 运行 `npm install`"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "![Running npm install in VS Code](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c00m73mzlt49kkwl4iiw.png)",
+      "source_content_hash": "84914643f738ceecc1b321be8e90f5028c369d1e8dfb44398d7921356ee7f3c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![在VS Code中运行npm install](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c00m73mzlt49kkwl4iiw.png)"
+      }
+    },
+    {
+      "segment_id": "4640c589",
+      "source_content": "> Theme: [Cobalt2 Theme Official by Wes Bos](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2)",
+      "source_content_hash": "33584750b5f097687f73f992472afef05cab1920534eb8429efde7711e64af63",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> 主题: [Wes Bos官方Cobalt2主题](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2)"
+      }
+    },
+    {
+      "segment_id": "126950d7",
+      "source_content": "## 2. Run and debug 🐞",
+      "source_content_hash": "f0a1e06920989aa9d38e2b5fdcde365109aae8f0c9eb7e06c06792013b47b896",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 2. 运行与调试 🐞"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "![Show automatic debug configurations](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pahznac0f8cjqt8haifb.png)",
+      "source_content_hash": "c18b89ecdbea3423be9de613f638939cf24838a26b05d080b46eba1cbe3a0c83",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![显示自动调试配置](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pahznac0f8cjqt8haifb.png)"
+      }
+    },
+    {
+      "segment_id": "a4bd3cfc",
+      "source_content": "1. Go to the \"Run and Debug\" view\n2. Click \"Show all automatic debug configurations.\"\n2. In the dropdown, select \"Azure Static Web Apps...\"\n3. Select the app you want to debug",
+      "source_content_hash": "42cb7ac3e7385cf28b4ff763e83ff54fdd5975cce4f78ab06e86373c4ea6ee9b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 转到\"运行和调试\"视图\n2. 点击\"显示所有自动调试配置\"\n3. 在下拉菜单中选择\"Azure Static Web Apps...\"\n4. 选择要调试的应用"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "This will start the Azure Static Web Apps CLI in the VS Code terminal, and launch the Chrome debugger on `http://localhost:4280`.",
+      "source_content_hash": "d0ffde03f386ca5184a3e00e1f4867e66e6e0f0d34b04315b6c3c0b5bdb96e55",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这将在VS Code终端中启动Azure Static Web Apps CLI，并在`http://localhost:4280`上打开Chrome调试器。"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "Now you can set and hit breakpoints in your frontend code.",
+      "source_content_hash": "77062e93280891b74b727c4b4a6194b9d8b8de0cf0b39212abd190dccb6002a1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在您可以在前端代码中设置并触发断点。"
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "![Set breakpoints](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aprutdzi9opkbegdnf2p.png)",
+      "source_content_hash": "27a52170761716265de89084b922ea1407f0ed72f455edeaa5d1fd953cb6c42b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![设置断点](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aprutdzi9opkbegdnf2p.png)"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "## 3. Add API route ⚡️",
+      "source_content_hash": "b568a8cd7be2931595e0e37cf4594a13fed4e83faa23c3f12a63469bee7eb1e2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3. 添加API路由 ⚡️"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "Azure Static Web Apps has integrated API support provided by Azure Functions. In order to add and debug an API route, we must install some Azure Functions tools.",
+      "source_content_hash": "5dfee50d03ce401db92f73bc8d710faf757b7d66044acedf8b667fb6fb8311f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps通过Azure Functions提供集成的API支持。要添加和调试API路由，我们需要安装一些Azure Functions工具。"
+      }
+    },
+    {
+      "segment_id": "c142abbb",
+      "source_content": "1. **Azure Functions extension for VS Code** - [Install from Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)\n\n2. **Azure Functions Core Tools** - [View on GitHub](https://github.com/Azure/azure-functions-core-tools)",
+      "source_content_hash": "69736fb52a45935decd9f55fb9c2437403dc3e615d672aa181266d181901a172",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. **VS Code的Azure Functions扩展** - [从市场安装](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)\n\n2. **Azure Functions Core Tools** - [GitHub链接](https://github.com/Azure/azure-functions-core-tools)"
+      }
+    },
+    {
+      "segment_id": "26f7c825",
+      "source_content": "```\nnpm i -g azure-functions-core-tools@4 --unsafe-perm true\n```",
+      "source_content_hash": "55f10681be9924c18ee00e792e97b6beb794dca5c076f45d0e9dc40459265a39",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_26f7c825"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Now, you can add an API route to your app using the command palette (press `F1`) and searching \"Create HTTP Function\".",
+      "source_content_hash": "ccf045b7644a2617360fbc54621c7f23f931f58043f9cd28e1bc0737e6369dc4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在，您可以通过命令面板(按`F1`)搜索\"创建HTTP函数\"来为应用添加API路由。"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "![Add HTTP Function](https://user-images.githubusercontent.com/12476526/169424449-3a10a9a0-025f-4fa3-b15f-294846fb0291.png)",
+      "source_content_hash": "92fc8558871b886a4e2e03d919235b7e4a203b2936e961819286e23b37dadf56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![添加HTTP函数](https://user-images.githubusercontent.com/12476526/169424449-3a10a9a0-025f-4fa3-b15f-294846fb0291.png)"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "Select a language (I chose JavaScript), then name your Function (I put \"hello\"). And then an API route will be created for you that you can make requests to at `/api/hello`.",
+      "source_content_hash": "e37c214eb6b2963e68de7ea22eb7381fe4d44e5f4ceb7cee4a222bd5b9bab4ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "选择语言(我选JavaScript)，命名函数(我输入\"hello\")。随后将为您创建可通过`/api/hello`访问的API路由。"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "![API route](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/emd9wo9q26m51aboyydd.png)",
+      "source_content_hash": "beb1aeb83f0f5829e3d640c310c223f010c9e94c6621362f8b23fdea4a20e6ca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![API路由](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/emd9wo9q26m51aboyydd.png)"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "## 4. Debug app & API ✨",
+      "source_content_hash": "24c93661e8d323da3b5206008798370be5641196f8530f4d450e90676c5ecfb6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 4. 调试应用与API ✨"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "We can debug our API routes and our frontend app simultaneously in VS Code.",
+      "source_content_hash": "f890f957fa288f17e55bc166a7286d5188990cbad1bec7083fe72b81e36853fd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们可以在VS Code中同时调试API路由和前端应用。"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Select the \"SWA: Run ...\" debug configuration and click the green \"Run and debug\" button.",
+      "source_content_hash": "80eb69587f38255c79058940d9d8aa1b2e5903922627dc4b6478b23f2318b3e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "选择\"SWA: Run...\"调试配置，点击绿色\"运行并调试\"按钮。"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "![Run and debug](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/234k0e1p9jzmtyeeli56.png)",
+      "source_content_hash": "fc8154a26b1eac8ae8e0b738bf329228ecf734d5b6b4e4033e22a4d5d85629b6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![运行并调试](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/234k0e1p9jzmtyeeli56.png)"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "VS Code will now run your Functions API routes and your frontend. When it's all started, a Chrome window will open at `http://localhost:4280`.",
+      "source_content_hash": "5b621eadfb01ecd701e1abc0cbec9015d6960e966ee0b5a3a9f6515d5b2c9a6f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "VS Code现在将运行你的Functions API路由和前端。当所有服务启动后，Chrome窗口会在`http://localhost:4280`自动打开。"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "Set a breakpoint in your Function endpoint.",
+      "source_content_hash": "b6d01fc34f2a62422aa56e0e4e1f891bdd33a37a5dc91018610ae5ebadac1cf1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在你的Function端点设置断点。"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "![Function endpoint breakpoint](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/89kolpnqbsrqysh661ep.png)",
+      "source_content_hash": "c9101619127a058b95b5cefe38272a7813c6daec074d3fee7edadd1fbae161c1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Function端点断点](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/89kolpnqbsrqysh661ep.png)"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "Go to `http://localhost:4280/api/hello` in the Chrome window to hit the breakpoint.",
+      "source_content_hash": "8ee15a725beb7625edf48c4693223c91c9422f0ed00e8860eadc406a30632037",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在Chrome窗口中访问`http://localhost:4280/api/hello`触发断点。"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "![Hitting an API breakpoint](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2q8zt9j70wz4dr5h3mcm.png)",
+      "source_content_hash": "ffb75eebe3a0bf34aa1f2b3e09c1a135fc07aa6e7dee21e26ed3fb768fb61afa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![命中API断点](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2q8zt9j70wz4dr5h3mcm.png)"
+      }
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "## 5. Next steps 🏃‍♀️",
+      "source_content_hash": "afe7c6e62ecf6e27cdf26ad3c26b8ada2be83a94dad469e7dae01c8d0124a026",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 5. 后续步骤 🏃‍♀️"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "Now that you got your static web app running locally, you can [deploy your static web app to Azure for free](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react).",
+      "source_content_hash": "d503b5bba228f1fefad5959fa4963e6866aa1c1df0c7c150d4e2a29a6f636106",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在你的静态Web应用已在本地运行，可以[免费部署到Azure](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)。"
+      }
+    },
+    {
+      "segment_id": "cbd60296",
+      "source_content": "## Troubleshooting 🔍",
+      "source_content_hash": "8f9a708a1e59e9803e14ecc35119b795a74f469cc079cceee7a6dee26db3aec6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 故障排除 🔍"
+      }
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "If you're having issues, please check out the [troubleshooting section in our wiki](https://github.com/microsoft/vscode-azurestaticwebapps/wiki/Guide:-Debugging-a-Static-Web-App-with-VS-Code#troubleshooting-).",
+      "source_content_hash": "7e652682d3959f8a8a4866239799168b6666e8163b0f7cbe4d9c3b123ee93c7b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如遇问题，请查阅[wiki中的故障排除章节](https://github.com/microsoft/vscode-azurestaticwebapps/wiki/Guide:-Debugging-a-Static-Web-App-with-VS-Code#troubleshooting-)。"
+      }
+    },
+    {
+      "segment_id": "47516512",
+      "source_content": "## Resources 🔗",
+      "source_content_hash": "61010b0e01670b53b20595eddca4771567df7263545cc296037b87952171f7e6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源链接 🔗"
+      }
+    },
+    {
+      "segment_id": "683a33d9",
+      "source_content": "* [Azure Static Web Apps documentation](https://docs.microsoft.com/en-us/azure/static-web-apps/)\n* [Azure Static Web Apps CLI](https://github.com/Azure/static-web-apps-cli)\n* [Azure Static Web Apps extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)",
+      "source_content_hash": "f512fefdc4d25738eea019e92ad0db9942cbd2089041a485550b688c2db70c4c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Azure静态Web应用文档](https://docs.microsoft.com/en-us/azure/static-web-apps/)\n* [Azure静态Web应用CLI](https://github.com/Azure/static-web-apps-cli)\n* [VS Code的Azure静态Web应用扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)"
+      }
+    },
+    {
+      "segment_id": "47cd8dd6",
+      "source_content": "## Next Week",
+      "source_content_hash": "38c5c0fa6943aa37cd66ad8bce6518eaf6a73393ab1f9b48a6b36fa9fd68aab3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 下周预告"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "This marks the end of Week 3 of #30DaysOfSWA, with a focus on `Developer Tools`. Want a visual recap of what we covered .. here you go!! To recap:",
+      "source_content_hash": "8e6c10a7db665f347e2940eafe983f83b88af9e0c8351d824d7d9fe63d50e265",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "至此#30DaysOfSWA第三周关于`开发者工具`的内容圆满结束。以下是本周内容视觉回顾："
+      }
+    },
+    {
+      "segment_id": "6409152f",
+      "source_content": "* We provisioned Azure resources - using the Azure Portal and Azure CLI\n * We added automated, cross-browser, e2e testing - using Playwright\n * We built multi-stage deployment pipelines - using Azure DevOps\n * We debugged and audited perf & accessibility - using Edge DevTools on VSCode\n * We got unified local development and cloud deployment - using SWA CLI\n * We explored rich extensions and seamless CLI interactions - using VS Code",
+      "source_content_hash": "9dfb2f2987f015ac60f15961c932fe5270e64f47f59deee7debf56ce28ff10be",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 使用Azure门户和Azure CLI配置资源\n * 通过Playwright实现自动化跨浏览器端到端测试\n * 利用Azure DevOps构建多阶段部署流水线\n * 使用VSCode中的Edge DevTools进行调试及性能与无障碍审计\n * 通过SWA CLI实现本地开发与云端部署的统一\n * 探索VS Code丰富的扩展功能和流畅的CLI交互体验"
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "![Week 3 Visual Roadmap](../static/img/png/week3-roadmap.png)",
+      "source_content_hash": "c6dda2858df0918261dc6b43e488cbc8a997e9e8f68f8cf8e32168f290491da3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![第三周视觉路线图](../static/img/png/week3-roadmap.png)"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "So what do we have planned for next week?",
+      "source_content_hash": "907e99fdd1b834be06a8f9c766993ec103fb3d8db3a22b152f8ab1e18322de49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "下周我们有什么计划？"
+      }
+    },
+    {
+      "segment_id": "cfeb9eb1",
+      "source_content": "We've already covered core concepts, usage examples and developer tools -- so that leaves: **Best Practices!** Join us for the final week of #30DaysOfSWA where we define the end-to-end developer experience, explore various Azure Service integrations to enhance your SWA, dive into a cool case study, and end with a `Tips & Tricks` series that brings you back full circle to development.",
+      "source_content_hash": "d3f8faac1ba6c484cc4033c63f6d45c313f3d9d201a3dffa53559ccb1d88e5f8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们已经涵盖了核心概念、使用示例和开发者工具——接下来是：**最佳实践！** 加入#30DaysOfSWA最后一周的学习，我们将定义端到端开发者体验，探索增强SWA的各种Azure服务集成，深入案例分析，并以带你回归开发本源的`技巧与窍门`系列作为收官。"
+      }
+    },
+    {
+      "segment_id": "f7e6e884",
+      "source_content": "Thanks for sticking with us on this journey!",
+      "source_content_hash": "a9d2b2292e69e2f8b2e5d4c96ac718b5f72d74f9e0d0aa8486c23d593cd546ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "感谢你一路相伴！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-22.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.880390+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "4f5c40123ce5129184f5b74263e03dd8216a146afbefff9b1c112814a3b9b943"
+  }
+}

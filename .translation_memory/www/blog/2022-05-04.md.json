@@ -1,0 +1,412 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-04.md",
+  "source_file_content_hash": "b2b184cb48ff72367bd1f01f66616982d7b1fbaa7dec519b0f524c06daf7e777",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: api-enabling-swa\ntitle: \"#03: API-Enabling SWA\"\nauthors: [anthony, nitya]\ntags: [swa, 30days, core-concepts]\ndraft: false\n---",
+      "source_content_hash": "9ba927e233bef63826cd77ec0febd404d43746829ece916589a35bc95db4d2d5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 1, Day 3` of **#30DaysOfSWA**!!",
+      "source_content_hash": "1d6c379b2deb59b1089ef0e0fa189763b84207aa404b4c6fdf6b175d5f3e1f2c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的`第1周第3天`！！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Yesterday, we built and deployed our first Static Web App (using a vanillaJS template) from a GitHub repo. We used the VS Code Extension and, with just a few clicks, it setup automated GitHub Actions (CI/CD) workflows for us transparently. Today - we learn how we can add **serverless API endpoints** to our application using Azure Functions, helping us scale APIs more effectively with demand.",
+      "source_content_hash": "42faf823d986954a5b2fcff007e00da9097d45bcb03a42b5910cb572de7b4dc6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "昨天，我们使用vanillaJS模板从GitHub仓库构建并部署了第一个静态Web应用。借助VS Code扩展，仅需几次点击就自动配置了GitHub Actions（CI/CD）工作流。今天，我们将学习如何通过Azure Functions为应用添加**无服务器API端点**，从而根据需求更高效地扩展API。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 今日要点"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "* Why go Serverless with SWA?\n * Add API with Azure Functions\n * Quickstart: Use Managed Functions\n * Bring Your Own Functions\n * **Example:** Bring [Azure-SWAG](https://github.com/sinedied/azure-swag/) to May 4!\n * **Exercise:** Try it out yourself!",
+      "source_content_hash": "b856059b69cea7d131404b2de019e56e0f0fdc1af36b6776308c0a3e70d22476",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 为何选择SWA无服务器方案？\n * 使用Azure Functions添加API\n * 快速入门：使用托管Functions\n * 自带Functions应用\n * **示例：** 将[Azure-SWAG](https://github.com/sinedied/azure-swag/)带到5月4日！\n * **练习：** 亲自动手尝试！"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "![](../static/img/series/03-banner.png)",
+      "source_content_hash": "6ccfb58210223c9027524540aa6fcf11cc61359cff94b84df1f6d0e97cee542c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/03-banner.png)"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Why Go Serverless?",
+      "source_content_hash": "ffab114990490f59d8a8fdc31fdf5cbc5d21ea62ab2dab4dae7460c40581ada4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 为何选择无服务器？"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "When [Introducing SWA](2022-05-02.md), we talked about how static web apps are architected to separate **static content assets** and **dynamic API endpoints** into separate components that can be served and scaled independently.",
+      "source_content_hash": "b486a028bae4384de7aebc859cc266c683832e53667a577ba6ca83df14021772",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在[SWA介绍](2022-05-02.md)中，我们探讨了静态Web应用如何通过架构分离**静态内容资源**与**动态API端点**，使组件能够独立部署和扩展。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "In yesterday's post we looked at a basic Static Web App with just content assets (no API). Deploying it with SWA helped us take advantage of Azure's globally-distributed content servers for fast and cost-effective access. Today, we want to add an API endpoint to support dynamic requests from clients. So what does serverless mean, and how do we implement serverless API endpoints?",
+      "source_content_hash": "44ea2d2dbbfddec82b5e4f1266b5befcf1fcedf60395ae6e10e7c96accc77d02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "昨天的示例展示了仅含内容资源（无API）的基础静态Web应用。通过SWA部署可充分利用Azure全球分布式内容服务器实现高速低成本访问。现在我们需要添加API端点以支持客户端动态请求。那么无服务器的意义是什么？如何实现无服务器API端点？"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "In this context, [Serverless](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/serverless/web-app) is about using an event-driven architecture to allocate our compute resources on-demand. So, our API server will scale as demand grows, but be cost-effective when demand drops.",
+      "source_content_hash": "a4586863fa0ab6c8c08f74ff9818a6cf2bf73ca44e5f742a3e47d1ba88a6841f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "此处的[无服务器](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/serverless/web-app)指采用事件驱动架构按需分配计算资源。API服务器会随需求增长自动扩展，在需求下降时保持成本效益。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "[Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) makes implementing your serverless solutions easier. Event handling is implemented with _functions_ (code blocks) that run on compute resources that are dynamically-allocated. Resources can spin up as API requests grow, and spin down as demand drops. [**Try this learning path**](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/) for a deep-dive into using Azure Functions.",
+      "source_content_hash": "9ef33ad4b600140cf6823183f93f2f43dd78e3c15d382f238d4b813afcf4ad19",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)简化了无服务器解决方案的实现。通过动态分配计算资源运行的_function_（代码块）处理事件。API请求增加时自动扩容，需求降低时自动收缩。[**学习路径**](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/)深入讲解Azure Functions使用。"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## Use Azure Functions",
+      "source_content_hash": "92fc6f65bc141ece8835e9967fb49524a0fbc54544ba44134d6594955e7c66fb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 使用Azure Functions"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Static Web Apps and Azure Functions are integrated seamlessly, enabling key features with respect to security (user data) and routing integrations:",
+      "source_content_hash": "575765ea34d3095531e7f081a24db4bb614787d2d8e86036a096e6ba1db59be6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "静态Web应用与Azure Functions深度集成，在安全（用户数据）和路由方面提供关键特性："
+      }
+    },
+    {
+      "segment_id": "157151e9",
+      "source_content": "* **[User data access](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript#api-functions)** - API functions can directly access user authenticaton and role-based authorization data when handling requests.\n * **[API Route access](https://docs.microsoft.com/en-us/azure/static-web-apps/configuration?#routes)** - the application can access the `/api` route securely, without requiring custom CORS rules.",
+      "source_content_hash": "870d33ee4434db3b0a4c6c5b80f567c8b5a2eebc9f8a28a5335459df742b123a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **[用户数据访问](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript#api-functions)** - API函数处理请求时可直接获取用户认证和基于角色的授权数据。\n * **[API路由访问](https://docs.microsoft.com/en-us/azure/static-web-apps/configuration?#routes)** - 应用无需自定义CORS规则即可安全访问`/api`路由。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "But it gets better. Your SWA can be configured for Azure Functions in two ways:",
+      "source_content_hash": "20e521a3ec089bf474fa4f2da08e2ba8af717fc2020d04dda7591e8c29d06e96",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更优越的是，SWA支持两种Azure Functions配置方式："
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "* **Managed Functions** - where the Azure Static Web Apps service configures and manages your Azure Functions deployment.\n* **Bring Your Own Functions** - where you use a pre-existing Azure Functions application and manage the deployment yourself.",
+      "source_content_hash": "e287a94445f3b513115ec430892531863ddf03595151a6b2da8d6e81d66fe428",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **托管Functions** - 由Azure静态Web应用服务配置并管理Functions部署。\n* **自带Functions** - 使用现有Azure Functions应用并自行管理部署。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "The Free plan supports only the Managed Functions option. It has [some limitations](https://docs.microsoft.com/en-us/azure/static-web-apps/apis) - e.g., supports only HTTP triggers and lacks support for [Durable Functions](https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview) etc. - but is quick to setup and seamless to use. We'll explore this option today but look for a post in Week 4 that will discuss the _[Bring Your Own Functions](https://docs.microsoft.com/en-us/azure/static-web-apps/functions-bring-your-own)_ approach in detail.",
+      "source_content_hash": "400fc0c94f15352ce80dcb8eae90c2170efa63a8e751956e59562dc36ed790ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "免费版仅支持托管Functions方案，存在[部分限制](https://docs.microsoft.com/en-us/azure/static-web-apps/apis)——例如仅支持HTTP触发器、不兼容[持久函数](https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview)等，但配置快捷且无缝使用。今天我们重点介绍此方案，第4周将详解[自带Functions](https://docs.microsoft.com/en-us/azure/static-web-apps/functions-bring-your-own)方案。"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Adding the API",
+      "source_content_hash": "c89d1210f583d486c0c4323626045a9bc3c8da2c5559e3749d6eaf9866d75a68",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 添加API"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "Want to get some hands-on experience with adding an API endpoint to your Static Web Apps deployment? Check out this [Quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vanilla-javascript) tutorial that builds on the vanilla-JS application you deployed previously. The key steps are:",
+      "source_content_hash": "81225dbc4f984648809a69d3e59db8a2571390e3eb5b59fc97e4b796c7b94d85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想要亲身体验如何为静态Web应用部署添加API端点吗？查看这个[快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vanilla-javascript)教程，它基于你之前部署的vanilla-JS应用程序。关键步骤如下："
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "**1. Setup Azure Functions for SWA**",
+      "source_content_hash": "33cfd080e997189bcf888c55d64d780ad561083a78fa01db8c471d1aff38934c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**1. 为SWA设置Azure Functions**"
+      }
+    },
+    {
+      "segment_id": "157c9741",
+      "source_content": "* Install the [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) for VS Code.\n * Open your application root folder (\"/\") - create an \"api\" subfolder\n * Select \"Azure Static Web Apps: Create HTTP Function\" through Command Palette or select the lightning bolt option in Azure extension menu.\n * Enter required configuration information (language=\"JavaScript\", function name=\"message\"), and confirm.",
+      "source_content_hash": "4aac6893dba3795fb201fb50c95173c9f293687fb773923a1e65504a7b0ce1dc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 安装VS Code的[Azure Functions扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)。\n * 打开应用程序根文件夹(\"/\") - 创建一个\"api\"子文件夹。\n * 通过命令面板选择\"Azure Static Web Apps: Create HTTP Function\"，或在Azure扩展菜单中选择闪电图标。\n * 输入必要的配置信息（语言=\"JavaScript\"，函数名称=\"message\"），然后确认。"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "_Sit back and wait till the process completes setup._ This populates the `/api` directory with configuration files (*.json) in the root folder, and a `/api/message` subfolder that contains 2 files:",
+      "source_content_hash": "550fd59cb9b74b5dacdcc6158ae3d1cb85a2eb0e0caabb9e1a4a188462de909b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_静候设置过程完成。_ 这将在根文件夹的`/api`目录中生成配置文件(*.json)，并在`/api/message`子文件夹中包含2个文件："
+      }
+    },
+    {
+      "segment_id": "3df4f066",
+      "source_content": "* _function.json_ - defines this function's trigger, bindings and [other settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference?tabs=blob#function-code).\n * _index.js_ - implements an async function (accessed at `/api/message`)",
+      "source_content_hash": "b109358f909ff736072465a0e58deb92c33dd28ca3e0b338d10255a7b4d0927e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* _function.json_ - 定义此函数的触发器、绑定和[其他设置](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference?tabs=blob#function-code)。\n * _index.js_ - 实现一个异步函数（通过`/api/message`访问）。"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "**2. Update the index.js file to implement your function** - making sure it returns a desired response given the incoming API request and context (input parameters).",
+      "source_content_hash": "882f9158cbba7a2953ea7b1b1c604dd36ea99fe43ce6e61583482c9718a2981c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**2. 更新index.js文件以实现你的函数** - 确保它根据传入的API请求和上下文（输入参数）返回所需的响应。"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "**3. Update your application code to invoke the API** - you can do this by calling `fetch('/api/message')` directly - the seamless Azure Functions integration ensures that the API routing happens automagically.",
+      "source_content_hash": "c04f9d91ff73dbf4f4907ed589d2fd273db89f22b25d72dbcea421e9641fcb1a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**3. 更新应用程序代码以调用API** - 你可以直接调用`fetch('/api/message')` - Azure Functions的无缝集成确保API路由自动完成。"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "**4. Test the integration locally with the SWA CLI**.\nThe Azure Static Web Apps CLI (SWA CLI) is a tool to support local development for Static Web Apps by emulating required services where needed. Follow [these steps](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vanilla-javascript#run-the-frontend-and-api-locally) to install the tools and run/test your app and API together in your local development environment. Look for a detailed 2-part post in Week 3 (\"Developer Tools\") where we cover the SWA CLI capabilities, configuration, and usage, in more detail.",
+      "source_content_hash": "4b8633fc879fac90092774dc9aa37a3b5dca82ab01c6fbb174fcb745edc4509a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**4. 使用SWA CLI在本地测试集成。**\nAzure静态Web应用CLI（SWA CLI）是一个工具，通过模拟所需服务来支持静态Web应用的本地开发。按照[这些步骤](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vanilla-javascript#run-the-frontend-and-api-locally)安装工具，并在本地开发环境中运行/测试你的应用和API。在第3周（\"开发者工具\"）的详细2部分文章中，我们将详细介绍SWA CLI的功能、配置和使用。"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "**5. Update the GitHub Actions workflow with API location**",
+      "source_content_hash": "a8ed1b39e737d9dd892cbc857c232765d5de50165f2a4f9ddbb674d3a7bb83ab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**5. 使用API位置更新GitHub Actions工作流**"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "This is the key step to make sure the Azure Static Web Apps deployment workflow also picks up the new API function.",
+      "source_content_hash": "bd4aeb5be88abfdce708dc9dfbd991a22ec8eae8f7909eab049ab3518363f0ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这是确保Azure静态Web应用部署工作流也能获取新API函数的关键步骤。"
+      }
+    },
+    {
+      "segment_id": "aa0bd54f",
+      "source_content": "* Open the default GitHub Actions workflow file for your SWA and update the `api_location` property to \"api\".\n * Save and commit changes to trigger rebuild and deploy.",
+      "source_content_hash": "44d5574fb7e10c54e9cc9790d03d1f480baaaf2a3301c06f4e3ced5ad6818566",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 打开你的SWA的默认GitHub Actions工作流文件，将`api_location`属性更新为\"api\"。\n * 保存并提交更改以触发重新构建和部署。"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "**Want to see API in action?** Scroll down to the `Exercise` section where we walk through a quick activity you can do to build and deploy a Static Web App with GitHub (SWAG) _and celebrate #StarWars Day_ in the process!",
+      "source_content_hash": "c5dc8de120b89464d33b1ee87500538a127e4248f23196ca024a3e73006c55b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**想看看API的实际效果吗？** 向下滚动到`练习`部分，我们将通过一个快速活动，指导你构建并部署一个带有GitHub（SWAG）的静态Web应用，并在此过程中庆祝#星球大战日！"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "**Prefer a video tutorial?** Check out this [Azure Static Web Apps: Tips & Tricks](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/) that walks through the process from a _react-starter_ template, and showcases the use of remote [development container](https://code.visualstudio.com/docs/remote/create-dev-container) for Visual Studio Code that further streamlines your development experience.",
+      "source_content_hash": "294bdfc1f7af64a928702c00dd7522aec550fe2c8db4a8cc8aedbe858eb82ed9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**更喜欢视频教程？** 查看这个[Azure静态Web应用：技巧与窍门](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/)，它从_react-starter_模板开始，逐步演示过程，并展示了使用远程[开发容器](https://code.visualstudio.com/docs/remote/create-dev-container)为Visual Studio Code进一步简化开发体验。"
+      }
+    },
+    {
+      "segment_id": "688f86d6",
+      "source_content": "<iframe width=\"560\" height=\"315\" frameborder=\"0\" src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-add-an-api-to-your-azure-static-web-app-7-of-16--azure-tips-and-tricks-static-web-apps\"></iframe>",
+      "source_content_hash": "e4d4dec767f772df24925aeacbaa82642579eeaf05b3769510090547b6328d31",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_688f86d6"
+      }
+    },
+    {
+      "segment_id": "1c598ecd",
+      "source_content": "## Exercise: SWAG!",
+      "source_content_hash": "53fa3f64f220a6aea53352792e25a1a20c9c313b21b015d44f7701a7b0b95293",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习：SWAG！"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "Today is May 4 - Star Wars Day! Wouldn't it be nice if we could celebrate this with our favorite Star Wars quotes? Thankfully, [my colleague Yohan](https://www.twitter.com/sinedied) has a great [Azure-SWAG](https://dev.to/sinedied/the-easy-way-to-serverless-web-apps-and-apis-with-azure-swag-2heb) template that combines images from [Unsplash](https://unsplash.com) with a pre-defined set of quotes in an API function (\"/api/quote\")",
+      "source_content_hash": "394c94010b01e4a5f8976f18d54f2be2c20fc737c785fa5d5b0d39b1c0f3c5c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天是5月4日 - 星球大战日！如果我们能用我们最喜欢的星球大战语录来庆祝这一天，岂不是很好？幸运的是，[我的同事Yohan](https://www.twitter.com/sinedied)有一个很棒的[Azure-SWAG](https://dev.to/sinedied/the-easy-way-to-serverless-web-apps-and-apis-with-azure-swag-2heb)模板，它将[Unsplash](https://unsplash.com)上的图像与一组预定义的语录结合在一个API函数（\"/api/quote\"）中。"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "**So I created a version for my [May 4 homage](ttps://github.com/nitya/may4-swag)**. Here's what that looks like when deployed. Refresh the SWA to get a new image and quote each time (from the API).",
+      "source_content_hash": "095efc96fa31e6ad9da94d7da64b6dc7b1a1a7815d3f9e1305ff1ac94cb858c0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**于是我创建了一个[五月四日致敬版](https://github.com/nitya/may4-swag)**。这是部署后的效果。每次刷新静态Web应用时，都会从API获取新的图片和名言。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "![May The Fourth Homage App](../static/img/series/03-may4.png)",
+      "source_content_hash": "788d2ee0ef6f5f823ec083b2f7b8a16a29a687c9c6cd80c59c58cdbbdb5554e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![五月四日致敬应用](../static/img/series/03-may4.png)"
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "* See the [Code Repository](https://github.com/nitya/may4-swag)\n * See the [Deployed SWA](https://agreeable-tree-0a216f70f.1.azurestaticapps.net/)",
+      "source_content_hash": "ba045f5517cab6f88936071173a6cf8f882ee7114b491540af44f1d78a24460e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 查看[代码仓库](https://github.com/nitya/may4-swag)\n * 查看[已部署的静态Web应用](https://agreeable-tree-0a216f70f.1.azurestaticapps.net/)"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Your assignment: follow [these steps](https://github.com/nitya/may4-swag#steps) to replicate my project, then explore the [index.js](https://github.com/nitya/may4-swag/blob/main/api/quote/index.js) code to see how the `/api/quote` function is implemented and review the [`app.js`](https://github.com/nitya/may4-swag/blob/main/app.js) code to see how that API is invoked within the application.",
+      "source_content_hash": "7288f63748087f4ead288c30eb2803a0d7dbc72e6b48a96cdd777e548ce9f93b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "你的任务：按照[这些步骤](https://github.com/nitya/may4-swag#steps)复现我的项目，然后研究[index.js](https://github.com/nitya/may4-swag/blob/main/api/quote/index.js)代码了解`/api/quote`函数的实现方式，并查看[`app.js`](https://github.com/nitya/may4-swag/blob/main/app.js)代码了解该API在应用中的调用逻辑。"
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "## Useful Resources",
+      "source_content_hash": "199ff2f5e8aba1500eadf7f3173a271b0d0e0c499dc71756f74b2be573bfe05a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实用资源"
+      }
+    },
+    {
+      "segment_id": "b0465fca",
+      "source_content": "- [API Support in SWA](https://docs.microsoft.com/en-us/azure/static-web-apps/apis)\n- [Add API with Managed Functions](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vanilla-javascript)\n- [Bring Your Own Functions](https://docs.microsoft.com/en-us/azure/static-web-apps/functions-bring-your-own)\n- [May4-Swag Demo](https://github.com/nitya/may4-swag)",
+      "source_content_hash": "4dd401d934fb296c84f7f67b808ba316098cbc0f21b9de8f4ec319110bd00a25",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- [静态Web应用中的API支持](https://docs.microsoft.com/zh-cn/azure/static-web-apps/apis)\n- [使用托管函数添加API](https://docs.microsoft.com/zh-cn/azure/static-web-apps/add-api?tabs=vanilla-javascript)\n- [自带函数](https://docs.microsoft.com/zh-cn/azure/static-web-apps/functions-bring-your-own)\n- [May4-Swag演示项目](https://github.com/nitya/may4-swag)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-04.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.875081+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "b2b184cb48ff72367bd1f01f66616982d7b1fbaa7dec519b0f524c06daf7e777"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-04-30.md",
+  "source_file_content_hash": "ad35c2d58bed9cb9ae0d1ae67b71c480dd33c75a32021d59ed19ec5ecb122758",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: swanniversary\ntitle: \"It's the SWA-anniversary!!\"\nauthors: [reshmi, nitya]\ntags: [swa, 30days, event]\ndraft: false\n---",
+      "source_content_hash": "76fda1cebc267b83e4455afbffc0d684f91efafd8fb6f08f4e4250b1a2a02974",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "![](../static/img/png/swanniversary.png)",
+      "source_content_hash": "1c2dbfe730dcefb7595952665609c00aef82acca2c28005dabb7405e2e7fd62b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/png/swanniversary.png)"
+      }
+    },
+    {
+      "segment_id": "bb849aa9",
+      "source_content": ":::info[SWA ANNIVERSARY SCHEDULE & SPEAKERS]\nView the latest Schedule & Speaker Lineup at [https://aka.ms/swaanniversary](https://aka.ms/swaanniversary)\n:::",
+      "source_content_hash": "ebf1a87f70d81088756ac246d2db27022875e8abec0511fb8adac95583ff9d2e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[SWA周年庆日程与演讲嘉宾]\n查看最新日程安排与演讲嘉宾阵容：[https://aka.ms/swaanniversary](https://aka.ms/swaanniversary)\n:::"
+      }
+    },
+    {
+      "segment_id": "5beeb758",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "On May 12, 2021, the [Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview?WT.mc_id=30daysofswa-61155-cxall) service hit a significant milestone - [becoming generally available](https://azure.microsoft.com/en-us/updates/azure-static-web-apps-is-now-generally-available/?WT.mc_id=30daysofswa-61155-cxall) with support for many of the popular [front-end frameworks and static site generators](https://docs.microsoft.com/en-us/azure/static-web-apps/front-end-frameworks) used for modern web app development.",
+      "source_content_hash": "1d1cd77dc94683dd7c2d6bb6f825f87c53fbd39ae8458bb90b662cc363780143",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "2021年5月12日，[Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview?WT.mc_id=30daysofswa-61155-cxall)服务达成重要里程碑——[正式发布商用版](https://azure.microsoft.com/en-us/updates/azure-static-web-apps-is-now-generally-available/?WT.mc_id=30daysofswa-61155-cxall)，全面支持现代Web应用开发中常用的[前端框架和静态站点生成器](https://docs.microsoft.com/en-us/azure/static-web-apps/front-end-frameworks)。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "On May 12, 2022, Azure Static Web Apps will make the first-year anniversary of that milestone - making this the perfect time to look back on all the progress made, and look ahead to what's in store next.",
+      "source_content_hash": "385dba0c96b40be71c70ef6a2ab4ffb2469a7cc190b3a1de0b7a0eba1a098a20",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "2022年5月12日，Azure Static Web Apps将迎来该里程碑的一周年纪念——这正是回顾已取得进展、展望未来发展的最佳时机。"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Celebrate with #SWAanniversary",
+      "source_content_hash": "5343dc2539fdb2328454b1797cd5af0422146be4be46ce24e053878e7bbb35d2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 参与#SWAanniversary庆典"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "On May 19, 2022, join us live on [Learn TV](https://docs.microsoft.com/en-us/learn/tv/?WT.mc_id=30daysofswa-61155-cxall) for a 2-hour celebration with some of our favorite speakers and guests from both Microsoft and the larger developer community. Can you tell we're excited for this birthday?",
+      "source_content_hash": "60923e23cf17f8eb28f6d6c4ae66ec1427148c1ea6a7793f1d12eadad5ce19c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "2022年5月19日，欢迎通过[Learn TV](https://docs.microsoft.com/en-us/learn/tv/?WT.mc_id=30daysofswa-61155-cxall)加入我们的两小时直播庆典，届时将有来自微软及广大开发者社区的明星演讲者和特邀嘉宾参与。看得出我们有多期待这次生日会吗？"
+      }
+    },
+    {
+      "segment_id": "2a3434e4",
+      "source_content": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OGlM5CgCwwc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "source_content_hash": "cdcaedb86323bcd28b6ff7b7435dba4428e8b8662c2edfaaa46d50b3c16feb15",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_2a3434e4"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Check out [the Event page](https://docs.microsoft.com/en-us/events/learntv/swa-anniversary-may-2022/?WT.mc_id=30daysofswa-61155-cxall) to learn more about the speakers and topics on the agenda. Add the event to your calendar, and join us live - or bookmark this page and revisit it for links to relevant resources and video replays.",
+      "source_content_hash": "cd1bcbe4af3fcb8293d856d6eac5ea1ee17a490ed5a1e19c80a86d604d9fbfaa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "访问[活动页面](https://docs.microsoft.com/en-us/events/learntv/swa-anniversary-may-2022/?WT.mc_id=30daysofswa-61155-cxall)了解演讲嘉宾与议程详情。可将活动添加至日历参与直播，或收藏本页面后续查看相关资源与视频回放。"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## Learn with #30DaysOfSWA",
+      "source_content_hash": "7f35c256dd118345469fa2f73860ea46d3b205ee29f1a715ee3c5e1f8aabc831",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 通过#30DaysOfSWA学习"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "But there's more! _Are you new to Azure Static Web Apps?_ Do you want to get a beginner-friendly tour of the core concepts, usage examples, developer tools, and best practices involved in building and deploy modern web applications with this service?",
+      "source_content_hash": "fe48dae024d27b002db0f019d75ef62a85682ab4b43a5601a78193bc5e526434",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但精彩不止于此！_您是Azure Static Web Apps的新手吗？_ 想要通过初学者友好的方式了解使用该服务构建和部署现代Web应用的核心概念、使用示例、开发工具和最佳实践吗？"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "**You're in luck!**",
+      "source_content_hash": "e111a35afdcc5c4c6b6340b49037d93a5a362bfb580854e31b8561bd6e1cd261",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**您来对地方了！**"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Watch this space for an update on a new content series that will help you jumpstart that learning journey! Throughout the month of May, we'll bring together a diverse group of technologists to share short articles with resources and insights on a curated tour of Static Web Apps - taking you from **code to scale**.",
+      "source_content_hash": "59bd00122d955fae620809606882e2f4a5a772bd8857aa47a141ddce432ffe44",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "请关注本栏目，我们将推出全新内容系列助您开启学习之旅！整个五月期间，我们将汇聚多元化的技术专家团队，通过精选文章分享静态Web应用的资源与洞见——带您从**代码编写走向规模部署**。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "![The #30DaysOfSWA logo](../static/img/png/logo-light.png)",
+      "source_content_hash": "228518cfbf354d0b7bdffef9ffae0d125180abbafaec394569a861e6cc6167f2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![#30DaysOfSWA标志](../static/img/png/logo-light.png)"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "## How Can You Participate?",
+      "source_content_hash": "cf42842a811b56d3b25843eeb1bd8488afe16e3e163355a12a5ffd9a7936ef5f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 如何参与？"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Some actions you can take today to get ready for a fun month of learning:",
+      "source_content_hash": "0da83338d37ab2f8f69fa324ac10bd9f4a8f4fd5bfe301a01cf207fa58b34aa8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "立即行动，为这个充满学习乐趣的五月做好准备："
+      }
+    },
+    {
+      "segment_id": "cef3cb03",
+      "source_content": "* Bookmark this Series page or [**Subscribe to the RSS feed**](https://aka.ms/30DaysOfSWA/rss)\n  * Follow the [**#staticwebapps tag on dev.to**](https://dev.to/t/staticwebapps) - and consider making a post there!\n  * Introduce yourself on [**our Discussions Forum**](https://github.com/orgs/staticwebdev/discussions/categories/-30daysofswa) - tell us what you hope to learn!",
+      "source_content_hash": "d5118ea7b4478757b39af1609fcaaa214d8a840c48511e776ef05c18fd1b8ff6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 收藏本系列页面或[**订阅RSS源**](https://aka.ms/30DaysOfSWA/rss)\n  * 关注[**dev.to上的#staticwebapps标签**](https://dev.to/t/staticwebapps)——欢迎发表您的见解！\n  * 在[**我们的讨论论坛**](https://github.com/orgs/staticwebdev/discussions/categories/-30daysofswa)自我介绍——告诉我们您的学习目标！"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "## Self-Study Resources",
+      "source_content_hash": "022605a51478bd1833eab1d156a72bca79ad01c3812bc794ceba08f1a1a1c057",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 自学资源"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "Our goal is to help make this a beginner-friendly learning journey into Azure Static Web Apps. We hope we inspire you to keep going beyond #30Days - and wanted to share resources to motivate you to keep going. Here are three links to bookmark:",
+      "source_content_hash": "58b9cd3a60d90b48a761d5af4502d4b9e43772abc2f4ddb8273e864059d100ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们的目标是帮助您开启Azure Static Web Apps的初学者友好学习之旅。希望激励您持续精进超越#30Days——特此分享三个值得收藏的资源链接："
+      }
+    },
+    {
+      "segment_id": "36ab8340",
+      "source_content": "* The [**Resources**](/resources) page - will be updated with links related to each article in the series, all through May! Use this to explore detours and deep dives.\n * The [**Microsoft Learn Path**](https://docs.microsoft.com/en-us/learn/paths/azure-static-web-apps/?WT.mc_id=30daysofswa-61155-cxall) - teaches you how to build your first Static Web Apps powered experience - with React, Angular, Vue and Blazor coding options.\n * The [**#30DaysOfSWA Collection**](https://docs.microsoft.com/en-us/users/nityan/collections/7d2ws6zd1mxmp6?WT.mc_id=30daysofswa-61155-cxall) - a Microsoft-specific collection of resources (from documentation to videos and code samples) that I will continue to update.",
+      "source_content_hash": "f3dbb7577bddc703d8aaf2bc70551985932f217ae413357310652b758b9dcc7f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [**资源**](/resources) 页面 - 将在整个五月期间持续更新与系列文章相关的链接！利用此页面探索延伸学习路径与深度解析。\n * [**Microsoft Learn 学习路径**](https://docs.microsoft.com/en-us/learn/paths/azure-static-web-apps/?WT.mc_id=30daysofswa-61155-cxall) - 指导您构建首个由静态Web应用驱动的体验，提供React、Angular、Vue和Blazor等多种编码选项。\n * [**#30DaysOfSWA 资源集合**](https://docs.microsoft.com/en-us/users/nityan/collections/7d2ws6zd1mxmp6?WT.mc_id=30daysofswa-61155-cxall) - 专为Microsoft技术栈整理的资源集合（涵盖文档、视频及代码示例），我将持续更新此内容。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-04-30.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.871538+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "ad35c2d58bed9cb9ae0d1ae67b71c480dd33c75a32021d59ed19ec5ecb122758"
+  }
+}

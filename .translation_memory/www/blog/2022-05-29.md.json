@@ -1,0 +1,392 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-29.md",
+  "source_file_content_hash": "14468a5947f5aebd4adb1066db9a158e99b73d9af88afb2c088fe1871a180e76",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: practices-full-stack-react\ntitle: \"#28: Full-Stack SWA: React + Mongoose\"\nauthors: [christopher]\ntags: [swa, 30days, best-practices, react, mongoose]\ndraft: false\n---",
+      "source_content_hash": "846b8e7c406d35bd062a9e04c2648819a4acc830c333987558423ae076a2a0a3",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/practices-full-stack-react\" />\n  <meta name=\"twitter:title\" content=\"#28: Full-Stack SWA with React + Mongoose\" />\n  <meta name=\"twitter:description\" content=\"Join @GeekTrainer on #30DaysOfSWA as he builds a full-stack @Reactjs app with @AzureStatic Apps @AzureFunctions @AzureCosmosDB & @mongoosejs !\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/28-banner.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/practices-full-stack-react\" />\n</head>",
+      "source_content_hash": "3656f925920cebdc6fbf6ceb949c5198c938267e52749bd6c368fac21ee2ee12",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Welcome to `Week 4, Day 7` of **#30DaysOfSWA**!!",
+      "source_content_hash": "ca4e195a48273128a0da1202b748c5df6009d18c0b163516c15a2a9b5b87bbd1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第4周第7天`！！"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "We're at the last post of the series, so let's close the loop to where we started on Day 1. We started by talking about End-to-End Developer Experiences built on Azure Static Web Apps - and continued with a series of posts exploring various Azure service integrations that showcase this vision. Wouldn't it be great if you could have one end-to-end development example that you could use as a **starter** for your next prototype? Let's end this week with the perfect example. Today we'll look at an end-to-end developer workflow for a full-stack app:",
+      "source_content_hash": "5eeac41d10d9af224cce117f4d0ac8417915324cf996c61e72378f27b7427cc5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们已来到本系列的最后一篇，让我们回到第1天的起点。我们最初讨论了基于Azure静态Web应用构建的端到端开发者体验——随后通过一系列文章探索了体现这一愿景的各种Azure服务集成。如果能有一个端到端的开发示例作为您下一个原型的**启动模板**，岂不美哉？让我们以完美案例结束本周。今天我们将了解一个全栈应用的端到端开发工作流："
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "- Front-end built with [React](https://reactjs.org/) and [Redux Toolkit](https://redux-toolkit.js.org/)\n- Back-end built with [Azure Functions](https://docs.microsoft.com/azure/static-web-apps/add-api?tabs=vanilla-javascript)\n- Deployed to the cloud with [Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/)\n- With a [MongoDB database hosted in Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/mongodb/mongodb-introduction), accessed using [Mongoose](https://mongoosejs.com/)\n- (Optionally, with Playwright testing)",
+      "source_content_hash": "0884c3509ce3863c6018c00b6fa6ac1fb9de36a5c16bb569e318d30d2e1afd7d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 使用[React](https://reactjs.org/)和[Redux Toolkit](https://redux-toolkit.js.org/)构建的前端\n- 使用[Azure Functions](https://docs.microsoft.com/azure/static-web-apps/add-api?tabs=vanilla-javascript)构建的后端\n- 通过[Azure静态Web应用](https://docs.microsoft.com/en-us/azure/static-web-apps/)部署至云端\n- 采用[Cosmos DB托管的MongoDB数据库](https://docs.microsoft.com/azure/cosmos-db/mongodb/mongodb-introduction)，通过[Mongoose](https://mongoosejs.com/)访问\n- （可选包含Playwright测试）"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "86b525ab",
+      "source_content": "- Building a Full-Stack App\n- Why use Mongoose?\n- Why use Redux Toolkit?\n- **Build**: Implement and deploy the React/Mongoose template\n- **Exercise**: Add your own features",
+      "source_content_hash": "5c2903e1b7b464b8d746b9f065714d129d0eed6216d51bc28063694358670032",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 构建全栈应用\n- 为何选择Mongoose？\n- 为何选择Redux Toolkit？\n- **构建**：实现并部署React/Mongoose模板\n- **练习**：添加自定义功能"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "![](../static/img/series/28-banner.png)",
+      "source_content_hash": "78991213db536f00e970f5e140e59f945d48d85b5b853f50f8ecbac91e148075",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/28-banner.png)"
+      }
+    },
+    {
+      "segment_id": "782c902a",
+      "source_content": "## Building a Full-Stack App with SWA",
+      "source_content_hash": "066e6bc3bb24622c0f3ce5e2a8a881015adaada5d5435c9d560a6405f23b54e7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 使用SWA构建全栈应用"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "In the first week of this series, we looked [Building Static Web Apps](./2022-05-03.md) using an **existing starter template** and learned about options for working with Azure Static Web Apps:",
+      "source_content_hash": "ac8cc49dad4b75f60e1ad85bcc58b64b44a6290600cd7252210cd3dd211ef760",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在本系列第一周，我们探讨了[构建静态Web应用](./2022-05-03.md)，使用**现有启动模板**并学习了Azure静态Web应用的操作选项："
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "1. [using VS Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react) - if you prefer an IDE\n 2. [using Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=react) - if you prefer the command-line\n 3. [using Azure Portal](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=react&pivots=github) - if you prefer a browser-based workflow \n 4. [using Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/docs/use/install) - if you prefer a unified develop-deploy tool",
+      "source_content_hash": "e03d723312e0fab9a2c511fa8878157e905ff1c660e5ead379e09e26ac6a146a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. [使用VS Code](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)——若您偏好IDE\n 2. [使用Azure CLI](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started-cli?tabs=react)——若您偏好命令行\n 3. [使用Azure门户](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started-portal?tabs=react&pivots=github)——若您偏好基于浏览器的工作流 \n 4. [使用Azure静态Web应用CLI](https://azure.github.io/static-web-apps-cli/docs/use/install)——若您偏好统一的开发部署工具"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "The default starter templates (for vanillaJS, React, Angular, Blazor, Vue) use a simple **front-end application** to validate your local development setup, and familiarize you with the automated build/deploy workflow setup by Azure Static Web Apps.",
+      "source_content_hash": "748d0d7de2c5e99f662d6a957c1001d866fd60868b1098e4bc2d12f713e917b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "默认启动模板（适用于vanillaJS、React、Angular、Blazor、Vue）使用简单的**前端应用**来验证本地开发环境，并帮助您熟悉Azure静态Web应用设置的自动化构建/部署工作流。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Today we'll look at something different - a [mongoose-starter](https://github.com/staticwebdev/mongoose-starter) template for building a **full-stack application** with a React/Redux front-end, a serverless back-end (using Azure Functions) and a NoSQL database (using Azure CosmosDB API for MongoDB) that works seamlessly with the popular mongoose client.",
+      "source_content_hash": "aa64407f14a84576c7668b22e6f7a72c1d52aaffe27baa46947598aa07f33c5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天我们将了解不同的内容——一个[mongoose-starter](https://github.com/staticwebdev/mongoose-starter)模板，用于构建具有React/Redux前端、无服务器后端（使用Azure Functions）和NoSQL数据库（使用Azure CosmosDB API for MongoDB）的**全栈应用**，该数据库与流行的mongoose客户端无缝协作。"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "Learn more about creating full-stack apps using this technology stack, in this video:",
+      "source_content_hash": "cd47989189342fc2e960ab662690d205ae3ca8ca03bc2a9dd0c8dc23ab97b1fd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过此视频深入了解如何使用该技术栈创建全栈应用："
+      }
+    },
+    {
+      "segment_id": "c7ecf06f",
+      "source_content": "<iframe src=\"https://learn-video.azurefd.net/vod/player?show=azure-tips-and-tricks-static-web-apps&ep=create-javascript-serverless-apps-w-azure-static-web-apps-etc-14-of-16--azure-tips-and-tricks\" width=\"600\" height=\"400\"  frameborder=\"0\"  allowfullscreen></iframe>",
+      "source_content_hash": "de9e175e7752966855dde642f7c7a117a433803e767c4dae13541f0a7c0a4bea",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_c7ecf06f"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## Why use Mongoose?",
+      "source_content_hash": "d5c5a71a57732a39dd978b2b7fc5e68c301a526ec2167d3db57198456b062b99",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 为何选择Mongoose？"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "When accessing a data store you can either use APIs to interact directly with the backend or use a library which can provide additional functionality. Many developers prefer to use a library as it allows them to focus more on creating their code and logic while offloading some of the work. Mongoose is just such a library.",
+      "source_content_hash": "2d9573a0da80fcb28e45140aa0e962516f86945ad60d2c717dff731ad43f9aec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "访问数据存储时，您可以直接使用API与后端交互，或使用能提供额外功能的库。许多开发者倾向于使用库，因为这能让他们更专注于代码和逻辑的创建，同时分担部分工作负担。Mongoose正是这样一个库。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "[Mongoose](https://mongoosejs.com/) is an Object-Database-Mapper (ODM) which allows you to define the objects you need to store in a NoSQL database. Mongoose can be used with any database which supports MongoDB APIs, which [Cosmos DB does](https://docs.microsoft.com/azure/cosmos-db/mongodb/mongodb-introduction). With Mongoose you can create schemas for your data, enforce validation, and streamline the process of interacting with your data.",
+      "source_content_hash": "185e73cdf7a43c9ccd02e47d1ff34a3eb0dee8e39839a5481fdf2a061f59445a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Mongoose](https://mongoosejs.com/) 是一个对象文档映射器(ODM)，允许您定义需要存储在NoSQL数据库中的对象。Mongoose可与任何支持MongoDB API的数据库配合使用，[Azure Cosmos DB正具备此能力](https://docs.microsoft.com/azure/cosmos-db/mongodb/mongodb-introduction)。通过Mongoose，您可以创建数据模式、实施验证，并简化数据交互流程。"
+      }
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "## Why use Redux Toolkit?",
+      "source_content_hash": "027b290269b56556a1ae48758fc32b26d8f8533f20dc9b3be1ea33537b12b8df",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 为何选择Redux Toolkit？"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "[Redux](https://redux.js.org/) is the most popular tool for managing state in a [React](https://reactjs.org/) application. [Redux Toolkit](https://redux-toolkit.js.org/) helps create projects which use Redux by providing an additional framework for some of the most common tasks when using Redux. Redux Toolkit includes functions to streamline the process of creating reducers and updating and accessing state.",
+      "source_content_hash": "d23fe7124a2a58cce9a639a528b64c0c69062ad103fbec1e77d37949b7ce82df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Redux](https://redux.js.org/) 是管理[React](https://reactjs.org/)应用状态最流行的工具。[Redux Toolkit](https://redux-toolkit.js.org/) 通过为Redux最常见任务提供额外框架来简化项目创建。它包含可简化reducer创建、状态更新与访问的函数集。"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "## Quickstart: Using the React/Mongoose template",
+      "source_content_hash": "c2012bfd6a9781f9e273b3347496e742c29bc1681a4cea7cccf63a2775c85096",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 快速入门：使用React/Mongoose模板"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "To help jump start your development process, we'll [use the mongoose-starter template](https://github.com/staticwebdev/mongoose-starter) built on the following libraries and tools:",
+      "source_content_hash": "c956480ebd9ce9a645ec33e546be247b5801c541c6711da52a1abbcc770f27c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "为加速开发流程，我们将采用基于以下库和工具的[mongoose-starter模板](https://github.com/staticwebdev/mongoose-starter)："
+      }
+    },
+    {
+      "segment_id": "af7d8a35",
+      "source_content": "- React\n- Redux Toolkit\n- Mongoose\n- [Node-config](https://github.com/node-config/node-config#readme)\n- SWA CLI",
+      "source_content_hash": "54edf949e9102bda3e1d53b2b7ce81a0b2cb890b57baa8b7a7ee12a05c1091af",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- React\n- Redux Toolkit\n- Mongoose\n- [Node-config](https://github.com/node-config/node-config#readme)\n- SWA CLI"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "The template is a todo application and contains models for items and lists (which contain the items). It uses [GitHub authentication through Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/authentication-authorization?tabs=invitations). To support local development, a `devcontainer.json` file is included [use a dev container](https://code.visualstudio.com/docs/remote/containers).",
+      "source_content_hash": "5e986f2412690f4e7866cdfb08903834fdeacaa1f8c1dc777bc059a71653266c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该模板是一个待办事项应用，包含事项和清单（包含事项）的数据模型。它使用[通过Azure静态Web应用实现的GitHub身份验证](https://docs.microsoft.com/azure/static-web-apps/authentication-authorization?tabs=invitations)。为支持本地开发，模板包含`devcontainer.json`文件以[使用开发容器](https://code.visualstudio.com/docs/remote/containers)。"
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "Follow **[this tutorial](https://docs.microsoft.com/azure/static-web-apps/add-mongoose)** to build and deploy the full-stack application to Azure Static Web Apps by completing the following steps:",
+      "source_content_hash": "8e5564f1f15d5e025b9c86ea0d19bb50addb8e808a045770602fcdb9f29363b2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "按照**[本教程](https://docs.microsoft.com/azure/static-web-apps/add-mongoose)**完成以下步骤，构建并部署全栈应用到Azure静态Web应用："
+      }
+    },
+    {
+      "segment_id": "ca1573da",
+      "source_content": "- create the Cosmos DB server\n- create a new repository from the template\n- create the Azure Static Web App\n- configure the Azure Static Web App\n- use the site",
+      "source_content_hash": "20963fdbf84e92eaac03d45044b85736ad51726f8c6f81367566812fb371e8d9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 创建Cosmos DB服务\n- 从模板新建代码仓库\n- 创建Azure静态Web应用\n- 配置Azure静态Web应用\n- 使用站点"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "**Watch this segment** to walk interactively through the process of using the mongoose-starter template build/deploy the basic project to Azure Static Web Apps.",
+      "source_content_hash": "663a4dcfbea567b30c6242c5a41573a464d5ae9a88d451e754893c5cce1e3474",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**观看此片段**可交互式学习使用mongoose-starter模板将基础项目构建部署到Azure静态Web应用的全过程。"
+      }
+    },
+    {
+      "segment_id": "bfba2ea7",
+      "source_content": "<iframe src=\"https://learn-video.azurefd.net/vod/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-create-your-azure-static-web-apps-from-a-github-template-15-of-16--azure-tips-and-tricks\" width=\"600\" height=\"400\"  frameborder=\"0\"  allowfullscreen></iframe>",
+      "source_content_hash": "084d60cbcdd5f7a87e273d52e4541527651f2230e4090270b5744033b363b924",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_bfba2ea7"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "**And watch this segment** to learn how you can setup and configure your Azure CosmosDB resource to work with your Azure Static Web Apps deployment.",
+      "source_content_hash": "d702f2b2a72d5b5993a1cd97189f3e717bc9b0877b1c598b70e853e011fa7029",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**观看此片段**了解如何设置和配置Azure CosmosDB资源以配合Azure静态Web应用部署。"
+      }
+    },
+    {
+      "segment_id": "9cb0b344",
+      "source_content": "<iframe src=\"https://learn-video.azurefd.net/vod/player?show=azure-tips-and-tricks-static-web-apps&ep=setup-cosmos-db-w-a-mongodb-api-to-use-w-azure-static-web-apps-16-of-16--azure-tips--tricks\" width=\"600\" height=\"400\"  frameborder=\"0\"  allowfullscreen></iframe>",
+      "source_content_hash": "3dcec1916c0f159e74de399b0143ea813c2c3800bb569a79be2820e81ac3f1b3",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_9cb0b344"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "## Exercise: Add your own features",
+      "source_content_hash": "a7a6a31cb2d8a67246525c6ab397dd51856cf7105c88af4c44d41cf746eb1951",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践：添加自定义功能"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "The template is designed to be used as the starter for your own projects.",
+      "source_content_hash": "37043c8553b1e66d139e48ce541663fbf4acc90107878dd7340ac25a07faa84d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该模板设计为项目开发的起点。"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "To build upon what you've learned, you could **explore expanding the functionality** by adding your own features. Clone the repository you created and begin writing your own code! This could include:",
+      "source_content_hash": "8b157fa3e24cb4fd89303b494681de359c8a5f3df6cbae63f73d94afcc65fc7b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可通过**扩展功能**深化学习：克隆创建的仓库并开始编写代码！例如："
+      }
+    },
+    {
+      "segment_id": "9f974d3d",
+      "source_content": "* allowing items to be labeled\n * implementing archive functionality\n * potentially incorporating [artificial intelligence to detect the sentiment of tasks](https://docs.microsoft.com/azure/cognitive-services/language-service/sentiment-opinion-mining/quickstart?pivots=programming-language-javascript).",
+      "source_content_hash": "97c3794920213b3a79c2c2da3b655d5b7169e77529c753b6b73eb4ffa450f86d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 为事项添加标签功能\n * 实现归档功能\n * 集成[人工智能检测任务情感倾向](https://docs.microsoft.com/azure/cognitive-services/language-service/sentiment-opinion-mining/quickstart?pivots=programming-language-javascript)"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "Alternatively, use what you learned to add CosmosDB as a database for an application built using a different front-end framework  - try one of the usage examples from Week 2, or enhance something you've already built.",
+      "source_content_hash": "c9638c0f076fd903787d3d5d489553a3092e6980c72c0ed958c70f6bf5d5429f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "或运用所学知识，为其他前端框架构建的应用添加CosmosDB数据库——尝试第二周的用例示例，或增强既有项目。"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源推荐"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Here is a collection of resources you may find helpful for digging more into creating applications hosted on Azure Static Web Apps:",
+      "source_content_hash": "53eb2483c7f531cc89e83ec2ea31a3acae70de95ac1e5c1c7eb0dd80b7c7609e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下资源可助您深入探索Azure静态Web应用托管应用的开发："
+      }
+    },
+    {
+      "segment_id": "38417f80",
+      "source_content": "- SWA Quickstart: [Using Azure CLI](https://docs.microsoft.com/azure/static-web-apps/get-started-cli?tabs=react)\n- [Official Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)\n- [Creating your first web apps with React](https://docs.microsoft.com/learn/paths/react/) - on Microsoft Learn\n- [Web Dev For Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) - project-based curriculum",
+      "source_content_hash": "087afc032325c1e23d7292d1e3a957f9f70801291a84f7b93498c19eea988155",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- SWA快速入门：[使用Azure CLI](https://docs.microsoft.com/azure/static-web-apps/get-started-cli?tabs=react)\n- [官方教程：React入门](https://reactjs.org/tutorial/tutorial.html)\n- [使用React创建首个Web应用](https://docs.microsoft.com/learn/paths/react/) - Microsoft Learn课程\n- [Web开发初学者指南](https://github.com/microsoft/Web-Dev-For-Beginners) - 基于项目的课程体系"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-29.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.882539+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "14468a5947f5aebd4adb1066db9a158e99b73d9af88afb2c088fe1871a180e76"
+  }
+}

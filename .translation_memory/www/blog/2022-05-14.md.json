@@ -1,0 +1,552 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-14.md",
+  "source_file_content_hash": "d4fe3297b099603fdcee097624c43856b6fb238a30b0d1e7f22391d8039d5b88",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: pwa-on-swa\ntitle: \"#13: Hosting PWA on Static Web Apps\"\nauthors: [max]\ntags: [swa, 30days, usage-examples]\ndraft: false\n---",
+      "source_content_hash": "4fd6f60b3b59a4329324d26aee7cbd284bcea735844540020f79762bb762a1ea",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Welcome to `Week 2, Day 6` of **#30DaysOfSWA**!!",
+      "source_content_hash": "baf91422fa364b26c3066907b0cdd7ecf889eb8d11ea08781917a1a78b26fa39",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第二周第六天`！"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Yesterday we talked about deploying Blazor apps on Static Web Apps. Let's continue today with one more type of the projects you can successfully host on SWA - Progressive Web Apps (PWAs).",
+      "source_content_hash": "1ed09079647e7420c089d0745dc5eefcadd71dff3461881155ed10ad81aecb72",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "昨天我们探讨了在静态Web应用上部署Blazor应用。今天我们将继续介绍另一种适合托管在SWA上的项目类型——渐进式Web应用（PWA）。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "730c423c",
+      "source_content": "* How do I start with building a PWA?\n * Optimized PWA-on-SWA configuration\n * Advanced techniques for better user experience\n * **Exercise:** [Deploy your PWA on SWA, run offline, and install it](https://github.com/webmaxru/pwa-on-swa)",
+      "source_content_hash": "665b3d75340dbf2e6d8426abbf9b422545ea19757507ec45decc02ba9b61fcf3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 如何开始构建PWA？\n * 针对PWA-on-SWA的优化配置\n * 提升用户体验的高级技巧\n * **练习：**[将你的PWA部署到SWA，实现离线运行并安装](https://github.com/webmaxru/pwa-on-swa)"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "![](../static/img/series/13-banner.png)",
+      "source_content_hash": "51e99254076b99ad7e899de5258ff3b14abf216afe32bcb7ffd8d21abd8c4b87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/13-banner.png)"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Progressive Web Applications",
+      "source_content_hash": "09e1bbea097c6828669cf96e0549b2f7270b5e5213898116711cc46b25b65985",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 渐进式Web应用"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "A **Progressive Web App (PWA)** is a web frontend application that is progressively enhanced using open web technologies, to make sure it delivers the best possible experience on every device, based on available capabilities. The \"baseline\" for your app to have a title \"progressive\" is its installability and offline-readiness. We skip the \"served with https\" requirement because it became a baseline for any web app these days.",
+      "source_content_hash": "3fd8706f3457399f71320f429ab35ccfe679ff1fd4f2a757ab6f282e5b2e31d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**渐进式Web应用（PWA）** 是通过开放网络技术逐步增强的Web前端应用，旨在根据设备可用功能提供最佳体验。获得\"渐进式\"称号的基础要求是应用的可安装性和离线可用性。我们跳过了\"通过https提供服务\"的要求，因为这已成为现代Web应用的标配。"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "![#30DaysOfPWA - Core Concepts](../static/img/series/13-pwa-30days.jpg)",
+      "source_content_hash": "74fff844a66c5cabcf982ab6dbf285835f1d2f4d62ab3fd7de40dfc80b451b7c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![#30DaysOfPWA - 核心概念](../static/img/series/13-pwa-30days.jpg)"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "This chapter of #30DaysOfSWA assumes that you are familiar with the basic concepts of a Service Worker API and automating your service worker with the Workbox library. If you wish to learn about these technologies, you are welcome to go through the Core Concepts part of the **[#30DaysOfPWA](https://aka.ms/30DaysOfPWA)** project (see roadmap above) to learn about PWA fundamentals and to watch **[Automating a service worker with the Workbox 6](https://www.youtube.com/watch?v=LILGt_pHk9M&ab_channel=NDCConferences)** video for quickstart with Workbox.",
+      "source_content_hash": "ff388473283b232a8dbfa829be2abd8144d5737895315bb1a95d09180bfea503",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本章的#30DaysOfSWA假定您已熟悉Service Worker API基础概念及使用Workbox库自动化服务 Worker。如需了解这些技术，欢迎学习 **[#30DaysOfPWA](https://aka.ms/30DaysOfPWA)** 项目的核心概念部分（参见上方路线图），并观看 **[使用Workbox 6自动化服务Worker](https://www.youtube.com/watch?v=LILGt_pHk9M&ab_channel=NDCConferences)** 视频快速入门Workbox。"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Is hosting a PWA on Azure Static Web Apps different from \"classic\" apps?",
+      "source_content_hash": "ba1d15d53e05c63198f7555267d2a54f5b770642532f199e8e97be6ab343785e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 在Azure静态Web应用上托管PWA与\"经典\"应用有何不同？"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "A Progressive Web Application is still a web frontend app so the initial scaffolding of your SWA resource is the same - you have learned how to deploy and configure various types of web apps from the previous chapters of the #30DaysOfSWA. But to make sure that your \"PWA on SWA\" works as intended both online & offline to provide the best possible user & developer experiences, you might need to pay special attention to some implementation details and fine-tune some configuration options. We'll go through the following points in this chapter:",
+      "source_content_hash": "5305a5a33dfac0edc2e20e6b0e4937c0cd8608528b6f457177a93e093052fab0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "渐进式Web应用本质上仍是Web前端应用，因此SWA资源的初始搭建过程相同——您已通过#30DaysOfSWA前期章节学习了各类Web应用的部署配置。但为确保您的\"PWA on SWA\"在线/离线时都能按预期运行并提供最佳用户体验和开发体验，可能需要特别注意以下实现细节和配置调优："
+      }
+    },
+    {
+      "segment_id": "86b525ab",
+      "source_content": "- Building your service worker as a part of the overall app build\n- Setting up HTML5 routing - for the Single-Page Application (SPA) use-case\n- Applying caching strategies for SWA-hosted APIs\n- Showing custom error pages\n- How to deal with authentication in PWA",
+      "source_content_hash": "ce87b5172f9e156e3b50da820ef966407b882dd7d52007561d9fd054dbf12632",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 将服务Worker构建作为整体应用构建的一部分\n- 为单页应用(SPA)场景配置HTML5路由\n- 对SWA托管API应用缓存策略\n- 显示自定义错误页面\n- 处理PWA中的身份验证"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "**Sample project**",
+      "source_content_hash": "b5a462d7431673330e4a435a92703d952ac2f14d4193359d1918c55040bbab01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**示例项目**"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "I created a **[PWA on SWA Starter](https://github.com/webmaxru/pwa-on-swa)** project with all the best practices implemented. The app is [hosted on SWA](https://aka.ms/pwa-on-swa) as shown below. Let's explore it!",
+      "source_content_hash": "9f9dc8fdbe677da98c78084f57b40d198e40d19e95d5f50b9eee89374ba73166",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我创建了 **[PWA on SWA入门模板](https://github.com/webmaxru/pwa-on-swa)** 项目，其中实现了所有最佳实践。该应用已[托管于SWA](https://aka.ms/pwa-on-swa)如下图所示，让我们开始探索！"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "![PWA Starter on SWA](../static/img/series/13-pwa-starter.png)",
+      "source_content_hash": "13be72f173810302714be4dccad5df75ea6b677371010f4383a112e5bd3b4ee8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![SWA上的PWA入门模板](../static/img/series/13-pwa-starter.png)"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "**Technical stack:**",
+      "source_content_hash": "f5e93541259d1724062b8bba94ef6e01ac7e3e15195f85c6f494685108a4b8e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**技术栈：**"
+      }
+    },
+    {
+      "segment_id": "824626b3",
+      "source_content": "- A React application scaffolded by the [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) tool. A simple SPA with a few routes and the possibility to call API endpoints. Note that the approaches described are applicable for any web frontend application: **framework-based** (including your custom frameworks) or **\"vanilla\" JavaScript**. We use React only for getting closer to the real-world scenario of the modern frontend app development when you have to perform some operations with your source code (\"build the app\") before the deployment.\n- A [service worker](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js) powered by the [Workbox](https://workboxjs.org) library.\n- Two API endpoints created within SWA resource - to emulate \"dynamic\" (`/api/news`) and \"conservative\" (`/api/archives`) data sources.",
+      "source_content_hash": "803625a305c6a752c823b83ddcb328d22b2e679b97406f5616ad5ce6a038e151",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 一个由[create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)工具搭建的React应用。这是一个简单的单页应用(SPA)，包含若干路由和调用API端点的功能。请注意，所述方法适用于任何Web前端应用：**基于框架**（包括自定义框架）或**原生JavaScript**。我们使用React只是为了更贴近现代前端应用开发的真实场景——在部署前需要对源代码进行某些操作（\"构建应用\"）。\n- 由[Workbox](https://workboxjs.org)库驱动的[service worker](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js)。\n- 在SWA资源内创建的两个API端点——用于模拟\"动态\"(`/api/news`)和\"保守\"(`/api/archives`)数据源。"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "## Building your service worker as a part of the overall app build",
+      "source_content_hash": "d233e555be5383ebaed96c6bfd1dea66039c0e0e8f4fd80b2a435e2beb3a2220",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 将Service Worker作为整体应用构建的一部分"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "The service worker file we have in the `src/sw` folder of the application is not ready for the deployment. We have to",
+      "source_content_hash": "674c63ac565fc2bb19be6b04561cee2f7506a9f11783c1b48f9775f10bc58d85",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "位于应用`src/sw`文件夹中的service worker文件尚未准备好部署。我们需要："
+      }
+    },
+    {
+      "segment_id": "157c9741",
+      "source_content": "1. **[Process it](https://github.com/webmaxru/pwa-on-swa/blob/main/scripts/sw-build.js)** by the `workbox-build` module to populate with the resources to precache (to provide offline-readiness)\n2. **Bundle it**\n3. **Choose** production or development mode\n4. **Minify** for deployment",
+      "source_content_hash": "e7fc38752ec5933c924743dda9014b177d6d8242bc891f3cfc426d4acaf32a70",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 通过`workbox-build`模块[处理该文件](https://github.com/webmaxru/pwa-on-swa/blob/main/scripts/sw-build.js)，填充需要预缓存的资源（以实现离线可用性）\n2. **打包**该文件\n3. **选择**生产或开发模式\n4. 为部署进行**代码压缩**"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "This is why in `package.json`'s `scripts` we have `\"build-sw\": \"node scripts/sw-build.js && npx rollup -c\"` command that is building a service worker file and copies it into the app distribution folder.",
+      "source_content_hash": "2ba035a6fb1d39279ed8d3006077e4128d3a059e38992b0c8ba33d124c9a3281",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "因此在`package.json`的`scripts`中，我们设置了`\"build-sw\": \"node scripts/sw-build.js && npx rollup -c\"`命令，用于构建service worker文件并将其复制到应用分发文件夹。"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "By default, Azure Static Web Apps runs `npm run build` command to build your application. So do not forget to add a service worker build command there. The resulting  command will be:",
+      "source_content_hash": "7af2bd5f4501e602a1f0820ddff7e2e1751e3654a143720901c95b46054e64c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "默认情况下，Azure Static Web Apps会运行`npm run build`命令来构建应用。因此别忘了在其中添加service worker构建命令。最终命令应为："
+      }
+    },
+    {
+      "segment_id": "750e2f7e",
+      "source_content": "```\n\"build\": \"react-scripts build && npm run build-sw\"\n```",
+      "source_content_hash": "7b43d6407fe7ece3ab47884462d9e98749f28a2e2ef9954e74e50db71fa081ed",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_750e2f7e"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "Instead of `react-scripts build`, there might be a command to build an application using a framework/bundler of your choice. **Important**: Keep this order - you always build a service worker _after_ the main application because the distribution folder will be scanned to list the files to precache based on the [pattern](https://github.com/webmaxru/pwa-on-swa/blob/main/scripts/sw-build.js#L5) you provided.",
+      "source_content_hash": "5a9d4fa0ad9187ce085eae824207474107c936ea98e4e010363dac5dacee5d12",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "此处`react-scripts build`可能是使用您选择的框架/打包器构建应用的命令。**重要**：保持此顺序——总是在主应用构建完成后才构建service worker，因为需要扫描分发文件夹，根据您提供的[模式](https://github.com/webmaxru/pwa-on-swa/blob/main/scripts/sw-build.js#L5)列出需要预缓存的文件。"
+      }
+    },
+    {
+      "segment_id": "3ef18741",
+      "source_content": "## Setting up HTML5 routing - for the Single-Page Application (SPA)",
+      "source_content_hash": "2830ae73db28d8acd27827e0c6c3a1334ae777d2203e53aa968e0c66be7f29c8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 设置HTML5路由——针对单页应用(SPA)"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "For having correct navigation in your single-page application, you have to \"ask\" the webserver to redirect all navigation requests to `index.html` - to run the application and let it do the routing. In SWA, you have to have something like this in the [configuration file](https://github.com/webmaxru/pwa-on-swa/blob/main/staticwebapp.config.json):",
+      "source_content_hash": "1a20a7f12b32f4c5ff7337494e65a26a55bae9cbd26b0a091b109ff2ac970440",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "为确保单页应用中的导航正确，需要\"告知\"Web服务器将所有导航请求重定向至`index.html`——从而运行应用并让其处理路由。在SWA中，您需要在[配置文件](https://github.com/webmaxru/pwa-on-swa/blob/main/staticwebapp.config.json)中添加如下内容："
+      }
+    },
+    {
+      "segment_id": "bc137a19",
+      "source_content": "```\n\"navigationFallback\": {\n  \"rewrite\": \"index.html\",\n  \"exclude\": [\"/images/*.{png,jpg,gif}\", \"/static/*\"]\n}\n```",
+      "source_content_hash": "77ab892c90228370ac4d84afa31a66c0b1603f263f13b0e494a02931b745d457",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_bc137a19"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "**Best practices**:",
+      "source_content_hash": "ae5b6377b2d87029ed42dc8533968f0aff9376fce9c631f54ac4db7dfb09f6da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**最佳实践**："
+      }
+    },
+    {
+      "segment_id": "c0ea80dd",
+      "source_content": "- Always \"exclude\" as much as possible in `navigationFallback` - it will help you to identify and fix \"resource not found\" errors.\n- Do not copy `staticwebapp.config.json` to the app distribution folder - SWA will find it in any location within the app source code.",
+      "source_content_hash": "0663d5e2bcc3caed2704ba75236c9628e59444628a5fd24ac45e2c19339cd43e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "- 在`navigationFallback`中尽可能多地\"排除\"路径——这将帮助您识别和修复\"资源未找到\"错误\n- 不要将`staticwebapp.config.json`复制到应用分发文件夹——SWA会在应用源代码的任何位置找到该文件"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "In case of PWA, there is an extra layer of this fallback: the first in a row to handle navigation requests is a service worker. In the [service-worker.js](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js) we have to have the following block for correct routing in SPAs:",
+      "source_content_hash": "931a36f63fb6be48a128bc1837bdd98117d595633311a5eb7c6d2177934b949f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "对于PWA，这种回退机制多了一个层级：处理导航请求的第一道关卡是service worker。在[service-worker.js](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js)中，我们需要以下配置块来实现SPA的正确路由："
+      }
+    },
+    {
+      "segment_id": "b73a4a7a",
+      "source_content": "```\nconst navHandler = createHandlerBoundToURL('/index.html');\nconst navigationRoute = new NavigationRoute(navHandler, {\n  denylist: [\n    new RegExp('^/images/'),\n    new RegExp('^/static/'),\n  ],\n});\nregisterRoute(navigationRoute);\n```",
+      "source_content_hash": "d209e509106001ab58cdeff400f0056b629e25f4d76246ab1e5fd80427f6589d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_b73a4a7a"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "The above configuration will work fine for opening both root url and \"deep links\" like `/about` both in online and offline modes.",
+      "source_content_hash": "1c2db8b19a71f55592959108117fb12c2af4e52e8b91d21875864bbe88c96b7c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "上述配置能确保在线和离线模式下，无论是根URL还是类似`/about`的深层链接都能正常打开。"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "## Showing custom error pages",
+      "source_content_hash": "431ac499be32a84e2f1042f1a2010382db638a7a4f4237e82e15951c7c48e65d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 显示自定义错误页面"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "It's a best practice to create and show custom error pages (for example for 404 Not Found) instead of the ones built-in in the browsers. And it makes sense to keep these pages as simple as possible - without running a SPA itself. To set up custom error pages, you add the following block to the [SWA config](https://github.com/webmaxru/pwa-on-swa/blob/main/staticwebapp.config.json)",
+      "source_content_hash": "382c38477596c68d1897913aeb2e0e98646a08110a31f9c27c723f4fceb69986",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最佳实践是创建并显示自定义错误页面（例如404 Not Found），而非使用浏览器内置页面。保持这些页面尽可能简单（不运行SPA本身）是明智之举。要设置自定义错误页面，您需要在[SWA配置](https://github.com/webmaxru/pwa-on-swa/blob/main/staticwebapp.config.json)中添加以下配置块："
+      }
+    },
+    {
+      "segment_id": "1cf51900",
+      "source_content": "```\n\"responseOverrides\": {\n  \"400\": {\n    \"rewrite\": \"/400.html\"\n  },\n  \"404\": {\n    \"rewrite\": \"/404.html\"\n  }\n}\n```",
+      "source_content_hash": "b1b363786e26248a9a6206260928e0e2029fe13d9dba766f24fd4aec0d533fe3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_1cf51900"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "These pages will be excluded from SWA's navigation fallback automatically because these two html are in the app distribution folder. But for the Workbox and explicit directive needed - just add these addresses to the same `denylist` we met with the HTML5 navigation section.",
+      "source_content_hash": "d93b7aaa57760559ccfb9509620ed601db56fd3d34ac95319e114640f3e489cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这些页面会自动从SWA的导航回退中排除，因为这两个html文件位于应用分发文件夹中。但对于Workbox所需的显式指令——只需将这些地址添加到与HTML5导航部分相同的`denylist`中即可。"
+      }
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "## Applying caching strategies for SWA-hosted APIs",
+      "source_content_hash": "2556afd10bdad07347cd9a4b4a9be3042aaa1d8453e1fc8928acf0373cb637ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 为SWA托管的API应用缓存策略"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "With Workbox, runtime caching is simple: you specify a url pattern to \"listen\" and intercept, and a caching strategy to apply. There are [5 strategies](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/) available and you can always create a custom one. By default, all API urls start with `/api`. Then in a [service worker](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js), we'll add this block for caching responses from our two API endpoints using different strategies:",
+      "source_content_hash": "3462b913363b01c943a12e7881e2869daa54a3bea1e8b2cef7acb45e96be8d94",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "使用Workbox实现运行时缓存很简单：指定要\"监听\"和拦截的URL模式，并应用缓存策略。有[5种策略](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/)可供选择，您也可以创建自定义策略。默认情况下，所有API URL都以`/api`开头。然后在[service worker](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js)中，我们将添加以下代码块，为两个API端点应用不同的缓存策略："
+      }
+    },
+    {
+      "segment_id": "b27056c4",
+      "source_content": "```\nregisterRoute(\n  ({ url }) => url.pathname.startsWith('/api/news'),\n  new NetworkFirst()\n);\n\nregisterRoute(\n  ({ url }) => url.pathname.startsWith('/api/archives'),\n  new CacheFirst()\n);\n```",
+      "source_content_hash": "14d50b4a26abdd24727756eb7fd83575098502edc87871101ac453710d510d59",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_b27056c4"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "Now, the data from APIs, once fetched, is also available offline!",
+      "source_content_hash": "97e754a43a71e8df148ce7f58c46ba5b0c31ea7fad19dfbb77f76e2599d468ae",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在，从API获取的数据在离线时也可用了！"
+      }
+    },
+    {
+      "segment_id": "383fbdd2",
+      "source_content": "**Mini-exercise**: Open the [hosted PWA on SWA Starter](https://aka.ms/pwa-on-swa), open the Network tab of DevTools, and click on two buttons in the \"API caching\" demo area. What difference do you see in the network request/response patterns for these two strategies?",
+      "source_content_hash": "8f753f7f3bce997bd6e4022a2d7957f2ef378d7a6bdfa9efed7c26683229182d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**小练习**：打开[托管在SWA上的PWA Starter](https://aka.ms/pwa-on-swa)，在DevTools的Network选项卡中，点击\"API缓存\"演示区域的两个按钮。您会看到这两种策略在网络请求/响应模式上有何不同？"
+      }
+    },
+    {
+      "segment_id": "13292277",
+      "source_content": "## How to deal with authentication in PWA",
+      "source_content_hash": "b8d1cb161e3e29b8cb7150ee2bcb709eee6950d6ecfc68bb8ba10b07bb051584",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 如何处理PWA中的身份验证"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "A couple of **important** rules here:",
+      "source_content_hash": "6d279a6448d3881529143025bc840890f7f6d289b3ef0add668f4b7b8789d17a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这里有几条**重要**规则："
+      }
+    },
+    {
+      "segment_id": "eb70e807",
+      "source_content": "1. Explicitly exclude the `.auth` system folder of SWA from Workbox's navigation fallback (use `denylist`) and never set up runtime caching for it\n2. Never runtime-cache all data users fetch from restricted API endpoints (served by SWA or external)",
+      "source_content_hash": "899e1bfcb8f00097170b76bf6c4169c57215f01f9c01bc883011c0cb7d9ab0bf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 明确将SWA的`.auth`系统文件夹从Workbox的导航回退中排除（使用`denylist`），并且永远不要为其设置运行时缓存\n2. 永远不要对用户从受限制API端点（由SWA或外部提供）获取的所有数据进行运行时缓存"
+      }
+    },
+    {
+      "segment_id": "9e90a9b3",
+      "source_content": "And it's a **best practice** to never precache and always exclude from the service worker's navigation fallback all urls related to the user authentication and restricted parts of your application. [Have a look](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js#L27) at the resulting `denylist` of our sample application.",
+      "source_content_hash": "8457162f9af7d78266c8d7b561ec225951bad74214684b048ed628811b0f9140",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**最佳实践**是永远不要预缓存，并且始终将与应用用户认证和受限制部分相关的所有URL排除在service worker的导航回退之外。[查看](https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js#L27)我们示例应用的最终`denylist`。"
+      }
+    },
+    {
+      "segment_id": "a0d0e29e",
+      "source_content": "## Exercise: Deploy your PWA on SWA, run offline, and install it!",
+      "source_content_hash": "ee95f405ced30f2a5710b2d13b1fd3f1fee43d95aaec24c48d2040ed019a837f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习：将您的PWA部署到SWA，离线运行并安装它！"
+      }
+    },
+    {
+      "segment_id": "be17ccc3",
+      "source_content": "Hopefully, you're ready to try something fun that will reinforce what you learned today.",
+      "source_content_hash": "ceca79256d3f2b31866eca63c0ba097c188d241315497a653119ca3901738b41",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "希望您已经准备好尝试一些有趣的事情来巩固今天学到的知识。"
+      }
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "For this exercise:",
+      "source_content_hash": "9c4fce5b1899ba54f0668b0284ccab5dcec41a164cda63f4e2418c4056adfadd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本次练习："
+      }
+    },
+    {
+      "segment_id": "a627a446",
+      "source_content": "* [Fork the PWA on SWA Starter repository](https://github.com/webmaxru/pwa-on-swa) and deploy it to Azure Static Web Apps using the skills you gained in the previous chapters of the #30DaysOfSWA\n* Open the url you received after the SWA resource was created\n* Now, go offline (disconnect from the Internet or emulate offline mode in the DevTools) and reload the page - it still works!\n* Using the \"App available\" icon on the right-hand side of the desktop browser's address bar, install the application on your laptop - now it behaves like a native one!",
+      "source_content_hash": "28b2ba17c8f58864cf22e9814e5d075375b58c7fd26fa0a3857c30a6d1a41a8d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Fork PWA on SWA Starter仓库](https://github.com/webmaxru/pwa-on-swa)并使用您在#30DaysOfSWA前几章学到的技能将其部署到Azure Static Web Apps\n* 打开SWA资源创建后获得的URL\n* 现在，离线（断开互联网连接或在DevTools中模拟离线模式）并重新加载页面——它仍然有效！\n* 使用桌面浏览器地址栏右侧的\"应用可用\"图标，将应用安装到您的笔记本电脑上——现在它的行为就像原生应用一样！"
+      }
+    },
+    {
+      "segment_id": "a19e2d81",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "531ec0bb",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "Here are some resources to get you started with your Progressive Web App journey into",
+      "source_content_hash": "11582af19e1d1cc0172a022a646e23c84b15170a35ded7fa4decb520cd455598",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下是一些资源，帮助您开始渐进式Web应用的旅程："
+      }
+    },
+    {
+      "segment_id": "25215977",
+      "source_content": "* [PWA on Microsoft Docs](https://aka.ms/learn-pwa)\n * [#30DaysOfPWA](https://aka.ms/30DaysOfPWA)\n * [Workbox library](https://workboxjs.org)",
+      "source_content_hash": "aa12c6a0d9ac3ed53523c45ebef51b8b55516efe319ea6d44f17b891895ccd40",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Microsoft Docs上的PWA](https://aka.ms/learn-pwa)\n * [#30DaysOfPWA](https://aka.ms/30DaysOfPWA)\n * [Workbox库](https://workboxjs.org)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-14.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.880095+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "d4fe3297b099603fdcee097624c43856b6fb238a30b0d1e7f22391d8039d5b88"
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-05.md",
+  "source_file_content_hash": "ecee0c2615b761e38f0b963130575466083b310599fd15d742734da0001232a9",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: configuring-swa\ntitle: \"#04: Configuring SWA\"\nauthors: [joseph, nitya]\ntags: [swa, 30days, core-concepts]\ndraft: false\n---",
+      "source_content_hash": "9615ee312a626f6d31850b3c7bfaf2693f4bd421dbae03e28cfdd13a970333c7",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 1, Day 4` of **#30DaysOfSWA**!!",
+      "source_content_hash": "0463529982de4b57e3d55668646eb2f793115651206f78d6e25cc9e541d56aba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第1周第4天`！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "In the past two days we've seen how the Azure Static Web Apps services sets up default CI/CD actions (to automate build/deploy workflows) and transparently configures application to access the API with minimal input from us during setup. But what if we want to _customize_ the build process or application behavior? That's where knowing SWA _configuration options_ can help.",
+      "source_content_hash": "a9bed233523da4a49471a7587a3f5bd11af6a827e30f115a2e96bbf5de180433",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "过去两天我们了解了Azure静态Web应用服务如何设置默认CI/CD操作（用于自动化构建/部署工作流），并在设置过程中以最小输入透明配置应用访问API。但如果我们想_自定义_构建流程或应用行为呢？这就需要掌握SWA的_配置选项_。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 今日要点"
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "* Configuration: Concepts & Files\n * Customize: Application Behavior\n * Customize: Build Process\n * Customize: Environment Settings\n * **Exercise:** Explore an open source app to see these in action!\n * **Resource(s):** Links for deeper-dives into the topic",
+      "source_content_hash": "45de72e4266966406aa77cfedc8c557c692c1f4d30beb5267a7143039ee411bc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 配置：概念与文件\n * 自定义：应用行为\n * 自定义：构建流程\n * 自定义：环境设置\n * **实践：** 通过开源应用观察实际配置\n * **资源：** 深度学习链接"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "![](../static/img/series/04-banner.png)",
+      "source_content_hash": "20136d3cc7d857b67642063d867dc81e6d05824dc032e9587941e1d860fb78c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/04-banner.png)"
+      }
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "## Concepts & Files",
+      "source_content_hash": "7b5d1bef88533b22acc91d14b69ad4ca4e8f29e4fc6700dea79ecb6d73623624",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 概念与文件"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "When we think of configuring the Static Web App, we have three potential targets we can customize:",
+      "source_content_hash": "aa885d3357bbfb1906c9988024d54c994a6cfd56f889cd4094d436ed6ed4c269",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "配置静态Web应用时，我们可针对三个层面进行自定义："
+      }
+    },
+    {
+      "segment_id": "1d13125b",
+      "source_content": "* **Application**: Use the `staticwebapp.config.json` file (located in the folder specified for `app_location`) to define rules and properties that customize application behaviors like routing, authentication, networking and more. \n * **Build**: Static Web Apps automates your build/deploy workflow using GitHub Actions or Azure Pipelines, configurable via the relevant YAML files. For example, this would be the `.github/workflows/azure-static-web-apps-xxx.yml` file in your repo, for GitHub Actions.\n * **Environment:** Sometimes configuration values may only be known at runtime - e.g., database connection strings. By using environment variables, you can update the _values_ at runtime without having to change the application code that uses them. Environment variables can be set in the Azure Portal (for production) or in _local settings files_ (for development.)",
+      "source_content_hash": "d656c7d675fa70ffd0218678b3e30720befe2ff0fe78e6e5fd0e2d1a259447a0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **应用层**：使用`staticwebapp.config.json`文件（位于`app_location`指定目录）定义路由、身份验证、网络等行为规则\n * **构建层**：通过GitHub Actions或Azure Pipelines的YAML文件（如`.github/workflows/azure-static-web-apps-xxx.yml`）自动化构建/部署流程\n * **环境层**：运行时才确定的配置值（如数据库连接字符串）可通过环境变量设置，无需修改应用代码"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Let's take a quick look at what each of these provides, along with resource links for deeper dives that you can explore on your own. Check out the [example scenarios](https://docs.microsoft.com/azure/static-web-apps/configuration-overview#example-scenarios) to get a better understanding of which file (or concept) you need to focus on, for specific scenarios.",
+      "source_content_hash": "c01b713242401d1bae08e83d986b07e46593e10a7351513fb2cfd01da6bdaa6c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "下面简要介绍各层配置，并附深度资源链接。参阅[示例场景](https://docs.microsoft.com/azure/static-web-apps/configuration-overview#example-scenarios)可快速定位特定场景所需的配置文件。"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## Config: Application",
+      "source_content_hash": "4fb0a459915b4547afaf98c8cdaa1883fb843f28adaf87d230d08959593c99ab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 应用配置"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Application behavior is configured using the _staticwebapp.config.json_ file located in the folder defined by `app_location`. Here are a _subset_ of the properties and their purpose:",
+      "source_content_hash": "f14d3ead6be7f6744a828cb814f809aec69a6f592d54952d86b20b00a2df79a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "应用行为通过`app_location`目录下的_staticwebapp.config.json_文件配置，主要属性包括："
+      }
+    },
+    {
+      "segment_id": "157151e9",
+      "source_content": "* [**\"routes\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#routes) - are an array of \"route\" objects that can each be associated with access rules (\"allowedRoles\"), actions (\"redirect\", \"rewrite\") - and request (\"methods\") and response (\"headers\",\"statusCode\") properties.\n * [**\"navigationFallback\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#fallback-routes) supports applications that rely on client-side routing by providing a server-side fallback route which serves the required page, with filters to control usage.\n * [**\"responseOverrides\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#response-overrides) allows you to return a custom response instead of default HTTP error codes, for more user-friendly experiences.\n * [**\"platform\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#platform) sets platform-specific configurations like _apiRuntime_ for API language runtime version.",
+      "source_content_hash": "7c8bc9006ce641896424e0efed827f14d4a579459febafb7cedf0adb9e7aefe4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [**\"routes\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#routes)：含\"allowedRoles\"访问规则、\"redirect/rewrite\"操作，以及请求(\"methods\")/响应(\"headers\",\"statusCode\")属性\n * [**\"navigationFallback\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#fallback-routes)：为客户端路由应用提供服务端回退路由\n * [**\"responseOverrides\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#response-overrides)：自定义HTTP错误码响应\n * [**\"platform\"**](https://docs.microsoft.com/azure/static-web-apps/configuration#platform)：设置API运行时版本等平台配置"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "There are also configuration properties for authentication, networking, global headers, custom MIME types and more. Check out the [documentation](https://docs.microsoft.com/azure/static-web-apps/configuration#file-location) for the complete list and scan this **example** [staticwebapp.config.json](https://docs.microsoft.com/azure/static-web-apps/configuration#example-configuration-file) to understand how these are defined.",
+      "source_content_hash": "fd68e81681f14887c749408bf3a0cd2aa46a386d25e1e632e34fa375c05f54a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "还包括身份验证、网络、全局头、MIME类型等配置。完整属性请参阅[文档](https://docs.microsoft.com/azure/static-web-apps/configuration#file-location)，参考[示例文件](https://docs.microsoft.com/azure/static-web-apps/configuration#example-configuration-file)了解定义方式。"
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```json\n{\n  \"routes\": [\n    {\n      \"route\": \"/profile*\",\n      \"allowedRoles\": [\"authenticated\"]\n    },\n    {\n      \"route\": \"/admin/index.html\",\n      \"allowedRoles\": [\"administrator\"]\n    },\n    {\n      \"route\": \"/images/*\",\n      \"headers\": {\n        \"cache-control\": \"must-revalidate, max-age=15770000\"\n      }\n    },\n    {\n      \"route\": \"/api/*\",\n      \"methods\": [\"GET\"],\n      \"allowedRoles\": [\"registeredusers\"]\n    },\n    {\n      \"route\": \"/api/*\",\n      \"methods\": [\"PUT\", \"POST\", \"PATCH\", \"DELETE\"],\n      \"allowedRoles\": [\"administrator\"]\n    },\n    {\n      \"route\": \"/api/*\",\n      \"allowedRoles\": [\"authenticated\"]\n    },\n    {\n      \"route\": \"/customers/contoso*\",\n      \"allowedRoles\": [\"administrator\", \"customers_contoso\"]\n    },\n    {\n      \"route\": \"/login\",\n      \"rewrite\": \"/.auth/login/github\"\n    },\n    {\n      \"route\": \"/.auth/login/twitter\",\n      \"statusCode\": 404\n    },\n    {\n      \"route\": \"/logout\",\n      \"redirect\": \"/.auth/logout\"\n    },\n    {\n      \"route\": \"/calendar*\",\n      \"rewrite\": \"/calendar.html\"\n    },\n    {\n      \"route\": \"/specials\",\n      \"redirect\": \"/deals\",\n      \"statusCode\": 301\n    }\n  ],\n  \"navigationFallback\": {\n    \"rewrite\": \"index.html\",\n    \"exclude\": [\"/images/*.{png,jpg,gif}\", \"/css/*\"]\n  },\n  \"responseOverrides\": {\n    \"400\": {\n      \"rewrite\": \"/invalid-invitation-error.html\"\n    },\n    \"401\": {\n      \"redirect\": \"/login\",\n      \"statusCode\": 302\n    },\n    \"403\": {\n      \"rewrite\": \"/custom-forbidden-page.html\"\n    },\n    \"404\": {\n      \"rewrite\": \"/404.html\"\n    }\n  },\n  \"globalHeaders\": {\n    \"content-security-policy\": \"default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'\"\n  },\n  \"mimeTypes\": {\n    \".json\": \"text/json\"\n  }\n}\n```",
+      "source_content_hash": "4a277a71fc9f91a58a4fdb33ef5e137e1d4cb0c096359c749db5406f497e9ee9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "c766290e",
+      "source_content": "## Config: Build",
+      "source_content_hash": "04489bdd7e3d3a5f249ca59d5c3506a4c3a959087c9bd083d5c11e2d60ede3d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 构建配置"
+      }
+    },
+    {
+      "segment_id": "5c7d994c",
+      "source_content": "Azure Static Web Apps build workflows are powered either by GitHub Actions (in a file named something like `.github/workflows/azure-static-web-apps-xxx.yml`) or by Azure Pipelines (using the `azure-pipelines.yml` file).",
+      "source_content_hash": "2d21094b39eccca481d38928751625db9443c1f7c3fe2bd15b7bfb9347622cae",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure静态Web应用通过GitHub Actions（`.github/workflows/azure-static-web-apps-xxx.yml`）或Azure Pipelines（`azure-pipelines.yml`）驱动构建流程。"
+      }
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "The main settings you need to be familiar with are:",
+      "source_content_hash": "bb4050a1cc21592d52b9d7961e3b7a1ba7e01c522c7d8d6bc894f64f970a8766",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "需掌握的核心设置包括："
+      }
+    },
+    {
+      "segment_id": "9ceae896",
+      "source_content": "* `app_location` - folder for application source code\n * `api_location` - folder with API functions source code\n * `output_location` - where are build files generated\n * `app_build_command` - custom app build command (for Node.js apps)\n * `api_build_command` - custom api build command (for Node.js apps)\n * `skip_app_build` - flag to skip app build step (if true)\n * `skip_api_build` - flag to skip api build step (if true)\n * `build_timeout_in_minutes` - defaults to 15 (customize to extend)",
+      "source_content_hash": "d3cf92c6c5f99d7ce50b9fd9821640e7be231520e1cf7716cceea489d812710e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* `app_location` - 应用程序源代码所在文件夹\n * `api_location` - API函数源代码所在文件夹\n * `output_location` - 构建文件生成目录\n * `app_build_command` - 自定义应用构建命令（适用于Node.js应用）\n * `api_build_command` - 自定义API构建命令（适用于Node.js应用）\n * `skip_app_build` - 跳过应用构建步骤的标志（若为true）\n * `skip_api_build` - 跳过API构建步骤的标志（若为true）\n * `build_timeout_in_minutes` - 默认15分钟（可自定义延长）"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "Read [**this document**](https://docs.microsoft.com/azure/static-web-apps/build-configuration?tabs=azure-devops#environment-variables) to learn how each of those properties can be customized and used effectively.",
+      "source_content_hash": "5d34e09bd65108515e53f3853fce171de436dbf181f6d7250b67d392c029b641",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "阅读[**此文档**](https://docs.microsoft.com/azure/static-web-apps/build-configuration?tabs=azure-devops#environment-variables)了解如何有效自定义和使用这些属性。"
+      }
+    },
+    {
+      "segment_id": "35353302",
+      "source_content": "## Config: Environment",
+      "source_content_hash": "f4a990084422cc35701869246701caf8ac56ba4316cd6b2954960f8fd5d0594d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 配置：环境"
+      }
+    },
+    {
+      "segment_id": "719d3997",
+      "source_content": "Your application behavior configuration values may change based on the runtime context. By setting values in _environment variables_, you can decouple definition of values from their usage within application code. We refer to these environment variables as [**application settings**](https://docs.microsoft.com/azure/static-web-apps/application-settings) which are copied to both staging and production environments.",
+      "source_content_hash": "98f61f9c158908d7490bc2d33c3343accb2799fb3b5d7b38cd229f6c4efdf4de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "应用程序行为配置值可能随运行时环境变化。通过设置_环境变量_，可以将值的定义与应用程序代码中的使用解耦。我们将这些环境变量称为[**应用程序设置**](https://docs.microsoft.com/azure/static-web-apps/application-settings)，它们会被复制到暂存和生产环境。"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "But where are they _defined?_ That depends on the development stage:",
+      "source_content_hash": "ad8535fa9746fed43772f99f547ba547553e3aaeb5ede2cc07f30f3a1b72cec1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但这些变量在哪里_定义_？这取决于开发阶段："
+      }
+    },
+    {
+      "segment_id": "415dc9ef",
+      "source_content": "* **[Local Development:](https://docs.microsoft.com/azure/static-web-apps/application-settings#configure-api-application-settings-for-local-development)** When developing your app, you can use a local settings file that is not tracked by GitHub so sensitive information is not leaked. **Azure Functions** uses the `api/local.settings.json` file to store relevant app settings - and watch out for a special 2-part series of posts in Week 3 where we cover the local settings file used by the [**Static Web Apps CLI**](https://github.com/Azure/static-web-apps-cli) for a simpler, unified local development experience.\n * [**Staging/Production:**](https://docs.microsoft.com/azure/static-web-apps/application-settings#configure-application-settings) You can define and configure these application settings in the [Azure Portal](https://portal.azure.com/) via the browser, or by using the [Azure CLI](https://docs.microsoft.com/cli/azure/) (see the [`az staticwebapp appsettings`](https://docs.microsoft.com/cli/azure/staticwebapp/appsettings?view=azure-cli-latest) documentation), to create and manage your application settings. These will be encrypted, and copied to staging and production environments.",
+      "source_content_hash": "e1a631abd0e4dd13d0542572e2262466f328605572d50ae286580e0b692d3455",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **[本地开发：](https://docs.microsoft.com/azure/static-web-apps/application-settings#configure-api-application-settings-for-local-development)** 开发应用时，可使用不受GitHub跟踪的本地设置文件来避免敏感信息泄露。**Azure Functions**使用`api/local.settings.json`文件存储相关应用设置——请注意第3周我们将通过两篇专题文章介绍[**静态Web应用CLI**](https://github.com/Azure/static-web-apps-cli)使用的本地设置文件，该工具能提供更简单统一的本地开发体验。\n * [**暂存/生产环境：**](https://docs.microsoft.com/azure/static-web-apps/application-settings#configure-application-settings) 可通过[Azure门户](https://portal.azure.com/)浏览器界面或[Azure CLI](https://docs.microsoft.com/cli/azure/)（参见[`az staticwebapp appsettings`](https://docs.microsoft.com/cli/azure/staticwebapp/appsettings?view=azure-cli-latest)文档）定义和配置这些应用设置。这些设置会被加密并复制到暂存和生产环境。"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "Learn more about how you can configure application settings in [the documentation](https://docs.microsoft.com/azure/static-web-apps/application-settings#configure-application-settings).",
+      "source_content_hash": "ae1dcdd7ebbf98100d26fad3f1a18be374e72779472518bb8e6d39320c06a3b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在[文档](https://docs.microsoft.com/azure/static-web-apps/application-settings#configure-application-settings)中了解更多应用程序设置配置方法。"
+      }
+    },
+    {
+      "segment_id": "3c6dd548",
+      "source_content": "## How-Tos: Watch It!",
+      "source_content_hash": "ee0c680dc08a7da7380fb47927701ab32fdcc5680f1fc7bebfbf589574e796ad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 操作指南：视频演示"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "Want to see how application behavior configuration in action? Check out these two videos from the [Azure Static Web Apps: Tips & Tricks](https://docs.microsoft.com/shows/azure-tips-and-tricks-static-web-apps/) series.",
+      "source_content_hash": "87beb0617778bc2b3d8e7228ca3af748ea9b18d54cec61824fab65344c7e20dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想观看应用程序行为配置的实际应用？请查看[Azure静态Web应用：技巧与窍门](https://docs.microsoft.com/shows/azure-tips-and-tricks-static-web-apps/)系列中的这两个视频。"
+      }
+    },
+    {
+      "segment_id": "5c5fbd5d",
+      "source_content": "<iframe width=\"560\" height=\"315\" frameborder=\"0\"  src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-configure-routing-in-azure-static-web-apps-6-of-16--azure-tips-and-tricks-static-web-apps\"></iframe>",
+      "source_content_hash": "26dcf37ddc4a2e948dfd02cc8aa4972d85c3854d000380156f4b59b67e16d3e7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_5c5fbd5d"
+      }
+    },
+    {
+      "segment_id": "ba1ba39c",
+      "source_content": "<iframe width=\"560\" height=\"315\" frameborder=\"0\" src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-configure-authorization-in-azure-static-web-apps-9-of-16--azure-tips-and-tricks-static-web-ap\" ></iframe>",
+      "source_content_hash": "09f6ead5bad2baa28786405ca4044465cfa73e5fbe8db7d1218f292fa48dc157",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_ba1ba39c"
+      }
+    },
+    {
+      "segment_id": "58f98d22",
+      "source_content": "## Exercise: Explore It!",
+      "source_content_hash": "b922072b2c521e546db1e75f8fd1f88046eeac41864006b88b34217cb870284d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践：探索示例项目"
+      }
+    },
+    {
+      "segment_id": "d636abf8",
+      "source_content": "The [SWA Bank](https://github.com/sinedied/swa-bank) is a Static Web App application developed as a solution for one of the projects in the [Web Dev For Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) curriculum.",
+      "source_content_hash": "ffdc601df978caf724eefcdbd90d301b89638a21e71bb0e2b61b8bf59024d615",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[SWA Bank](https://github.com/sinedied/swa-bank)是为[Web开发初学者](https://github.com/microsoft/Web-Dev-For-Beginners)课程项目开发的静态Web应用解决方案。"
+      }
+    },
+    {
+      "segment_id": "99840f13",
+      "source_content": "It was recently updated to reflect best practices. Explore the configuration files in the project - and see if you understand how they customize the application behavior and build process. **Then revisit it in week 3 when we discuss developer tools** to understand how local settings are configured and used with the Static Web Apps CLI (`swa`) tool for local development",
+      "source_content_hash": "8ce3ed64fab555655026229b97a2f2660273ec5374766dc1342a1601e50a92fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该项目已更新至最佳实践标准。请探索项目中的配置文件，理解它们如何定制应用程序行为和构建流程。**在第3周讨论开发者工具时重新审视该项目**，了解如何使用静态Web应用CLI（`swa`）工具配置本地设置进行开发。"
+      }
+    },
+    {
+      "segment_id": "a6b29dc7",
+      "source_content": "## Useful Resources",
+      "source_content_hash": "199ff2f5e8aba1500eadf7f3173a271b0d0e0c499dc71756f74b2be573bfe05a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实用资源"
+      }
+    },
+    {
+      "segment_id": "db79148c",
+      "source_content": "1. [Configuration Overview](https://docs.microsoft.com/azure/static-web-apps/configuration-overview)\n 2. [Application Configuration: staticwebapp.config.json](https://docs.microsoft.com/azure/static-web-apps/configuration)\n 3. [Build Configuration: Actions or Pipelines YAML](https://docs.microsoft.com/azure/static-web-apps/build-configuration?tabs=github-actions)\n 4. [Environment Configurations: For Backends](https://docs.microsoft.com//azure/static-web-apps/application-settings)\n 5. [Configure Application Settings](https://docs.microsoft.com/azure/static-web-apps/application-settings)\n 6. [SWA Bank Repo](https://github.com/sinedied/swa-bank) - a Static Web Apps project to explore and learn from.",
+      "source_content_hash": "5ce53ded8507a1ba96683c3c46234de5aa070174371e45f5ac11aa9772e4500f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. [配置概述](https://docs.microsoft.com/azure/static-web-apps/configuration-overview)\n 2. [应用程序配置：staticwebapp.config.json](https://docs.microsoft.com/azure/static-web-apps/configuration)\n 3. [构建配置：GitHub Actions或Pipelines YAML](https://docs.microsoft.com/azure/static-web-apps/build-configuration?tabs=github-actions)\n 4. [环境配置：针对后端](https://docs.microsoft.com//azure/static-web-apps/application-settings)\n 5. [配置应用程序设置](https://docs.microsoft.com/azure/static-web-apps/application-settings)\n 6. [SWA Bank代码库](https://github.com/sinedied/swa-bank) - 一个用于探索学习的静态Web应用项目。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-05.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.870456+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "ecee0c2615b761e38f0b963130575466083b310599fd15d742734da0001232a9"
+  }
+}

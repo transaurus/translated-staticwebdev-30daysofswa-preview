@@ -1,0 +1,512 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-06.md",
+  "source_file_content_hash": "41b9119b5be21cffa73fd17fc5e81b676c45abdbfb67d64f0540c73d2f10471f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: securing-swa\ntitle: \"#05: Securing SWA\"\nauthors: [mitali, nitya]\ntags: [swa, 30days, core-concepts]\ndraft: false\n---",
+      "source_content_hash": "b8cfe05c47b546f5261aaaab970bc2a0c2f2ed9437151f12ee9e179356eebd08",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 1, Day 5` of **#30DaysOfSWA**!!",
+      "source_content_hash": "1ebd8f367535d608e53a0862a77d4ccc34ca2fc3d5065944994f19615279d17d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第1周第5天`！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "So far, we've learnt to build/deploy a basic web app, add a serverless API endpoint and customize the configuration settings for both application behaviors and build workflows. But we forgot one thing - the **user**! To create _differentiated_ experiences for users, we need ways to **identify them** and **understand their role** in the application context. We can then use that information to **manage user access to application features** (role-based authorization) as well as **application access to user information** (once authenticated).",
+      "source_content_hash": "ba0fc9b2e0fbbd40b27b4439a3ab88296251cd6bc4afd080ae7882b9afccfc78",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "截至目前，我们已经学习了如何构建/部署基础网页应用、添加无服务器API端点，以及为应用行为和构建工作流自定义配置设置。但我们遗漏了一个关键要素——**用户**！要为用户打造**差异化体验**，我们需要能够**识别用户身份**并**理解其在应用上下文中的角色**。随后可以利用这些信息**管理用户对应用功能的访问权限**（基于角色的授权），以及**应用对用户信息的访问权限**（认证后）。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Thankfully, Azure Static Web Apps makes this fairly painless. Let's see how.",
+      "source_content_hash": "4607d95251f1fe8bbeed6c2e21f2a211d75f17f84b52ed5997abbd766116177d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "值得庆幸的是，Azure Static Web Apps 让这一切变得相当简单。让我们一探究竟。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "* How do we secure a SWA?\n * Managed authentication\n * Custom authentication\n * Managing user roles\n * Role-based authorization\n * Accessing user information",
+      "source_content_hash": "5755078b2e9960ad79aa3c1ab79997c75970a041032202aadd429c030b002122",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 如何保护SWA安全？\n * 托管式认证\n * 自定义认证\n * 管理用户角色\n * 基于角色的授权\n * 访问用户信息"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "![](../static/img/series/05-banner.png)",
+      "source_content_hash": "29cac583e3ff20be0e9e6dafcf667d8080954e75495d14a79621ea1cb96492fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/05-banner.png)"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "## Securing SWA",
+      "source_content_hash": "6a6e7aaa6bb5ec45b2af84e52d5b38d3ae6e4a56d25b693dce72cc3060b87404",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 保护SWA安全"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "What does it mean to _secure_ a Static Web App? It's three things:",
+      "source_content_hash": "6e60229011d07a8046aaf2f8e46c80e33488824d9d8c957ad0f67c9737131213",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "保护静态Web应用意味着什么？它包含三个层面："
+      }
+    },
+    {
+      "segment_id": "5da9e02b",
+      "source_content": "* **Knowing User Identity** - Having a way to determine the identity of the user using an authentication service or provider.\n * **Knowing User Roles** - Understanding what persona the user is taking on when (using the application), and customizing the experience accordingly.\n * **Managing User Access** - Making sure the authenticaton information is seamlessly accessible to all SWA components, allowing them to enforce rules that allow only authorized users or roles to access resources.",
+      "source_content_hash": "fc8f9b54a38b5c9520579f865edd644d8cda030ab1af221c875b5b199ee7cfa0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **识别用户身份** - 通过认证服务或提供商确认用户身份\n * **识别用户角色** - 理解用户使用应用时扮演的角色，据此定制体验\n * **管理访问权限** - 确保认证信息可被所有SWA组件无缝获取，使其能执行规则仅允许授权用户/角色访问资源"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Let's dive into the three concepts that tackle these needs: **Authentication**, **Role Assignment** and **Role-Based Authorization**.",
+      "source_content_hash": "fb77a1e27cf9c7b934f4ca0d14bd0825a989e82b7aed7481f89db8bd150b67a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将深入探讨满足这些需求的三大核心概念：**认证**、**角色分配**和**基于角色的授权**。"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## Managed Auth",
+      "source_content_hash": "63b99b4371bffd6a362d11668259a2ea62776cafd3f3669836ec9398579d22ab",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 托管式认证"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "Azure Static Web Apps comes with a default **streamlined authentication experience** that supports:",
+      "source_content_hash": "37fbd9a480a7022a111bb6b66c0a85325da59b2bb186288aba2be862bdb2a9e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps 提供开箱即用的**简化认证体验**，支持："
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "* _pre-configured providers_: Twitter, GitHub, Azure Active Directory\n * _pre-assigned roles_: anonymous (guest) or authenticated (on login)\n * _customizable rules_: defined for routes, in `staticwebapps.config.json`",
+      "source_content_hash": "ad66919c81dfcbaf8254260a8214aae0b6e659dc51f4cb13363da094f1ab5e96",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 预配置提供商：Twitter、GitHub、Azure Active Directory\n * 预分配角色：匿名（访客）或已认证（登录后）\n * 可定制规则：在`staticwebapps.config.json`中为路由定义"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "All pre-configured providers are active by default, with their own pre-defined API endpoints for [Login](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#login), and a shared API endpoint for [Logout](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#logout).",
+      "source_content_hash": "35efef6609b32a14925993d6e92e6c3a8193fbda37b54660e4215839d5189aca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "所有预配置提供商默认启用，各自拥有预定义的[登录](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#login)API端点，以及共享的[登出](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#logout)API端点。"
+      }
+    },
+    {
+      "segment_id": "aa83231c",
+      "source_content": "* Want to block a specific pre-configured provider? Just [add a blocking rule](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#block-an-authentication-provider) to their login route to ensure no user is allowed access to it.\n * Want to send users to custom pages after successful or failed login attempts? Use [query parameters and route rules](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#post-login-redirect) to make this work.",
+      "source_content_hash": "19058518b63bc7656b0ece80867a1aa21d6c81c2d95602648fa78088d907d67a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 需要禁用特定预配置提供商？只需[添加拦截规则](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#block-an-authentication-provider)到其登录路由即可禁止访问\n * 想要在登录成功/失败后跳转至自定义页面？使用[查询参数和路由规则](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#post-login-redirect)实现"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "This is the default _managed authentication_ experience.",
+      "source_content_hash": "9d5cac8e92ec32b295b8c710fd9d4ab0de8c28c777a744f7e75cc8e8983777b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这就是默认的_托管式认证_体验。"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Custom Auth",
+      "source_content_hash": "c1acd0a0b4faacb50ddfe63f3676479cf267adb809f79c4440d6f66ab90b3491",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 自定义认证"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "But what if you want more flexibility with the registration process (used by a pre-configured provider) or want to add a new one (custom provider)?\nThis is where _custom authentication_ options come in, allowing you to override the defaults.",
+      "source_content_hash": "ba406c89dc0e89e74ab3c21375a87403185e12e1e40c1c6c48c05637712c9a58",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但如果您需要更灵活的注册流程（替代预配置提供商），或想添加新提供商（自定义提供商）呢？\n这时就需要_自定义认证_功能来覆盖默认设置。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "You can [configure one or more custom providers](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=aad#configure-a-custom-identity-provider) for this purpose. Azure Static Web Apps has **[built-in support](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=apple#configure-a-custom-identity-provider) for custom authentication using: _Apple, Facebook, Google, Twitter, GitHub - and AAD_!** You can also configure custom providers that support [OpenID Connect](https://openid.net/connect/) standard.",
+      "source_content_hash": "5f84d220bcba6170a6e1aa7fea31c547aea1f205f44105469c14c1a87817aec2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可以[配置一个或多个自定义提供商](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=aad#configure-a-custom-identity-provider)。Azure Static Web Apps **[原生支持](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=apple#configure-a-custom-identity-provider)以下自定义认证方式：_Apple、Facebook、Google、Twitter、GitHub及AAD_！** 还支持配置符合[OpenID Connect](https://openid.net/connect/)标准的自定义提供商。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "By configuring at least one custom provider, you are effectively disabling pre-configured provider options. To configure custom providers, add config information to the `auth` section of the `staticwebapps.config.json` file. This is also a good place to use _Application Settings_ (environment variables) to store potentially sensitive configuration data in a privacy-preserving way.",
+      "source_content_hash": "8150e48a74c0367c374a486eadbb665e971111d66591bf8710cc88c03b108aa9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过配置至少一个自定义身份提供程序，您实际上会禁用预配置的提供程序选项。要配置自定义提供程序，请将配置信息添加到`staticwebapps.config.json`文件的`auth`部分。这也是使用_应用程序设置_（环境变量）以隐私保护方式存储潜在敏感配置数据的好地方。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "Azure Static Web Apps makes custom registrations easy by providing standard route patterns for [_Login_, _Logout_ and _User Profile_](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=apple#authentication-callbacks) requests, as well as [redirect URLs](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=apple#authentication-callbacks) for authentication callbacks (from the custom provider) on login/logout.",
+      "source_content_hash": "546666116c2c073b89620e8bf139e900a9064bff241f54ad7abdfc8dad91cd9a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps通过为[_登录_、_注销_和_用户配置文件_](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=apple#authentication-callbacks)请求提供标准路由模式，以及登录/注销时自定义提供程序的[重定向URL](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=apple#authentication-callbacks)，使得自定义注册变得简单。"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## User Roles",
+      "source_content_hash": "b284b864b7d015dbf08ca89c15bdeb8ef6a13c1ce8f2f73bfb21829551c3928e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 用户角色"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "There are three key concepts you need to know in this context:",
+      "source_content_hash": "2665add8ff23aab9ed91f4de02041da5382f6e5630e575b6f1f5e45864fc50b7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在此上下文中，您需要了解三个关键概念："
+      }
+    },
+    {
+      "segment_id": "ea0c7bae",
+      "source_content": "* Every Static Web Apps user has one or more roles assigned to them.\n * There are 2 built-in roles (\"anonymous\" and \"authenticated\")\n * Define custom roles & assign users **[by invitation](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#add-a-user-to-a-role)** or **[by-function](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=function#add-a-user-to-a-role)**.",
+      "source_content_hash": "9fe14a20161c5fdd3663facc56b049ef80663fbf39e2dedb8df0834a46ba1e33",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 每个Static Web Apps用户都有一个或多个分配的角色。\n * 有2个内置角色（\"anonymous\"和\"authenticated\"）\n * 通过[邀请](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations#add-a-user-to-a-role)或[函数](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=function#add-a-user-to-a-role)定义自定义角色并分配用户。"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "Let's review these quickly.",
+      "source_content_hash": "48b9a598db25b304032b7fdfc8d30ad9e4616638cdcbd1b5246d96474661a23c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "让我们快速回顾这些内容。"
+      }
+    },
+    {
+      "segment_id": "a4bd3cfc",
+      "source_content": "* All users accessing a Static Web App are in an _anonymous_ role (guest) until authenticated by a pre-configured or custom provider.\n * Once authenticated, they have an _authenticated_ role but can now be _assigned custom roles_ by invitation (proactive) or by function (reactive)\n * **Proactive invitations** can be configured and sent from the Azure Portal, using provider-specific email addresses for the user. Users now click on the invite link to login with that custom role assigned automatically.\n * **Reactive functions** defer assignment to post-login, using an Azure Function that dynamically returns an assigned role (or roles) to the user on being given the authenticated user details.",
+      "source_content_hash": "efe8e7aed9a384930b6ee97136602dc1d496155337ca15dbf82ec6b1f5e5da9e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 所有访问Static Web App的用户在通过预配置或自定义提供程序认证之前都处于_anonymous_角色（访客）。\n * 一旦认证，他们具有_authenticated_角色，但可以通过邀请（主动）或函数（被动）_分配自定义角色_\n * **主动邀请**可以从Azure门户配置并发送，使用用户特定于提供程序的电子邮件地址。用户现在点击邀请链接登录，自动分配该自定义角色。\n * **被动函数**将分配推迟到登录后，使用一个Azure函数，在给定认证用户详细信息后动态返回分配的角色（或多个角色）。"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "The latter approach offers more flexibility, allowing you to use the function handler to invoke another service (like [Microsoft Graph](https://developer.microsoft.com/graph)) to make the role-assignment decision for you. Read [**Role Management**](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=function#role-management) for more details - including steps to update role assignments or remove users from a role.",
+      "source_content_hash": "fecb0d7f1a5d917df2722c86d7949e6c171315293be01d68db745e491b7a89bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "后一种方法提供了更大的灵活性，允许您使用函数处理程序调用另一个服务（如[Microsoft Graph](https://developer.microsoft.com/graph)）来为您做出角色分配决策。阅读[**角色管理**](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=function#role-management)了解更多细节——包括更新角色分配或从角色中移除用户的步骤。"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "## Role-Based Auth",
+      "source_content_hash": "7e988caca1aa96913737a24da1dfbdeae892fbbef886d3e4c601ff61e5e62e52",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 基于角色的授权"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Once the user has been assigned a role, _managing user access_ based on that assignment becomes easy using the built-in support for [routing rules](https://docs.microsoft.com/en-us/azure/static-web-apps/configuration#routes) based on the **allowedRoles** property attached to each `route`. For example, the following configuration setting (in `staticwebapps.config.json`) would restrict access to all routes that start with `/profile*` to _only authenticated users_.\n)",
+      "source_content_hash": "edaeb42d0607fa3c7bf8282fce1d03dc5f085eaa2f84ce97413e96636e1c29b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "一旦用户被分配了角色，基于该分配的_管理用户访问_变得简单，使用内置的[路由规则](https://docs.microsoft.com/en-us/azure/static-web-apps/configuration#routes)支持，基于每个`route`附加的**allowedRoles**属性。例如，以下配置设置（在`staticwebapps.config.json`中）将限制所有以`/profile*`开头的路由仅对_认证用户_开放。\n)"
+      }
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```\n{\n  \"route\": \"/profile*\",\n  \"allowedRoles\": [\"authenticated\"]\n}\n```",
+      "source_content_hash": "2a77ee708399d3e15568448080566cf659e60217c197064c2b3c5eafe26ebd8a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_a716abf2"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Read more about [securing routes with rules](https://docs.microsoft.com/en-us/azure/static-web-apps/configuration#securing-routes-with-roles) to understand various usage scenarios and configuration settings to enforce them.",
+      "source_content_hash": "dddde31990777dd58ed5fce4bf9dcbd551e19299eb0e0edf458007d1d06f702d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "阅读更多关于[使用规则保护路由](https://docs.microsoft.com/en-us/azure/static-web-apps/configuration#securing-routes-with-roles)的内容，了解各种使用场景和配置设置以强制执行它们。"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "## Access User Info",
+      "source_content_hash": "38a20b9de4c9bdb323028a2ccb6f9c54a9f29e7cce53bcdb18a7e1d14af801cb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 访问用户信息"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "One of the benefits of Azure Static Web Apps' seamless integration of application and API capabilities is that [authenticated user information can be accessed transparently](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript) in two ways:",
+      "source_content_hash": "8a99710872a1950b8c2ec85aefd7aeb76af97a14ea374bcf3675723e6da2d438",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps无缝集成应用程序和API功能的一个好处是，[认证用户信息可以透明地访问](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript)，有两种方式："
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "* Using a [direct access endpoint](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript#direct-access-endpoint) at `/.auth/me` that is automatically provisioned with the user's information when authenticated.\n * Using [API functions](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript#api-functions) with a `fetch` call to the `/api/xxx` endpoint, where `xxx` is a named function you implement to return user information.",
+      "source_content_hash": "db84f0f25100386a8772f1e9d368abcbad82700fa96b18fa58734c0ba5cc37db",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 使用[直接访问端点](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript#direct-access-endpoint)在`/.auth/me`，当用户认证时自动提供用户信息。\n * 使用[API函数](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript#api-functions)通过`fetch`调用`/api/xxx`端点，其中`xxx`是您实现的返回用户信息的命名函数。"
+      }
+    },
+    {
+      "segment_id": "ab3df6e6",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "## How-Tos: Watch It!",
+      "source_content_hash": "ee0c680dc08a7da7380fb47927701ab32fdcc5680f1fc7bebfbf589574e796ad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 操作指南：观看视频！"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "Prefer a Video Walkthrough to understand the process? We have you covered with the [Azure Tips And Tricks: Static Web Apps](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/) series. Check out the following videos:",
+      "source_content_hash": "2624249d5304b55065b88a4abfca11f53ea110c9b2443b347070900e8f701b81",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更倾向于通过视频教程来理解流程？我们为您准备了[Azure技巧与窍门：静态Web应用](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/)系列视频。请查看以下内容："
+      }
+    },
+    {
+      "segment_id": "341c2c0e",
+      "source_content": "<iframe  width=\"560\" height=\"315\" frameborder=\"0\" src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-integrate-authentication-in-azure-static-web-apps-8-of-16--azure-tips-and-tricks-static-web-a\"></iframe>",
+      "source_content_hash": "14014f7d949aa0a47eae31a5daf71bbbaf81fa0a3dc457e82eeb863726e87f10",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_341c2c0e"
+      }
+    },
+    {
+      "segment_id": "a3da9b2d",
+      "source_content": "<iframe  width=\"560\" height=\"315\" frameborder=\"0\" src=\"https://aka.ms/docs/player?show=azure-tips-and-tricks-static-web-apps&ep=how-to-configure-authorization-in-azure-static-web-apps-9-of-16--azure-tips-and-tricks-static-web-ap\"></iframe>",
+      "source_content_hash": "2a47b82f53f8346ac8aaea9fa6b0cea6a54140f67b33c157ebfc1d74e072a573",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_a3da9b2d"
+      }
+    },
+    {
+      "segment_id": "4fc5e34f",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "56bc971f",
+      "source_content": "## Exercise: Try it!",
+      "source_content_hash": "bc55f0f2c08841e4e70a501f60c77e3f8758d23328aa6889164ee4e76e057c0a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习：动手尝试！"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "One popular feature that modern web apps often support is the ability to assign a custom role to an authenticated user (based on some identifiable context) and then regulate their access to various routes or features in the application based on that assigned role. **How can we make that happen in Static Web Apps?**",
+      "source_content_hash": "f44bb17d8e9d96a897be3f1dc4ca7b871c092d7e0d7ffc207d99b4a0a14da393",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现代Web应用中一个广受欢迎的功能是能够根据可识别上下文为认证用户分配自定义角色，并基于该角色调控其对应用中不同路由或功能的访问权限。**如何在静态Web应用中实现这一功能？**"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "There's a [**tutorial**](https://docs.microsoft.com/en-us/azure/static-web-apps/assign-roles-microsoft-graph) that teaches you how!",
+      "source_content_hash": "ee3b9e23844d7909bf8c234becfca17b1a690a0446a2b1307c75000b33d76128",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这里有一份[**教程**](https://docs.microsoft.com/en-us/azure/static-web-apps/assign-roles-microsoft-graph)将指导您完成："
+      }
+    },
+    {
+      "segment_id": "0422e2e2",
+      "source_content": "* Authenticate the user using the managed [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) API endpoint.\n * Query [Microsoft Graph](https://developer.microsoft.com/graph) to determine their Active Directory group membership.\n * Use that membership to assign them a custom role.",
+      "source_content_hash": "9e31fd82b7a1502450598fd7bbb773fdb535f7a068561798a53668dd03caec7e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 使用托管的[Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) API端点进行用户认证。\n * 查询[Microsoft Graph](https://developer.microsoft.com/graph)以确定其Active Directory群组成员身份。\n * 根据该成员身份分配自定义角色。"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "**Challenge Yourself!**",
+      "source_content_hash": "f4b05f6e432104d5d359ca5b5a69e6248f615d19b9f711771f172b751e64b598",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**自我挑战！**"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "Update the application behavior in the `staticwebapp.config.json` file to restrict user access to specific routes by specifying `allowedRoles` for those routes. Test what happens when the custom role above is added, and then removed, from the collection of allowedRoles.",
+      "source_content_hash": "150a7442c134a3d8cb153518dc583d9d9ea4c8890bbbfc9c0aefa378f5c3c93f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "修改`staticwebapp.config.json`文件中的应用行为，通过为特定路由指定`allowedRoles`来限制用户访问。测试当上述自定义角色被添加或从allowedRoles集合中移除时的效果。"
+      }
+    },
+    {
+      "segment_id": "862bb4be",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "ed644f52",
+      "source_content": "## Useful Resources",
+      "source_content_hash": "199ff2f5e8aba1500eadf7f3173a271b0d0e0c499dc71756f74b2be573bfe05a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实用资源"
+      }
+    },
+    {
+      "segment_id": "40a587f3",
+      "source_content": "1. [Authentication and Authorization in SWA](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations)\n2. [Accessing authenticated user information in SWA](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript)\n3. [Implement custom authentication in SWA](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=aad)\n4. Tutorial: [Assign custom roles using Microsoft Graph and AAD](https://docs.microsoft.com/en-us/azure/static-web-apps/assign-roles-microsoft-graph)\n5. Video Series: [Azure Tips And Tricks - Static Web Apps](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/)",
+      "source_content_hash": "ed9e0f5f5b616a1dd742ad49e3c5c633e7be4a789bd1f85f15b463d9d6e76682",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. [SWA中的认证与授权](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-authorization?tabs=invitations)\n2. [在SWA中访问认证用户信息](https://docs.microsoft.com/en-us/azure/static-web-apps/user-information?tabs=javascript)\n3. [在SWA中实现自定义认证](https://docs.microsoft.com/en-us/azure/static-web-apps/authentication-custom?tabs=aad)\n4. 教程：[使用Microsoft Graph和AAD分配自定义角色](https://docs.microsoft.com/en-us/azure/static-web-apps/assign-roles-microsoft-graph)\n5. 视频系列：[Azure技巧与窍门 - 静态Web应用](https://docs.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-06.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.877432+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "41b9119b5be21cffa73fd17fc5e81b676c45abdbfb67d64f0540c73d2f10471f"
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-30.md",
+  "source_file_content_hash": "b8810ed7208d309ed65cf86b3d8a4b31933124c818267de3c8833bdeb068e9ae",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: 30days-summary\ntitle: \"#29: Learn in #30Days\"\nauthors: [reshmi, nitya]\ntags: [swa, 30days]\ndraft: false\n---",
+      "source_content_hash": "e2f82f0d20f2bcb57efc4d344949020d2be71414b1c49cc1c43c50a85037c6f3",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/30days-summary\" />\n  <meta name=\"twitter:title\" content=\"#28: Learn Azure Static Web Apps in #30DaysOfSWA\" />\n  <meta name=\"twitter:description\" content=\"Join us for a #30Days learning journey into @AzureStaticApps from Core Concepts and Usage Examples to DevTools and Best Practices.\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/29-banner.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/30days-summary\" />\n</head>",
+      "source_content_hash": "aab6d259785a59cc74ec7096a334450d7c05e622ba3496b27205f17fc8476a16",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Hello there!!",
+      "source_content_hash": "5ca315be122a94c4c078fc40c6304720ce2fd491397cc9cea7f98cac313906b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "你好！"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "The #30DaysOfSWA series embarks us on a quick and easy journey to learn about Azure Static Web Apps - from Core Concepts to Best Practices **in just four weeks**! The content is structured in a way that allows you to jumpstart or revisit the journey at any time! Here's a summary of what is covered and what you'll learn by taking this journey with us!! And stay tuned for a follow-up post a little later, where we'll share resources and next steps you can take, to keep skilling up.🚀",
+      "source_content_hash": "abed26fc6d458df06e728d07ae7520d2e2188ac98bce60661596189f09b3a4d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "#30DaysOfSWA 系列将带领我们开启一段快速了解 Azure Static Web Apps 的旅程——从核心概念到最佳实践，仅需四周时间！内容结构设计灵活，您可以随时加入或重温学习之旅！以下是本系列涵盖的内容概览及您将学到的知识！敬请关注后续文章，我们将分享更多进阶学习资源。🚀"
+      }
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "## The #30DaysOfSWA Journey",
+      "source_content_hash": "40bcd080ccac8d673903b4215719ccbf210ce2d14a6b64c6975599e2590d11f9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## #30DaysOfSWA 学习之旅"
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "* SWA Anniversary Highlights\n * Week 1: Core Concepts\n * Week 2: Usage Examples\n * Week 3: Developer Tools\n * Week 4: Best Practices\n * Our Amazing Contributors!\n * What's Next",
+      "source_content_hash": "0687c734dde760098ae5bbcc5eaac7cc1256ce2378926695b2a4770a6e4996df",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* SWA周年庆亮点\n * 第一周：核心概念\n * 第二周：应用示例\n * 第三周：开发工具\n * 第四周：最佳实践\n * 杰出贡献者\n * 下一步计划"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## Prelude - SWAanniversary and the birth of #30DaysOfSWA",
+      "source_content_hash": "018fc4874bf1ef3e5193f7f52531fa470d816e4d80994fe3c5fc5143d7fb7467",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 序章 - SWA周年庆与#30DaysOfSWA的诞生"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "The #30DaysOfSWA blog series started off on Apr 30 with [this post](./2022-04-30.md) announcing the **SWA Anniversary** event, before [**kicking off**](./2022-05-01.md) the **#30DaysOfSWA** on May 1, then completing four themed weeks of content, publishing **one new blog everyday**. The intent of the series is to take a developer from zero to hero. You can [**find the entire roadmap here**](/roadmap).",
+      "source_content_hash": "5d9d0873ecc469a636b2fc79bbf005f0cdea882d6cca32cb48dd7c7088f11cf2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "#30DaysOfSWA 博客系列始于4月30日的[这篇公告](./2022-04-30.md)，庆祝 **SWA周年庆** 活动，随后于5月1日[正式启动](./2022-05-01.md) **#30DaysOfSWA**，连续四周按主题发布内容，坚持每日更新一篇博客。该系列旨在帮助开发者从入门到精通。您可在此查看[完整学习路线](/roadmap)。"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "On 19th and 20th May, we celebrated the [#SWAanniversary](https://www.azurestaticwebapps.dev/blog/swanniversary?WT.mc_id=30daysofswa-61155-cxall) to commemorate a year of Static Web App's **General Availability**! It was a fun-and-engaging event featuring **top community speakers**, and the latest SWA feature demos!",
+      "source_content_hash": "45b8d7f5c0dc09effba7ab338225891ec1b1599ba93a0a0388fd291706bbc7bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "5月19日至20日，我们举办了[#SWA周年庆](https://www.azurestaticwebapps.dev/blog/swanniversary?WT.mc_id=30daysofswa-61155-cxall)活动，庆祝 Static Web Apps 正式发布一周年！这场活动精彩纷呈，邀请了顶级社区演讲者，并展示了最新的SWA功能！"
+      }
+    },
+    {
+      "segment_id": "84650edb",
+      "source_content": ":::success[ANNOUNCEMENT: SWA CLI V1.0 RELEASED!🚀]\nOn May 19th, we also witnessed a big announcement - **the General Availability (GA) of SWA CLI**!! Try out the [SWA CLI](https://aka.ms/swa-cli-ga?WT.mc_id=30daysofswa-61155-cxall), deploy your amazing Static Web Apps, and tell us about your experience!🌹\n:::",
+      "source_content_hash": "ed555c577cd0b6824ce8b79504152100976ee769ff8f49d923821a99296ca918",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::success[重磅公告：SWA CLI V1.0 正式发布！🚀]\n5月19日还迎来了一个重要时刻——**SWA CLI 正式发布(GA)**！！快来试用[SWA CLI](https://aka.ms/swa-cli-ga?WT.mc_id=30daysofswa-61155-cxall)，部署您出色的静态Web应用，并分享您的体验！🌹\n:::"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Watch this video to learn more about how this CLI streamlines your workflow from `init` to `deploy`.",
+      "source_content_hash": "cbda992f093535fd99b4f15dbf29805503cefff96ad6d3f6b53ef51757843eeb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "观看此视频了解该CLI如何从初始化到部署全程优化您的工作流。"
+      }
+    },
+    {
+      "segment_id": "f5276727",
+      "source_content": "<iframe src=\"https://learn-video.azurefd.net/vod/player?ev=swa-anniversary-may-2022&session=explore-static-web-apps-cli\"  width=\"600\" height=\"400\"  frameborder=\"0\"  allowfullscreen></iframe>",
+      "source_content_hash": "d2d767743fb489e8384b23a1529bb2445af0e664806effec5b2364b1593dc78c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_f5276727"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "And if you happened to miss the live stream, worry not! You can watch (_and re-watch_) the [**on-demand recordings of the event**](https://aka.ms/swaanniversary-ondemand?WT.mc_id=30daysofswa-61155-cxall) to catch up on key talks including:",
+      "source_content_hash": "6af9d8448b802cca49038c3e0f1f7a9765a644dfbe230cd9335de03093f0c18b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若您错过了直播，别担心！您可以通过[活动回放](https://aka.ms/swaanniversary-ondemand?WT.mc_id=30daysofswa-61155-cxall)观看（或重温）精彩演讲，包括："
+      }
+    },
+    {
+      "segment_id": "40251870",
+      "source_content": "* [How Static Web Apps saved (me) time and money](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/how-static-web-apps-saved-scott-hanselman-time-and-money/) - Scott Hanselman\n * [SWA Case Study: ohmyposh.dev ](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/azure-static-web-apps-for-your-cli-oh-my-posh/)- Jan De Dobbeleer\n * [Hybrid Rendering with Zero Config - Nuxt ♥️ SWA](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/hybrid-rendering-with-zero-config-nuxt-3-azure-swa/) - Daniel Roe & Anthony Chu\n * [How I Created My Brand with SWA and..](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/how-i-created-my-brand-using-static-web-apps-with-blazor-and-azure-functions/) - Stacy Cashmore & Frank Boucher\n * ...and many more!",
+      "source_content_hash": "4e757cdc268dc95b50cda58ba6c353f9ca8b34cb91abfeecab1b817f358380b6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Static Web Apps如何为我节省时间和金钱](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/how-static-web-apps-saved-scott-hanselman-time-and-money/) - Scott Hanselman\n * [SWA案例研究：ohmyposh.dev](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/azure-static-web-apps-for-your-cli-oh-my-posh/) - Jan De Dobbeleer\n * [零配置混合渲染 - Nuxt ♥️ SWA](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/hybrid-rendering-with-zero-config-nuxt-3-azure-swa/) - Daniel Roe & Anthony Chu\n * [如何用SWA打造个人品牌](https://docs.microsoft.com/en-us/events/swa-anniversary-may-2022/how-i-created-my-brand-using-static-web-apps-with-blazor-and-azure-functions/) - Stacy Cashmore & Frank Boucher\n * ……以及更多内容！"
+      }
+    },
+    {
+      "segment_id": "716da8e8",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "1a316f80",
+      "source_content": "## Week 1: Core Concepts",
+      "source_content_hash": "f4df3d95a2d816e5535f6ac390d9eb9815306c329f45d7dc669177f61bcc3002",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 第一周：核心概念"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "![Banner with people](../static/img/png/week1-roadmap.png)",
+      "source_content_hash": "02302704c7b3541493888fc77ded57812d67e92d1f941a50ef68038798255a5e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![人物横幅](../static/img/png/week1-roadmap.png)"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "`Week 1` is the foundational week, focusing on what Azure Static Web Apps is, how to build, deploy, preview, customize APIs etc. This is where a Static Web App newbie earns the title of a **\"Successful SWA voyager\"**! Every blog comes with a cute little exercise at the bottom which gives a compact hands-on experience of using Static Web Apps 😄",
+      "source_content_hash": "14ae41dff56ce64aa5b7ed8917d000d04983a83da3c556076f42c8ffc3688a24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "`第一周`是基础周，重点介绍Azure静态Web应用是什么、如何构建、部署、预览、自定义API等。静态Web应用的新手将在此阶段荣膺**\"成功SWA探索者\"**称号！每篇博文底部都附有可爱的小练习，提供使用静态Web应用的紧凑实践体验😄"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "**The best part?** Every blog has a visual narrative of what we cover, and some of them also feature video lessons! Do give us a shoutout if you (_like us_) are a firm believer of visual learning!❤️",
+      "source_content_hash": "07ea160563db0d2e411e5cd91bb8dd6bfcaf7acdee707db77943ad17088a0c00",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**最棒的部分？**每篇博文都配有内容可视化图示，部分还包含视频教程！如果您（和我们一样）坚信可视化学习的力量，请为我们点赞！❤️"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "To visit Week 1, or to start afresh - **[click here.](/roadmap#core-concepts)** 🚀",
+      "source_content_hash": "407a95e077c4f3a0223ab937417a14f785baf8106db6a4c8d8b527931923f07f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "访问第一周内容或重新开始旅程——**[点击此处](/roadmap#core-concepts)** 🚀"
+      }
+    },
+    {
+      "segment_id": "a635fada",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "047c2395",
+      "source_content": "## Week 2: Usage Examples",
+      "source_content_hash": "b869d445ef53ac98515a781db09aa0b28030caf500c01499133f3f25beeaac2e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 第二周：应用实例"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "![Banner with people](../static/img/png/week2-roadmap.png)",
+      "source_content_hash": "f8867a064fdc659698789b05f5214b45b5b75679c0683946e1bc9052fb58416c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![人物横幅](../static/img/png/week2-roadmap.png)"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "`Week 2` showcases a plethora of examples, from diverse front-end frameworks to popular static site generators and languages! The creators of these mind-blowing examples come forward to teach how we can easily replicate these on our end too! After all, what better way to learn than to get your hands dirty playing with them 😉",
+      "source_content_hash": "b3554b83dfeae9f36459a5ca89b77ae5c13bb006f6ba63a55c83cb7da99680f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "`第二周`展示了丰富多样的示例，从前端框架到静态站点生成器和编程语言！这些惊艳示例的创作者亲自教学如何轻松复现。毕竟，动手实践才是最佳学习方式😉"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Haven't tried them yet? Go for it [**right away**](/roadmap#usage-examples)!!! 👩🏽‍💻",
+      "source_content_hash": "ba7f486646bc70832a0f870310de9920cac0f54147eb92c5ae7359db80f9fda1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "还没尝试？立即[**开始体验**](/roadmap#usage-examples)！！！ 👩🏽‍💻"
+      }
+    },
+    {
+      "segment_id": "aac83236",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "## Week 3: Developer Tools",
+      "source_content_hash": "f15a3807cb17d17b92ad4e47a8a7d81f079f31789ebc720c93c8368856ba22a6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 第三周：开发者工具"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "![Banner with people](../static/img/png/week3-roadmap.png)",
+      "source_content_hash": "7df6c14fe9211f7c9e626ad876131119891168e6423074df76dd34c4802b18c5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![人物横幅](../static/img/png/week3-roadmap.png)"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "`Week 3` focuses on the plethora of partner tools and platforms available in the Azure ecosystem, which can empower your Static Web Apps to achieve **more**! Be it VSCode, Playwright, or Egde DevTools - we got you covered! As a bonus, we also talk about the enhanced dX (Developer Experience) for Azure DevOps🌟 as well as the ease-of-development _straight outta your local devboxes_ with [SWA CLI](https://aka.ms/swa-cli-ga?WT.mc_id=30daysofswa-61155-cxall)🪄",
+      "source_content_hash": "a1c6be6d3ff806a7b4f084f571e81b9554c53f886988694c7069209b19b3f7de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "`第三周`聚焦Azure生态系统中丰富的合作伙伴工具与平台，助力您的静态Web应用实现**更多可能**！无论是VSCode、Playwright还是Edge DevTools——我们应有尽有！额外彩蛋：我们还将探讨Azure DevOps的增强型dX（开发者体验）🌟，以及使用[SWA CLI](https://aka.ms/swa-cli-ga?WT.mc_id=30daysofswa-61155-cxall)🪄从本地开发环境直接获得的便捷开发体验"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "Go ahead and familiarize yourself with these [dev-tools](/roadmap#developer-tools). 🧰",
+      "source_content_hash": "370f448a7e0d2b78033738ef2a89259e88aa9d74dfa5bcd01ed0ae429d2ce2cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "立即熟悉这些[开发工具](/roadmap#developer-tools)。🧰"
+      }
+    },
+    {
+      "segment_id": "9006437d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "f6b04a59",
+      "source_content": "## Week 4: Best Practices",
+      "source_content_hash": "d993f6ebb2dd4978691dc408ae588a31d9b4a5a75097d8b2e258e6740045dc8b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 第四周：最佳实践"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "![Banner with people](../static/img/png/week4-roadmap.png)",
+      "source_content_hash": "b66e40613e3a1cecab6e436e08174421ef0669cca9a24aad9ca1750f4ea966b2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![人物横幅](../static/img/png/week4-roadmap.png)"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "`Week 4` marks the final phase of our journey! This week is dedicated to the Best practices to ensure a seamless end-to-end dX (Developer Experience) while using Static Web Apps. Explore enhanced services such as BYOFunctions, Cognitive search, Azure Vision, Communication Services, etc. and learn from a real-life case study on how Static Web Apps helped deliver an effective and scalable solution for [KlipTok](https://kliptok.com), allowing the developer to seamlessly integrate additional Azure services to meet challenges and deliver a richer user experience(uX). 😄",
+      "source_content_hash": "f8871460f977b518f45ff72e6e71790d3da2af1bec7c1bccbd8987b6afc898a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "`第四周`标志着旅程的最终阶段！本周致力于分享确保静态Web应用端到端dX（开发者体验）无缝衔接的最佳实践。探索BYOFunctions、认知搜索、Azure视觉服务、通信服务等增强功能，并通过[KlipTok](https://kliptok.com)真实案例学习静态Web应用如何帮助交付高效可扩展的解决方案，使开发者能无缝集成更多Azure服务应对挑战，提供更丰富的用户体验(uX)。😄"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "Explore the various integrations and best practices articles [here](/roadmap#best-practices)",
+      "source_content_hash": "e4b8cfa82cb333e16f93c4cbbc15b7e061841ff5254eb91925fd09415e0a5834",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "探索各类集成方案与最佳实践文章[请点击此处](/roadmap#best-practices)"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "_Hope this is a long but fun journey!_ **Do tell us about your SWA learning experience using #30DaysOfSWA!** 😉",
+      "source_content_hash": "c177c8abb0c2d7077872001b7965b15f9e981b420961fc48531740c5d8c676e3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_希望这是段漫长而有趣的旅程！_**请使用#30DaysOfSWA标签分享您的SWA学习体验！** 😉"
+      }
+    },
+    {
+      "segment_id": "e9ae42a9",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "## Our Amazing Contributors",
+      "source_content_hash": "2b5aa7bdcc6081a2089a6ee0d669dd2cfd9328c2293c2448b3baec897ff53164",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 杰出贡献者"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "![Banner with people](../static/img/series/29-banner.png)",
+      "source_content_hash": "9b1161e3f2f62b1bfa8747b099096e46f78c945a9502aa74f4ec85671450a755",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![人物横幅](../static/img/series/29-banner.png)"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "A series of this magnitude would not be possible without the support, time and efforts a number of people. This includes our amazing authors (listed  [here, in our kickoff post](/blog/kickoff#meet-the-authors). Check out the tweet below to find them on Twitter, or [**follow the series on dev.to**](https://dev.to/nitya/series/17901) to find their profiles on that platform.",
+      "source_content_hash": "9e3674b0fe726cca462b50c728aa297d704d3ae91ed625da28e470fdc34a61c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如此宏大的系列离不开众多支持者的时间与心血。这包括我们优秀的作者们（名单见[启动帖](/blog/kickoff#meet-the-authors)）。查看下方推文关注他们的Twitter账号，或[**在dev.to上关注本系列**](https://dev.to/nitya/series/17901)获取他们的平台资料。"
+      }
+    },
+    {
+      "segment_id": "95f2feab",
+      "source_content": ":::info[AUTHORS ON TWITTER]\n\nThe tweet below has the Twitter profiles of the many authors who contributed to this series. Liked an article they wrote? Let them know - and follow them for more tech updates and content! \n\n<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Thank you <a href=\"https://twitter.com/simona_cotin?ref_src=twsrc%5Etfw\">@simona_cotin</a> <a href=\"https://twitter.com/glaucia_lemos86?ref_src=twsrc%5Etfw\">@glaucia_lemos86</a> <a href=\"https://twitter.com/nthonyChu?ref_src=twsrc%5Etfw\">@nthonyChu</a> <a href=\"https://twitter.com/KarmarkarMitali?ref_src=twsrc%5Etfw\">@KarmarkarMitali</a> <a href=\"https://twitter.com/chris_noring?ref_src=twsrc%5Etfw\">@chris_noring</a> <a href=\"https://twitter.com/jenlooper?ref_src=twsrc%5Etfw\">@jenlooper</a> <a href=\"https://twitter.com/justinchronicle?ref_src=twsrc%5Etfw\">@justinchronicle</a> <a href=\"https://twitter.com/csharpfritz?ref_src=twsrc%5Etfw\">@csharpfritz</a> <a href=\"https://twitter.com/webmaxru?ref_src=twsrc%5Etfw\">@webmaxru</a> <a href=\"https://twitter.com/debs_obrien?ref_src=twsrc%5Etfw\">@debs_obrien</a> <a href=\"https://twitter.com/patrickbrosset?ref_src=twsrc%5Etfw\">@patrickbrosset</a> <a href=\"https://twitter.com/sinedied?ref_src=twsrc%5Etfw\">@sinedied</a> <a href=\"https://twitter.com/manekinekko?ref_src=twsrc%5Etfw\">@manekinekko</a> <a href=\"https://twitter.com/alexweininger?ref_src=twsrc%5Etfw\">@alexweininger</a> <a href=\"https://twitter.com/AnfibiaCreativa?ref_src=twsrc%5Etfw\">@AnfibiaCreativa</a> <a href=\"https://twitter.com/dfberry?ref_src=twsrc%5Etfw\">@dfberry</a> <a href=\"https://twitter.com/AysSomething?ref_src=twsrc%5Etfw\">@AysSomething</a> <a href=\"https://twitter.com/craigshoemaker?ref_src=twsrc%5Etfw\">@craigshoemaker</a> <a href=\"https://twitter.com/davrous?ref_src=twsrc%5Etfw\">@davrous</a> <a href=\"https://twitter.com/GeekTrainer?ref_src=twsrc%5Etfw\">@GeekTrainer</a>🙏🏽</p>&mdash; Nitya Narasimhan (@nitya) <a href=\"https://twitter.com/nitya/status/1531100046275620866?ref_src=twsrc%5Etfw\">May 30, 2022</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n:::",
+      "source_content_hash": "f3d5f30835a7ef0fecda362f8d6b5971df4deab1110bd4cd6aa4afc3324a74f0",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[作者推特列表]\n\n下方推文列出了参与本系列文章的众多作者推特账号。喜欢某位作者的文章？请告诉他们——并关注他们以获取更多技术动态和内容！\n\n<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Thank you <a href=\"https://twitter.com/simona_cotin?ref_src=twsrc%5Etfw\">@simona_cotin</a> <a href=\"https://twitter.com/glaucia_lemos86?ref_src=twsrc%5Etfw\">@glaucia_lemos86</a> <a href=\"https://twitter.com/nthonyChu?ref_src=twsrc%5Etfw\">@nthonyChu</a> <a href=\"https://twitter.com/KarmarkarMitali?ref_src=twsrc%5Etfw\">@KarmarkarMitali</a> <a href=\"https://twitter.com/chris_noring?ref_src=twsrc%5Etfw\">@chris_noring</a> <a href=\"https://twitter.com/jenlooper?ref_src=twsrc%5Etfw\">@jenlooper</a> <a href=\"https://twitter.com/justinchronicle?ref_src=twsrc%5Etfw\">@justinchronicle</a> <a href=\"https://twitter.com/csharpfritz?ref_src=twsrc%5Etfw\">@csharpfritz</a> <a href=\"https://twitter.com/webmaxru?ref_src=twsrc%5Etfw\">@webmaxru</a> <a href=\"https://twitter.com/debs_obrien?ref_src=twsrc%5Etfw\">@debs_obrien</a> <a href=\"https://twitter.com/patrickbrosset?ref_src=twsrc%5Etfw\">@patrickbrosset</a> <a href=\"https://twitter.com/sinedied?ref_src=twsrc%5Etfw\">@sinedied</a> <a href=\"https://twitter.com/manekinekko?ref_src=twsrc%5Etfw\">@manekinekko</a> <a href=\"https://twitter.com/alexweininger?ref_src=twsrc%5Etfw\">@alexweininger</a> <a href=\"https://twitter.com/AnfibiaCreativa?ref_src=twsrc%5Etfw\">@AnfibiaCreativa</a> <a href=\"https://twitter.com/dfberry?ref_src=twsrc%5Etfw\">@dfberry</a> <a href=\"https://twitter.com/AysSomething?ref_src=twsrc%5Etfw\">@AysSomething</a> <a href=\"https://twitter.com/craigshoemaker?ref_src=twsrc%5Etfw\">@craigshoemaker</a> <a href=\"https://twitter.com/davrous?ref_src=twsrc%5Etfw\">@davrous</a> <a href=\"https://twitter.com/GeekTrainer?ref_src=twsrc%5Etfw\">@GeekTrainer</a>🙏🏽</p>&mdash; Nitya Narasimhan (@nitya) <a href=\"https://twitter.com/nitya/status/1531100046275620866?ref_src=twsrc%5Etfw\">May 30, 2022</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n:::"
+      }
+    },
+    {
+      "segment_id": "513f3dff",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "cbd60296",
+      "source_content": "## Next Steps",
+      "source_content_hash": "94792dd5969e771cc2c3d1210355ca64b0d1b19f0b908b4aec6b19ca3dbde26a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 后续步骤"
+      }
+    },
+    {
+      "segment_id": "f38d1cb0",
+      "source_content": "This gave you a curated tour of Azure Static Web Apps in daily bites of content. Now it's your turn to take the journey forward. Join us tomorrow to learn about three key actions you can take to continue skilling up:",
+      "source_content_hash": "f746cea2aeedcf9e6160c0be71294b0858417725b47fd1c8b56cf7c71f7aec27",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们已通过每日精选内容带您领略了Azure静态Web应用的精华。现在轮到您继续探索旅程。明天加入我们，了解三个关键行动来持续提升技能："
+      }
+    },
+    {
+      "segment_id": "82abb0a4",
+      "source_content": "* **Learn**: We'll share key documentation and tutorial links to skill up!\n * **Share**: Let's talk about the {where, what, how} of sharing your insights!\n * **Contribute**: Built a cool sample or real-world app? Showcase it to inspire others!",
+      "source_content_hash": "f1c1ec897efbcd1a4f196c1e571a90204d4abfe1b0f6568ab33f596ea1b054fd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **学习**：我们将分享关键文档和教程链接助您成长！\n * **分享**：让我们探讨分享见解的{渠道、内容、方式}！\n * **贡献**：构建了酷炫示例或真实应用？展示它以激励他人！"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "And thank you for staying the course with us!",
+      "source_content_hash": "01f236773e1ddc45cc2c3d3ef004686c8e1427186cca11d3f1f5ef0281535c79",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "感谢您全程与我们同行！"
+      }
+    },
+    {
+      "segment_id": "44f53186",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-30.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.882025+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "b8810ed7208d309ed65cf86b3d8a4b31933124c818267de3c8833bdeb068e9ae"
+  }
+}

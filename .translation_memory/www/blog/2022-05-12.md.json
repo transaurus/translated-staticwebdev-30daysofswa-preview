@@ -1,0 +1,882 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-12.md",
+  "source_file_content_hash": "39e822eb98ad47e106dfdbcc0db9c1e9f934efa1ea8354de470209793554cfc8",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: build-with-docusaurus\ntitle: \"#11: Share Content - with Docusaurus\"\nauthors: [nitya]\ntags: [swa, 30days, usage-examples, react, docusaurus]\ndraft: false \n---",
+      "source_content_hash": "92fafeacc72939a10e94edb1c45e349c5f3d6eb77598e4def5c0899390d1e035",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 2, Day 4` of **#30DaysOfSWA**!!",
+      "source_content_hash": "70b35ca4b9a8e7eec18a715865d8b1e747bb9c625d437a4239fe9bda73f6eab9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第2周第4天`！！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Today's a special day - the [1 year anniversary of Azure Static Web Apps](https://azure.microsoft.com/en-us/updates/azure-static-web-apps-is-now-generally-available/?WT.mc_id=30daysofswa-61155-cxall)! <br/> **Happy Birthday SWA! 🎂**",
+      "source_content_hash": "251cb9fb74c520de63e1cc5cb9ea1e08b277bf3a9dc1ce6fdb4596d64c9e5827",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今天是个特别的日子——[Azure Static Web Apps 发布一周年](https://azure.microsoft.com/en-us/updates/azure-static-web-apps-is-now-generally-available/?WT.mc_id=30daysofswa-61155-cxall)！<br/> **SWA 生日快乐！🎂**"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "I wanted to do something special to celebrate - and I thought of just the thing! Let's create a content-focused static website [with Docusaurus](https://docusaurus.io/) and deploy it [using Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/?WT.mc_id=30daysofswa-61155-cxall). Want to get a sense of what kinds of static sites you can build with Docusaurus? [Check out their showcase](https://docusaurus.io/showcase)!",
+      "source_content_hash": "75fa587d24091c82afc62d76b9f2f3453271fc0db9e0358878746b4ab049aa01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我想用特别的方式来庆祝，正好有个绝妙的主意！让我们使用 [Docusaurus](https://docusaurus.io/) 创建一个内容型静态网站，并通过 [Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/?WT.mc_id=30daysofswa-61155-cxall) 部署它。想了解能用 Docusaurus 构建哪些静态网站？[查看他们的展示案例](https://docusaurus.io/showcase)！"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Why **this** demo today? Well, it's very _Meta_ (pun intended). You may have noticed that the [#30DaysOfSWA](https://aka.ms/30DaysOfSWA) website is built on Docusaurus. 🦖",
+      "source_content_hash": "7d612ea19505d5394426e23d06845b792f8e15d2d4652f00f5ee416009b4d7c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "为什么选择**这个**演示？因为它非常“元”（双关语）。你可能已经注意到 [#30DaysOfSWA](https://aka.ms/30DaysOfSWA) 网站就是用 Docusaurus 构建的。🦖"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "By sharing this tutorial, I'm hoping it inspires more of you to build/deploy sites that showcase your own tech journeys - whether its with #30Days of learning, or to feature your #100Devs portfolios. #LetsGetStarted! 🎉",
+      "source_content_hash": "be6d1294e82bbb9dff7afce8f3029b75944aa1a670ee96cc71ef55e67bb36aad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过分享这个教程，我希望激励更多人构建/部署展示自己技术旅程的网站——无论是记录 #30Days 学习历程，还是展示 #100Devs 作品集。#现在开始吧！🎉"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "* **Intro**: What is Docusaurus?\n * **Quickstart:** setup classic site\n * **Configure**: `docusaurus.config.js`\n * **Deploy**: Azure Static Web Apps\n * **Customize**: Themes & Plugins\n * **Exercise**: Try extending the demo further",
+      "source_content_hash": "cc4a58b5890b809826b28871e3a7b9fc14b012f288ac3bad418e1852b425d8de",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **简介**: 什么是 Docusaurus？\n * **快速入门**: 搭建经典站点\n * **配置**: `docusaurus.config.js`\n * **部署**: Azure Static Web Apps\n * **定制**: 主题与插件\n * **练习**: 尝试扩展演示项目"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "![](../static/img/series/11-banner.png)",
+      "source_content_hash": "584fcf72ae83e0fc7319391cae4f29e248525403e762045c91a878fff6ff58fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/11-banner.png)"
+      }
+    },
+    {
+      "segment_id": "2b88bb9d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## About the Demo",
+      "source_content_hash": "556219b9eabb978083635a45454e02d8bc1ff4cb04d384156cd4ce304307dce9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 关于演示"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "In today's tutorial, we'll create a _classic_ Docusaurus site, deploy it to Azure Static Web Apps, then make some changes to the site content to validate that it rebuilds and deploys the site without any further manual effort from us. I hope to also contribute this back to the Docusaurus docs as an example for Deploying to Azure - feedback to improve this is very welcome!",
+      "source_content_hash": "4ae4a68e69894219c2f10eb0fd87b5f0ad9cdd2c0cc7dc85f886fcd2bfc3e14a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在今天的教程中，我们将创建一个 Docusaurus 经典站点，部署到 Azure Static Web Apps，然后修改站点内容来验证其自动重建和部署的能力。我希望最终能将其贡献给 Docusaurus 文档作为 Azure 部署范例——欢迎提出改进建议！"
+      }
+    },
+    {
+      "segment_id": "157151e9",
+      "source_content": "* 🌟 **The tutorial source is [here on GitHub](https://github.com/fearlessly-dev/swa-demo-docusaurus)** - I'll update **that version** over time.\n* 🎉  **See the site live [on Azure Static Web Apps](https://zealous-bay-0062c640f.1.azurestaticapps.net/)** - for demo purposes only.",
+      "source_content_hash": "225d39554b02b9d25817a4dd2c454ddc013088383419cfcd80d84a7cb0a08318",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 🌟 [GitHub 上的教程源码](https://github.com/fearlessly-dev/swa-demo-docusaurus)——我会持续更新**该版本**\n* 🎉  [Azure Static Web Apps 上的实时站点](https://zealous-bay-0062c640f.1.azurestaticapps.net/)——仅用于演示"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## What is Docusaurus?",
+      "source_content_hash": "355d26c0bd4e064a138bd1e89218b1772523e21469e58950647adde0e1e58b4d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 什么是 Docusaurus？"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Docusaurus is an open-source project from Meta that helps you build, deploy, and maintain, open source project websites. It was rated one of the top 3 [rising stars of JavaScript](https://docusaurus.io/) in 2021, under the _static site generators_ category. It has a number of features that made it attractive:",
+      "source_content_hash": "5b00364b128911a2642655ead40c78629f2ba89f09c08f753959c9057bce1935",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Docusaurus 是 Meta 开源的静态网站生成器，可帮助构建、部署和维护开源项目网站。它在 2021 年被评为 JavaScript 生态中[上升最快的](https://docusaurus.io/)三大静态站点生成器之一，具有以下吸引人的特性："
+      }
+    },
+    {
+      "segment_id": "4c077b92",
+      "source_content": "* It has built-in support for search, localization and versioning\n * It support MDX (JSX-flavored Markdown) for richer content options\n * It has built-in support for themes and plugins to enhance default behaviors\n * It is built with React, making it extensible with custom components",
+      "source_content_hash": "a525bff39ec9e74fdc3ec2f708977e520d41e245b00bd845e5fd9c05b5ec5097",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 内置搜索、本地化和版本控制支持\n * 支持 MDX（JSX 风格的 Markdown）实现更丰富的内容\n * 提供主题和插件系统扩展默认功能\n * 基于 React 构建，可通过自定义组件扩展"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Read their [documentation](https://docusaurus.io/docs) & visit their [showcase](https://docusaurus.io/showcase) to see real-world examples. Now, let's dive into our tutorial for building the demo.",
+      "source_content_hash": "cb46604fc6dcb2ecc90fdab99e649a437155d62a43237ff86a3b3d920363262c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "阅读其[文档](https://docusaurus.io/docs)并查看[展示案例](https://docusaurus.io/showcase)了解实际应用。现在让我们开始构建演示项目。"
+      }
+    },
+    {
+      "segment_id": "e0a17c0d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "60410af6",
+      "source_content": "## 1. Setup Site",
+      "source_content_hash": "fef20f47ad69f53c1fe18a082eeb76f4de51dcb45fdd51a6e21e6dfe08c03175",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 1. 搭建站点"
+      }
+    },
+    {
+      "segment_id": "9b797309",
+      "source_content": "1. Setup a Docusaurus site (`classic` theme) in a dedicated folder (`www`) in repo. The command automatically installs the required packages and their dependencies.",
+      "source_content_hash": "27023962c26b0084ac8eef481a71cc0bd79f75c58961bae72a47ff946ee0442c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "1. 在仓库的专用文件夹(`www`)中搭建 Docusaurus 站点（使用`classic`主题）。该命令会自动安装所需包及其依赖项。"
+      }
+    },
+    {
+      "segment_id": "ef0d086d",
+      "source_content": "```bash\n npx create-docusaurus@latest www classic\n```",
+      "source_content_hash": "689248265b18c3185723b6396f03ca8bb5e7f0e94a9c13f2ecd13156aa2289d2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_ef0d086d"
+      }
+    },
+    {
+      "segment_id": "24c174ca",
+      "source_content": "2. Let's see what was created for us. The output has been cleaned up for clarity.",
+      "source_content_hash": "25f2161c74f134386773bc3eae19c995611394a4d8f48688f6b135d60bb7b3fe",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "2. 查看生成的文件结构。以下输出经过简化以便阅读。"
+      }
+    },
+    {
+      "segment_id": "5a41b4fb",
+      "source_content": "```\nls -l www/\n\nREADME.md   \nbabel.config.js \nblog/              \ndocs/    \ndocusaurus.config.js               \nnode_modules/        \npackage-lock.json    \npackage.json           \nsidebars.js                 \nsrc/                  \nstatic/    \n```",
+      "source_content_hash": "833f8739211587a138b3429a1b847aaf2b5a9ebc1881e9a4c1ed04a32cf85dfa",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_5a41b4fb"
+      }
+    },
+    {
+      "segment_id": "ca1573da",
+      "source_content": "3. Let's preview the site locally, to validate this worked.",
+      "source_content_hash": "552161278eca3126d3f9522e69bd25059106f905f90425b887a8a7142c609cd2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "3. 让我们在本地预览站点，验证是否成功。"
+      }
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```bash\ncd www\nnpx docusaurus start\n\n[INFO] Starting the development server...\n[SUCCESS] Docusaurus website is running at http://localhost:3000/.\n```",
+      "source_content_hash": "b9c70556090d27014d4840e0855496af8aaf7dc4a5fc7699c9bda3f36f0fa897",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_a716abf2"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "You should see something like this - this is the default landing page for the scaffolded Docusaurus site.",
+      "source_content_hash": "878129673f723ed47a42d2c97d6fd6e59ff55ea90cb561b49b3738fafda18ac1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您应该会看到类似这样的界面——这是脚手架生成的Docusaurus站点默认首页。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "![Landing Page](../static/img/series/11-landing.png)",
+      "source_content_hash": "07b605e83d914584e5bb31ba7d834d09763e51609d975da5160eefffb359d2c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Landing Page](../static/img/series/11-landing.png)"
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "4. The dev server supports hot reloading. Try making a minor change to the site source - for example edit `docusaurus.config.js` and change the `title` to **\"My Static Web Apps Site\"**. You should see this in your site preview, instantly:",
+      "source_content_hash": "e5b6839d7f462bd029154b5fa2fbcbb164ecfd166e502691fca600150c3df5f1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "4. 开发服务器支持热重载。尝试修改站点源代码——例如编辑`docusaurus.config.js`文件，将`title`改为**\"我的静态Web应用站点\"**。您会立即在预览中看到变化："
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "![Landing Page Reloaded](../static/img/series/11-reload.png)",
+      "source_content_hash": "d78603020fcf62ab25957c2e0b58742506a38d2f6fd72a28588359d39b55344b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Landing Page Reloaded](../static/img/series/11-reload.png)"
+      }
+    },
+    {
+      "segment_id": "cfea4c31",
+      "source_content": "5. You can now build a **production-ready** version of that site as follows. Note that the static files are generated in the **build/** directory.",
+      "source_content_hash": "c7e884281790edd04df02ebf9da1f35a57c650c791138c28d41deb3805e09740",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "5. 现在可以通过以下命令构建**生产环境就绪**的站点版本。注意静态文件会生成在**build/**目录下。"
+      }
+    },
+    {
+      "segment_id": "dc73c0d2",
+      "source_content": "```bash\ncd www/\nnpm run build\n..\n..\n[SUCCESS] Generated static files in \"build\".\n[INFO] Use `npm run serve` command to test your build locally.\n```",
+      "source_content_hash": "74dda38b44404e2b67829fa62c49ffc2fd364ad3b781a7d8134ba3d58ac04029",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_dc73c0d2"
+      }
+    },
+    {
+      "segment_id": "04837130",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "d1f76d04",
+      "source_content": "## 2. Deploy To Azure",
+      "source_content_hash": "fb5c0b0e255379da0cc9efc08fbcff3afdecf8af888b8878b5b85c7da7c17457",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 2. 部署到Azure"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "Docusaurus is built using React - so you can use [the same configuration settings](https://docs.microsoft.com/en-us/azure/static-web-apps/front-end-frameworks) for Docusaurus, when deploying to Azure Static Web Apps.",
+      "source_content_hash": "3442d70759edd1069a35064e4301c2c0564b86cf2490a2d0f14528c4b89505c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Docusaurus基于React构建——因此在部署到Azure静态Web应用时，可以使用[相同的配置设置](https://docs.microsoft.com/en-us/azure/static-web-apps/front-end-frameworks)。"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "You have three options to  get started:",
+      "source_content_hash": "e83d0e42b335b74fdf73e2ef61bb135255532ba4806e8ee67cd519c09465509e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您有三种入门选择："
+      }
+    },
+    {
+      "segment_id": "8d56fc0d",
+      "source_content": "* via browser with [the Azure Portal quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)\n  * via terminal with [the Azure CLI quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript)\n  * via IDE with [the VS Code Extension quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)",
+      "source_content_hash": "537c951a3f5258f4fb8fe8db7e8d6412904cec2875d84121ba6061a24661cfec",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 通过浏览器使用[Azure门户快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)\n  * 通过终端使用[Azure CLI快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript)\n  * 通过IDE使用[VS Code扩展快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "If you prefer the first approach, click the button to go to the Azure portal, then follow the [quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react) guidance, but using *this* project's details instead.",
+      "source_content_hash": "ba0d485451491a5144af278fd8a5570f043f9d9272e091869ae7aaa997c917fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若选择第一种方式，点击按钮跳转至Azure门户后，请按照[快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react)指南操作，但使用*本项目*的详细信息。"
+      }
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "[![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=30daysofswa-61155-cxall#create/Microsoft.StaticApp)",
+      "source_content_hash": "b717f7d3d816dc271f0fbcceb98893a587f31db31cd4476666a4810c849179bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=30daysofswa-61155-cxall#create/Microsoft.StaticApp)"
+      }
+    },
+    {
+      "segment_id": "64d57278",
+      "source_content": "## 3... using VS Code",
+      "source_content_hash": "d98a2c59333f382afdfd393bd9ce6d091c84130b8303febb4dcf816726b46334",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3... 使用VS Code"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "I'll use the [Visual Studio Code extension](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript) to make this happen with just a few clicks.",
+      "source_content_hash": "3eb05807826a9f2714d0bc7281ad1fca59e8c57e8cdf21e48c0f83befac538cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我将使用[Visual Studio Code扩展](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)通过几次点击完成部署。"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "The whole process happens within the VS Code window, and takes just a few minutes from start to finish - _with guided prompts to help all the way_. For convenience, I've documented it step-by-step with screenshots (images valid for _VS Code ver 1.66.2_).",
+      "source_content_hash": "bdd7890aabcc34b1c07116fc4e9455f531f5a16c1920d2e8bd36f493e7110b0c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "整个过程都在VS Code窗口内完成，从开始到结束只需几分钟——_并全程提供引导提示_。为方便起见，我已通过截图逐步记录（图片适用于_VS Code 1.66.2版本_）。"
+      }
+    },
+    {
+      "segment_id": "4dd6a631",
+      "source_content": "## 3.1 Install Extension",
+      "source_content_hash": "4bf0e7f8aa29a225ec77f8ff4b64687d3b6a02cbba78d82cf029650fc1bf6b50",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3.1 安装扩展"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "Open Visual Studio Code (IDE) in the project folder for your repo. Install the [Azure Static Web Apps extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) by visiting this page and clicking \"Install\".",
+      "source_content_hash": "5e9c277e371475133a8b830c16e4587d5768fa9d928362e99153c723d406f1cd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在项目仓库目录中打开Visual Studio Code (IDE)。访问此页面点击\"安装\"，安装[Azure静态Web应用扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)。"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "![VS Code Extension for SWA](../static/img/series/11-extension.png)",
+      "source_content_hash": "15fae71fa05d9534c33fbe8c03b55cf080b8e4c07dfe8a033813ef518960525f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![VS Code Extension for SWA](../static/img/series/11-extension.png)"
+      }
+    },
+    {
+      "segment_id": "c83259bb",
+      "source_content": "## 3.2. Find SWA Panel",
+      "source_content_hash": "fe76dc44820af54abf31935d918931e8ec09c813b6ab850ecbb4bae2b7e232bc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3.2 定位SWA面板"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "When extension is installed, you should see this window in your VS Code editor, confirming readiness for use.",
+      "source_content_hash": "384f0b03b6845cfb611ea2763da4f2db6df8453cf98f5ccb25f670952c2ff5a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "扩展安装完成后，您将在VS Code编辑器中看到此窗口，确认已准备就绪。"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "![VS Code Extension Installed](../static/img/series/11-vscode.png)",
+      "source_content_hash": "4af7e4aaf172eb6b68ef3a9522bb3efc8b510191ff3ebb7342cb800d956b0f60",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![VS Code Extension Installed](../static/img/series/11-vscode.png)"
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "You'll find the Azure Static Web Apps options listed in a  section under \"Azure\".",
+      "source_content_hash": "dbe1978980c562a21f33c637c38a43ee358f8620c43178e63903f60ae61b4879",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您会在\"Azure\"分类下找到Azure静态Web应用选项。"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "The extension's [documentation page](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) and its [GitHub](https://github.com/microsoft/vscode-azurestaticwebapps/wiki/Creating-a-Static-Web-App) page both provide detailed walkthroughs - check those for the most current process for this. We'll start by clicking the _Azure_ icon in the VS Code sidebar, then scrolling down till we see this `Static Web Apps` section.",
+      "source_content_hash": "ebfe5939227875773d4a91d4ff6af203ebe90dec4764690b961a325ee61638c0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "该扩展的[文档页面](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)及其[GitHub页面](https://github.com/microsoft/vscode-azurestaticwebapps/wiki/Creating-a-Static-Web-App)均提供了详细的操作指南——请查阅这些资源以获取最新流程。我们将首先点击VS Code侧边栏中的_Azure_图标，然后向下滚动直至看到`Static Web Apps`部分。"
+      }
+    },
+    {
+      "segment_id": "73776161",
+      "source_content": "## 3.3 Create SWA",
+      "source_content_hash": "7da26fc3557ce99b13442e24b0df6015d66590bd947bf1602e75478892eaf1a5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3.3 创建静态Web应用"
+      }
+    },
+    {
+      "segment_id": "f7e6e884",
+      "source_content": "Click the \"+\" button to start the **Create Static Web App** workflow.",
+      "source_content_hash": "62a309b29ae4a90f977126e736c021e6baf66cfe29d399438b148d17ce3072f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "点击\"+\"按钮启动**创建静态Web应用**流程。"
+      }
+    },
+    {
+      "segment_id": "17b50e81",
+      "source_content": "![Activate SWA Extension](../static/img/series/11-swa-plus.png)",
+      "source_content_hash": "cae0ffc364a37b2659740ba514242eeecb9c208724a65ccf78869d6ea3293845",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![激活SWA扩展](../static/img/series/11-swa-plus.png)"
+      }
+    },
+    {
+      "segment_id": "719d3997",
+      "source_content": "The _\"Create Static Web Apps\"_ process will create (and commit) a GitHub actions workflow for you that will automate the build/deploy process for your site directly from your source on all future codebase changes.",
+      "source_content_hash": "d477b6ee9de86e0320dd87e44825c08db00e715ef6d060b9222dcfc83372d976",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_\"创建静态Web应用\"_流程将为您创建（并提交）一个GitHub Actions工作流，该工作流会从代码库源头自动构建和部署您的站点，并在未来所有代码变更时生效。"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "So if you have _current pending codebase changes_ it will first prompt you to commit them before it does its magic! Let's get that done!",
+      "source_content_hash": "8c1c869fd26cea88be0f4b43449b660f78d9d148fb6ddf7a35d841e3b0e878a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "因此如果您有_当前待提交的代码变更_，系统会首先提示您提交这些更改！让我们完成这一步！"
+      }
+    },
+    {
+      "segment_id": "619c3209",
+      "source_content": "![Commit changes](../static/img/series/11-commit.png)",
+      "source_content_hash": "6debb445b5829a5eb4fd32a1682012d88d1cb48f3f46bcbfcf208640f8944ee0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![提交变更](../static/img/series/11-commit.png)"
+      }
+    },
+    {
+      "segment_id": "c6b2ca77",
+      "source_content": "## 3.4 Configure SWA",
+      "source_content_hash": "827865639180875133fda461109cc314aa93fd2a100cca219445815c8bf10ca0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3.4 配置SWA"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "The extension walks you through the five steps shown below, each with defaults already filled in for you. Customize them as shown, for this project:",
+      "source_content_hash": "9f1e632d3fd7bb1dc785da06a96232774d9007bfa80c3709ccfeba8e98c4aece",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "扩展将引导您完成下图所示的五个步骤，每个步骤都已预先填充默认值。请根据本项目需求进行如下自定义配置："
+      }
+    },
+    {
+      "segment_id": "03a09291",
+      "source_content": "| Screenshot | Step |\n|:---|:---|\n| ![Step 1](../static/img/series/11-swa-1.png)<br/> | Specify project name |\n| ![Step 2](../static/img/series/11-swa-2.png) <br/>| Pick Azure region to deploy it in |\n| ![Step 3](../static/img/series/11-swa-3.png)<br/> | Pick framework used by app |\n| ![Step 4](../static/img/series/11-swa-4.png)<br/> | Specify folder contaning site source |\n| ![Step 5](../static/img/series/11-swa-5.png)<br/> | Specify folder where site gets built by default |\n| | |",
+      "source_content_hash": "22476591194299d0a0f81c70218833eba1e3c09000aaa23913a3bee2c7ba4dbe",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_03a09291"
+      }
+    },
+    {
+      "segment_id": "89b740fe",
+      "source_content": "## 3.5 Track Progress",
+      "source_content_hash": "4e7362d62209da49e448bc81c473d313cf396d9ea1ebd0a99ab53a48bb65f399",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3.5 跟踪进度"
+      }
+    },
+    {
+      "segment_id": "99840f13",
+      "source_content": "In a few seconds, you'll see this alert - this indicates that the workflow is **creating and committing the GitHub Actions build/deploy workflow YAML** for you. 🎉",
+      "source_content_hash": "6b32418f5f77df92111b6f0c690288539261255833f79f91aff51cf0c05d73cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "几秒钟后，您将看到此提示——这表示工作流正在**为您创建并提交GitHub Actions构建/部署工作流YAML文件**。🎉"
+      }
+    },
+    {
+      "segment_id": "85ea22dd",
+      "source_content": "![Created](../static/img/series/11-swa-created.png)",
+      "source_content_hash": "efbe76e6a62f5b6409f9c17f0dabf75d53cf3125118e53ae818fdcdad48d45b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![已创建](../static/img/series/11-swa-created.png)"
+      }
+    },
+    {
+      "segment_id": "dc72fd20",
+      "source_content": "If you check your repository right now, you'll find the [relevant commit](https://github.com/fearlessly-dev/swa-demo-docusaurus/commit/1005a16c10bbbce51c8526a3c14253d1aec1a59c) and the [activated Actions flow](https://github.com/fearlessly-dev/swa-demo-docusaurus/actions/runs/2313039968) (labeled `ci: add Azure Static Web Apps worfklow`) in progress.",
+      "source_content_hash": "65e7e4fb3e7cbfbf4a0785971f044717fe7d154d06b88240a12e3ff4afaef247",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果立即查看代码仓库，您会发现[相关提交记录](https://github.com/fearlessly-dev/swa-demo-docusaurus/commit/1005a16c10bbbce51c8526a3c14253d1aec1a59c)和[已激活的Actions流程](https://github.com/fearlessly-dev/swa-demo-docusaurus/actions/runs/2313039968)（标记为`ci: add Azure Static Web Apps worfklow`）正在运行。"
+      }
+    },
+    {
+      "segment_id": "674abb31",
+      "source_content": "You can also track the progress and configuration settings of your app right there in the VS Code Sidebar, under the `Static Web Apps` section. _Look for the project name, and unroll contents.._",
+      "source_content_hash": "296a0feddf10495bd4f885996c12b3f096b3bfc440fbe860bd4a05283859cd99",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您还可以直接在VS Code侧边栏的`Static Web Apps`部分跟踪应用进度和配置设置。_找到项目名称并展开内容..._"
+      }
+    },
+    {
+      "segment_id": "9ef42155",
+      "source_content": "![Sidebar](../static/img/series/11-swa-sidebar.png)",
+      "source_content_hash": "6d146075f3c07d8ceeb2f48cdd07ad9052668a74488422a1934bf6204bef75c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![侧边栏](../static/img/series/11-swa-sidebar.png)"
+      }
+    },
+    {
+      "segment_id": "61282bab",
+      "source_content": "## 3.6 Browse Site!",
+      "source_content_hash": "04cf74c1ae76bf8d01b4f9ac57950c02f567f9fd5500fb8ef91d1bbb06acd9e7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 3.6 浏览站点！"
+      }
+    },
+    {
+      "segment_id": "4e2e17c5",
+      "source_content": "In a few second more, you'll get this alert:",
+      "source_content_hash": "389000d264611c7ae02c50af6e98a7189b66587ff5d7faeca1cc5f76656acea7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "再过几秒钟，您将收到此提示："
+      }
+    },
+    {
+      "segment_id": "b49a7009",
+      "source_content": "![Deployed](../static/img/series/11-swa-deployed.png)",
+      "source_content_hash": "465c00aab75f627e9b48b10170c21867965540b13cfacf71f3db50019a50d76c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![已部署](../static/img/series/11-swa-deployed.png)"
+      }
+    },
+    {
+      "segment_id": "9ebd9d9b",
+      "source_content": "Now, go to the sidebar section for your project, right-click the name to see the available menu options:",
+      "source_content_hash": "caa5e93f1ea9dfe634e5fb46f33e6c66a71d7a3f3a17f5d305ba67b5804fe2d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "现在前往侧边栏中您的项目部分，右键点击项目名称查看可用菜单选项："
+      }
+    },
+    {
+      "segment_id": "295367fa",
+      "source_content": "![Browse](../static/img/series/11-swa-browse.png)",
+      "source_content_hash": "1a6c8e7f37436eab3127d168c0e02f814d8e11b077694be387b04c5737dc9b1c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![浏览](../static/img/series/11-swa-browse.png)"
+      }
+    },
+    {
+      "segment_id": "6fad5db5",
+      "source_content": "Click \"Browse Site\" to be taken to your live deployed Docusaurus website! That's it! A few clicks, customizing defaults - and you're done!",
+      "source_content_hash": "5444244b66c3f36803d0e106391d0b475c0245d41949f61bd0f1511bc2e8b6b7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "点击\"浏览站点\"即可访问已部署的Docusaurus网站！就这样！只需几次点击和默认配置调整——大功告成！"
+      }
+    },
+    {
+      "segment_id": "0e7eccf0",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "17fd5988",
+      "source_content": "## 4. Customize It!",
+      "source_content_hash": "caddfb605f1cac327220537dc2d40f78c83d502af795d1142086dbc8a0c1907b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 4. 自定义配置"
+      }
+    },
+    {
+      "segment_id": "3208eb29",
+      "source_content": "At this point, you can make any changes to the site source, commit them - and watch the site get rebuilt and deployed without any further action from you!",
+      "source_content_hash": "6bed72067fb2a52f4c0a8fd6fe875d6c28dc81d5cb30246a7f561018421bf396",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "此时，您可以对站点源码进行任意修改，提交变更后——无需任何额外操作即可自动重建和部署站点！"
+      }
+    },
+    {
+      "segment_id": "38f964f1",
+      "source_content": "Here are some things to try:",
+      "source_content_hash": "dbb080badbe1ea6a0c4941f96d04ef3ac72ba5098f193f19b7f503c4bd842375",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "以下是一些尝试建议："
+      }
+    },
+    {
+      "segment_id": "dcc0eddd",
+      "source_content": "* Customize [styles or layout](https://docusaurus.io/docs/styling-layout)\n * Explore [plugins](https://docusaurus.io/docs/api/plugins) for SEO, Search etc.\n * Try [create/use MDX](https://docusaurus.io/docs/markdown-features/react#using-jsx-in-markdown) in content",
+      "source_content_hash": "373968c1a6478faddddf4e3e02a585a16376c4e7646892946ae108f924fb171c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 自定义[样式或布局](https://docusaurus.io/docs/styling-layout)\n * 探索SEO、搜索等[插件功能](https://docusaurus.io/docs/api/plugins)\n * 尝试在内容中[创建/使用MDX](https://docusaurus.io/docs/markdown-features/react#using-jsx-in-markdown)"
+      }
+    },
+    {
+      "segment_id": "7e563909",
+      "source_content": "I made a few example changes to the `docusaurus.config.js` file to personalize the landing page content to reflect my needs.",
+      "source_content_hash": "4f82c5a947d6e5324d73c0e1292985bf2e153bcf02ad765bc8daf631f1ed54b3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我对`docusaurus.config.js`文件做了一些示例修改，使着陆页内容更符合我的个性化需求。"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "And I updated the `src/css/custom.css` file to reflect new theme colors for dark/light mode - and replaced the `logo.svg` file.",
+      "source_content_hash": "79a8c58de64897e433950f44513273e70de26478facfeea3de0d6b36ba1b3a6e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我还更新了 `src/css/custom.css` 文件以适配新的深色/浅色模式主题色，并替换了 `logo.svg` 文件。"
+      }
+    },
+    {
+      "segment_id": "1f9058cd",
+      "source_content": "Committing these changes should automatically rebuild and update the deployed site. Here is what they looked like in my local preview, before I committed the changes.",
+      "source_content_hash": "8767f3c28caecdb55a7702cdea83562b957f1d5569f64a3da6caf5f0a8cc5dc1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "提交这些更改后，部署的站点将自动重建更新。以下是我在本地预览时的效果，提交更改前的状态。"
+      }
+    },
+    {
+      "segment_id": "ce712201",
+      "source_content": "|Light Mode |  Dark Mode|\n|:---|:---|\n|![Light Mode](../static/img/series/11-swa-light.png)|![Dark Mode](../static/img/series/11-swa-dark.png) |",
+      "source_content_hash": "222e77ba81dd0664a3f59afaa0a844b4c6a526105063f1e4ffcf917a6d68c3a8",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_ce712201"
+      }
+    },
+    {
+      "segment_id": "c60fccc8",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "d8c366cc",
+      "source_content": "🎉  **Check it out: The site is [live on Azure Static Web Apps](https://zealous-bay-0062c640f.1.azurestaticapps.net/)**",
+      "source_content_hash": "ed0bb4014fbb16819cbe3f9c2ca72e1a16300681a6c0cdcbf4807dce725c010e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "🎉  **成果展示: 站点已[通过 Azure Static Web Apps 实时发布](https://zealous-bay-0062c640f.1.azurestaticapps.net/)**"
+      }
+    },
+    {
+      "segment_id": "6c489d9e",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "2c3ad447",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践任务"
+      }
+    },
+    {
+      "segment_id": "61e5dad6",
+      "source_content": "You saw a few things I did to customize the site. Now it's your turn! Here are a few challenges you can try out:",
+      "source_content_hash": "dcce66c670b39661121cdaf045fb4fdfc8c42c658a5cc01c91b26471b2c463f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您已看到我对站点进行的几项定制。现在轮到您了！以下是几个可供尝试的挑战："
+      }
+    },
+    {
+      "segment_id": "1537994d",
+      "source_content": "* Complete the tutorial to deploy your own site!\n * Try Docusaurus customization: **add an MDX component!**\n * Try SWA customization: **add an API to fetch content!**\n * Try SWA customization: **add auth using Twitter - use it!**",
+      "source_content_hash": "6c04f73f575106c0e1b670d47b8695e8b75b5d85e9286f6f1c6da1ab70154fab",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 完成教程部署您自己的站点！\n * 尝试 Docusaurus 定制：**添加一个 MDX 组件！**\n * 尝试 SWA 定制：**添加 API 获取内容！**\n * 尝试 SWA 定制：**通过 Twitter 添加身份验证功能并实际使用！**"
+      }
+    },
+    {
+      "segment_id": "fbdb880f",
+      "source_content": "## Resources:",
+      "source_content_hash": "7b6a2e93efe6a0fd25a3553f6bbfa341b298ff465c2e59c1bd35da64c1c8ba22",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源："
+      }
+    },
+    {
+      "segment_id": "5bf5870e",
+      "source_content": "* [Docusaurus](https://docusaurus.io/) - documentation\n * [Azure Static Web Apps (SWA)](https://docs.microsoft.com/en-us/azure/static-web-apps/) - documentation\n * [#30DaysOfSWA](https://aka.ms/30DaysOfSWA) - guide tour to SWA.",
+      "source_content_hash": "493b0168c550825df09027f108c1275e915c4f32352952edcda859e66cdc4824",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Docusaurus](https://docusaurus.io/) - 官方文档\n * [Azure Static Web Apps (SWA)](https://docs.microsoft.com/en-us/azure/static-web-apps/) - 官方文档\n * [#30DaysOfSWA](https://aka.ms/30DaysOfSWA) - SWA 功能导览"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-12.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.873829+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "39e822eb98ad47e106dfdbcc0db9c1e9f934efa1ea8354de470209793554cfc8"
+  }
+}

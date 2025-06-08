@@ -1,0 +1,362 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog-roundup/2023-03-20-thismonth/index.md",
+  "source_file_content_hash": "90ea0e98e170252d7881288d37fa3405e6017c9924f7934f3b44773c03a928df",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: roundup-2023-mar\ntitle: \"2023 | March\"\nauthors: [reshmi, nitya, sara]\ntags: [swa, thismonth, mar]\ndraft: false\n---",
+      "source_content_hash": "4bfb8dd6e4b01455009ed249543821af9459b34886e1268b6216abfb8ea8c76f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/roundup-2023-mar\" />\n  <meta name=\"twitter:title\" content=\"This Month in Azure Static Web Apps: March 2023\" />\n  <meta name=\"twitter:description\" content=\"This March in @AzureStaticApps - we cover Azure Static Web Apps Diagnostics, authentication, deploying from Codespaces and SWA CLI\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/img/png/roundup/mar.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@saragibby\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/thismonth/roundup-2023-mar\" />\n</head>",
+      "source_content_hash": "9221d7367b59c6cca4e517e3d7aee4b408f430746fdc54aed12895f6e292da3d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Welcome to the **March 2023** edition of **This Month in SWA** 🎉",
+      "source_content_hash": "fe579ee0b83cec353c415f18e341c91b4d4cbbdbc7864ab82f23281dc9fed68e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎查阅 **2023年3月** 的 **Azure静态Web应用月度简报** 🎉"
+      }
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::info[ABOUT THE ROUNDUP ]\n\nThe roundup is traditionally published **on the fourth Monday of each month** - just ahead of the [**Azure Static Web Apps Community Standup**](https://aka.ms/swa/community/standups) held on the fourth Thursday of each month. Catch up on all the news and announcements in one friendly blog post, then join the livestream for interactive discussions, demos and more.\n\n * Want to make sure you don't miss the next roundup? <a href=\"/thismonth/rss.xml\" target=\"_blank\">**Subscribe to the feed**</a>.\n * Want to contribute items for roundup? [**Submit this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community).\n * Want to catch up on past posts? [**Browse past editions.**](/roundup#roundups-archive)\n * Want to catch up on past livestreams? [**Watch standup recordings**](https://aka.ms/swa/community/standups)\n\nAnd don't forget to contribute _your_ updates for inclusion in the next issue!\n\n:::",
+      "source_content_hash": "65ac9084427e05fd6d6096b70ceb1f3a95c26c91e8f22d99cb744357e0104416",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[关于本简报]\n\n本简报传统上于**每月第四个星期一**发布——恰在[**Azure静态Web应用社区站会**](https://aka.ms/swa/community/standups)（每月第四个星期四举行）之前。您可以通过这篇友好的博客文章了解所有新闻和公告，然后加入直播参与互动讨论、演示等。\n\n * 不想错过下一期简报？<a href=\"/thismonth/rss.xml\" target=\"_blank\">**订阅Feed**</a>。\n * 想为简报投稿？[**提交此定制issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)。\n * 想回顾往期内容？[**浏览往期文章**](/roundup#roundups-archive)。\n * 想观看往期直播？[**查看站会录像**](https://aka.ms/swa/community/standups)\n\n别忘了提交您的更新以纳入下一期！\n\n:::"
+      }
+    },
+    {
+      "segment_id": "b0e5a8f2",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "![](../../static/img/png/roundup/mar.png)",
+      "source_content_hash": "c34e82834ee23cb965985fea0d084fb0bf32eb63e4a3a1376377315f15dfe410",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../../static/img/png/roundup/mar.png)"
+      }
+    },
+    {
+      "segment_id": "5ef5fda3",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Product News",
+      "source_content_hash": "a39b0906a21b5d05b839c70dd81e6e5341db47840ee4e56e0a921977d6090ef7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 产品动态"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "_This section covers recent news or announcements from the product team. Read on to learn the latest news from the world of Azure Static Web Apps!_",
+      "source_content_hash": "a271c4ebde2d498b95c3d19f0a556143bc4bc997ba6578f7d5d296512d619989",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节涵盖产品团队的最新新闻或公告。阅读以下内容，了解Azure静态Web应用的最新动态！_"
+      }
+    },
+    {
+      "segment_id": "9d8ff988",
+      "source_content": "> 🌟 **Database Connections** now available! 🌟<br/>\n> Find all the resources in our [Database Connections: Content Collection](/collections/dab)",
+      "source_content_hash": "667b2def4a903da29a96fd074069964c7650ef7560077d2965d53f7c5d833de4",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "> 🌟 **数据库连接** 现已可用！🌟<br/>\n> 所有资源请见我们的[数据库连接：内容集锦](/collections/dab)"
+      }
+    },
+    {
+      "segment_id": "6773b78b",
+      "source_content": "* **March 15** | [Public preview: Azure Static Web Apps support for A Record](https://azure.microsoft.com/en-us/updates/public-preview-azure-static-web-apps-support-for-a-record/) Azure Static Web Apps introduces the ability to add an APEX custom domain with an `A` record to enable the use of domain registrars that do not support `ALIAS` record, `ANAME` record and `CNAME` flattening. | _**[Read More For Details!](https://aka.ms/swa/arecords)**_\n* **March 15** | [Public preview: Database connections support in Azure Static Web Apps](https://azure.microsoft.com/en-us/updates/public-preview-database-connections-support-in-azure-static-web-apps/) Azure Static Web Apps introduces database connections with Data API Builder. Now, you can access your Azure database content directly from your frontend client application, without the need to write backend code. Make REST and GraphQL requests to the built-in `/data-api` endpoint to securely retrieve and modify your database contents. | _**[Learn more and get started today!](https://aka.ms/swa/database-connections)**_\n* **March 15** | [Public preview: Data API builder instantly creates modern REST and GraphQL endpoints for modern databases](https://azure.microsoft.com/en-us/updates/public-preview-data-api-builder-instantly-creates-modern-rest-and-graphql-endpoints-for-modern-databases/) With data API builder, database objects can be exposed via REST or GraphQL endpoints so that your data can be accessed using modern techniques on any platform, any language, and any device. | _**[Data API builder is available as an Open-Source project here](https://aka.ms/dab)**_",
+      "source_content_hash": "2ce194123c6bf9ad7f13661096d7dd835edf81601ac39ec2cda31889974ef0dd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **3月15日** | [公共预览：Azure静态Web应用支持A记录](https://azure.microsoft.com/en-us/updates/public-preview-azure-static-web-apps-support-for-a-record/) Azure静态Web应用引入了添加APEX自定义域（使用`A`记录）的功能，以支持不支持`ALIAS`记录、`ANAME`记录和`CNAME`扁平化的域名注册商。| _**[详情请阅读！](https://aka.ms/swa/arecords)**_\n* **3月15日** | [公共预览：Azure静态Web应用中的数据库连接支持](https://azure.microsoft.com/en-us/updates/public-preview-database-connections-support-in-azure-static-web-apps/) Azure静态Web应用引入了通过Data API Builder实现的数据库连接。现在，您可以直接从前端客户端应用程序访问Azure数据库内容，无需编写后端代码。通过内置的`/data-api`端点发起REST和GraphQL请求，安全地检索和修改数据库内容。| _**[了解更多并立即开始！](https://aka.ms/swa/database-connections)**_\n* **3月15日** | [公共预览：Data API Builder为现代数据库即时创建REST和GraphQL端点](https://azure.microsoft.com/en-us/updates/public-preview-data-api-builder-instantly-creates-modern-rest-and-graphql-endpoints-for-modern-databases/) 通过Data API Builder，数据库对象可以通过REST或GraphQL端点暴露，使您的数据能够在任何平台、任何语言和任何设备上使用现代技术访问。| _**[Data API Builder作为开源项目提供于此](https://aka.ms/dab)**_"
+      }
+    },
+    {
+      "segment_id": "49d8fe2a",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## Dev Resources",
+      "source_content_hash": "476de9fde5142c80171779eccd068628fd82d2b7b1dc0dd4fc2ddabc9666f378",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 开发者资源"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "_This section covers content, events and code samples from Microsoft authors. Check them out for relevant learning resources and best practices._",
+      "source_content_hash": "1b45f986a00285ba7bb58dfd942b4957175f70952384f0bac00858883c93e9a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节涵盖来自Microsoft作者的内容、活动和代码示例。查看相关学习资源和最佳实践。_"
+      }
+    },
+    {
+      "segment_id": "a0e887c2",
+      "source_content": "* **March 07** | `techcommunity.microsoft.com` - [**Azure function app doesn't work after unlinking to Azure static web app**](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/azure-function-app-doesn-t-work-after-unlinking-to-azure-static/ba-p/3759599) by _Tony Ju_. Linking an existing Azure function app to an Azure static web app will map the function to the /api route of your static web app, but when then accessing the function app outside your static web app, you get an error. Follow this walk through on how to update your function's authentication settings to get working for both scenarios.\n* **March 16** | `youtube.com` - [**Connect to a Database directly from Static Web Apps**](https://youtu.be/vGOnh0UrADg) by _Thomas Gauvin_. Discover how to connect your Azure SQL Database to your Static Web Apps, and access it through a secure data endpoint generated for you. This video shows how to setup the connection, and use the REST API to perform Create, Read, Update and Delete (CRUD) operation on your data.\n* **March 16** | `youtube.com` -  [**Query a Database using GraphQL from your Static Web Apps**](https://youtu.be/NF0EC68rdQk) by _Craig Shoemaker_. Learn how to query your Database directly through your Static Web Apps using GraphQL, without having to write any backend code with Azure Static Web Apps database connections feature. This video shows how to setup and use the database connection feature to use GraphQL queries in your apps.\n* **March 16** | `techcommunity.microsoft.com` - [**GraphQL on Azure: Part 13 - Using Data API builder with SWA and React**](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/graphql-on-azure-part-13-using-data-api-builder-with-swa-and/ba-p/3769309) by _Aaron Powell_. Follow along in this walkthrough on how you can create your own React application that uses GraphQL to fetch data from a Cosmos DB database using Database Connections!",
+      "source_content_hash": "bf77150df87e9e58660d384ae548cd4b93a2fc8dbd5fec1b7114968710c862db",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **3月7日** | `techcommunity.microsoft.com` - [**取消链接Azure静态Web应用后Azure函数应用无法工作**](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/azure-function-app-doesn-t-work-after-unlinking-to-azure-static/ba-p/3759599) 作者：_Tony Ju_。将现有Azure函数应用链接到Azure静态Web应用时，函数会被映射到静态Web应用的/api路由，但若在静态Web应用外部访问该函数应用，则会报错。本文逐步指导如何更新函数应用的认证设置以兼容两种场景。\n* **3月16日** | `youtube.com` - [**直接从静态Web应用连接数据库**](https://youtu.be/vGOnh0UrADg) 作者：_Thomas Gauvin_。了解如何将Azure SQL数据库连接到静态Web应用，并通过自动生成的安数据终结点进行访问。视频演示了如何建立连接，并使用REST API对数据执行增删改查(CRUD)操作。\n* **3月16日** | `youtube.com` - [**使用GraphQL从静态Web应用查询数据库**](https://youtu.be/NF0EC68rdQk) 作者：_Craig Shoemaker_。学习如何通过Azure静态Web应用的数据库连接功能，使用GraphQL直接查询数据库而无需编写后端代码。视频展示了如何配置该功能并在应用中使用GraphQL查询。\n* **3月16日** | `techcommunity.microsoft.com` - [**Azure上的GraphQL：第13部分 - 在SWA和React中使用Data API构建器**](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/graphql-on-azure-part-13-using-data-api-builder-with-swa-and/ba-p/3769309) 作者：_Aaron Powell_。本教程将逐步指导如何创建React应用，通过数据库连接功能使用GraphQL从Cosmos DB获取数据！"
+      }
+    },
+    {
+      "segment_id": "42c293cc",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "## Community Buzz",
+      "source_content_hash": "9fae708cacd69eca2e72fc66e41553b31f1d80613ee28c92e0a50b8c165a8bc7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 社区动态"
+      }
+    },
+    {
+      "segment_id": "c9945b55",
+      "source_content": ":::info[AUTHORED BY DEVS LIKE YOU!]\n_This section highlights content from our amazing developer community - submitted directly, or discovered via the Azure Static Web Apps tag in sites like Tech Community and dev.to._\n:::",
+      "source_content_hash": "c6637baa6633ddcd5f64e3626150d4338eb82f5d03bf63e845a92bae43a50647",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[开发者原创内容]\n_本节重点呈现来自开发者社区的优质内容——通过直接提交或在Tech Community、dev.to等平台使用Azure静态Web应用标签发现的资源。_\n:::"
+      }
+    },
+    {
+      "segment_id": "69c1f590",
+      "source_content": "* **March 13** | `dev.to` - [**Astro and Azure Static Web Apps**](https://dev.to/florianrappl/astro-and-azure-static-web-apps-efl) by _Florian Rappl_ In this article what Astro is, and why it is ideal for an information driven static website. Then dive into Azure SWA as a hosting candidate, and what you might want to consider when going there, and how to deploy your Astro site.\n* **March 10** | `geeksforgeeks.org` -  [**How to use Azure Static Web Apps to Deploy an Angular App**](https://www.geeksforgeeks.org/how-to-use-azure-static-web-apps-to-deploy-an-angular-app/) by _Manikandan Shanmugam_ Follow this step by step guide on how you can create and deploy your own Angular app to Azure Static Web Apps with having just a GitHub and an Azure account.\n* **March 20** | `blog.johnnyreilly.com` -  [**Playwright, GitHub Actions and Azure Static Web Apps staging environments**](https://blog.johnnyreilly.com/playwright-github-actions-and-azure-static-web-apps-staging-environments) by _John Reilly_ Azure Static Web Apps staging environments allow you to test changes before they go live. This post shows how to use Playwright against staging environments with GitHub Actions.",
+      "source_content_hash": "3e38ba99073fce2a950aabd22f640f7d5985cc4a5a22b1c2cfbe2a3e65c774aa",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **3月13日** | `dev.to` - [**Astro与Azure静态Web应用**](https://dev.to/florianrappl/astro-and-azure-static-web-apps-efl) 作者：_Florian Rappl_。本文解析Astro框架的特性及其在信息驱动型静态网站中的优势，探讨将Azure SWA作为托管方案的注意事项，并演示如何部署Astro站点。\n* **3月10日** | `geeksforgeeks.org` - [**如何使用Azure静态Web应用部署Angular应用**](https://www.geeksforgeeks.org/how-to-use-azure-static-web-apps-to-deploy-an-angular-app/) 作者：_Manikandan Shanmugam_。本分步指南说明如何仅凭GitHub和Azure账户创建Angular应用并部署至Azure静态Web应用。\n* **3月20日** | `blog.johnnyreilly.com` - [**Playwright、GitHub Actions与Azure静态Web应用预发布环境**](https://blog.johnnyreilly.com/playwright-github-actions-and-azure-static-web-apps-staging-environments) 作者：_John Reilly_。Azure静态Web应用的预发布环境支持在生产前测试变更。本文演示如何通过GitHub Actions对预发布环境运行Playwright测试。"
+      }
+    },
+    {
+      "segment_id": "63e1d83c",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "## Upcoming Events",
+      "source_content_hash": "db2318a574c4d5e0551cf2de63fbbd9ab51753429c0cb2f44a4c1ae600dca803",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 近期活动"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "_This section highlights in-person or online events that are likely to feature Azure Static Web Apps content or developer conversations - links to CFPs or registration links are welcome!_",
+      "source_content_hash": "0c2c83656025095ef42800b875ab1912643024bc7e218a983023a63eeccddd2f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节推荐可能包含Azure静态Web应用相关内容或开发者讨论的线上线下活动——欢迎提交活动征集(CFP)或注册链接！_"
+      }
+    },
+    {
+      "segment_id": "536b7b6b",
+      "source_content": "* **March 23** | ✨ **Join LIVE for [Azure Static Web Apps Community Standups](https://www.youtube.com/live/9O4qZ6VHOIA?feature=share)** ✨ Meet members of the Azure Static Web Apps team as they cover the latest news, demos and announcements in a livestreamed event (12pm EST).\n* **March 20-24** | [**Microsoft Student Summit**](https://aka.ms/StudentSummit) Register for free for this 90 min career focused event! Watch live or on-demand after event, and stay tuned for post-Summit skilling activities in your region.\n* **April 5** | [**Azure Developers - .NET Day**](https://learn.microsoft.com/events/learn-events/azuredeveloper-dotnetday/) Join us to discover the latest services and features in Azure designed specifically for .NET developers. You'll learn cutting-edge cloud development techniques that can save you time and money, while providing your customers with the best experience possible.\n* **April 26** | [**VS Code Day 2023**](https://learn.microsoft.com/events/learn-events/vs-code-day-2023/) Our annual event where you'll learn how to elevate your development workflow using the latest and greatest features of VS Code.\n* **May 23-24** | [**Microsoft Build**](https://build.microsoft.com/home) Advance your knowledge and skills with deep interactive sessions focused on cloud and AI, .NET, data and analytics, dev tools, DevSecOps and SRE, low-code, and more. [Register now](https://register.build.microsoft.com/) to attend the event live in Seattle or remote from anywhere in the world.",
+      "source_content_hash": "af8bba8bfc0ee509406ae14f42113811957ef4ce0abd3a92fee955c3e41ad47e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **3月23日** | ✨ **加入[Azure静态Web应用社区站会](https://www.youtube.com/live/9O4qZ6VHOIA?feature=share)直播** ✨ 与Azure静态Web应用团队成员一起了解最新动态、演示和公告（美国东部时间中午12点）。\n* **3月20-24日** | [**微软学生峰会**](https://aka.ms/StudentSummit) 免费注册参加这场90分钟的职业发展活动！可观看直播或活动结束后的点播内容，并关注您所在地区的峰会后续技能提升活动。\n* **4月5日** | [**Azure开发者 - .NET日**](https://learn.microsoft.com/events/learn-events/azuredeveloper-dotnetday/) 加入我们，探索Azure专为.NET开发者设计的最新服务和功能。您将学习前沿的云开发技术，这些技术可以节省您的时间和成本，同时为客户提供最佳体验。\n* **4月26日** | [**VS Code日2023**](https://learn.microsoft.com/events/learn-events/vs-code-day-2023/) 我们的年度活动，您将了解如何使用VS Code的最新和最强大功能提升开发工作流程。\n* **5月23-24日** | [**微软Build大会**](https://build.microsoft.com/home) 通过专注于云和AI、.NET、数据和分析、开发工具、DevSecOps和SRE、低代码等领域的深度互动会议，提升您的知识和技能。[立即注册](https://register.build.microsoft.com/)参加在西雅图现场或全球任何地方的远程活动。"
+      }
+    },
+    {
+      "segment_id": "2a9ed33d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "## Did You Know?",
+      "source_content_hash": "244cb6b4719225219c0ba90273be054f028633181809325a71519c00e46c39b8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 您知道吗？"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "_Each month, we hope to turn the spotlight on one key resource or person that is worth knowing about, in the context of Azure Static Web Apps._",
+      "source_content_hash": "9f671d00d60bc452c4b198f7504b0f306fc75e5645df04e827d3ee61ae1e1277",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_每个月，我们希望聚焦一个在Azure静态Web应用背景下值得了解的关键资源或个人。_"
+      }
+    },
+    {
+      "segment_id": "8a58dc39",
+      "source_content": ":::info[🌟 SPOTLIGHT ON:  DATABASE CONNECTIONS]\n\nLast week we annonced the release of [**Database Connections for Azure Static Web Apps**](https://aka.ms/swa/db/announcement) 🥳\n\nThis new feature allows you to access Azure databases using REST and GraphQL, without writing backend code! Once you create a connection between your web application and database, you can manipulate data with full support for CRUD operations, built-in authorization, and relationships.\n\n:::",
+      "source_content_hash": "dcb482bcc9a32854c199039c4324fe3f5681a14c43d45b4710bc5135c5518b88",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[🌟 聚焦：数据库连接]\n\n上周我们宣布了[**Azure静态Web应用的数据库连接**](https://aka.ms/swa/db/announcement)的发布 🥳\n\n这一新功能允许您使用REST和GraphQL访问Azure数据库，而无需编写后端代码！一旦您在Web应用程序和数据库之间建立连接，您就可以操作数据，支持完整的CRUD操作、内置授权和关系。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "![SWA Database Connections](swa-database-connections.png)",
+      "source_content_hash": "339b465f3b0b9b4c08864f35f7ccf6fa4ae4c56500670208da2215f8ad93f6ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![SWA数据库连接](swa-database-connections.png)"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "Ready to learn more? We've got you covered! The site is now updated with _Collections_ where you can find links to recoures for lots of topics. Check out our [**Database Connections: Content Collection**](/collections/dab) with all you'll need on database connections.",
+      "source_content_hash": "67f501976fb07d7cd3b5971cd10ac89f6b0c4aa4e597ed3dc2e94c7def5ed73a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想了解更多？我们已经为您准备好了！网站现已更新了“集合”部分，您可以找到许多主题的资源链接。查看我们的[**数据库连接：内容集合**](/collections/dab)，其中包含了关于数据库连接的所有必要内容。"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "Or, here's some links for you to get your database connection going now:",
+      "source_content_hash": "26c454899a4ed1e98ec78bf3514d532870b310c8aa09cf8b0494741053d97eb8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "或者，这里有一些链接可以帮助您立即开始数据库连接："
+      }
+    },
+    {
+      "segment_id": "7a3b7c62",
+      "source_content": "* [Get started for free by connecting a database to your Static Web Apps resource](https://aka.ms/swa/db/getstarted)\n* [Learn more about Database connections for Static Web Apps](https://aka.ms/swa/db/docs)",
+      "source_content_hash": "0f15bac95869ce37df9efe43b592e70a7b0bd9048b7e9a0a4015734c378702be",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [免费开始，将数据库连接到您的静态Web应用资源](https://aka.ms/swa/db/getstarted)\n* [了解更多关于静态Web应用的数据库连接](https://aka.ms/swa/db/docs)"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "As you have feedback and ideas, we'd love to hear it! Join the [**GitHub Database Connection Discussion**](https://github.com/Azure/static-web-apps/discussions/1111) to share with us.",
+      "source_content_hash": "03e474c60e81f4b4340dfd60013eac8402347d94e9b271af45c9bbcc5eb2c5a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果您有反馈和想法，我们非常乐意听取！加入[**GitHub数据库连接讨论**](https://github.com/Azure/static-web-apps/discussions/1111)与我们分享。"
+      }
+    },
+    {
+      "segment_id": "42bfcc5d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "## 🚨 | Call For Content",
+      "source_content_hash": "110e923a6af2e878e3de072faa343b706cf5da4a99dac6d3e339d4d6d42eaf5e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 🚨 | 内容征集"
+      }
+    },
+    {
+      "segment_id": "379173ce",
+      "source_content": ":::tip[Next Roundup: April 24, 2023]\nSubmissions welcome till April 19, 2023.\n\n * Did you author an article, create a SWA application or sample?\n * Are you organizing an event with a SWA-related session?\n * Are you a student who just created your first SWA app or blog post?\n\nSubmit the details [**using this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community) as soon as possible. We can't wait to share your contributions!\n:::",
+      "source_content_hash": "51c400cf202992b3137774414b7c419623b4ca98f550059ee2d4858c6a3a00d4",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::tip[下一期汇总：2023年4月24日]\n提交截止日期为2023年4月19日。\n\n * 您是否撰写了一篇文章，创建了一个SWA应用程序或示例？\n * 您是否正在组织一个包含SWA相关会话的活动？\n * 您是否是刚刚创建了第一个SWA应用程序或博客文章的学生？\n\n尽快[**使用此自定义问题**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)提交详细信息。我们迫不及待地想分享您的贡献！\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog-blog-roundup/2023-03-20-thismonth/index.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.881191+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "90ea0e98e170252d7881288d37fa3405e6017c9924f7934f3b44773c03a928df"
+  }
+}

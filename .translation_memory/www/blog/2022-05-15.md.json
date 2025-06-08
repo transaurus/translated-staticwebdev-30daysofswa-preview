@@ -1,0 +1,492 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-15.md",
+  "source_file_content_hash": "716055e11427432d793b32dc9fb27f248575122b56841b1c9dee84db8c1d0a09",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: show-and-tell\ntitle: \"#14: Show & Tell: A SWArm Of Apps\"\nauthors: [nitya]\ntags: [swa, 30days, usage-examples]\ndraft: false\n---",
+      "source_content_hash": "b8696bd2d6c04dbd557ddb24762fbd29bfe5707c5e9cca8323bff8ba82d8a6a6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Welcome to `Week 2, Day 7` of **#30DaysOfSWA**!!",
+      "source_content_hash": "c7244d348cadf78ee73b66b77f02fe01c08e1613d97500959bf5c26611dcb453",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第2周第7天`！！"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "We made it to the end of Week 2!! **Let's give ourselves a round of applause!**",
+      "source_content_hash": "888d9c1ae4f95ed1e40d69c4f61e281971ca8f9edb17d22d37c86c7382517223",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们成功完成了第二周！！**让我们为自己鼓掌喝彩！**"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "In the last week we walked through a subset of usage examples featuring diverse applications, static site generators and front-end frameworks. And that's still just a small slice of what is possible. So how do you make this journey more actionable and _learn by doing_?",
+      "source_content_hash": "259662f3037bdad2ce5220fd1a1fa43856b125d593ab4aa46d85ba88d8de1200",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "过去一周我们通过多样化应用、静态站点生成器和前端框架的用例进行了实践。但这仅仅是可能性的冰山一角。如何让学习之旅更具实践性并实现\"做中学\"？"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "That's what I'll try to answer in today's post. Also **bookmark this one** because we will revisit it at the end of next week (\"Dev Tools\") and try to replicate some of these tutorials using the more streamlined experience provided by the [**Azure Static Web Apps CLI**](https://aka.ms/swa-cli) (a command-line tool for local development).",
+      "source_content_hash": "d7d25835fbe4b17142c1f794949c4202cb01078e45a36f45dfdf14d4898058bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这正是今天文章试图解答的问题。**建议收藏本文**，因为下周结束时（\"开发工具\"主题周）我们将结合 [**Azure Static Web Apps CLI**](https://aka.ms/swa-cli)（用于本地开发的命令行工具）提供的更流畅体验，重新审视并复现部分教程。"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "034de896",
+      "source_content": "* **Recap**: Usage Examples Week\n * **Build**: How to Get Project Ideas\n * **Share**: Contribute to the Gallery\n * **Simplify**: Using Static Web Apps CLI!\n * **Exercise**: Build, Deploy, and Customize, some starter app.x",
+      "source_content_hash": "b3b8e3efcd667013d57b1b0afa850d27c6f0d3cd0f9ae31d2a2830ad907c98c1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **回顾**：应用场景实践周\n * **构建**：如何获取项目灵感\n * **分享**：贡献到案例库\n * **简化**：使用Static Web Apps CLI！\n * **实践**：构建、部署并定制入门应用"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "![](../static/img/series/14-banner.png)",
+      "source_content_hash": "32c189f3a6d6a12a2c027efb5d7713449f8e2b38f8949f623dab36678bfe5ec8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/14-banner.png)"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Week 2 Recap",
+      "source_content_hash": "c42e4ecf9067261171d952a35099177b0bcc00f77f3fa36d4ba8373fcd48bcd9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 第二周回顾"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "This week was packed with different usage scenarios and front-end technologies. Let's take a quick look at what was covered:",
+      "source_content_hash": "268feb4899eb91aa0471cfd92f4b5a7b5af10eca37378f8cd25dad9dc8269c18",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本周涵盖了丰富的应用场景和前端技术，以下是核心内容："
+      }
+    },
+    {
+      "segment_id": "86b525ab",
+      "source_content": "* **Monday:** We built a [personal blog](https://dev.to/azure/08-build-a-blog-with-astro-1lb2) using [Astro](https://astro.build/).\n * **Tuesday:** We built an [inventory management](https://dev.to/azure/09-manage-inventory-with-react-39lc) app using [React](https://reactjs.org/)\n * **Wednesday:** We [got creative](https://dev.to/azure/10-get-creative-with-vuejs-33k1) with [Vue](https://vuejs.org/), ML and Game Engines!\n * **Thursday:** We [published content](https://dev.to/azure/11-share-content-with-docusaurus-azure-static-web-apps-30hc) using [Docusaurus](https://docusaurus.io/)\n * **Friday:** We explore [headless CMS](https://dev.to/azure/12-headless-cms-swa-built-with-blazor-1e2d) examples using [Blazor WebAssembly](http://blazor.net/)\n * **Saturday:** We learned to make SWA a more [progressive web app](https://dev.to/azure/13-hosting-pwa-on-static-web-apps-16la)",
+      "source_content_hash": "3bfd73ab598d516a5798eba27f91c432d8e611239da0ceb07d6f0b9b36af5fb4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **周一**：使用[Astro](https://astro.build/)搭建[个人博客](https://dev.to/azure/08-build-a-blog-with-astro-1lb2)\n * **周二**：使用[React](https://reactjs.org/)开发[库存管理](https://dev.to/azure/09-manage-inventory-with-react-39lc)应用\n * **周三**：结合[Vue](https://vuejs.org/)、机器学习和游戏引擎[创意开发](https://dev.to/azure/10-get-creative-with-vuejs-33k1)\n * **周四**：通过[Docusaurus](https://docusaurus.io/)[发布内容](https://dev.to/azure/11-share-content-with-docusaurus-azure-static-web-apps-30hc)\n * **周五**：探索基于[Blazor WebAssembly](http://blazor.net/)的[无头CMS](https://dev.to/azure/12-headless-cms-swa-built-with-blazor-1e2d)案例\n * **周六**：学习将SWA升级为[渐进式Web应用](https://dev.to/azure/13-hosting-pwa-on-static-web-apps-16la)"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "The visual roadmap gives you a sense of what was covered each day. But this is just the tip of the iceberg. JavaScript developers have a wide variety of front-end frameworks and static site generators to work with. And, as we saw with Blazor WebAssembly, non-JavaScript developers have other frameworks they use to develop modern web applications. So, how can you continue the learn-by-doing journey? Read on for some ideas.",
+      "source_content_hash": "237e329f37dec93aae0ea96dcc7fabb12e5a606b9547fbb5902101ce13df27fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "路线图展示了每日主题，但这只是技术生态的缩影。JavaScript开发者拥有丰富的前端框架和静态站点生成器选择，而如Blazor WebAssembly所示，非JavaScript开发者也有其他现代Web应用开发方案。如何延续\"做中学\"之旅？请继续阅读获取灵感。"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "![Week 2 Roadmap](../static/img/png/week2-roadmap.png)",
+      "source_content_hash": "801a45d4d80a0332d085001a8c4e9ea975d17386c45474a6a0bf0c10535f1ae0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![第2周路线图](../static/img/png/week2-roadmap.png)"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "## Project Ideas",
+      "source_content_hash": "6a377f6ef04de3b9d597afb30ac0c633a2d172c53e05a5dfec6aad6ba91cbaff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 项目灵感"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "### 1. Static Sites",
+      "source_content_hash": "08d787ddc0f5f74d743b7d38e1062c383aff1abd6a6b15b05d2d8a0755fdfaef",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 1. 静态站点"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "The easiest way to get started is to use one of many [static site generators](https://jamstack.org) available today. Most of these provide templates you can start with, and customize just by bringing your own content (data, media assets etc.). Need some inspiration? Take a look at the recently released [Rising Stars Of JavaScript: Static Sites](https://risingstars.js.org/2021/en#section-ssg) list and see if any of those projects have starters you can repurpose.",
+      "source_content_hash": "52f5ad8e89061eb3cee5087fa52bd85b131a43805892c3fbadf9a2d1e34f4f60",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最佳入门方式是使用现有的[静态站点生成器](https://jamstack.org)，多数提供可快速启动的模板，仅需注入自定义内容（数据、媒体资源等）。需要灵感？可参考最新发布的[JavaScript领域新星：静态站点](https://risingstars.js.org/2021/en#section-ssg)榜单，寻找适合改造的入门项目。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "**Example: My \"Recipe Me\" Project**.",
+      "source_content_hash": "c6aafac175ad4581627585917e75bc1eb8f25f6b71d96c7194c8c11e20b9886c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**案例：我的\"Recipe Me\"项目**"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "Earlier this week, we covered examples with Astro (#2), Docusarus (#3) and VuePress (#9) in our usage examples. Today we look at [Eleventy](https://www.11ty.dev/) (#7).",
+      "source_content_hash": "63f57fa60758f49998f86e926224312913285d928a98e433d8e6a0f80b52f693",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本周我们已通过Astro（第2位）、Docusaurus（第3位）和VuePress（第9位）的案例进行实践。今天我们将聚焦[Eleventy](https://www.11ty.dev/)（第7位）。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Earlier this year I ran [#30DaysOfPWA](https://dev.to/azure/07-developing-progressive-web-apps-hfb), a similar series focused on Progressive Web Apps. And I wanted a demo! I've always wanted to have a recipe blog, and I found [this Eleventy starter](https://github.com/maeligg/my-online-cookbook) that was perfect. I customized it to add the features and code required to make it PWA-compliant. And I configured it for hosting on Azure Static Web Apps. **Bonus:** I learned a lot in the process about the framework, and the configuration changes for SWA!",
+      "source_content_hash": "df56604a1c49e4ca9b0e7318f9fdcbe4289fd19b72219407096274b39be0fd8d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "今年早些时候，我开展了 [#30DaysOfPWA](https://dev.to/azure/07-developing-progressive-web-apps-hfb) 系列，专注于渐进式网络应用。当时我需要一个演示项目！我一直想搭建一个食谱博客，于是发现了[这个Eleventy启动模板](https://github.com/maeligg/my-online-cookbook)，它非常合适。我对其进行了定制，添加了使其符合PWA规范的功能和代码，并配置为托管在Azure Static Web Apps上。**额外收获：** 在此过程中，我深入了解了该框架以及针对SWA的配置调整！"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "![Recipe Me](../static/img/series/14-recipeme.png)",
+      "source_content_hash": "9eb187a2129d3626071b5342dd0b0c3fb842ba23afacd5b185dada07dea770aa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![食谱博客](../static/img/series/14-recipeme.png)"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "**Related Resources:**",
+      "source_content_hash": "d68cb41a19dbe9d1203cfedc88a2cdff6cf9f6003a1819996c015598bd47f33e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**相关资源：**"
+      }
+    },
+    {
+      "segment_id": "a0e887c2",
+      "source_content": "* [Read the Tutorial](https://dev.to/azure/07-developing-progressive-web-apps-hfb)\n * [Browse the Source](https://github.com/fearlessly-dev/recipe-me)\n * [Visit the Website](https://white-rock-036691f0f.1.azurestaticapps.net/)",
+      "source_content_hash": "e11481fa453a1e7a1eb20758f1524ebbbc3853155f06e58d036f617033c083b2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [阅读教程](https://dev.to/azure/07-developing-progressive-web-apps-hfb)\n * [查看源码](https://github.com/fearlessly-dev/recipe-me)\n * [访问网站](https://white-rock-036691f0f.1.azurestaticapps.net/)"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "### 2. Frameworks",
+      "source_content_hash": "c7372360ffcdee8eab8695c0fcab8de48f5f88bc25d974d2e38926145147c08f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 2. 框架应用"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "The next step up from this is to look at existing application starter-kits or tutorials that target popular front-end and full-stack frameworks. Unlike static site generators (which are content-centric) these apps let you explore advanced user interactions that can benefit from SWA concepts like serverless API and authentication support. Need some inspiration? Take a look at the recently released [Rising Stars Of JavaScript: Front-end Frameworks](https://risingstars.js.org/2021/en#section-framework) list and see if any of those projects have starters you can repurpose.",
+      "source_content_hash": "6759cd5cf71e1b1ec47f238761a5c2e46d2fca4646076029358c6c758c77a84b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "更进一步的方法是探索针对流行前端和全栈框架的现有应用启动套件或教程。与静态站点生成器（以内容为中心）不同，这些应用让你能够探索高级用户交互，这些交互可以受益于SWA的无服务器API和身份验证支持等概念。需要灵感？查看最新发布的[JavaScript前沿框架排行榜](https://risingstars.js.org/2021/en#section-framework)，看看其中是否有可复用的启动项目。"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "**Example:  Simona's \"Sticker Shop\" Project**.",
+      "source_content_hash": "2990eaa9589d7fa562b300cb6874bde17f4dded95a452dbac6a49114d8914748",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**示例：Simona的\"贴纸商店\"项目**。"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "Check out this example from Simona Cotin (currently a Principal PM on the Static Web Apps team) which forked the [Strapi e-commerce starter](https://strapi.io/blog/strapi-starter-nuxt-js-e-commerce) and adapted it for deployment on Azure Static Web Apps. The Strapi [tutorial](https://strapi.io/blog/strapi-starter-nuxt-js-e-commerce) talks you through the setup and structure of the application - making it a perfect place to explore just adding SWA integrations. **Bonus:** Simona's deployment also takes advantage of SWA's _custom domain_ support, making the app accessible at the [https://aswa.cloud](https://aswa.cloud) domain.",
+      "source_content_hash": "7f576ccbb1b8b5560cbc8d577be879a4edf566d2ce34555ff36b9432c2f28ed3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "看看Static Web Apps团队首席项目经理Simona Cotin的这个案例，她复刻了[Strapi电商启动模板](https://strapi.io/blog/strapi-starter-nuxt-js-e-commerce)，并适配部署到Azure Static Web Apps。Strapi的[教程](https://strapi.io/blog/strapi-starter-nuxt-js-e-commerce)会带你了解应用的设置和结构——这是探索添加SWA集成的绝佳起点。**亮点：** Simona的部署还利用了SWA的_自定义域名_功能，使应用可通过[https://aswa.cloud](https://aswa.cloud)域名访问。"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "![Sticker Shop](../static/img/series/14-simona-stickers.png)",
+      "source_content_hash": "f924b4be527f755c9ec8029e91de5478ab3d05c588d019fa062308e962db3fd0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![贴纸商店](../static/img/series/14-simona-stickers.png)"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "**Related Resources:**",
+      "source_content_hash": "d68cb41a19dbe9d1203cfedc88a2cdff6cf9f6003a1819996c015598bd47f33e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**相关资源：**"
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "* [Read the Tutorial](https://strapi.io/blog/strapi-starter-nuxt-js-e-commerce)\n * [Browse the Source](https://github.com/simonaco/sticker-shop)\n * [Visit the Website](https://www.aswa.cloud/)",
+      "source_content_hash": "2c23ab684942211d30779908b9d9a5ee32e19e2891cae385c7e124cbce12cd7c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [阅读教程](https://strapi.io/blog/strapi-starter-nuxt-js-e-commerce)\n * [查看源码](https://github.com/simonaco/sticker-shop)\n * [访问网站](https://www.aswa.cloud/)"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "### 3. OSS Apps",
+      "source_content_hash": "c5b680a48feb7edbd2debe8c9380b070a349de6fa1b9019bbf30b5e0f2cd1281",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "### 3. 开源应用"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "Sometimes, you find the right application not because of the framework - but because its a use case that really resonates with you - even if you are not necessarily familiar with the underlying technology. These projects are great because your interest in the end result makes you more curious to dig under the hood, improving your understanding of new applicaton architectures and tooling. Need some inspiration? My favorite starting point is the [awesome](https://github.com/sindresorhus/awesome) repo which is a directory of `awesome-XYZ` lists for a given technology `XYZ`. Many of these lists identify tutorials, open-source projects and starter template repos that can be the basis for your experiments!",
+      "source_content_hash": "d12f07df5d79fe29a4fe1fd1dea1564ad3beef279c95984cefd737a900a3329b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "有时，你找到合适的应用不是因为框架——而是因为它的用例真正引起了你的共鸣——即使你可能并不熟悉底层技术。这类项目很棒，因为你对最终结果的兴趣会促使你深入探究，从而提升对新应用架构和工具的理解。需要灵感？我最喜欢的起点是[awesome](https://github.com/sindresorhus/awesome)仓库，这是一个针对特定技术`XYZ`的`awesome-XYZ`列表目录。许多列表都标识了教程、开源项目和启动模板仓库，可以作为你实验的基础！"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "**Example:  My \"Google Codelabs\" Project**.",
+      "source_content_hash": "d5b5c63907f2d324787740d80eadd9190b0b48adc5b28e32b5f788f619a65850",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**示例：我的\"Google Codelabs\"项目**。"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "If you've attended any Google Developer events or community conferences, chances are you'll have encountered their [Codelabs](https://codelabs.developers.google.com/) site - a repository of step-by-step tutorials that cover a wide range of technologies. But did you know that they [open-sourced the codelabs management and hosting tools](https://github.com/googlecodelabs/tools)?",
+      "source_content_hash": "fcab33a2fd4cd086eb38c3cdf63a65bcf0b74a3d1b7c7d519aaaeb333ec3e0f7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果你参加过任何Google开发者活动或社区会议，很可能遇到过他们的[Codelabs](https://codelabs.developers.google.com/)网站——一个涵盖广泛技术的分步教程库。但你知道吗？他们[开源了codelabs管理和托管工具](https://github.com/googlecodelabs/tools)。"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "The underlying tooling uses Golang but the actual content is written in Markdown, and converted into the required static files by [`claat`](https://github.com/googlecodelabs/tools/tree/main/claat), the \"Code Labs As A Tool\" utility. Follow along to create your own codelabs - and host them on Azure Static Web Apps. **Bonus:** The hosted app *is* the tutorial for how it was created. Isn't that meta?",
+      "source_content_hash": "47bb780103f2ba2e66a53823581b238f19664403611f808343bccdf7aa059b2d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "底层工具链采用Golang实现，但实际内容以Markdown编写，并通过[`claat`](https://github.com/googlecodelabs/tools/tree/main/claat)（\"Code Labs As A Tool\"工具）转换为所需的静态文件。跟随教程创建属于您自己的代码实验室——并托管在Azure Static Web Apps上。**额外收获：**托管应用本身即是其创建过程的教程，这种自指设计是否颇具哲学意味？"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "![Google Codelabs](../static/img/series/14-codelabs.png)",
+      "source_content_hash": "2e6faaab5981a67d798c6fd62bd954f062062c956b154b8f17eb2bba95434af6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![Google代码实验室](../static/img/series/14-codelabs.png)"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "**Related Resources:**",
+      "source_content_hash": "d68cb41a19dbe9d1203cfedc88a2cdff6cf9f6003a1819996c015598bd47f33e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**相关资源：**"
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "* [Read the Tutorial](https://medium.com/@zarinlo/publish-technical-tutorials-in-google-codelab-format-b07ef76972cd)\n * [Browse the Source](https://github.com/nitya/swa-googlecodelabs)\n * [Visit the Website](https://agreeable-bush-016b49e0f.1.azurestaticapps.net/#0)",
+      "source_content_hash": "3b4e77af9c2efdce1072ce35552797f68ac101a3bce745f8295ddb4b92d383b1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [阅读教程](https://medium.com/@zarinlo/publish-technical-tutorials-in-google-codelab-format-b07ef76972cd)\n * [浏览源码](https://github.com/nitya/swa-googlecodelabs)\n * [访问网站](https://agreeable-bush-016b49e0f.1.azurestaticapps.net/#0)"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "## Share: Gallery",
+      "source_content_hash": "80e37c4a5df1fdf00c8a84f5552125e28708483623f096d7dd7cda972f2d5a8a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 分享：项目画廊"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "We've talked about Project ideas that help **you** learn by repurposing the open-source projects, tutorials or templates generated by others. Now let's talk about paying it forward by **sharing** your project to inspire others.",
+      "source_content_hash": "edd940fa617af4a1def16bc07b2a8dd8a078730acc39d2043b26b8d9f116ba37",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们探讨了如何通过改造他人创建的开源项目、教程或模板来助力**您**的学习。现在让我们谈谈如何通过**分享**您的项目来激励他人，以此回馈社区。"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "That is the purpose of the [Static Web Apps Showcase](/showcase) that we will be debuting before the end of May. You can see a sneak preview of what the app gallery looks like, allowing developers to search for projects that have _live_ deployments and _open source_ codebases, and use one of the listed front-end technologies. **Bookmark this post or track the _Showcase_ link on this site, to know when the Showcase feature goes live!** Be the first to submit a project for some of the more recent technologies added to that list!",
+      "source_content_hash": "b9849068b160a1ff1fde49ea39f4f126128494594e79c399f5f128a9fe958de0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "这正是我们将在五月底推出的[静态Web应用展示区](/showcase)的初衷。您可以先睹为快这个应用画廊的预览版，开发者能在此搜索具有_在线部署_和_开源代码库_的项目，并使用所列出的任意前端技术。**收藏本文或关注本站的_Showcase_链接，第一时间获取展示功能上线通知！** 欢迎为新增技术栈提交首批项目案例！"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "![SWA Gallery](../static/img/png/swa-showcase.png)",
+      "source_content_hash": "b464189f1b853b57f78e22345181378f135161aa5a72495949c258e22cabfef6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![SWA项目画廊](../static/img/png/swa-showcase.png)"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "## Simplify: SWA CLI",
+      "source_content_hash": "254794b59d1b35312c0d930e8497b1321865c317481141bd26d4bc8225620ffe",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 简化：SWA CLI"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "One last thing. In all the usage examples and tutorial so far, we've typically emphasized either the **IDE** option (using the Visual Studio Code SWA extension) or the **Azure Portal** option (activated by the `Deploy to Azure` button configured on repo README).",
+      "source_content_hash": "5628df9f9e2de8a84166a0eafeb561659063bffa3dcfe83d5645ff122c58ee51",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最后还有一点。在迄今所有使用示例和教程中，我们通常强调**IDE**方案（使用Visual Studio Code的SWA扩展）或**Azure门户**方案（通过仓库README中配置的`Deploy to Azure`按钮触发）。"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "But what if you could do everything from the command-line - from initializing your project configuration, to building and testing your application locally, to deploying it to the cloud in a production or preview environment? That's the promise behind the [Azure Static Web Apps CLI](https://aka.ms/swa-cli). **Join us May 19 for a special #SWAanniversary event** for some exciting announcements in this context.",
+      "source_content_hash": "0f1e7928dd191d25c96f817f9796796fbca3c4a64434f367f78e68683b2372ba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "但如果您能从命令行完成所有操作——从初始化项目配置，到本地构建测试应用，再到将其部署至云端生产或预览环境呢？这正是[Azure Static Web Apps CLI](https://aka.ms/swa-cli)的承诺。**5月19日请加入我们的#SWA周年特别活动**，届时将有相关重磅公告发布。"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "Then bookmark and revisit this page later in May for an updated section where we discuss how we can further simplify and streamline our \"learn by doing\" projects with this tool!",
+      "source_content_hash": "751c0acb37c3e7278d13d90f6202779b6cff742a48ab84d1e4e7544a24a839d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "请收藏本页面并在五月下旬回访，我们将更新章节讨论如何利用此工具进一步简化和优化\"实践中学习\"的项目流程！"
+      }
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践练习"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "We've looked at various resources you can start with, to scaffold a real-world application that you can then configure for SWA deployment and further customization. Go ahead and pick something and expand on the app to create something new. Then contribute it to [our upcoming Showcase](/showcase) project!",
+      "source_content_hash": "02fd7d4a784c26b053392062435437636a3ead15511cabb66583579997085c1c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们已经了解了多种可快速搭建真实世界应用的资源，这些应用都能配置为SWA部署并进行深度定制。现在请选择某个项目进行扩展创新，然后将其提交至[我们即将推出的展示区](/showcase)！"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "Need more inspiration? I'm a fan of React, but I've wanted to explore [Preact](https://preactjs.com/) as a performant alternative with a comparable API. The [Preact Demos](https://preactjs.com/about/demos-examples/) page has a rich set of examples - including this [Homepage Generator](https://thomaswood.me/) which is a perfect 1-page resume template you can customize for **your** profile. _Try it out!_",
+      "source_content_hash": "319d0762a302cde282c30ddd3becdcef428fda0a7dcd2ab2bc09132c3a616022",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "需要更多灵感？作为React爱好者，我一直想探索具有相似API但性能更优的[Preact](https://preactjs.com/)。[Preact示例集](https://preactjs.com/about/demos-examples/)页面提供了丰富案例——包括这个可作为单页简历模板的[主页生成器](https://thomaswood.me/)，您可轻松定制**个人**资料页面。_立即尝试！_"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-15.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.881465+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "716055e11427432d793b32dc9fb27f248575122b56841b1c9dee84db8c1d0a09"
+  }
+}

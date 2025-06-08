@@ -1,0 +1,542 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-16.md",
+  "source_file_content_hash": "62175d0fffb4807e7790224661993355229adeba0980dcf75ce4d9c1843b98a8",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: devtools-azure\ntitle: \"#15: Develop with Azure Tools\"\nauthors: [nitya]\ntags: [swa, 30days, dev-tools]\ndraft: false\n---",
+      "source_content_hash": "c543eac4f79d6d1956f19d8a6a84b9c28c89876697f7d0737eb2b63b3747b007",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Welcome to `Week 3, Day 1` of **#30DaysOfSWA**!!",
+      "source_content_hash": "3fb1fead398a138e69f7a97094b9d2462b3b625737a496bb448150a5abfb5f7e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的 `第3周第1天`!!"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "We just crossed the halfway mark on #30DaysOfSWA! We covered core concepts in Week 1, and explored usage examples in Week 2. Today we kick off week 3 with a focus on **_Developer Tools_!** Let's dive in!",
+      "source_content_hash": "fcbbf59adace4f7f248d5855252adf4ba728b1618d331a23c63c9393f5b00fbd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们刚刚跨越了#30DaysOfSWA的中途里程碑！第一周我们涵盖了核心概念，第二周探索了使用示例。今天我们将以**_开发者工具_**为主题开启第三周！让我们开始吧！"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 本周内容"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "* What does the Developer Experience look like?\n * Explore: Azure CLI\n * Explore: Azure Portal\n * Explore: Azure Core Functions Tools\n * **Exercise:** Explore Azure Portal & CLI docs for SWA.",
+      "source_content_hash": "a53eee55d08617497521fbcb39e3e577cd01dba60a3db5fcd231e8166ee64ffa",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 开发者体验是怎样的？\n * 探索：Azure CLI\n * 探索：Azure 门户\n * 探索：Azure Functions Core Tools\n * **练习：** 查阅 Azure 门户和 CLI 中关于 SWA 的文档。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "![](../static/img/series/15-banner.png)",
+      "source_content_hash": "b94192c95499683b62670536379fefbec30a6958301515e7837c83cb7d8dc8cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/15-banner.png)"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Dev Experience",
+      "source_content_hash": "c7bb97d127d3cc7ecfe0f4ad52b8238c746ed9f9f763dc3913632144c0e21d9d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 开发者体验"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "When we think about building a modern web application, we're also thinking about our _developer experience_. By [one definition](https://microsoft.github.io/code-with-engineering-playbook/developer-experience/#defining-end-to-end), developer experience refers to how easy or difficult it is for us, as developers, to perform the required tasks to implement the desired outcome.",
+      "source_content_hash": "2b772894b78299c49b51e4426ddec1b3e65e8cbc3cb028f045fbcb7f6891b2d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "当我们思考如何构建现代 Web 应用时，我们也在考虑自身的_开发者体验_。根据[某个定义](https://microsoft.github.io/code-with-engineering-playbook/developer-experience/#defining-end-to-end)，开发者体验指的是我们作为开发者执行必要任务以实现预期结果的难易程度。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "In the case of application development, the tasks often involve:",
+      "source_content_hash": "5fed0e2a447544f77b752f1f5a383a9a78ed6d3efdfc92328e0ac617a713ff0a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在应用开发场景中，这些任务通常包括："
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "* **Building** the project from source (after creating the codebase)\n * **Testing** project behaviors (to validate compliance with requirements)\n * **Deploying** the project (to staging or production environments)\n * **Debugging** the project (to fix issues, audit performance etc.)",
+      "source_content_hash": "c660b401ea0c685f935e47c4be19cc650d974ddd4c350d2e085714e825de5366",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **构建**项目（在创建代码库之后）\n * **测试**项目行为（以验证是否符合需求）\n * **部署**项目（到暂存或生产环境）\n * **调试**项目（修复问题、审计性能等）"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Having the right **developer tools** can make all the difference between a productive developer workflow and a painful one. This week, we'll look at the many tools and services available, that make the Azure Static Web Apps Developer Experience more seamless.",
+      "source_content_hash": "44fd9f7e666213abbc4287712909a0696fa83ee055fd34026cba487ad905298f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "拥有合适的**开发者工具**可以决定工作流是高效顺畅还是痛苦不堪。本周我们将了解各种工具和服务，它们能让 Azure Static Web Apps 的开发者体验更加流畅。"
+      }
+    },
+    {
+      "segment_id": "f2c8a42b",
+      "source_content": "* **Azure Dev Tools |** What are the core tools for working with Azure?\n * **Playwright |** How can we implement end-to-end testing for our app?\n * **CI/CD|** How can we automate build/deploy workflows?\n * **Edge DevTools** How can we debug and profile apps in the browser?\n * **SWA CLI** How can we simplify local development for static web apps?\n * **Visual Studio Code** How can we supercharge our IDE-driven experience?",
+      "source_content_hash": "234bcd2c7fc7b7d49707c1c953175033e7fa90c6df43cff832beb1b4120044ec",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **Azure 开发工具 |** 使用 Azure 的核心工具有哪些？\n * **Playwright |** 如何为应用实施端到端测试？\n * **CI/CD |** 如何自动化构建/部署工作流？\n * **Edge DevTools |** 如何在浏览器中调试和分析应用？\n * **SWA CLI |** 如何简化静态 Web 应用的本地开发？\n * **Visual Studio Code |** 如何强化我们的 IDE 驱动体验？"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "In today's post we'll look at the main tools that make it easy for modern web application developers to build static web apps on Azure:",
+      "source_content_hash": "83c8d04b0c5f1c9deecfff14108ccb26fa9529062bd79f64e95fb6cbec4fabf0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在今天的文章中，我们将了解使现代 Web 应用开发者能轻松在 Azure 上构建静态 Web 应用的主要工具："
+      }
+    },
+    {
+      "segment_id": "8612da05",
+      "source_content": "* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) - a command-line interface to create and manage Azure resources\n * [Azure Portal](https://docs.microsoft.com/en-us/azure/azure-portal/) - a web-based unified console alternative to the Azure CLI.\n * [Azure SWA CLI](https://github.com/Azure/static-web-apps-cli) - a _local development tool_ for Azure Static Web Apps\n * [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) - a _local development tool_ for Azure Functions.\n * [Azure Extensions for Visual Studio Code](https://code.visualstudio.com/docs/azure/extensions) for seamless access from IDE.",
+      "source_content_hash": "af854ab94b8a468a635abb7ce84d8672cde550a0313a32e9e075b7bbdd063b62",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) - 用于创建和管理 Azure 资源的命令行接口\n * [Azure 门户](https://docs.microsoft.com/en-us/azure/azure-portal/) - 基于 Web 的统一控制台，是 Azure CLI 的替代方案\n * [Azure SWA CLI](https://github.com/Azure/static-web-apps-cli) - Azure Static Web Apps 的_本地开发工具_\n * [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) - Azure Functions 的_本地开发工具_\n * [Visual Studio Code 的 Azure 扩展](https://code.visualstudio.com/docs/azure/extensions) - 从 IDE 无缝访问 Azure"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "We'll coverAzure SWA CLI and VS Code extensions in greater detail later this week.",
+      "source_content_hash": "b293ec7234b5fb761fcdc85d43e7ff6e9fda5e0551ac38602837c814b789fcdf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们将在本周晚些时候更详细地介绍 Azure SWA CLI 和 VS Code 扩展。"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "## New to Azure?",
+      "source_content_hash": "185ccfe4baf195f92dfa5a5a1accb64764c99aa738b7b50253d246b00c14dccb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 刚接触 Azure？"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "We assume you are familiar with cloud computing concepts like resources, resource groups, subscriptions and services. If not, that's okay. Now's a good time to take a detour and explore **[Azure Fundamentals](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)** - a 6-part learning series that will take you through the core concepts, services, solutions, security features, identity & governance aspects, and cost management features available on Azure.",
+      "source_content_hash": "cd81ef6c850adf8d737664399bd4ffae4eddb310829940fa3ced0cd49874db47",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们假设您熟悉云计算概念，如资源、资源组、订阅和服务。如果不熟悉也没关系。现在正是了解 **[Azure 基础知识](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)** 的好时机——这是一个由6部分组成的学习系列，将带您了解 Azure 上的核心概念、服务、解决方案、安全功能、身份与治理方面以及成本管理功能。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "If you're a JavaScript or Node.js developer new to Azure, bookmark these links:",
+      "source_content_hash": "fe699f5779c83c17d738a7cdf42b12282a738de19b362120ab605bbda93cb3f8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果您是刚接触 Azure 的 JavaScript 或 Node.js 开发者，请收藏以下链接："
+      }
+    },
+    {
+      "segment_id": "c94a9c0e",
+      "source_content": "* [Azure SDKs](https://azure.github.io/azure-sdk/releases/latest/js.html) for service integrations in your preferred programming language.\n * [Azure for JavaScript Developers](https://docs.microsoft.com/en-us/azure/developer/javascript/) for guides and samples\n * [Tools for JS Developers on Azure](https://docs.microsoft.com/en-us/azure/developer/javascript/node-azure-tools) with [configuration tips](https://docs.microsoft.com/en-us/azure/developer/javascript/core/configure-local-development-environment?tabs=bash)",
+      "source_content_hash": "973158d997f7da75c519fc197773c9658f70f04cb013897cc8635143900b85e1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Azure SDK](https://azure.github.io/azure-sdk/releases/latest/js.html) - 适用于您首选编程语言的服务集成工具包\n * [面向JavaScript开发者的Azure指南](https://docs.microsoft.com/en-us/azure/developer/javascript/) - 包含教程与示例代码\n * [Azure上的JS开发工具链](https://docs.microsoft.com/en-us/azure/developer/javascript/node-azure-tools)及[本地环境配置技巧](https://docs.microsoft.com/en-us/azure/developer/javascript/core/configure-local-development-environment?tabs=bash)"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "## Azure CLI",
+      "source_content_hash": "bc195cd967ce25f22b6f38ce00c625b8054101e2b4188d7b7577990410695e4f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Azure CLI"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "Now that you're familiar with core Azure concepts, let's talk about how you can _create and manage_ your cloud resources on Azure. The **[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli)** is a _cross-platform_ command-line tool that connects you securely to Azure, to execute commands on Azure resources interactively (or via scripts) from a terminal.",
+      "source_content_hash": "6d6196cdf56be604a1efcabb14fb510e6e59c346353672ad890cd45bd0f15228",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "了解Azure核心概念后，我们来探讨如何_创建和管理_云资源。[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli)是一款_跨平台_命令行工具，可通过终端以交互方式(或脚本)安全连接Azure并执行资源操作。"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "The easiest way to familiarize yourself with the Azure CLI commands is to [install and run it in Azure Cloud Shell](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli#install-or-run-in-azure-cloud-shell) **in your browser** - no local installation needed. Follow [these instructions](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) to then install it locally in your development environment. Validate your install by testing out the core `az` command.",
+      "source_content_hash": "118b4d91f8818e586e4d0a40ffd87f8c6cb78e8e24e04f8f191d08549516fd84",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "最快捷的上手方式是通过浏览器[在Azure Cloud Shell中安装运行](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli#install-or-run-in-azure-cloud-shell)，无需本地安装。随后按[此指南](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)在开发环境本地安装。可通过测试核心`az`命令验证安装。"
+      }
+    },
+    {
+      "segment_id": "5d4925eb",
+      "source_content": "```bash\naz --version\n```",
+      "source_content_hash": "79e3a7b6ee818da66b8b60c34e47ca598aab0f7940226c245a6a26ef091126a2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_5d4925eb"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "There Azure CLI can manage most Azure Services out of the box. Here is **[list of supportred services](https://docs.microsoft.com/en-us/cli/azure/azure-services-the-azure-cli-can-manage)** along with links to quickstart documentation for each. As web developers, you may find the **[web-related subset of services](https://docs.microsoft.com/en-us/cli/azure/azure-services-the-azure-cli-can-manage#web)** worth exploring - everything from App Service and API Management, to Azure Static Web Apps.",
+      "source_content_hash": "ee943a192683e0dec438d7aee8a76600bc2566872611330e94ab9085896d2139",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure CLI默认支持管理绝大多数Azure服务，[此处查看支持的服务列表](https://docs.microsoft.com/en-us/cli/azure/azure-services-the-azure-cli-can-manage)及对应快速入门文档。Web开发者可重点关注[Web相关服务子集](https://docs.microsoft.com/en-us/cli/azure/azure-services-the-azure-cli-can-manage#web)，涵盖从应用服务、API管理到Azure静态Web应用的全套服务。"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "Use the following command to get interactive help with supported commands and options in this context.",
+      "source_content_hash": "5ddd8a999da2760c577771d1614d8274625994b2780fc823426bdbf2c30773d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "执行以下命令获取当前上下文的交互式帮助："
+      }
+    },
+    {
+      "segment_id": "af983f82",
+      "source_content": "```\naz staticwebapp --help\n```",
+      "source_content_hash": "46da94812c44d74e5699afb810e628d6066f8f99b897ef027054fede2950e9fd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_af983f82"
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "With the CLI you can manage app settings, create and delete static apps, manage the static app's environment and associated functions, oversee information related to identity, users and secrets associated with the app, and more.",
+      "source_content_hash": "676309833b97c99fb00d48ebcc9eb635fcfc1dabc7513191e71723f210a4810d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过CLI可管理应用设置、创建/删除静态应用、管理应用环境与关联函数、监管身份信息/用户/应用密钥等。"
+      }
+    },
+    {
+      "segment_id": "ca1573da",
+      "source_content": "* Explore the **[az staticwebapp](https://docs.microsoft.com/en-us/cli/azure/staticwebapp?view=azure-cli-latest)** reference to learn relevant commands and options.\n * Then **[build your first static web app](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript)** using the Azure CLI.",
+      "source_content_hash": "d8eea561ebf7da7103dfa8b1a5ecd39f7a505f88241e74ac506c25e681edced2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 查阅[az staticwebapp命令参考](https://docs.microsoft.com/en-us/cli/azure/staticwebapp?view=azure-cli-latest)学习相关命令选项\n * 使用Azure CLI[构建首个静态Web应用](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript)"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "## Azure Portal",
+      "source_content_hash": "046983fb817a16b0f7edbf4200e7d527fcaa2a9026be463050534b66e580fafd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Azure门户"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "If you prefer a unified web-based console for managing your Azure resource interactions, the [Azure Portal](https://docs.microsoft.com/en-us/azure/azure-portal/) provides a **graphical user interface alternative to the Azure CLI**. The portal is designed for _continuous availability_. Here's a snapshot of what the Azure Portal layout looks like. Browse the following documents to get a deeper dive into its capabilities:",
+      "source_content_hash": "f5887c255e3fd70ae0735b38c7c83918fca601da852584de30e81f28c6ec70d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若倾向使用基于Web的统一控制台管理Azure资源，[Azure门户](https://docs.microsoft.com/en-us/azure/azure-portal/)提供了_图形化界面的CLI替代方案_。该门户设计为_持续可用_。下图展示门户界面布局，可通过以下文档深入了解功能："
+      }
+    },
+    {
+      "segment_id": "e032fbc6",
+      "source_content": "* Understand the [components of the Azure Portal](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview#getting-around-the-portal) in this document.\n * Then learn to [navigate the portal](https://docs.microsoft.com/en-us/learn/modules/tour-azure-portal/3-navigate-the-portal) in this tutorial.\n * Or follow the [Azure Quickstart Center](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-quickstart-center) guided tour.",
+      "source_content_hash": "e0d30a1ff8025b1380fdebbc7f28a4468b77ac37674d165adb66af127080e0cb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 通过[Azure门户组件解析](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview#getting-around-the-portal)了解架构\n * 在[门户导航教程](https://docs.microsoft.com/en-us/learn/modules/tour-azure-portal/3-navigate-the-portal)中学习操作技巧\n * 或跟随[Azure快速入门中心](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-quickstart-center)引导式教程"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "Then, try to  **[build your first static web app](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript)** using the Azure Portal to get hands-on experience with the developer workflow from creation to deployment.",
+      "source_content_hash": "296ccbd99bf92ce9c0a584b8b5982cb262724fefc6c8b1c588d8eda49dad67d5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "实践环节：通过Azure门户[构建首个静态Web应用](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript)，体验从创建到部署的完整开发流程。"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "![](https://docs.microsoft.com/en-us/learn/modules/tour-azure-portal/media/3-portal.png)",
+      "source_content_hash": "6ec32d89c342e5960e58f6a26a11dbaff35ef00280f0d62e4512de26eed4cd9a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](https://docs.microsoft.com/en-us/learn/modules/tour-azure-portal/media/3-portal.png)"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "## Functions Core Tools",
+      "source_content_hash": "34df6d3ba424f55cea967b48f696723feaa2af8c5b31a00ee2f34923ef5451e5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Functions Core Tools"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "Azure Static Web Apps uses [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) to support serverless API capability for the app. Learn more about this in our earlier post on [API-enabling SWA](./2022-05-04.md) where we talked about  _Managed Functions_ (created and managed by Azure Static Web Apps) and _Bring Your Own Functions_ (independently created and managed) options for adding serverless API support to your static web application.",
+      "source_content_hash": "4e20c71c6dcc890cd06789fbbfcdadddca8534f1746e1cabbf22e7852fa625cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps 采用 [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) 为应用提供无服务器 API 支持。您可以通过我们早前的文章[《为SWA启用API》](./2022-05-04.md)深入了解，文中探讨了两种为静态Web应用添加无服务器API支持的方式：_托管函数_（由Azure Static Web Apps创建并管理）和_自带函数_（独立创建并管理）。"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "The [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools) - aka `func` - supports **local development** with a command-line tool to create, test, and even deploy, your functions to Azure. Once installed, use the following to get interactive help with the supported commands and options for this tool:",
+      "source_content_hash": "8bf846a5e7551ea09bdfebdf8fd6c9a159f7d49e7fd7635d1ad2f567492adbfa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)（简称`func`）是一款支持**本地开发**的命令行工具，可用于创建、测试甚至将函数部署至Azure。安装完成后，可通过以下命令获取该工具支持的命令和选项的交互式帮助："
+      }
+    },
+    {
+      "segment_id": "a476a172",
+      "source_content": "```\nfunc --help\n```",
+      "source_content_hash": "8e77b4ef67fc0af38c497d5c6d34fc42df94e1d29108f6911595579a3ccacd1b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_a476a172"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "You should see something like this **(some output abbreviated for clarity)** giving you a sense of the main operations you can perform from this CLI.",
+      "source_content_hash": "d295a736b038c661b700b9e1ca16bc684b92578a171c343c1a803a46c79b8da1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您将看到类似如下的输出（部分内容已精简），由此了解该CLI的主要操作功能："
+      }
+    },
+    {
+      "segment_id": "c4c0fc07",
+      "source_content": "```\nAzure Functions Core Tools\nCore Tools Version:       4.0.3971 ...\nFunction Runtime Version: 4.0.1.16815\n\nUsage: func [context] [context] <action> [-/--options]\n\nContexts:\nazure       Commands to log in to Azure and manage resources\ndurable     Commands for working with Durable Functions\nextensions  Commands for installing extensions\nfunction    Commands for creating and running functions locally\nhost        Commands for running the Functions host locally\nkubernetes  Commands for working with Kubernetes and Azure Functions\nsettings    Commands for managing environment settings for the local Functions host\ntemplates   Commands for listing available function templates\n\nActions: \nstart   Launches the functions runtime host  \n    --port [-p]     Local port to listen on. \n                    Default: 7071\n..\n..\n```",
+      "source_content_hash": "2b29d8147024fd9d5762e5cc854105ad5e8128212c7bb8337404a9416ba34f30",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_c4c0fc07"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "Explore the documentation to learn how you can:",
+      "source_content_hash": "1fb4ca6d61a2190dc4f430d2d658a5c8f383b7e6fa365d90af2c8b2234f05ed8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过文档学习如何实现以下操作："
+      }
+    },
+    {
+      "segment_id": "6409152f",
+      "source_content": "* [Install the Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local)\n * [Create a local Functions project](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#create-a-local-functions-project)\n * [Run and test Functions locally](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#start)\n * [Publish Functions to Azure](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#publish)",
+      "source_content_hash": "7a4884faa18b0314878bfe31624f896ffca0aa8c4d66b15cf6a96d6c1efca4e7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [安装Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local)\n * [创建本地Functions项目](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#create-a-local-functions-project)\n * [本地运行和测试Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#start)\n * [将Functions发布至Azure](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#publish)"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "Later this week, we'll do a deep-dive into the **[Azure Static Web Apps CLI](https://github.com/Azure/static-web-apps-cli)** - a local development commandline tool for Azure Static Web Apps, that works seamlessly with the Azure Functions Core Tool, to deliver an unified developer experience for creating and testing your API-enabled Static Web Apps projects.",
+      "source_content_hash": "67abd37943a7129f9baf5046215a002935dca0681e8db0b4c87223e858908082",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本周晚些时候，我们将深入探讨 **[Azure Static Web Apps CLI](https://github.com/Azure/static-web-apps-cli)** —— 这是一款用于Azure Static Web Apps本地开发的命令行工具，可与Azure Functions Core Tools无缝协作，为创建和测试支持API的静态Web应用项目提供统一的开发体验。"
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "The combination of **Azure CLI** (to manage Azure resources from command line), **Azure Functions Core Tools** (to manage Azure Functions local development and deploy) and **Azure Static Web Apps CLI** (to manage SWA local development and deploy) provides a seamless command-line driven developer experience for web developers on Azure.",
+      "source_content_hash": "7461f234345691b476428f260dc6371c2bda82d2c4091c2b72b5fe07c9bba51a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "**Azure CLI**（用于通过命令行管理Azure资源）、**Azure Functions Core Tools**（用于管理Azure Functions本地开发与部署）和**Azure Static Web Apps CLI**（用于管理SWA本地开发与部署）的组合，为Azure上的Web开发者提供了无缝衔接的命令行开发体验。"
+      }
+    },
+    {
+      "segment_id": "0d5321b7",
+      "source_content": "## Azure Extensions",
+      "source_content_hash": "125f5ad9cd9bec86f16e18a9fd4dc3f81b2d3c9662c322b96e53296d8cd4abd1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## Azure扩展"
+      }
+    },
+    {
+      "segment_id": "cfeb9eb1",
+      "source_content": "But what if you prefer an IDE-based approach? Visual Studio Code has you covered. In a post Later this week, we'll look in depth at the key Visual Studio Code Extensions you can use, to supercharge your developer experience from code to cloud, right inside the IDE. For now, I'll leave you with these resources:",
+      "source_content_hash": "3a1a19c423c3f81be3360303b896d3fec7e6e4ce061083da6111b125d4e8dbd0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果您更倾向于基于IDE的开发方式呢？Visual Studio Code已为您做好准备。本周晚些时候的博文中，我们将深入探讨可用于在IDE内实现从编码到云端全流程开发体验的关键Visual Studio Code扩展。现在，我先为您提供以下资源："
+      }
+    },
+    {
+      "segment_id": "6b304caa",
+      "source_content": "* Read the [Azure Extensions](https://code.visualstudio.com/docs/azure/extensions) documentation to learn how to find, and install, relevant extensions in VS Code.\n * Explore the [Deploying Applications To Azure](https://code.visualstudio.com/docs/azure/deployment) page for hands-on tutorials for VS Code - including one for [Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript) and one for [Azure Functions](https://docs.microsoft.com/azure/javascript/tutorial-vscode-serverless-node-01)\n * Search the [VS Code Marketplace](https://marketplace.visualstudio.com/search?term=Microsoft&target=VSCode&category=Azure&sortBy=Relevance) for relevant extensions from both Microsoft and the broader developer community.",
+      "source_content_hash": "8d740deaf609af215578766b4c0fd9eb43f459ee7796789622b977b9fd4b5598",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 阅读[Azure扩展](https://code.visualstudio.com/docs/azure/extensions)文档，了解如何在VS Code中查找和安装相关扩展\n * 浏览[将应用程序部署至Azure](https://code.visualstudio.com/docs/azure/deployment)页面获取VS Code实战教程——包括[Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript)和[Azure Functions](https://docs.microsoft.com/azure/javascript/tutorial-vscode-serverless-node-01)专项教程\n * 在[VS Code应用市场](https://marketplace.visualstudio.com/search?term=Microsoft&target=VSCode&category=Azure&sortBy=Relevance)搜索来自Microsoft及广大开发者社区的相关扩展"
+      }
+    },
+    {
+      "segment_id": "719d3997",
+      "source_content": "Here is a snapshot of extensions currently published by **Microsoft** in the **Azure** category, sorted by **Trending** metrics. You can see the [Azure Static Web Apps Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) listed here -- we'll cover that in more detail in the final post of this week!",
+      "source_content_hash": "22811be944c8f1fe24af44d1a2a213032042bb07b4f826639b283886c1fb5a6b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "下图展示了当前**Microsoft**发布在**Azure**分类下按**趋势**排序的扩展列表。您可以看到[Azure Static Web Apps扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)位列其中——我们将在本周最后一篇博文中详细解析！"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "![](../static/img/series/15-extensions.png)",
+      "source_content_hash": "ff00efe7bcc074ad1604d0e559236536bbe4fc07c5a7e964fa4ab91fe985c14f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/15-extensions.png)"
+      }
+    },
+    {
+      "segment_id": "b50cf7ff",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 实践练习"
+      }
+    },
+    {
+      "segment_id": "44285072",
+      "source_content": "Wow - we covered a lot today!! But don't worry about having to remember all of it. The goal was to raise awareness of _which_ tool to use, _when_, and _why_. Your exercise today:",
+      "source_content_hash": "87598355e613e453ab302fc34430a3b2063af5808dcc9bb41c2c81c78bf3b647",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "哇，今天我们涵盖了大量内容！但不必担心需要记住所有细节。今天的目的是让大家了解该在_何时_使用_哪种_工具，以及_为什么_要使用它。您今天的练习任务是："
+      }
+    },
+    {
+      "segment_id": "6ffcaeb2",
+      "source_content": "*  pick either **Azure Portal** or **Azure CLI** documentation for Azure Static Web Apps, and familiarize yourself with the many commands, settings and options available. \n\n * Try the default quickstart for that option - then explore other commands with the deployed Static Web App to get a real sense of how this works.",
+      "source_content_hash": "580e70c711094ccc66d743d7ec3001b3ba9a5505e823edcc955ad167383ccf27",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 选择 **Azure 门户** 或 **Azure CLI** 中关于 Azure Static Web Apps 的文档，熟悉其中提供的众多命令、设置和选项。\n\n * 尝试使用所选工具的默认快速入门教程，然后通过已部署的静态 Web 应用探索其他命令，切实感受其工作方式。"
+      }
+    },
+    {
+      "segment_id": "d4eab4a6",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 资源"
+      }
+    },
+    {
+      "segment_id": "25215977",
+      "source_content": "* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) documentation - with [Static Web Apps Quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript)\n * [Azure Portal](https://docs.microsoft.com/en-us/azure/azure-portal/) documentation - with [Static Web Apps Quickstart](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript)\n * [Azure SWA CLI](https://github.com/Azure/static-web-apps-cli) documentation\n * [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) documentation\n * [Azure SDKs](https://azure.github.io/azure-sdk/releases/latest/js.html) for JavaScript and other languages\n * [Azure Extensions for Visual Studio Code](https://code.visualstudio.com/docs/azure/extensions)",
+      "source_content_hash": "413518885084e368ed0b39ea19f85805962cac6e8cdc2e237b95ea0c17b17ce8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) 文档 - 包含 [Static Web Apps 快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-cli?tabs=vanilla-javascript)\n * [Azure 门户](https://docs.microsoft.com/en-us/azure/azure-portal/) 文档 - 包含 [Static Web Apps 快速入门](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript)\n * [Azure SWA CLI](https://github.com/Azure/static-web-apps-cli) 文档\n * [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) 文档\n * 适用于 JavaScript 及其他语言的 [Azure SDK](https://azure.github.io/azure-sdk/releases/latest/js.html)\n * [Visual Studio Code 的 Azure 扩展](https://code.visualstudio.com/docs/azure/extensions)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-16.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.873229+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "62175d0fffb4807e7790224661993355229adeba0980dcf75ce4d9c1843b98a8"
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-05-25.md",
+  "source_file_content_hash": "d9fd7db376d981299a9acf8eaee6cc61dbc22d68ab9ea1f7359ffaa743fc258b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: practices-cognitive-services\ntitle: \"#24: Cognitive Services & SWA\"\nauthors: [yönet]\ntags: [swa, 30days, best-practices, AI, ComputerVision, CognitiveServices]\ndraft: false\n---",
+      "source_content_hash": "c0c1e9d09d767fd98c44d21fe89bb0452490e3f22f80a170d7ee321c240384d1",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/practices-cognitive-services\" />\n  <meta name=\"twitter:title\" content=\"#24: Custom Vision & SWA\" />\n  <meta name=\"twitter:description\" content=\"Join @AysSomething as we kick off 'Best Practices' week on #30DaysOfSWA with a discussion on adding AI capabilities to @AzureStatic Apps using Cognitive Services!\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/assets/images/24-banner.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/practices-cognitive-services\" />\n</head>",
+      "source_content_hash": "75f81131840ebe0dd7b9124c4ac0e11ba4391e1950c9f60c4ddfdde087fc33a1",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Welcome to `Week 4, Day 3` of **#30DaysOfSWA**!!",
+      "source_content_hash": "2b6fa354e961dd5f8656b0dc5b999c129088b3af884107466f788c219e38307e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "欢迎来到 **#30DaysOfSWA** 的第4周第3天！"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "We continue our Best Practices week by looking at year another Azure Services integration option for your Azure Static Web Apps deployment. Yesterday we talked about adding search to your website using pre-trained Azure AI models. Today we'll discuss how you can use Vision AI Services.",
+      "source_content_hash": "9a1e127aa27466c8b107524002c0e72469ef17fc656e8df4d28a7676bd61ffa5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们继续\"最佳实践周\"的探索，今天将了解如何为Azure静态Web应用集成另一项Azure服务。昨天我们讨论了使用预训练Azure AI模型为网站添加搜索功能，今天我们将探讨如何运用视觉AI服务。"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## What We'll Cover",
+      "source_content_hash": "0379e05cdc5355b44aec75f1771f866fa1b1c11302b033c9f578a171145e6c35",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 内容概览"
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "-   What are Azure Vision Services\n-   How to get started building your AI applications\n-   How to use the JavaScript AI SDKs\n-   How to analyze a document using Form Recognizer\n-   How to deploy your APIs and Static Web App(SWA)\n-   **Exercise** [Build and deploy a SWA to analyse images](https://docs.microsoft.com/samples/azure-samples/js-e2e-client-cognitive-services/build-and-deploy-a-static-web-app-to-azure/?WT.mc_id=javascript-68057-ayyonet)",
+      "source_content_hash": "1fa0e3b1b67a5c20c96c6ff8476f5fd3d0075737caf93a091ada04f380f0217a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "-   Azure视觉服务概述\n-   如何开始构建AI应用\n-   如何使用JavaScript AI SDK\n-   如何使用表单识别器分析文档\n-   如何部署API和静态Web应用(SWA)\n-   **实践** [构建并部署用于图像分析的SWA](https://docs.microsoft.com/samples/azure-samples/js-e2e-client-cognitive-services/build-and-deploy-a-static-web-app-to-azure/?WT.mc_id=javascript-68057-ayyonet)"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## Resources",
+      "source_content_hash": "75c6211de8f8951e8037d10289e3e5d0177b8a172b593345006b5b42a8e08e0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 相关资源"
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "* [Azure Custom Vision](https://aka.ms/AzureCustomVision) - Documentation\n* [Azure AI Fundamentals: Explore computer vision](https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/?WT.mc_id=javascript-68057-ayyonet) - Learn Module\n* [SWA Next.js ](https://docs.microsoft.com/azure/static-web-apps/deploy-nextjs?WT.mc_id=javascript-68057-ayyonet) - Documentation",
+      "source_content_hash": "dc14ce61a862c3bd4ed44cd4e3ef89f0336fdf700bd6d9df532cbcfccf818190",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [Azure自定义视觉](https://aka.ms/AzureCustomVision) - 文档\n* [Azure AI基础：探索计算机视觉](https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/?WT.mc_id=javascript-68057-ayyonet) - 学习模块\n* [SWA Next.js部署](https://docs.microsoft.com/azure/static-web-apps/deploy-nextjs?WT.mc_id=javascript-68057-ayyonet) - 文档"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "![](../static/img/series/24-banner.png)",
+      "source_content_hash": "7ac4f23ff84745a0c3f322d1a78ee2c0cd4b6caa0b57c4b3ca395e1f6b5d6d7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../static/img/series/24-banner.png)"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "## What are Azure Vision Services?",
+      "source_content_hash": "bd67aa730e011cbdef42e43507062d624846c04d8cbb93ab5e6f0a6163ecf196",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 什么是Azure视觉服务？"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Azure AI Vision is part of [Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/what-are-cognitive-services?WT.mc_id=javascript-57623-ayyonet) - cloud-based AI services that give you Terminator-like powers.",
+      "source_content_hash": "f8f0bd9ab3d0654fe394b00346784414aa44166ab9c1f5d895db0e1716012e87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure AI视觉是[Azure认知服务](https://docs.microsoft.com/azure/cognitive-services/what-are-cognitive-services?WT.mc_id=javascript-57623-ayyonet)的组成部分——这些基于云的AI服务能赋予您终结者般的能力。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "![](https://media.giphy.com/media/NHUaA15Nk910hFczxu/giphy.gif)",
+      "source_content_hash": "3fe50049e443f4c7d13c086ec00ed02d34ef1210a2a64337c7c5b5031413cbf9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](https://media.giphy.com/media/NHUaA15Nk910hFczxu/giphy.gif)"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "You can take a picture and [analyze it to describe the image, detect objects, landmarks and famous people](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts-sdk/image-analysis-client-library?tabs=visual-studio&pivots=programming-language-javascript&WT.mc_id=javascript-57623-ayyonet) or [your users](https://docs.microsoft.com/azure/cognitive-services/face/build-enrollment-app?tabs=android&WT.mc_id=javascript-57623-ayyonet), [read documents](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts-sdk/client-library?tabs=visual-studio&pivots=programming-language-javascript&WT.mc_id=javascript-57623-ayyonet) and scan information on an ID or a business card. All of these superpowers are available to you - an API call away - using Azure’s Cognitive and Applied AI Services. Let’s dive into what we can build and what we can customize.",
+      "source_content_hash": "443231e57aaffb8bfd942b49c49cd2522b23a928f71f1e2ab108809b6bfdce53",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可以拍摄照片并[通过图像分析描述内容、检测物体、地标和名人](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts-sdk/image-analysis-client-library?tabs=visual-studio&pivots=programming-language-javascript&WT.mc_id=javascript-57623-ayyonet)，或[识别用户](https://docs.microsoft.com/azure/cognitive-services/face/build-enrollment-app?tabs=android&WT.mc_id=javascript-57623-ayyonet)，[读取文档](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts-sdk/client-library?tabs=visual-studio&pivots=programming-language-javascript&WT.mc_id=javascript-57623-ayyonet)，以及扫描身份证或名片信息。所有这些超能力都只需通过API调用即可实现——使用Azure认知和应用AI服务。让我们深入探索可构建的内容和可定制的功能。"
+      }
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "## Get Started building AI apps",
+      "source_content_hash": "9843c2642001f5c7d91e40168438570b422f3fde107fb6a7794f5beb4182c3fd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 开始构建AI应用"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "If you are planning to infuse your application with AI, the first place you need to look at is our [Applied AI Services](https://docs.microsoft.com/azure/applied-ai-services/?WT.mc_id=javascript-57623-ayyonet). Applied AI services are solving the most common use cases and build on top of our Cognitive Services. In terms of Vision related services, we have two Applied AI Services, [Form Recognizer](https://docs.microsoft.com/azure/applied-ai-services/form-recognizer/?WT.mc_id=javascript-57623-ayyonet) and [Video Analyzer](https://docs.microsoft.com/azure/azure-video-analyzer/?WT.mc_id=javascript-57623-ayyonet).",
+      "source_content_hash": "5e5a30f779cabaa54c2fad2fb44ccf1700ef431115a6c8027896df2f066a0db6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果您计划为应用程序注入AI能力，首先需要了解的是我们的[应用AI服务](https://docs.microsoft.com/azure/applied-ai-services/?WT.mc_id=javascript-57623-ayyonet)。这些服务基于认知服务构建，解决了最常见的用例。在视觉相关服务方面，我们提供两项应用AI服务：[表单识别器](https://docs.microsoft.com/azure/applied-ai-services/form-recognizer/?WT.mc_id=javascript-57623-ayyonet)和[视频分析器](https://docs.microsoft.com/azure/azure-video-analyzer/?WT.mc_id=javascript-57623-ayyonet)。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Azure Form Recognizer is built using [Optical Character Recognition(OCR)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-ocr?WT.mc_id=javascript-57623-ayyonet), [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/language-service/overview?WT.mc_id=javascript-57623-ayyonet) and [Custom Text](https://docs.microsoft.com/azure/cognitive-services/language-service/custom-text-classification/overview?WT.mc_id=javascript-57623-ayyonet) from Azure Cognitive Services and has [custom trained models](https://docs.microsoft.com/azure/applied-ai-services/form-recognizer/concept-custom?WT.mc_id=javascript-57623-ayyonet) for things like vaccination cards, passports and tax documentation. If you are wondering why you need Form Recognizer, you can try reverse engineering some of its features by using the Cognitive Services.",
+      "source_content_hash": "877bf7e6a9c7191ff96b4e0dcc62e0b8dfe624358e9d5260e1dc181eee669433",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure 表单识别器基于 [光学字符识别(OCR)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-ocr?WT.mc_id=javascript-57623-ayyonet)、[文本分析](https://docs.microsoft.com/azure/cognitive-services/language-service/overview?WT.mc_id=javascript-57623-ayyonet) 和 [自定义文本](https://docs.microsoft.com/azure/cognitive-services/language-service/custom-text-classification/overview?WT.mc_id=javascript-57623-ayyonet) 等 Azure 认知服务构建，并针对疫苗接种卡、护照和税务文件等场景提供了 [定制训练模型](https://docs.microsoft.com/azure/applied-ai-services/form-recognizer/concept-custom?WT.mc_id=javascript-57623-ayyonet)。若您好奇为何需要表单识别器，可以尝试通过认知服务逆向实现其部分功能。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "![Building things from scratch instea of using a ready solution](https://media.giphy.com/media/tH2Ur5u1wpfPDNHhgm/giphy.gif)",
+      "source_content_hash": "f4e98921ace6685801d493194da1e09e93a29a7a834dc27d000075d1fe283483",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![从零造轮子而非使用现成解决方案](https://media.giphy.com/media/tH2Ur5u1wpfPDNHhgm/giphy.gif)"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "I won’t wish that for any of you and that’s why your first stop should be [Applied AI Services documentation](https://docs.microsoft.com/azure/applied-ai-services/?WT.mc_id=javascript-57623-ayyonet) to see if your problem is solvable by any of these services. Whenever your problem is not solved or you need more flexibility, you can build with Cognitive Services, [Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-image-analysis?WT.mc_id=javascript-57623-ayyonet), [Custom Vision](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/?WT.mc_id=javascript-57623-ayyonet) or [Face](https://docs.microsoft.com/azure/cognitive-services/face/overview?WT.mc_id=javascript-57623-ayyonet) APIs.",
+      "source_content_hash": "92f2e3e3a4a082f9613a20969c5c0730b8fbb1e50bd2399f4b1455a42771c984",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我不建议任何人这样做，因此您的首要步骤应是查阅 [应用AI服务文档](https://docs.microsoft.com/azure/applied-ai-services/?WT.mc_id=javascript-57623-ayyonet)，确认是否有现成服务能解决您的问题。当现有方案无法满足需求时，您可以使用认知服务中的 [计算机视觉](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-image-analysis?WT.mc_id=javascript-57623-ayyonet)、[自定义视觉](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/?WT.mc_id=javascript-57623-ayyonet) 或 [人脸](https://docs.microsoft.com/azure/cognitive-services/face/overview?WT.mc_id=javascript-57623-ayyonet) API 进行构建。"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "A great way to start playing with these APIs and explore your specific use case is through [Vision Studio Preview](https://preview.vision.azure.com/) or [Form Recognizer Studio preview](https://formrecognizer.appliedai.azure.com/studio). For example, I was wondering if I can recognize Mixed Reality devices using Computer Vision. Since these devices are very new and still not a common object, they were not recognized by our all-purpose object detection model. Before building an app, I was able to easily see that I need to train a custom model. You can check and see your logo or your product is easily recognizable or you should start training a custom model on the Studio without writing any code and find the code samples right inside the Studio.",
+      "source_content_hash": "583d5c38ba980f6b97ed21f8f29959b3e288e38b60f189a7bcd05e64ee15a2d5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "探索这些API的理想起点是 [Vision Studio预览版](https://preview.vision.azure.com/) 或 [表单识别器Studio预览版](https://formrecognizer.appliedai.azure.com/studio)。例如，我曾测试能否通过计算机视觉识别混合现实设备。由于这类设备非常新颖且非常见物体，通用物体检测模型无法识别。在开发应用前，我通过Studio轻松发现需要训练定制模型。您可在此验证企业logo或产品是否易识别，或直接获取Studio内的代码示例开始无代码定制模型训练。"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "If the object you want to detect is not recognized, you can train a custom model through [customvision.ai](https://customvision.ai) and deploy it. You will get a custom API endpoint to call and your client implementation won’t be different than using any other service. There are couple of best practices for training a custom model. Most importantly, you need a variety of images in different contexts. For example if you want to find Waldo, you can’t just train with Waldo’s profile picture, you need to also use his pictures in a crowd.",
+      "source_content_hash": "e2d67c55a1716c09efe4b71a1b0df261e94e636a180a5ff8fd4136c1c8ff5ed8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若目标物体未被识别，可通过 [customvision.ai](https://customvision.ai) 训练定制模型并部署。您将获得专属API端点，客户端调用方式与其他服务无异。训练定制模型时需注意：最关键的是需要多样化场景的图片样本。例如要寻找\"威利\"，仅用其肖像训练是不够的，还需包含人群中的场景图片。"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "You can read how I’ve trained my custom model and built an [No Code prototype here](https://medium.com/microsoftazure/no-code-ai-app-with-azure-cognitive-services-custom-vision-and-power-apps-ca47c019dcd0) using [Power Apps AI Builder](https://docs.microsoft.com/ai-builder/overview?WT.mc_id=javascript-57623-ayyonet)",
+      "source_content_hash": "1f5d89a041134fdc936705bbf3fdcf1089b06ee69f3d7c630981bbd23a27f1b0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "您可阅读我如何训练定制模型并通过 [Power Apps AI Builder](https://docs.microsoft.com/ai-builder/overview?WT.mc_id=javascript-57623-ayyonet) 构建 [无代码AI原型](https://medium.com/microsoftazure/no-code-ai-app-with-azure-cognitive-services-custom-vision-and-power-apps-ca47c019dcd0)。"
+      }
+    },
+    {
+      "segment_id": "bd92edfc",
+      "source_content": "## How to use the JavaScript AI SDKs",
+      "source_content_hash": "0058aaeebf283cd1b0d87fce61fda73a9f74a4cd56e10aeb4d69963ddcab6a10",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 如何使用JavaScript AI SDK"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "Using any of these APIs works pretty much the same way if you are working with an image instead of a video to analyze:",
+      "source_content_hash": "bab697d6aacdc6621f22e7b6089ed8ed61412ab3ddca022cc3bfbc4fe64202ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "使用这些API分析图像（非视频）时，基本流程大致相同："
+      }
+    },
+    {
+      "segment_id": "76dbcc76",
+      "source_content": "-   Sign into your Azure account or [sign up for $200 free credit](https://azure.microsoft.com/free/?WT.mc_id=javascript-57623-ayyonet).\n-   [Create an Azure Cognitive Services or Specific service resource](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?WT.mc_id=javascript-57623-ayyonet) and get the key and endpoint information.\n-   Install the related service’s [JavaScript SDK](https://www.npmjs.com/~azure-sdk) and [Azure Identity SDK](https://www.npmjs.com/package/@azure/identity).\n-   Take a picture or upload an image.\n-   Initialize an AzureCredentials object using your resource key.\n-   Initialize a Client object with the Azure credential object & endpoint.\n-   Use the client’s analyze method to make an API call, wait for response.",
+      "source_content_hash": "aa44fd4c8634faa68fdbfea9c9d4509c3bed072e61eb9b729da349342a199e3c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "-   登录您的 Azure 账户或[注册获取 200 美元免费额度](https://azure.microsoft.com/free/?WT.mc_id=javascript-57623-ayyonet)。\n-   [创建 Azure 认知服务或特定服务资源](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?WT.mc_id=javascript-57623-ayyonet)并获取密钥与终结点信息。\n-   安装相关服务的 [JavaScript SDK](https://www.npmjs.com/~azure-sdk) 和 [Azure Identity SDK](https://www.npmjs.com/package/@azure/identity)。\n-   拍摄或上传一张图片。\n-   使用资源密钥初始化 AzureCredentials 对象。\n-   使用 Azure 凭据对象和终结点初始化客户端对象。\n-   调用客户端的 analyze 方法发起 API 请求，等待响应。"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "The class and method names change, like `DocumentAnalysisClient` for Form Recognizer, `PredictionAPIClient` for Custom Vision or `FaceClient` for facial recognition. If you are training a custom model or using a specific model for form recognizer, you have couple of things that you will do but the most important part of it is taken care of by our SDK functionality.",
+      "source_content_hash": "ca597dffb11481b164c884ebf1ea7196c60d6a1d3dcaabf9a789c5cbe6cfe345",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "类和方法名称会有所不同，例如表单识别器使用 `DocumentAnalysisClient`，自定义视觉使用 `PredictionAPIClient`，而人脸识别则使用 `FaceClient`。如果您正在训练自定义模型或使用表单识别器的特定模型，虽然需要执行一些额外操作，但最重要的部分已由我们的 SDK 功能实现。"
+      }
+    },
+    {
+      "segment_id": "8a9b6c26",
+      "source_content": "## How to analyze a document using Form Recognizer",
+      "source_content_hash": "c54bf4c30508054ed089ccbe7dfcf73d18146200b62430761bfb910809c14694",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 如何使用表单识别器分析文档"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "Let’s see the code in action for Form Recognizer using their [new JavaScript SDK](https://www.npmjs.com/package/@azure/ai-form-recognizer/v/4.0.0-beta.3). You can start with your [choice of Static Web Apps templates](https://github.com/staticwebdev) or add the code to your existing application.",
+      "source_content_hash": "733acb97620d6029d04550d6bc9f240407a18088846bb9885176aad5cb4723a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "让我们通过[新版 JavaScript SDK](https://www.npmjs.com/package/@azure/ai-form-recognizer/v/4.0.0-beta.3) 来演示表单识别器的代码实现。您可以从[静态 Web 应用模板库](https://github.com/staticwebdev)中选择模板，或将代码集成到现有应用中。"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "We need to import the SDK objects and your environment variables:",
+      "source_content_hash": "5c1692847ff9f45bf84a7cdcf7e2dc49b15b5eb727f79e0283740eb8ebef87eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "我们需要导入 SDK 对象和环境变量："
+      }
+    },
+    {
+      "segment_id": "26f7c825",
+      "source_content": "```javascript\nimport {\n\tAzureKeyCredential,\n\tDocumentAnalysisClient,\n\tDocumentField,\n\tFormRecognizerApiVersion,\n\tPrebuiltModels,\n} from \"@azure/ai-form-recognizer\";\n\nconst key = process.env.FORM_RECOGNIZER_KEY || \"\";\nconst endpoint = process.env.FORM_RECOGNIZER_ENDPOINT || \"\";\n```",
+      "source_content_hash": "579c1134dbee27c26fddcdcc8089a4d422e80fafc71809012dc53f7be53540fd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_26f7c825"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "In your async callback function that starts the analysis, like a picture upload or click event callback, you will initialize the client object and poll until you have all the results from your analysis.",
+      "source_content_hash": "354ceba567cb99ce3a3070fb2020d004aebdcb3765b65523dd70848d59885d39",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "在启动分析的异步回调函数中（如图片上传或点击事件回调），您需要初始化客户端对象并通过轮询获取完整分析结果。"
+      }
+    },
+    {
+      "segment_id": "cae897fb",
+      "source_content": "```javascript\nasync function Analyze() {\n\tconst client = new DocumentAnalysisClient(endpoint, new AzureKeyCredential(key));\n\n\tconst poller = await client.beginAnalyzeDocument(\"prebuilt-document\", formUrl);\n\n\tconst { keyValuePairs, entities } = await poller.pollUntilDone();\n\n\t//Do amazing things with the data.\n}\n```",
+      "source_content_hash": "56e47558499bba69f3da454689b5cce740fa5e0ba2a492be1350397dda23e52b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_cae897fb"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "Do something with the results, either sign in your user with their ID doc data or display the key value pairs to your user.",
+      "source_content_hash": "16b5f7bceae46e1bfc3d9fad706c5ad896962d698c3bdee6fca18dcb87dfbc2a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "对结果进行处理——既可以使用身份证数据让用户登录，也可以向用户展示键值对信息。"
+      }
+    },
+    {
+      "segment_id": "48155948",
+      "source_content": "## Deploy your app to SWA",
+      "source_content_hash": "e52522614cf0b7e26a8fa972d1b1f7b26741cdf5ecbfece890221be3d14bf34d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 将应用部署至静态 Web 应用"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "If you are using one of the SWA templates, all you need to do is push your code to share it with the word.",
+      "source_content_hash": "57bda462ca209f09b4a75c54bcd5cecf63da40ed4106f56477b7e775f4aa1996",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如果使用静态 Web 应用模板，只需推送代码即可向全球发布。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "If you are not using a template, you can use the [Azure Static Web Apps VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) or [SWA CLI](https://github.com/Azure/static-web-apps-cli) to [deploy your app to an](https://docs.microsoft.com/azure/static-web-apps/deploy-nextjs?WT.mc_id=javascript-57623-ayyonet) SWA resource.",
+      "source_content_hash": "68b12abdcb06a66d6d9c5db2c913ebde0d1864ecf1f7a90c7fe10feb4531e945",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "若未使用模板，可通过 [Azure 静态 Web 应用 VS Code 扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps)或 [SWA CLI](https://github.com/Azure/static-web-apps-cli) [将应用部署到](https://docs.microsoft.com/azure/static-web-apps/deploy-nextjs?WT.mc_id=javascript-57623-ayyonet) SWA 资源。"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "If you have a lot of images and would like to batch process or if you are doing multiple things with your image, like detect objects, read the text in the image and translate, you might want to use a [Azure Functions App](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=javascript-57623-ayyonet). Thankfully [creating and API for your Static Web App](https://docs.microsoft.com/azure/static-web-apps/functions-bring-your-own?WT.mc_id=javascript-57623-ayyonet) is one of the features of the VSCode extension.\nCheck out my video for step by step instructions to deploy your SWA with Functions.",
+      "source_content_hash": "1a1d0a6b3cddc3b6e0d008d748d15daa9bc60293f4d49c88f68503b8380406bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "如需批量处理大量图片，或对图片执行多重操作（如检测物体、识别图中文字并翻译），建议使用 [Azure 函数应用](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=javascript-57623-ayyonet)。幸运的是，[为静态 Web 应用创建 API](https://docs.microsoft.com/azure/static-web-apps/functions-bring-your-own?WT.mc_id=javascript-57623-ayyonet) 正是 VSCode 扩展的功能之一。观看我的视频获取分步部署指南。"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "[![How to add an API to your Azure Static Web App | Azure Tips and Tricks: Static Web Apps](https://img.youtube.com/vi/VzML-6DClVU/0.jpg)](https://youtu.be/VzML-6DClVU)",
+      "source_content_hash": "752a71170507fea3898bc9c65cde0e5ca1eac35b8454a9e9a0f407a5d61c21d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[![如何为 Azure 静态 Web 应用添加 API | Azure 技巧与窍门：静态 Web 应用](https://img.youtube.com/vi/VzML-6DClVU/0.jpg)](https://youtu.be/VzML-6DClVU)"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "I hope you are inspired to enhance your applications with Azure Applied AI or Cognitive Services. Checkout the [Build AI talk](https://aka.ms/MSBuild2022) and [demo](https://github.com/Azure-Samples/papiro) to see what else you can do with AI.",
+      "source_content_hash": "6b94bab950529baa6455dd7c5eecb567ef27f5e0f9c2e5f907995410dc1848a1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "希望这些内容能激发您使用 Azure 应用 AI 或认知服务增强应用程序。查看 [Build AI 演讲](https://aka.ms/MSBuild2022)和[演示项目](https://github.com/Azure-Samples/papiro)，探索更多 AI 应用场景。"
+      }
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "[![MS Build 2022 AI Session Demo](https://media.giphy.com/media/YSsOvebCkyeglsqsaQ/giphy.gif)](https://youtu.be/L10-LnbXxEo)",
+      "source_content_hash": "173e107aba80e395b0756c5ba885b691edce5cff922acf4000c3e7f2c47b367c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[![MS Build 2022 AI 环节演示](https://media.giphy.com/media/YSsOvebCkyeglsqsaQ/giphy.gif)](https://youtu.be/L10-LnbXxEo)"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "[Reach out to me on twitter](https://twitter.com/AysSomething) if you have questions, you want to share what you build or discuss your ideas.",
+      "source_content_hash": "dfc72c09e699e091d3520ee9d4bab44a59abdb7ccef7464a60a343c8bf9b9811",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "[欢迎在Twitter上联系我](https://twitter.com/AysSomething)，如果您有任何疑问、想分享构建成果或讨论创意。"
+      }
+    },
+    {
+      "segment_id": "d53c8ed4",
+      "source_content": "## Exercise",
+      "source_content_hash": "83297eafa565e96426d9f5268a65ea70f8ef7cb466f9c908b26c422babfff602",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 练习"
+      }
+    },
+    {
+      "segment_id": "1ecf0882",
+      "source_content": "Want to explore Azure Cognitive Service integrations with your Azure Static Web App? Try walking through one of these tutorials to get hands-on experience with development:",
+      "source_content_hash": "dd2142cfdb384774406410879110657175438a068799dcd86f2c8dbb8aea0f25",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "想要探索Azure认知服务与Azure静态Web应用的集成？请尝试通过以下教程之一进行实践开发："
+      }
+    },
+    {
+      "segment_id": "9ceae896",
+      "source_content": "* [Build and deploy a SWA to analyse images](https://docs.microsoft.com/samples/azure-samples/js-e2e-client-cognitive-services/build-and-deploy-a-static-web-app-to-azure/?WT.mc_id=javascript-68057-ayyonet) - build a React application that analyzes an image using Azure Cognitive Services (Computer Vision) - deploy the app to Azure Static Web Apps.\n * [Machine Learning With Custom Vision](http://aka.ms/ws-customvision) - complete this workshop where you learn to build a model to detect dog breeds using the Custom Vision API, then deploy it to Azure Static Web Apps with an Azure Functions backend.",
+      "source_content_hash": "9f528b20a1a09cc1df525a7cf58073842a605680421fec56dad092a7ac2f07b8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* [构建并部署用于图像分析的静态Web应用](https://docs.microsoft.com/samples/azure-samples/js-e2e-client-cognitive-services/build-and-deploy-a-static-web-app-to-azure/?WT.mc_id=javascript-68057-ayyonet) - 使用Azure认知服务（计算机视觉）构建一个React应用程序来分析图像，并将其部署到Azure静态Web应用。\n * [使用自定义视觉进行机器学习](http://aka.ms/ws-customvision) - 完成本实验课程，学习如何通过自定义视觉API构建检测狗品种的模型，然后将其部署到带有Azure Functions后端的Azure静态Web应用。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-05-25.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.872009+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "d9fd7db376d981299a9acf8eaee6cc61dbc22d68ab9ea1f7359ffaa743fc258b"
+  }
+}

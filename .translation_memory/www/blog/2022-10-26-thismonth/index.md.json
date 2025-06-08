@@ -1,0 +1,332 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2022-10-26-thismonth/index.md",
+  "source_file_content_hash": "30b135c3fc8d84974080599cf9e98e0ff26a68e77b45f532887adef6647a8c4a",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: roundup-2022-oct\ntitle: \"SWA Roundup: Oct 2022\"\nauthors: [reshmi, nitya, sara]\ntags: [swa, thismonth, oct]\ndraft: false\n---",
+      "source_content_hash": "47d4396ca504f21591ca6fd15119b90577468ff9236c7b08aab3d8f9052c6db3",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<head>\n  <meta name=\"twitter:url\" content=\"https://www.azurestaticwebapps.dev/blog/roundup-2022-oct\" />\n  <meta name=\"twitter:title\" content=\"This Month in Azure Static Web Apps: Oct 2022\" />\n  <meta name=\"twitter:description\" content=\"This October in @AzureStaticApps - we cover hybrid rendering with @nextjs, universal rendering with @nuxt_js and put the spotlight on #MicrosoftStudentSummit\" />\n  <meta name=\"twitter:image\" content=\"https://www.azurestaticwebapps.dev/img/png/roundup/oct.png\" />\n  <meta name=\"twitter:card\" content=\"summary_large_image\" />\n  <meta name=\"twitter:creator\" content=\"@nitya\" />\n  <meta name=\"twitter:site\" content=\"@AzureStaticApps\" /> \n  <link rel=\"canonical\" href=\"https://www.azurestaticwebapps.dev/blog/roundup-2022-oct\" />\n</head>",
+      "source_content_hash": "4c8f0906c76480be1f13e3c1adf4d40b68a404595c769559fd1570bf47091a73",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-CN": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "It's here!! Our October roundup of **This Month in SWA** 🎉",
+      "source_content_hash": "2e214d5a55f9f840ab80c5ea3b29cf955e8457c3ffdb034d38621f1877e3e895",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "重磅来袭！我们的十月特辑《本月SWA动态》🎉"
+      }
+    },
+    {
+      "segment_id": "9beb6e94",
+      "source_content": ":::info[ABOUT THE ROUNDUP ]\n\nWe publish a roundup of Azure Static Web Apps product news, announcements and content updates **on the last Wednesday of each month**. Catch up on all the updates in one friendly post - and don't forget to contribute _your_ updates for inclusion in the next issue!\n\n * Want to make sure you don't miss it? <a href=\"/blog/rss.xml\" target=\"_blank\">**Subscribe to the feed**</a>.\n * Want to contribute items for roundup? [**Submit this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community).\n * Want to catch up on past posts? [**Browse past editions.**](/thismonth#view-past-editions)\n\n:::",
+      "source_content_hash": "273457b9177120912a755593604ad51d9141287abdc4a296cf22b05a5ad1e8bd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[关于本月特辑]\n\n我们每月最后一个星期三发布Azure静态Web应用的产品动态、公告和内容更新汇总。通过这篇友好集锦掌握所有更新——别忘了提交你的更新内容以纳入下期特刊！\n\n * 不想错过更新？<a href=\"/blog/rss.xml\" target=\"_blank\">**订阅RSS源**</a>\n * 想投稿？[**提交此定制issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)\n * 查看往期内容？[**浏览历史特辑**](/thismonth#view-past-editions)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d5420c8e",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "![](../../static/img/png/roundup/oct.png)",
+      "source_content_hash": "7adebdcf849ffe24ec030aa025539dd6ced35bf0899dbd2f5d831f35ea893769",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "![](../../static/img/png/roundup/oct.png)"
+      }
+    },
+    {
+      "segment_id": "4fdcb1ee",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "## Product News",
+      "source_content_hash": "a39b0906a21b5d05b839c70dd81e6e5341db47840ee4e56e0a921977d6090ef7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 产品动态"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "_This section covers recent news or announcements from the product team. Read on to learn the latest news from the world of Azure Static Web Apps!_",
+      "source_content_hash": "a271c4ebde2d498b95c3d19f0a556143bc4bc997ba6578f7d5d296512d619989",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节涵盖产品团队的最新公告。阅读了解Azure静态Web应用领域的前沿资讯！_"
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "* **Oct 03** | [Universal Rendering with Nuxt 3 and Azure Static Web Apps](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/universal-rendering-with-nuxt-3-and-azure-static-web-apps/ba-p/3586297?WT.mc_id=javascript-74011-ninarasi). Previously, you were able to deploy a static rendered Nuxt app on Azure Static Web Apps, where the entire app is pre-generated as static content. However, Nuxt 3 also supports universal rendering, which provides the performance and search engine optimization of server-side rendering while still enabling client-side interactivity. [**Get Started**](https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-nuxtjs?WT.mc_id=javascript-74011-ninarasi) with this tutorial.\n\n* **Oct 08** | [Extending Next.js Support in Azure Static Web Apps](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/extending-next-js-support-in-azure-static-web-apps/ba-p/3627975?WT.mc_id=javascript-74011-ninarasi) <br/> It's here - Azure Static Web Apps has **preview** support for Hybrid Next.js apps, making zero-config deployments with Next.js even easier with support for Server-Side Rendering, Incremental Static Regeneration (SSR and ISR respectively), API Routes, advanced image compression, and Next.js Auth. [**Get Started**](https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-nextjs-hybrid?WT.mc_id=javascript-74011-ninarasi) with this tutorial.",
+      "source_content_hash": "ac6300705088051fa4e941430dd3749a74af894ec5dcd8e698ad59eb47864a1d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **10月3日** | [Nuxt 3与Azure静态Web应用的通用渲染方案](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/universal-rendering-with-nuxt-3-and-azure-static-web-apps/ba-p/3586297?WT.mc_id=javascript-74011-ninarasi)。此前您只能在Azure静态Web应用上部署静态渲染的Nuxt应用，而现在Nuxt 3的通用渲染方案在保留客户端交互能力的同时，兼具服务端渲染的性能与SEO优势。[**通过教程开始体验**](https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-nuxtjs?WT.mc_id=javascript-74011-ninarasi)\n\n* **10月8日** | [扩展Azure静态Web应用对Next.js的支持](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/extending-next-js-support-in-azure-static-web-apps/ba-p/3627975?WT.mc_id=javascript-74011-ninarasi) <br/> 现已推出预览版——Azure静态Web应用支持混合模式Next.js应用，通过服务端渲染(SSR)、增量静态再生(ISR)、API路由、高级图像压缩和Next.js身份验证等功能，实现零配置部署。[**通过教程开始体验**](https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-nextjs-hybrid?WT.mc_id=javascript-74011-ninarasi)"
+      }
+    },
+    {
+      "segment_id": "94f98fb8",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Dev Resources",
+      "source_content_hash": "476de9fde5142c80171779eccd068628fd82d2b7b1dc0dd4fc2ddabc9666f378",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 开发资源"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "_This section covers content, events and code samples from Microsoft authors. Check them out for relevant learning resources and best practices._",
+      "source_content_hash": "1b45f986a00285ba7bb58dfd942b4957175f70952384f0bac00858883c93e9a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节汇集微软官方作者的技术内容、活动与代码示例。获取相关学习资源与最佳实践。_"
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "* **Oct 13** | [Cloud-Native Architectures on Azure: Microsoft Ignite Update](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/cloud-native-architectures-on-azure-microsoft-ignite-update/ba-p/3650098?WT.mc_id=javascript-74011-ninarasi) <br/>  Read it to get a sense of where Azure Static Web Apps fits in the Cloud-Native ecosystem for building serverless solutions on Azure. Then [**Watch The Session**](https://ignite.microsoft.com/sessions/8950b2b1-62eb-48f9-90ef-5ad779ce8e22?source=sessions?WT.mc_id=javascript-74011-ninarasi) to see a demo of the Next.js Hybrid Rendering preview, and learn about what's next for Azure Static Web Apps.\n\n* **Oct 24** | [Create blazing-fast web apps with Next.js and Azure Static Web Apps](https://www.youtube.com/watch?v=w6uH1CZEhcg&WT.mc_id=javascript-74011-ninarasi) <br/> Discover how Azure Static Web Apps support for Next.js hybrid rendering can help you create web applications optimized for SEO and performance in this **5-minute video walkthrough**, part of the 20-part series of [Azure Tips & Tricks: Static Web Apps](https://www.youtube.com/playlist?list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&WT.mc_id=javascript-74011-ninarasi) that takes you from core concepts to best practices.",
+      "source_content_hash": "eea81b281ce0bc81e5b0b6d71032a0541fbdd5e9d312633f0a7edb1f31cf7af2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **10月13日** | [Azure上的云原生架构：Microsoft Ignite更新](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/cloud-native-architectures-on-azure-microsoft-ignite-update/ba-p/3650098?WT.mc_id=javascript-74011-ninarasi) <br/> 阅读本文了解Azure Static Web Apps如何融入Azure云原生生态系统，用于构建无服务器解决方案。然后[**观看此会议**](https://ignite.microsoft.com/sessions/8950b2b1-62eb-48f9-90ef-5ad779ce8e22?source=sessions?WT.mc_id=javascript-74011-ninarasi)查看Next.js混合渲染预览版演示，并了解Azure Static Web Apps的未来发展。\n\n* **10月24日** | [使用Next.js和Azure Static Web Apps创建极速Web应用](https://www.youtube.com/watch?v=w6uH1CZEhcg&WT.mc_id=javascript-74011-ninarasi) <br/> 在这段**5分钟视频教程**中，探索Azure Static Web Apps对Next.js混合渲染的支持如何帮助您创建针对SEO和性能优化的Web应用程序。这是20集系列视频[Azure技巧与窍门：Static Web Apps](https://www.youtube.com/playlist?list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&WT.mc_id=javascript-74011-ninarasi)的一部分，带您从核心概念到最佳实践。"
+      }
+    },
+    {
+      "segment_id": "6e9a41d8",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "## Community Buzz",
+      "source_content_hash": "9fae708cacd69eca2e72fc66e41553b31f1d80613ee28c92e0a50b8c165a8bc7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 社区动态"
+      }
+    },
+    {
+      "segment_id": "416beea7",
+      "source_content": ":::info[AUTHORED BY DEVS LIKE YOU!]\n_This section highlights content from our amazing developer community - submitted directly, or published to the relevant tag in sites like Tech Community and dev.to._\n:::",
+      "source_content_hash": "3b694ae639b64191d2d4ec7a639ed78e288de56c319f088f71505bfb33f4a1be",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[开发者创作内容]\n_本节重点介绍来自我们优秀开发者社区的内容——直接提交或在Tech Community和dev.to等相关标签下发布的内容。_\n:::"
+      }
+    },
+    {
+      "segment_id": "35f6931b",
+      "source_content": "* **Oct 03** | Microsoft MVP Stacy Cashmore just published a book on [Beginning Azure Static Web Apps](https://link.springer.com/book/10.1007/978-1-4842-8146-8) with a focus on \"Building and Deploying Dynamic Web Applications with Blazor\". The book covers dynamic content with Azure Functions, discusses the JAMstack revolution, and contains examples built using Visual Studio 2022. You can find [**Stacy's tweet**](https://twitter.com/Stacy_Cash/status/1576956491218976768) with more details.",
+      "source_content_hash": "bcffa896eeec67b5b8800d8696f790fce0f9bbf8ab6a9d924291ec9ac8c3dddc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **10月3日** | Microsoft MVP Stacy Cashmore刚刚出版了一本关于[《Azure Static Web Apps入门》](https://link.springer.com/book/10.1007/978-1-4842-8146-8)的书籍，重点介绍\"使用Blazor构建和部署动态Web应用程序\"。该书涵盖了使用Azure Functions的动态内容，讨论了JAMstack革命，并包含使用Visual Studio 2022构建的示例。您可以在[**Stacy的推文**](https://twitter.com/Stacy_Cash/status/1576956491218976768)中找到更多详情。"
+      }
+    },
+    {
+      "segment_id": "379f9c7b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "3ef18741",
+      "source_content": "## Upcoming Events",
+      "source_content_hash": "db2318a574c4d5e0551cf2de63fbbd9ab51753429c0cb2f44a4c1ae600dca803",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 即将举行的活动"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "_This section highlights in-person or online events that are likely to feature Azure Static Web Apps content or developer conversations - links to CFPs or registration links are welcome!_",
+      "source_content_hash": "0c2c83656025095ef42800b875ab1912643024bc7e218a983023a63eeccddd2f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_本节重点介绍可能包含Azure Static Web Apps内容或开发者对话的线下或线上活动——欢迎提交活动征集或注册链接！_"
+      }
+    },
+    {
+      "segment_id": "69c1f590",
+      "source_content": "* **Oct 27** | Join MVP Stacy Cashmore at [Microsoft Reactor](https://reactor.microsoft.com/en-us/reactor/events/17239/) and go **From Zero To Deployed App in 60 Minutes**\n* **Nov 8-10** | Register for [_.NET Conf 2022_](https://www.dotnetconf.net/) and attend the session on **Azure Static Web Apps with Blazor and .NET**.\n* **Nov 9-10** | Register for [GitHub Universe](https://githubuniverse.com/) and look out for some great sessions from [Microsoft speakers](https://githubuniverse.com/events/detail/speakers) there!",
+      "source_content_hash": "5b200b68fe01d98f68f0f12e7f7fc7cf463a9c199460b604d6e94732faf91c4a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* **10月27日** | 加入MVP Stacy Cashmore在[Microsoft Reactor](https://reactor.microsoft.com/en-us/reactor/events/17239/)的活动，体验**60分钟从零到部署应用**。\n* **11月8-10日** | 注册参加[_.NET Conf 2022_](https://www.dotnetconf.net/)并参加**使用Blazor和.NET的Azure Static Web Apps**会议。\n* **11月9-10日** | 注册参加[GitHub Universe](https://githubuniverse.com/)并关注[微软演讲者](https://githubuniverse.com/events/detail/speakers)的精彩会议！"
+      }
+    },
+    {
+      "segment_id": "254ea949",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "## Did You Know?",
+      "source_content_hash": "244cb6b4719225219c0ba90273be054f028633181809325a71519c00e46c39b8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 您知道吗？"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "_Each month, we hope to turn the spotlight on one key resource or person that is worth knowing about, in the context of Azure Static Web Apps._",
+      "source_content_hash": "9f671d00d60bc452c4b198f7504b0f306fc75e5645df04e827d3ee61ae1e1277",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "_每个月，我们希望聚焦一个在Azure Static Web Apps背景下值得了解的关键资源或人物。_"
+      }
+    },
+    {
+      "segment_id": "a9404d4e",
+      "source_content": ":::info[🌟 SPOTLIGHT ON:  Microsoft Student Summit]\nDid you know the [Microsoft Student Summit](https://developer.microsoft.com/en-us/reactor/overview/student-summit-2022?WT.mc_id=javascript-74011-ninarasi) was just held as a global virtual event **on October 7, 2022** The event was held virtually in several regions, to suit local time zones and regional community interests. \n\nAnd you can catch up on all the recordings from these sessions in [**this handy playlist**](https://www.youtube.com/playlist?list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-?WT.mc_id=javascript-74011-ninarasi)\n\n![Student Summit Logo](./studentsummit.png)\n\n:::",
+      "source_content_hash": "69d50c4c31cde06d6dae4903cf520c689ac8603670e7bc25b9d6342721d4884f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::info[🌟 聚焦：Microsoft 学生峰会]\n您是否知道 [Microsoft 学生峰会](https://developer.microsoft.com/en-us/reactor/overview/student-summit-2022?WT.mc_id=javascript-74011-ninarasi) 已于 **2022年10月7日** 作为全球虚拟活动成功举办？该活动根据不同地区的时区和社区兴趣，在多个区域以虚拟形式举行。\n\n您可以通过 [**此便捷播放列表**](https://www.youtube.com/playlist?list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-?WT.mc_id=javascript-74011-ninarasi) 回顾所有相关录制的课程内容。\n\n![学生峰会标志](./studentsummit.png)\n\n:::"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "Azure Static Web Apps was a key focus for the Student Audience with sessions focused on the topic at 6 of 7 regional events. Here are links to the relevant recordings:",
+      "source_content_hash": "6ed3b0ff26e993558cad1185b172ef795202654e2371d04b9d721ade244b6129",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Azure Static Web Apps 是学生观众关注的重点，在7个区域活动中有6个专门围绕该主题展开。以下是相关录制内容的链接："
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "* North America (Thomas And Ricardo) - [View Recording](https://youtu.be/_rfVNPWdcNg?t=7505)\n * EMEA (Sandro) - [View Recording](https://www.youtube.com/watch?v=TLJvG98pSkc&list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-&index=4&t=7168s&WT.mc_id=javascript-74011-ninarasi)\n * India (Reshmi) - [View Recording](https://youtu.be/e7tm1WpFK24?t=8750&WT.mc_id=javascript-74011-ninarasi)\n * Asia Pacific (Julia) - [View Recording](https://youtu.be/ZjHZ5zCGPbk?t=8528&WT.mc_id=javascript-74011-ninarasi)\n * Brasil (Lavinia) - [View Recording](https://youtu.be/NmjwsCExIQM?list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-&t=7892&WT.mc_id=javascript-74011-ninarasi)\n * LATAM (Christopher and Francisco) - [View Recording](https://youtu.be/ROJFLILoJ9U?list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-&t=6930&WT.mc_id=javascript-74011-ninarasi)",
+      "source_content_hash": "869777e9dc5b6498f48afd7943311d7cd6d22dd75586ddeeeb902f22e21439f7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "* 北美地区 (Thomas 和 Ricardo) - [观看录制](https://youtu.be/_rfVNPWdcNg?t=7505)\n* 欧洲、中东和非洲地区 (Sandro) - [观看录制](https://www.youtube.com/watch?v=TLJvG98pSkc&list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-&index=4&t=7168s&WT.mc_id=javascript-74011-ninarasi)\n* 印度地区 (Reshmi) - [观看录制](https://youtu.be/e7tm1WpFK24?t=8750&WT.mc_id=javascript-74011-ninarasi)\n* 亚太地区 (Julia) - [观看录制](https://youtu.be/ZjHZ5zCGPbk?t=8528&WT.mc_id=javascript-74011-ninarasi)\n* 巴西地区 (Lavinia) - [观看录制](https://youtu.be/NmjwsCExIQM?list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-&t=7892&WT.mc_id=javascript-74011-ninarasi)\n* 拉丁美洲地区 (Christopher 和 Francisco) - [观看录制](https://youtu.be/ROJFLILoJ9U?list=PLmsFUfdnGr3zU8GBuF3772MWhO4mMjMA-&t=6930&WT.mc_id=javascript-74011-ninarasi)"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "Microsoft Student Ambassadors also participated in a [Static Web Apps Bug Bash 🐞](https://github.com/microsoft/studentambassadors/issues) - getting hands-on experience with providing valuable product feedback, and working with product teams to help resolve identified issues! [**Learn more about the Microsoft Learn Student Ambassadors Program**](https://studentambassadors.microsoft.com/?WT.mc_id=javascript-74011-ninarasi)",
+      "source_content_hash": "126d3d7dffbda708b0149f2c82d01d0c95d476de219c9abd0afd56353606969e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "Microsoft 学生大使还参与了 [Static Web Apps Bug Bash 🐞](https://github.com/microsoft/studentambassadors/issues) 活动，通过实践获得了宝贵的产品反馈经验，并与产品团队合作解决已发现的问题！[**了解更多关于 Microsoft Learn 学生大使计划的信息**](https://studentambassadors.microsoft.com/?WT.mc_id=javascript-74011-ninarasi)"
+      }
+    },
+    {
+      "segment_id": "4c30a6aa",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "---"
+      }
+    },
+    {
+      "segment_id": "54bafb10",
+      "source_content": "## 🚨 | Call For Content",
+      "source_content_hash": "110e923a6af2e878e3de072faa343b706cf5da4a99dac6d3e339d4d6d42eaf5e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "## 🚨 | 内容征集"
+      }
+    },
+    {
+      "segment_id": "467b2691",
+      "source_content": ":::tip[Next Roundup: Nov 30, 2022]\nSubmissions welcome till Nov  23, 2022.\n\n * Did you author an article, create a SWA application or sample?\n * Are you organizing an event with a SWA-related session?\n * Are you a student who just created your first SWA app or blog post?\n\nSubmit the details [**using this custom issue**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community) as soon as possible. We can't wait to share your contributions!\n:::",
+      "source_content_hash": "f2d89e7dadbefda5d679b0af9b2326fdb212d08477c78e6d85bcc6b6eec9e131",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-CN": ":::tip[下一期汇总：2022年11月30日]\n投稿截止日期为2022年11月23日。\n\n* 您是否撰写过文章、创建过 SWA 应用或示例？\n* 您是否正在组织包含 SWA 相关内容的会议？\n* 您是否是刚创建了首个 SWA 应用或博客的学生？\n\n请尽快 [**通过此自定义问题提交详细信息**](https://github.com/staticwebdev/30DaysOfSWA/issues/new?assignees=&labels=ThisMonthIn+-+Community&template=---this-month-in-swa--community-submission.md&title=This+Month+In%3A+Community)。我们期待分享您的贡献！\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2022-10-26-thismonth/index.md",
+  "last_updated_timestamp": "2025-06-08T18:35:42.880674+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "30b135c3fc8d84974080599cf9e98e0ff26a68e77b45f532887adef6647a8c4a"
+  }
+}
