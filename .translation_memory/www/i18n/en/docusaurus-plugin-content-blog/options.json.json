@@ -1,0 +1,65 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-plugin-content-blog/options.json",
+  "source_file_content_hash": "e2a704333b9db905d96e01b0d461658d79eb2e606e76a5a3baa7656c5517b3e6",
+  "segments": [
+    {
+      "segment_id": "title",
+      "source_content": "#30DaysOfServerless",
+      "source_content_hash": "19a8b62cda0e20a2c186d9bb5b83faf538ace0c141e5977f86200e1fe2ac6746",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "#30天无服务器学习"
+      },
+      "metadata": {
+        "json_description": "The title for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "description",
+      "source_content": "Learn about Azure Static Web Apps in #30Days of blog posts structured as 4 themed weeks taking you from fundamentals to advanced topics",
+      "source_content_hash": "14cc2aef14e3711716b059ecae4519f73ccf1c41ab06a3e9afcdb932f46b3629",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "通过为期30天的系列博文学习Azure静态Web应用，内容分为4个主题周，从基础知识到高级主题循序渐进"
+      },
+      "metadata": {
+        "json_description": "The description for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "sidebar.title",
+      "source_content": "#30DaysOfSWA (2022)",
+      "source_content_hash": "d5c872b410655839271531547d0afb5d36d1f813d64ba907bd9192af824a3945",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "#30天静态Web应用学习(2022)"
+      },
+      "metadata": {
+        "json_description": "The label for the left sidebar"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "title": {
+      "message": "#30DaysOfServerless",
+      "description": "The title for the blog used in SEO"
+    },
+    "description": {
+      "message": "Learn about Azure Static Web Apps in #30Days of blog posts structured as 4 themed weeks taking you from fundamentals to advanced topics",
+      "description": "The description for the blog used in SEO"
+    },
+    "sidebar.title": {
+      "message": "#30DaysOfSWA (2022)",
+      "description": "The label for the left sidebar"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/options.json",
+  "last_updated_timestamp": "2025-06-10T09:30:44.185675+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "e2a704333b9db905d96e01b0d461658d79eb2e606e76a5a3baa7656c5517b3e6"
+  }
+}

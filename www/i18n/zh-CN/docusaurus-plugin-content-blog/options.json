@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "#30天无服务器学习",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "通过为期30天的系列博文学习Azure静态Web应用，内容分为4个主题周，从基础知识到高级主题循序渐进",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "#30天静态Web应用学习(2022)",
+    "description": "The label for the left sidebar"
+  }
+}

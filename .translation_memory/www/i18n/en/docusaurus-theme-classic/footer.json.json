@@ -1,0 +1,31 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-theme-classic/footer.json",
+  "source_file_content_hash": "7130a75d8bdb36ce9081f4cd98a1259c28f2da71898bd534e25b0afc97b80072",
+  "segments": [
+    {
+      "segment_id": "copyright",
+      "source_content": "Copyright © 2025 Microsoft </a> - Built with <a href=\"https://docusaurus.io\"> Docusaurus, </a> & Hosted on <a href=\"https://aka.ms/swa\"> Azure </a> - Follow <a href=\"https://twitter.com/AzureStaticApps\"> @AzureStaticApps </a>",
+      "source_content_hash": "6a4de8d614782d5acd613faaede7e0c57e7039f520ed052d9af330113e49fd7f",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "版权所有 © 2025 Microsoft </a> - 基于 <a href=\"https://docusaurus.io\"> Docusaurus </a> 构建，托管于 <a href=\"https://aka.ms/swa\"> Azure </a> - 关注 <a href=\"https://twitter.com/AzureStaticApps\"> @AzureStaticApps </a>"
+      },
+      "metadata": {
+        "json_description": "The footer copyright"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "copyright": {
+      "message": "Copyright © 2025 Microsoft </a> - Built with <a href=\"https://docusaurus.io\"> Docusaurus, </a> & Hosted on <a href=\"https://aka.ms/swa\"> Azure </a> - Follow <a href=\"https://twitter.com/AzureStaticApps\"> @AzureStaticApps </a>",
+      "description": "The footer copyright"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-theme-classic/footer.json",
+  "last_updated_timestamp": "2025-06-10T09:30:44.183010+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "7130a75d8bdb36ce9081f4cd98a1259c28f2da71898bd534e25b0afc97b80072"
+  }
+}

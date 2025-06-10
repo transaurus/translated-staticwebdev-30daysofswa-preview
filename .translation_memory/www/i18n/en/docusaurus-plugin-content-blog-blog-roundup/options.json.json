@@ -1,0 +1,65 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "i18n/en/docusaurus-plugin-content-blog-blog-roundup/options.json",
+  "source_file_content_hash": "ebffbbb73b8c356fbd565291ee8a8384a2213f8c5dd611d46bc58daa97359aec",
+  "segments": [
+    {
+      "segment_id": "title",
+      "source_content": "This Month In SWA",
+      "source_content_hash": "371362702ddd8b684625d8b364381d2c793c4478e804bf1b810164e62c007c0b",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "本月聚焦：SWA动态"
+      },
+      "metadata": {
+        "json_description": "The title for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "description",
+      "source_content": "A monthly roundup of Azure Static Web Apps news, updates, content and more from your friendly neighborhood SWA team!",
+      "source_content_hash": "4e7ee4dbbdf570e69cfd48e01a57598e03958afebde4eac1d876b76336c999be",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "来自SWA团队的最新月度汇总，涵盖Azure静态Web应用新闻、更新、技术内容等精彩资讯！"
+      },
+      "metadata": {
+        "json_description": "The description for the blog used in SEO"
+      }
+    },
+    {
+      "segment_id": "sidebar.title",
+      "source_content": "#ThisMonthInSWA",
+      "source_content_hash": "56186918c8076dcb93273a55b05064d287f8d81f23425ae9355b6028de0792cb",
+      "node_type": "json_message",
+      "translatable": true,
+      "translations": {
+        "zh-CN": "#本月聚焦SWA"
+      },
+      "metadata": {
+        "json_description": "The label for the left sidebar"
+      }
+    }
+  ],
+  "original_json_structure": {
+    "title": {
+      "message": "This Month In SWA",
+      "description": "The title for the blog used in SEO"
+    },
+    "description": {
+      "message": "A monthly roundup of Azure Static Web Apps news, updates, content and more from your friendly neighborhood SWA team!",
+      "description": "The description for the blog used in SEO"
+    },
+    "sidebar.title": {
+      "message": "#ThisMonthInSWA",
+      "description": "The label for the left sidebar"
+    }
+  },
+  "target_i18n_subpath": "docusaurus-plugin-content-blog-blog-roundup/options.json",
+  "last_updated_timestamp": "2025-06-10T09:30:44.184194+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-CN": "ebffbbb73b8c356fbd565291ee8a8384a2213f8c5dd611d46bc58daa97359aec"
+  }
+}

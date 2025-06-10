@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "This Month In SWA",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "A monthly roundup of Azure Static Web Apps news, updates, content and more from your friendly neighborhood SWA team!",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "#ThisMonthInSWA",
+    "description": "The label for the left sidebar"
+  }
+}

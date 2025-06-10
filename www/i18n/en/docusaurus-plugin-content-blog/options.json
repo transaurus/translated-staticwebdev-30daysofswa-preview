@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "#30DaysOfServerless",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Learn about Azure Static Web Apps in #30Days of blog posts structured as 4 themed weeks taking you from fundamentals to advanced topics",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "#30DaysOfSWA (2022)",
+    "description": "The label for the left sidebar"
+  }
+}

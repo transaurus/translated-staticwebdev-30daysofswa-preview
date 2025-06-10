@@ -1,0 +1,38 @@
+{
+  "title": {
+    "message": "Static Web Apps!",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "#30DaysOfSWA Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.#ThisMonthInSWA": {
+    "message": "#ThisMonthInSWA",
+    "description": "Navbar item with label #ThisMonthInSWA"
+  },
+  "item.label.#30DaysOfSWA": {
+    "message": "#30DaysOfSWA",
+    "description": "Navbar item with label #30DaysOfSWA"
+  },
+  "item.label.Collections 🆕": {
+    "message": "Collections 🆕",
+    "description": "Navbar item with label Collections 🆕"
+  },
+  "item.label.Resources": {
+    "message": "Resources",
+    "description": "Navbar item with label Resources"
+  },
+  "item.label.Roadmap": {
+    "message": "Roadmap",
+    "description": "Navbar item with label Roadmap"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Deploy": {
+    "message": "Deploy",
+    "description": "Navbar item with label Deploy"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "本月聚焦：SWA动态",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "来自SWA团队的最新月度汇总，涵盖Azure静态Web应用新闻、更新、技术内容等精彩资讯！",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "#本月聚焦SWA",
+    "description": "The label for the left sidebar"
+  }
+}

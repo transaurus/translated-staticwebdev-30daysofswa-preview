@@ -31,6 +31,14 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-CN'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      'zh-CN': {
+        label: '中文 (中国)',
+      },
+    },
   },
 
   // --- CONFIG-NN #4: Configure presets for theme (classic)

@@ -1,0 +1,38 @@
+{
+  "title": {
+    "message": "静态 Web 应用！",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "#30DaysOfSWA 徽标",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.#ThisMonthInSWA": {
+    "message": "#本月静态Web应用动态",
+    "description": "Navbar item with label #ThisMonthInSWA"
+  },
+  "item.label.#30DaysOfSWA": {
+    "message": "#30天静态Web应用挑战",
+    "description": "Navbar item with label #30DaysOfSWA"
+  },
+  "item.label.Collections 🆕": {
+    "message": "精选集 🆕",
+    "description": "Navbar item with label Collections 🆕"
+  },
+  "item.label.Resources": {
+    "message": "资源",
+    "description": "Navbar item with label Resources"
+  },
+  "item.label.Roadmap": {
+    "message": "路线图",
+    "description": "Navbar item with label Roadmap"
+  },
+  "item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Deploy": {
+    "message": "部署",
+    "description": "Navbar item with label Deploy"
+  }
+}
